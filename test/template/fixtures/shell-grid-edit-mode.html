@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>au-shell-grid edit-mode fixture</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      hui-card {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      au-shell-grid {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <hui-card id="card">
+      <au-shell-grid id="grid"></au-shell-grid>
+    </hui-card>
+    <script type="module">
+      customElements.define(
+        'hui-card',
+        class extends HTMLElement {
+          preview = false;
+          editMode = false;
+        },
+      );
+
+      await import('/dist/atrium-ui.js');
+
+      const grid = document.getElementById('grid');
+      const card = document.getElementById('card');
+
+      grid.setConfig({
+        type: 'custom:au-shell-grid',
+        columns: 12,
+        cards: [
+          {
+            type: 'custom:au-action-card',
+            id: 'tile-1',
+            entity: 'light.kitchen',
+            layout: { x: 0, y: 0, w: 4, h: 2 },
+          },
+        ],
+      });
+
+      const params = new URLSearchParams(location.search);
+      if (params.get('edit') === '1') {
+        card.preview = true;
+        card.editMode = true;
+        card.dispatchEvent(new Event('card-updated'));
+      }
+
+      window.__fixture = { grid, card };
+    </script>
+  </body>
+</html>

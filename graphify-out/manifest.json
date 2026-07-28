@@ -1,0 +1,917 @@
+{
+  "hacs.json": {
+    "mtime": 1783767340.4661343,
+    "ast_hash": "d5333ba8835a1c699da19549bc34e2ff",
+    "semantic_hash": "d5333ba8835a1c699da19549bc34e2ff"
+  },
+  "package.json": {
+    "mtime": 1784392480.2427924,
+    "ast_hash": "605b8e80d2e29af74376a542de33f351",
+    "semantic_hash": ""
+  },
+  "src/card/action-card/action-card-editor-schema.ts": {
+    "mtime": 1784271086.610662,
+    "ast_hash": "7be87a409085af3e1b4dd456a600c53c",
+    "semantic_hash": "7be87a409085af3e1b4dd456a600c53c"
+  },
+  "src/card/action-card/au-action-card-editor.ts": {
+    "mtime": 1783767340.466242,
+    "ast_hash": "544e26c401e5a6175225b0e585a5c04a",
+    "semantic_hash": "544e26c401e5a6175225b0e585a5c04a"
+  },
+  "src/card/action-card/au-action-card.ts": {
+    "mtime": 1784392470.6363463,
+    "ast_hash": "5ddf277f3e1d468db9f1aa52f3337784",
+    "semantic_hash": ""
+  },
+  "src/card/climate-card/au-climate-card-editor.ts": {
+    "mtime": 1784143338.359494,
+    "ast_hash": "f9d8160a6f4543b15a84d47f01f454c7",
+    "semantic_hash": "f9d8160a6f4543b15a84d47f01f454c7"
+  },
+  "src/card/climate-card/au-climate-card.ts": {
+    "mtime": 1784400266.0464165,
+    "ast_hash": "eb33329be4c4ccda67ab91adb059daca",
+    "semantic_hash": ""
+  },
+  "src/card/climate-card/climate-card-editor-schema.ts": {
+    "mtime": 1784387476.2071233,
+    "ast_hash": "ccc29100f0e4e11f3d19b1b2b150c6fc",
+    "semantic_hash": ""
+  },
+  "src/card/device-card/au-device-card-editor.ts": {
+    "mtime": 1784148986.625259,
+    "ast_hash": "fbeb674360aaecaa705740bd581eaec2",
+    "semantic_hash": "fbeb674360aaecaa705740bd581eaec2"
+  },
+  "src/card/device-card/au-device-card.ts": {
+    "mtime": 1784826730.6855583,
+    "ast_hash": "c51fc3765e5ab9336700d220bc35d8d3",
+    "semantic_hash": ""
+  },
+  "src/card/device-card/device-card-editor-schema.ts": {
+    "mtime": 1784826715.7599154,
+    "ast_hash": "b2049fcad53cfe777930c63ddddc3839",
+    "semantic_hash": ""
+  },
+  "src/card/light-card/au-light-card-editor.ts": {
+    "mtime": 1783767340.4662993,
+    "ast_hash": "78fda1ef36bef1febc35c2e33fc2f87f",
+    "semantic_hash": "78fda1ef36bef1febc35c2e33fc2f87f"
+  },
+  "src/card/light-card/au-light-card.ts": {
+    "mtime": 1784800826.8447378,
+    "ast_hash": "e15f8c4ceea9f18a02f37f1216981aab",
+    "semantic_hash": ""
+  },
+  "src/card/light-card/light-card-editor-schema.ts": {
+    "mtime": 1784387472.6735768,
+    "ast_hash": "a9a6eb2599aa75a2c0695fd4bba77a9c",
+    "semantic_hash": ""
+  },
+  "src/card/room-card/au-room-card-editor.ts": {
+    "mtime": 1784322576.5950856,
+    "ast_hash": "92a207f553ac29ea7a6afe959b996126",
+    "semantic_hash": "92a207f553ac29ea7a6afe959b996126"
+  },
+  "src/card/room-card/au-room-card.ts": {
+    "mtime": 1784800815.638972,
+    "ast_hash": "ce56ce9a902afc01f831c63580a0efc0",
+    "semantic_hash": ""
+  },
+  "src/card/room-card/room-card-editor-schema.ts": {
+    "mtime": 1784389462.7784393,
+    "ast_hash": "f8e449f046fd3923e308caadaf645183",
+    "semantic_hash": ""
+  },
+  "src/card/sensor-card/au-sensor-card-editor.ts": {
+    "mtime": 1783767340.4666452,
+    "ast_hash": "b66f44ff0a32ae03f80b739551ed0ef1",
+    "semantic_hash": "b66f44ff0a32ae03f80b739551ed0ef1"
+  },
+  "src/card/sensor-card/au-sensor-card.ts": {
+    "mtime": 1784389243.6687706,
+    "ast_hash": "40a80377d8dcb533bb1e456c6411b4d1",
+    "semantic_hash": ""
+  },
+  "src/components/au-climate-selectors.ts": {
+    "mtime": 1784400269.169252,
+    "ast_hash": "d9f7c55eed2aa46ae3ddf0e44effd079",
+    "semantic_hash": ""
+  },
+  "src/components/au-light-slider.ts": {
+    "mtime": 1784389334.4215178,
+    "ast_hash": "e302011a84c5ee5b228d17a98619cc07",
+    "semantic_hash": ""
+  },
+  "src/components/au-temp-stepper.ts": {
+    "mtime": 1784389586.1361034,
+    "ast_hash": "02340faaa11a05cca6a3f5d730989051",
+    "semantic_hash": ""
+  },
+  "src/core/action-card.ts": {
+    "mtime": 1784790222.866004,
+    "ast_hash": "3cc16b70d58a2b24277e954f44090e7a",
+    "semantic_hash": ""
+  },
+  "src/core/base-card.ts": {
+    "mtime": 1784790221.5870473,
+    "ast_hash": "409f95c3ff3524bc3b5483b6176b8b5f",
+    "semantic_hash": ""
+  },
+  "src/core/base-editor.ts": {
+    "mtime": 1784806741.3396723,
+    "ast_hash": "50860ca13f9b356a07a92481cfede7fe",
+    "semantic_hash": ""
+  },
+  "src/core/card-content.ts": {
+    "mtime": 1784387813.9306393,
+    "ast_hash": "25c6da0d6fdffb8ae026e5ba13be1aed",
+    "semantic_hash": ""
+  },
+  "src/index.ts": {
+    "mtime": 1784829703.2377744,
+    "ast_hash": "a122f3bd124acbedddb0bf7f40a8e6e4",
+    "semantic_hash": ""
+  },
+  "src/localize/en.ts": {
+    "mtime": 1784808221.5858204,
+    "ast_hash": "5d11f5f682f42490c31a6f970d9d895a",
+    "semantic_hash": ""
+  },
+  "src/localize/he.ts": {
+    "mtime": 1784808223.7592106,
+    "ast_hash": "cb562d91cacbbe014248a48a6e81e857",
+    "semantic_hash": ""
+  },
+  "src/localize/localize.ts": {
+    "mtime": 1784148929.4731126,
+    "ast_hash": "2254c5365563fbb5898ef70cb9cd773f",
+    "semantic_hash": "2254c5365563fbb5898ef70cb9cd773f"
+  },
+  "src/localize/ru.ts": {
+    "mtime": 1784808222.8805041,
+    "ast_hash": "3481f94d0bc961fc174bd94da69f0aa3",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/au-shell-grid-editor.ts": {
+    "mtime": 1784801646.5775104,
+    "ast_hash": "5d8f06882e0919149a90e36d3b1a6f00",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/au-shell-grid.ts": {
+    "mtime": 1784389783.3572373,
+    "ast_hash": "a9b4817118b16293b78bc48fd61f1d0d",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/au-shell-home-view.ts": {
+    "mtime": 1785263185.4635992,
+    "ast_hash": "fe663b0baf1a3dac300fee4690d8b76c",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/config-persist.ts": {
+    "mtime": 1784196918.0492246,
+    "ast_hash": "fcc69e2f77273ded7f9c3964d2170830",
+    "semantic_hash": "fcc69e2f77273ded7f9c3964d2170830"
+  },
+  "src/template/shell-grid/create-child-card.ts": {
+    "mtime": 1784389783.358641,
+    "ast_hash": "e27fdff83886bd756aff3355871fa843",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/grid-engine.ts": {
+    "mtime": 1784389783.3585863,
+    "ast_hash": "8f57219219bdb287a2da3f0f918c5805",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/home-drag-resize.ts": {
+    "mtime": 1784266856.227401,
+    "ast_hash": "5624b131891cb10572f11c08fb483265",
+    "semantic_hash": "5624b131891cb10572f11c08fb483265"
+  },
+  "src/template/shell-grid/home-edit-commit.ts": {
+    "mtime": 1784323216.1254885,
+    "ast_hash": "5fd723705bb829094e30c78ed6d3ff1c",
+    "semantic_hash": "5fd723705bb829094e30c78ed6d3ff1c"
+  },
+  "src/template/shell-grid/home-grid-types.ts": {
+    "mtime": 1784323211.352164,
+    "ast_hash": "e4ce2903feb7bbef0746e623412682f7",
+    "semantic_hash": "e4ce2903feb7bbef0746e623412682f7"
+  },
+  "src/template/shell-grid/room-controls.ts": {
+    "mtime": 1784798520.2995934,
+    "ast_hash": "14eff012ceb1db998a493be6aaf30678",
+    "semantic_hash": ""
+  },
+  "src/theme/action-tile-layout.ts": {
+    "mtime": 1784319010.5336452,
+    "ast_hash": "5b1524d2200bf9a0054c24ece6e1b156",
+    "semantic_hash": "5b1524d2200bf9a0054c24ece6e1b156"
+  },
+  "src/theme/home-style.ts": {
+    "mtime": 1784389224.9475927,
+    "ast_hash": "4770724a2fac89a4cca2629052121389",
+    "semantic_hash": ""
+  },
+  "src/theme/tokens.ts": {
+    "mtime": 1784390137.6503842,
+    "ast_hash": "4ec9b7ef7f99d0a908b4297cb95112fb",
+    "semantic_hash": ""
+  },
+  "src/types/action.ts": {
+    "mtime": 1784798521.0382833,
+    "ast_hash": "5132d015598bb19ee25586c07b087e1c",
+    "semantic_hash": ""
+  },
+  "src/types/climate.ts": {
+    "mtime": 1784276493.6387918,
+    "ast_hash": "42b2cf0ea9f0ff1c25b6c03491ae83eb",
+    "semantic_hash": "42b2cf0ea9f0ff1c25b6c03491ae83eb"
+  },
+  "src/types/config.ts": {
+    "mtime": 1784826705.9932694,
+    "ast_hash": "38a7c7c700fff18922657648a5143980",
+    "semantic_hash": ""
+  },
+  "src/types/device.ts": {
+    "mtime": 1784826704.4471996,
+    "ast_hash": "5747068df90b762ae4f58aafdecfca9a",
+    "semantic_hash": ""
+  },
+  "src/types/home-assistant.ts": {
+    "mtime": 1784398336.6360605,
+    "ast_hash": "e2d4d7eef1f8c9e0882e536739ef03a9",
+    "semantic_hash": ""
+  },
+  "src/types/home.ts": {
+    "mtime": 1784806783.9355812,
+    "ast_hash": "f5c8feaf6f32e5aec5d275efc55bbc61",
+    "semantic_hash": ""
+  },
+  "src/types/index.ts": {
+    "mtime": 1784826709.098621,
+    "ast_hash": "9ce0e49aa7084ddb7bd1ae3c201f3689",
+    "semantic_hash": ""
+  },
+  "src/types/light.ts": {
+    "mtime": 1783767340.4667125,
+    "ast_hash": "20fc462581acc8b2781887514449972f",
+    "semantic_hash": "20fc462581acc8b2781887514449972f"
+  },
+  "src/types/room-card.ts": {
+    "mtime": 1784798523.601723,
+    "ast_hash": "30ff577b5c417b870b6deeea19828ca9",
+    "semantic_hash": ""
+  },
+  "src/utils/action.ts": {
+    "mtime": 1784800811.3671772,
+    "ast_hash": "513266b7737a73a8c377ae393db4696d",
+    "semantic_hash": ""
+  },
+  "src/utils/areas.ts": {
+    "mtime": 1784389686.0585527,
+    "ast_hash": "ebdcba1909e778b8e7dd3488177a59a7",
+    "semantic_hash": ""
+  },
+  "src/utils/bulk-action.ts": {
+    "mtime": 1784389462.7090545,
+    "ast_hash": "14d966774e9332888326d03d9ee98575",
+    "semantic_hash": ""
+  },
+  "src/utils/climate.ts": {
+    "mtime": 1784389715.5158408,
+    "ast_hash": "03d12703225427676c0a5a54b6a9d4ed",
+    "semantic_hash": ""
+  },
+  "src/utils/cover.ts": {
+    "mtime": 1784812135.7492337,
+    "ast_hash": "30bcaae9d852e34e187529c9b4d33963",
+    "semantic_hash": ""
+  },
+  "src/utils/debug.ts": {
+    "mtime": 1784148932.201797,
+    "ast_hash": "f1a3bb2ca0aa371f8c80b634702fb6db",
+    "semantic_hash": "f1a3bb2ca0aa371f8c80b634702fb6db"
+  },
+  "src/utils/device.ts": {
+    "mtime": 1784826698.1837344,
+    "ast_hash": "56e3e9101183a5f708451f2bdf66678c",
+    "semantic_hash": ""
+  },
+  "src/utils/domain-controls.ts": {
+    "mtime": 1784826702.3596535,
+    "ast_hash": "029f03e52b5e9a7d1c1f5f83c6b64625",
+    "semantic_hash": ""
+  },
+  "src/utils/entity.ts": {
+    "mtime": 1784389454.067047,
+    "ast_hash": "ff8002b97de3d383903a958fa0bc1e90",
+    "semantic_hash": ""
+  },
+  "src/utils/fan.ts": {
+    "mtime": 1784809362.0320415,
+    "ast_hash": "5d13a848d5ef5168e9f46b22d03eda23",
+    "semantic_hash": ""
+  },
+  "src/utils/fire-event.ts": {
+    "mtime": 1783767340.4666932,
+    "ast_hash": "6e31f92512ca5df8d5fdc7a993c91eac",
+    "semantic_hash": "6e31f92512ca5df8d5fdc7a993c91eac"
+  },
+  "src/utils/light-card-layout.ts": {
+    "mtime": 1783767340.4570975,
+    "ast_hash": "70e582699ad15d5d131256ff35ec5ab1",
+    "semantic_hash": "70e582699ad15d5d131256ff35ec5ab1"
+  },
+  "src/utils/light.ts": {
+    "mtime": 1784798093.0490465,
+    "ast_hash": "bec482b50e77ddc7a2b08f8b32b0df76",
+    "semantic_hash": ""
+  },
+  "src/utils/pointer-gestures.ts": {
+    "mtime": 1784387462.5956805,
+    "ast_hash": "7d0c6191c35581979e38f9e774b9b12f",
+    "semantic_hash": ""
+  },
+  "src/utils/presence.ts": {
+    "mtime": 1784148950.3411195,
+    "ast_hash": "159df66b856b111573dcd482f074d10e",
+    "semantic_hash": "159df66b856b111573dcd482f074d10e"
+  },
+  "src/utils/touch-click.ts": {
+    "mtime": 1784400233.9744837,
+    "ast_hash": "d5573908a3595fb914f9303a18562004",
+    "semantic_hash": ""
+  },
+  "src/utils/vacuum.ts": {
+    "mtime": 1784826657.6583722,
+    "ast_hash": "d93f5651ea6c57ecf251287db7f32cf6",
+    "semantic_hash": ""
+  },
+  "src/utils/water-heater-timer.ts": {
+    "mtime": 1784312936.1106791,
+    "ast_hash": "bc70410bb50bc9d2a43862e3815c9ae4",
+    "semantic_hash": "bc70410bb50bc9d2a43862e3815c9ae4"
+  },
+  "src/utils/water-heater.ts": {
+    "mtime": 1784148948.669986,
+    "ast_hash": "04f5a99d82158fea1581acd25e0088fa",
+    "semantic_hash": "04f5a99d82158fea1581acd25e0088fa"
+  },
+  "test/card/action-card-base.test.ts": {
+    "mtime": 1784392476.466422,
+    "ast_hash": "c43cd93c7dbb308e2f27b3b08c579df1",
+    "semantic_hash": ""
+  },
+  "test/card/action.test.ts": {
+    "mtime": 1784799066.350898,
+    "ast_hash": "102b7323bbe9e32dbaa674505392e699",
+    "semantic_hash": ""
+  },
+  "test/card/au-climate-card-home.test.ts": {
+    "mtime": 1784389791.989265,
+    "ast_hash": "2244b8251424becc03265a2d5a0b66b6",
+    "semantic_hash": ""
+  },
+  "test/card/au-climate-card.test.ts": {
+    "mtime": 1784276890.0497658,
+    "ast_hash": "6862cc00ab3e02f38665b348505294e4",
+    "semantic_hash": "6862cc00ab3e02f38665b348505294e4"
+  },
+  "test/card/au-device-card.test.ts": {
+    "mtime": 1784826780.9489174,
+    "ast_hash": "daedf662ae6b2dbe98afa36ba777a1d8",
+    "semantic_hash": ""
+  },
+  "test/card/au-light-card.test.ts": {
+    "mtime": 1784787630.4990408,
+    "ast_hash": "c84f8bca1b32a49f3a253aa165d377cb",
+    "semantic_hash": ""
+  },
+  "test/card/au-room-card.test.ts": {
+    "mtime": 1784799075.9727,
+    "ast_hash": "bbe4dbaadff4303b2f3e443841d03ca1",
+    "semantic_hash": ""
+  },
+  "test/card/au-sensor-card.test.ts": {
+    "mtime": 1784267032.5898724,
+    "ast_hash": "d2544b1666d828dcd06ca9e2b3ae1187",
+    "semantic_hash": "d2544b1666d828dcd06ca9e2b3ae1187"
+  },
+  "test/card/card-content.test.ts": {
+    "mtime": 1783767340.466255,
+    "ast_hash": "79ed8b3dd13f742022e04edf41b915c1",
+    "semantic_hash": "79ed8b3dd13f742022e04edf41b915c1"
+  },
+  "test/card/home-variant.test.ts": {
+    "mtime": 1784826787.063074,
+    "ast_hash": "15650157d91781c81769e3dd80915211",
+    "semantic_hash": ""
+  },
+  "test/card/reactive-update.test.ts": {
+    "mtime": 1784799066.7606523,
+    "ast_hash": "2a5c06efd6445d6f942fd7d5365b8f32",
+    "semantic_hash": ""
+  },
+  "test/card/set-config.test.ts": {
+    "mtime": 1784187822.04964,
+    "ast_hash": "8559473b132fa84e69dbbb420e8adc08",
+    "semantic_hash": "8559473b132fa84e69dbbb420e8adc08"
+  },
+  "test/components/au-climate-selectors.test.ts": {
+    "mtime": 1784284467.122908,
+    "ast_hash": "92377957deb71866c902116f9a8f15b4",
+    "semantic_hash": "92377957deb71866c902116f9a8f15b4"
+  },
+  "test/components/au-light-slider.test.ts": {
+    "mtime": 1783767340.455045,
+    "ast_hash": "fd100d92e894903d014c946606f7dc99",
+    "semantic_hash": "fd100d92e894903d014c946606f7dc99"
+  },
+  "test/components/au-temp-stepper.test.ts": {
+    "mtime": 1784276507.3094223,
+    "ast_hash": "781d4b2a315a8f696adbfa6234494717",
+    "semantic_hash": "781d4b2a315a8f696adbfa6234494717"
+  },
+  "test/helpers.ts": {
+    "mtime": 1783767340.4665399,
+    "ast_hash": "60e150ba7c835b62da274479a20045ad",
+    "semantic_hash": "60e150ba7c835b62da274479a20045ad"
+  },
+  "test/localize/localize.test.ts": {
+    "mtime": 1784149094.9110177,
+    "ast_hash": "83d6938f7717bdb3b4ab0a3a9ab12da0",
+    "semantic_hash": "83d6938f7717bdb3b4ab0a3a9ab12da0"
+  },
+  "test/template/au-shell-grid-editor.test.ts": {
+    "mtime": 1784389757.4011955,
+    "ast_hash": "00015b760917da05f6dbade0a49b2c94",
+    "semantic_hash": ""
+  },
+  "test/template/au-shell-grid-home.test.ts": {
+    "mtime": 1784812381.4256089,
+    "ast_hash": "3da6a4dd30d93cde8c4a49707d604e22",
+    "semantic_hash": ""
+  },
+  "test/template/config-persist.test.ts": {
+    "mtime": 1784197012.6066995,
+    "ast_hash": "6fa0eab5d89b903ab0c6a2a5a67f058a",
+    "semantic_hash": "6fa0eab5d89b903ab0c6a2a5a67f058a"
+  },
+  "test/template/create-child-card.test.ts": {
+    "mtime": 1784267029.7886093,
+    "ast_hash": "2beb90faa9e747e30ed235db2f825066",
+    "semantic_hash": "2beb90faa9e747e30ed235db2f825066"
+  },
+  "test/template/grid-engine.test.ts": {
+    "mtime": 1784271712.5706673,
+    "ast_hash": "4dd9cdb83b2646fc39f24ff71379a050",
+    "semantic_hash": "4dd9cdb83b2646fc39f24ff71379a050"
+  },
+  "test/template/home-drag-resize.test.ts": {
+    "mtime": 1784267093.3622262,
+    "ast_hash": "8584ce0e8765690f945499a6a4cc0e0c",
+    "semantic_hash": "8584ce0e8765690f945499a6a4cc0e0c"
+  },
+  "test/template/home-edit-commit.test.ts": {
+    "mtime": 1784323262.4710305,
+    "ast_hash": "bd27649960ab62518b8dd82760967c5f",
+    "semantic_hash": "bd27649960ab62518b8dd82760967c5f"
+  },
+  "test/template/room-controls.test.ts": {
+    "mtime": 1784400946.362463,
+    "ast_hash": "5465c7b44a0ce599189f6abb2b85ca36",
+    "semantic_hash": ""
+  },
+  "test/template/shell-grid-add-card.test.ts": {
+    "mtime": 1784193296.1136653,
+    "ast_hash": "ae0bab7cdaa1100dd45211e4e66e75f1",
+    "semantic_hash": "ae0bab7cdaa1100dd45211e4e66e75f1"
+  },
+  "test/utils/areas.test.ts": {
+    "mtime": 1784149094.767725,
+    "ast_hash": "09864951eee588ee24fb85b6c9c26221",
+    "semantic_hash": "09864951eee588ee24fb85b6c9c26221"
+  },
+  "test/utils/bulk-action.test.ts": {
+    "mtime": 1784149091.6350229,
+    "ast_hash": "02c61713d28b53d2077d652cc0c7ebbd",
+    "semantic_hash": "02c61713d28b53d2077d652cc0c7ebbd"
+  },
+  "test/utils/climate.test.ts": {
+    "mtime": 1784143338.352362,
+    "ast_hash": "423a097b0e96ae63d95e508f36781c9f",
+    "semantic_hash": "423a097b0e96ae63d95e508f36781c9f"
+  },
+  "test/utils/cover.test.ts": {
+    "mtime": 1784812369.948954,
+    "ast_hash": "b4b409e367593b20bf509a4006543572",
+    "semantic_hash": ""
+  },
+  "test/utils/device.test.ts": {
+    "mtime": 1784826765.1974826,
+    "ast_hash": "5a273293b84dac95179dd7b9f8e23ead",
+    "semantic_hash": ""
+  },
+  "test/utils/domain-controls.test.ts": {
+    "mtime": 1784826766.8201916,
+    "ast_hash": "a5801e2259d1f13606cef96538f9ad47",
+    "semantic_hash": ""
+  },
+  "test/utils/entity.test.ts": {
+    "mtime": 1784312355.413834,
+    "ast_hash": "8ddefe42e7dd09f92bb8204859e0360e",
+    "semantic_hash": "8ddefe42e7dd09f92bb8204859e0360e"
+  },
+  "test/utils/fan.test.ts": {
+    "mtime": 1784809343.645241,
+    "ast_hash": "2f898ca9ab1a3995c0aaeb0105785e39",
+    "semantic_hash": ""
+  },
+  "test/utils/light-card-layout.test.ts": {
+    "mtime": 1783767340.453102,
+    "ast_hash": "e98c71622c746a7fe53c310565da3c38",
+    "semantic_hash": "e98c71622c746a7fe53c310565da3c38"
+  },
+  "test/utils/light.test.ts": {
+    "mtime": 1784787630.1138473,
+    "ast_hash": "dc1d0028f91921b97c4c9e3c06d53037",
+    "semantic_hash": ""
+  },
+  "test/utils/pointer-gestures.test.ts": {
+    "mtime": 1784314210.2747014,
+    "ast_hash": "7d8d98fc5844cbe10e98526231e8bcb7",
+    "semantic_hash": "7d8d98fc5844cbe10e98526231e8bcb7"
+  },
+  "test/utils/presence.test.ts": {
+    "mtime": 1784149089.6496902,
+    "ast_hash": "92ebf3e8f4ac4e0ea8b0fcf88720e1b1",
+    "semantic_hash": "92ebf3e8f4ac4e0ea8b0fcf88720e1b1"
+  },
+  "test/utils/touch-click.test.ts": {
+    "mtime": 1784387479.8451405,
+    "ast_hash": "0721491efcd8de289d554af92d1a2953",
+    "semantic_hash": ""
+  },
+  "test/utils/vacuum.test.ts": {
+    "mtime": 1784826773.1152961,
+    "ast_hash": "0d8630aeeb3eb098f2f34a37509cbac3",
+    "semantic_hash": ""
+  },
+  "test/utils/water-heater-timer.test.ts": {
+    "mtime": 1784312956.6646593,
+    "ast_hash": "b6f59f83ff03e3b59cb536cf200c1059",
+    "semantic_hash": "b6f59f83ff03e3b59cb536cf200c1059"
+  },
+  "test/utils/water-heater.test.ts": {
+    "mtime": 1784267004.6097035,
+    "ast_hash": "14334159a40404631cfc6e24e45dff5c",
+    "semantic_hash": "14334159a40404631cfc6e24e45dff5c"
+  },
+  "tsconfig.build.json": {
+    "mtime": 1783767340.4532042,
+    "ast_hash": "74370e28d4c1777478ff81c92569baba",
+    "semantic_hash": "74370e28d4c1777478ff81c92569baba"
+  },
+  "tsconfig.json": {
+    "mtime": 1783767340.4531739,
+    "ast_hash": "0d9e09f01782753c37a150245912fe71",
+    "semantic_hash": "0d9e09f01782753c37a150245912fe71"
+  },
+  "vite.config.ts": {
+    "mtime": 1783767340.4475207,
+    "ast_hash": "8355a4b4dbd50656820894ef2b0d2bca",
+    "semantic_hash": "8355a4b4dbd50656820894ef2b0d2bca"
+  },
+  "README.md": {
+    "mtime": 1784829730.6952302,
+    "ast_hash": "aed1d522429e26bc12a5bd23fb4e11f2",
+    "semantic_hash": ""
+  },
+  "demo/home-dashboard.yaml": {
+    "mtime": 1784398351.5750704,
+    "ast_hash": "30055a004a636a5d77dfa9a4e9ef3b8d",
+    "semantic_hash": ""
+  },
+  "test/template/fixtures/shell-grid-edit-mode.html": {
+    "mtime": 1783767340.466673,
+    "ast_hash": "1b216b81212c26ad69eeda1bdc05a845",
+    "semantic_hash": "1b216b81212c26ad69eeda1bdc05a845"
+  },
+  "test/template/fixtures/shell-grid-view-edit-mode.html": {
+    "mtime": 1783767340.4530783,
+    "ast_hash": "655d4464aa5b64d6e875f5a9203c3d04",
+    "semantic_hash": "655d4464aa5b64d6e875f5a9203c3d04"
+  },
+  "src/template/shell-grid/home-child-config.ts": {
+    "mtime": 1784826716.2421198,
+    "ast_hash": "e89220897ff14a4a9745d5443ad3c0ed",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/home-child-host.ts": {
+    "mtime": 1784389783.3585432,
+    "ast_hash": "713587fd7bf1a4f8958a7aea70446df2",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/home-edit-room-modal.ts": {
+    "mtime": 1785263170.3325996,
+    "ast_hash": "ecb544ba81371c42485d50a63e4bc8a8",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/home-picker-modals.ts": {
+    "mtime": 1784387731.363204,
+    "ast_hash": "2b726a34bd7787d01e1b6ae626084650",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/home-view-styles.ts": {
+    "mtime": 1784390528.0690904,
+    "ast_hash": "a2c22db34306909d49e6a44178d2029c",
+    "semantic_hash": ""
+  },
+  "src/utils/stop-bubble.ts": {
+    "mtime": 1784387813.3146296,
+    "ast_hash": "7a1465ec53ad44d1c45476701ad62612",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/home-edit-session.ts": {
+    "mtime": 1784389451.471132,
+    "ast_hash": "9dc6355ca01e7f3b8d50d3c50d8523a8",
+    "semantic_hash": ""
+  },
+  "src/template/shell-grid/home-grid-items.ts": {
+    "mtime": 1785263186.0393956,
+    "ast_hash": "cb2f79de3cf2f50a359eccfd0aba88dc",
+    "semantic_hash": ""
+  },
+  "src/utils/debounce.ts": {
+    "mtime": 1784389322.667208,
+    "ast_hash": "ab0108e9208b8186d3a2070f7fa1a13d",
+    "semantic_hash": ""
+  },
+  "src/utils/domain-icons.ts": {
+    "mtime": 1784389344.2044802,
+    "ast_hash": "546e2c3447e0d1c3610bc6c759ab4f2f",
+    "semantic_hash": ""
+  },
+  "src/utils/domains.ts": {
+    "mtime": 1784826704.9460666,
+    "ast_hash": "1b8788dbc2099d8460687098eb46fa77",
+    "semantic_hash": ""
+  },
+  "src/utils/pending-control.ts": {
+    "mtime": 1784389323.562978,
+    "ast_hash": "65b88b4747e685fd5c8bfd068cd63111",
+    "semantic_hash": ""
+  },
+  "src/utils/pointer-value.ts": {
+    "mtime": 1784389325.2316558,
+    "ast_hash": "075a0f33f3543d2115cbc8cb14d99a8a",
+    "semantic_hash": ""
+  },
+  "MASTER_ASSESSMENT.md": {
+    "mtime": 1784400333.2425845,
+    "ast_hash": "c59240b58dea60089b1a1bdd8f606fb7",
+    "semantic_hash": ""
+  },
+  ".prettierrc.json": {
+    "mtime": 1784389695.2974882,
+    "ast_hash": "8efc7b456c10ee8723834a2a49a2975c",
+    "semantic_hash": ""
+  },
+  "eslint.config.js": {
+    "mtime": 1784389694.9882512,
+    "ast_hash": "cc1bccbd3b1edf1b128682cb7a581a68",
+    "semantic_hash": ""
+  },
+  "test/core/set-config-copy.test.ts": {
+    "mtime": 1784389701.4441798,
+    "ast_hash": "87143c0ab5925662475c49c253962011",
+    "semantic_hash": ""
+  },
+  "src/utils/format-clock.ts": {
+    "mtime": 1784801656.6745183,
+    "ast_hash": "576f439379c388aa1cab84c56bd38b53",
+    "semantic_hash": ""
+  },
+  "test/utils/format-clock.test.ts": {
+    "mtime": 1784801683.5364628,
+    "ast_hash": "69818698342977136798ed534b50bdbc",
+    "semantic_hash": ""
+  },
+  "src/card/calendar-card/au-calendar-card-editor.ts": {
+    "mtime": 1784398064.7330737,
+    "ast_hash": "11494dafff6c80f5542956cc9ae53bcc",
+    "semantic_hash": ""
+  },
+  "src/card/calendar-card/au-calendar-card.ts": {
+    "mtime": 1784400267.701831,
+    "ast_hash": "1b4f9af9a7347939f31ca508e7d9c0fe",
+    "semantic_hash": ""
+  },
+  "src/card/calendar-card/calendar-card-editor-schema.ts": {
+    "mtime": 1784400232.6183558,
+    "ast_hash": "65a75b0c182efa04895645542ef7922a",
+    "semantic_hash": ""
+  },
+  "src/types/calendar.ts": {
+    "mtime": 1784400218.852172,
+    "ast_hash": "9e290558df7c26f50481132df48dc936",
+    "semantic_hash": ""
+  },
+  "src/utils/calendar.ts": {
+    "mtime": 1784398346.0191786,
+    "ast_hash": "d12f92eaaee35538a8239c94003ab4e5",
+    "semantic_hash": ""
+  },
+  "test/card/au-calendar-card.test.ts": {
+    "mtime": 1784400275.2564788,
+    "ast_hash": "ef222035d3eab621d7c0645b3eeb7ab1",
+    "semantic_hash": ""
+  },
+  "test/utils/calendar.test.ts": {
+    "mtime": 1784398356.042091,
+    "ast_hash": "5c493c6530f65f86fa170df7dd4eb519",
+    "semantic_hash": ""
+  },
+  "test/card/au-calendar-card-editor.test.ts": {
+    "mtime": 1784398071.4892104,
+    "ast_hash": "9fc4320e8db1be140f5c4cecececbb00",
+    "semantic_hash": ""
+  },
+  "src/utils/hass-entity.ts": {
+    "mtime": 1784790201.1175568,
+    "ast_hash": "20fe9069b09081f9a5678b8b3a7053ad",
+    "semantic_hash": ""
+  },
+  "src/utils/sync-debug.ts": {
+    "mtime": 1784800798.8626156,
+    "ast_hash": "dc6fabd21d98033b5e1e66c9472b1708",
+    "semantic_hash": ""
+  },
+  "test/utils/sync-debug.test.ts": {
+    "mtime": 1784798570.1024427,
+    "ast_hash": "086c081eaed7e2579aab2cfa990a5b0c",
+    "semantic_hash": ""
+  },
+  "src/utils/format-greeting.ts": {
+    "mtime": 1784801650.4717808,
+    "ast_hash": "c06ec2f678c1cf9973919d9bcc06f02a",
+    "semantic_hash": ""
+  },
+  "src/utils/home-card-type.ts": {
+    "mtime": 1784826705.5554113,
+    "ast_hash": "6ad26b40972ab00d4aaec628f985d668",
+    "semantic_hash": ""
+  },
+  "test/template/home-child-config.test.ts": {
+    "mtime": 1784812340.6938796,
+    "ast_hash": "36b541175f8c68a71c54d9b1de39e3f4",
+    "semantic_hash": ""
+  },
+  "test/utils/home-card-type.test.ts": {
+    "mtime": 1784826769.8794887,
+    "ast_hash": "9a0ccedad544d5ebf6cb6362a02b02a9",
+    "semantic_hash": ""
+  },
+  "src/card/fan-card/au-fan-card-editor.ts": {
+    "mtime": 1784808268.5132346,
+    "ast_hash": "344c42ac67d4766f57f20c726c94f2af",
+    "semantic_hash": ""
+  },
+  "src/card/fan-card/au-fan-card.ts": {
+    "mtime": 1784810770.3996212,
+    "ast_hash": "f6699be218d6e94b0c029dd054a08582",
+    "semantic_hash": ""
+  },
+  "src/card/fan-card/fan-card-editor-schema.ts": {
+    "mtime": 1784810243.5529768,
+    "ast_hash": "b17ecb66762b148687c9f7216e35cba2",
+    "semantic_hash": ""
+  },
+  "src/types/fan.ts": {
+    "mtime": 1784810263.9704936,
+    "ast_hash": "4d1c6022e0434ad42f55adaf41a094af",
+    "semantic_hash": ""
+  },
+  "test/card/au-fan-card.test.ts": {
+    "mtime": 1784810781.291714,
+    "ast_hash": "d8ca1386b794e1e0c3f33eccbe0b82a2",
+    "semantic_hash": ""
+  },
+  "src/card/cover-card/au-cover-card-editor.ts": {
+    "mtime": 1784812144.6894157,
+    "ast_hash": "33e4f53fd32d541a4f2359056643ff66",
+    "semantic_hash": ""
+  },
+  "src/card/cover-card/au-cover-card.ts": {
+    "mtime": 1784812170.331795,
+    "ast_hash": "1febd360ae78095df6c455ba6e2d01c1",
+    "semantic_hash": ""
+  },
+  "src/card/cover-card/cover-card-editor-schema.ts": {
+    "mtime": 1784812140.6510553,
+    "ast_hash": "e26323df38bf79481dc6e99ec94d46d8",
+    "semantic_hash": ""
+  },
+  "src/card/switch-card/au-switch-card-editor.ts": {
+    "mtime": 1784812145.0919268,
+    "ast_hash": "1951481b473f176c744c4fe43558f85f",
+    "semantic_hash": ""
+  },
+  "src/card/switch-card/au-switch-card.ts": {
+    "mtime": 1784812170.6922364,
+    "ast_hash": "361878750f37342739076a712f083b0b",
+    "semantic_hash": ""
+  },
+  "src/card/switch-card/switch-card-editor-schema.ts": {
+    "mtime": 1784812142.8666081,
+    "ast_hash": "225f98dd58717b2b8d80e59c5a7af24f",
+    "semantic_hash": ""
+  },
+  "src/components/au-fan-speed-selector.ts": {
+    "mtime": 1784810765.7023804,
+    "ast_hash": "6dc266963ffb6c3c76dc57de1e5d41b3",
+    "semantic_hash": ""
+  },
+  "src/types/cover.ts": {
+    "mtime": 1784812137.6409264,
+    "ast_hash": "807279f64aa5d43c05c0741cf1eb395a",
+    "semantic_hash": ""
+  },
+  "src/types/switch.ts": {
+    "mtime": 1784812139.4116514,
+    "ast_hash": "ae2bdf0eaff3a6e6ea48292b3bc31412",
+    "semantic_hash": ""
+  },
+  "src/utils/switch.ts": {
+    "mtime": 1784812137.1007051,
+    "ast_hash": "ec431d3aeaf0b06ba829fb87b8dfcf5d",
+    "semantic_hash": ""
+  },
+  "test/card/au-cover-card.test.ts": {
+    "mtime": 1784812321.5323203,
+    "ast_hash": "28ae5f8ad535643248b9c4ebfa099ea9",
+    "semantic_hash": ""
+  },
+  "test/card/au-switch-card.test.ts": {
+    "mtime": 1784812324.2152176,
+    "ast_hash": "038844314c4872b3084c3be47cc9116b",
+    "semantic_hash": ""
+  },
+  "test/utils/switch.test.ts": {
+    "mtime": 1784812370.353203,
+    "ast_hash": "b224bcc98f21bf0e1bf0329293f112a8",
+    "semantic_hash": ""
+  },
+  "src/card/vacuum-card/au-vacuum-card-editor.ts": {
+    "mtime": 1784826671.4986522,
+    "ast_hash": "26523184f97d3f90f68ec9a54fda6487",
+    "semantic_hash": ""
+  },
+  "src/card/vacuum-card/au-vacuum-card.ts": {
+    "mtime": 1784829701.1734052,
+    "ast_hash": "40e2cd025b4034484c9e2a06282985ba",
+    "semantic_hash": ""
+  },
+  "src/card/vacuum-card/vacuum-card-editor-schema.ts": {
+    "mtime": 1784829701.7807994,
+    "ast_hash": "2f040e49f27d1265b8ef54666965a66c",
+    "semantic_hash": ""
+  },
+  "src/types/vacuum.ts": {
+    "mtime": 1784829588.4101884,
+    "ast_hash": "20a7ea5d0fecc67ae129d57c928fc00d",
+    "semantic_hash": ""
+  },
+  "test/card/au-vacuum-card.test.ts": {
+    "mtime": 1784829729.8769107,
+    "ast_hash": "026f75dd94ab12c906b7ef503edd41dd",
+    "semantic_hash": ""
+  },
+  "src/card/vacuum-card/au-vacuum-settings-overlay.ts": {
+    "mtime": 1784831847.8576214,
+    "ast_hash": "7ec56f5c3921ed562873e07fe34121b1",
+    "semantic_hash": ""
+  },
+  "src/utils/vacuum-device-catalog.ts": {
+    "mtime": 1784829592.0017254,
+    "ast_hash": "90cfb81dd64bfb1ea1f36d5f4de36e35",
+    "semantic_hash": ""
+  },
+  "src/utils/vacuum-settings-draft.ts": {
+    "mtime": 1784829592.1818233,
+    "ast_hash": "249f68872f1cd423e96c5c3125307bdc",
+    "semantic_hash": ""
+  },
+  "test/utils/vacuum-device-catalog.test.ts": {
+    "mtime": 1784829716.2014878,
+    "ast_hash": "8acd0afc25f1980d599464272e6c1ab0",
+    "semantic_hash": ""
+  },
+  "test/template/home-edit-room-modal.test.ts": {
+    "mtime": 1785263203.3785007,
+    "ast_hash": "3745b26f70f58260e7ee9687f12353e9",
+    "semantic_hash": ""
+  }
+}

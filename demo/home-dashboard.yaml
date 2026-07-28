@@ -1,0 +1,85 @@
+# AtriumUI Shell Grid — Home dashboard demo (Panel view)
+# Requires atrium-ui.js registered as a Lovelace resource.
+#
+# Compatible with Home Assistant 2024.1+ (storage or YAML Lovelace).
+# Single card: floors (rooms + optional floor entities) + room grids.
+
+title: Atrium Home
+views:
+  - title: Home
+    path: atrium-home
+    type: panel
+    cards:
+      - type: custom:au-shell-grid
+        columns: 12
+        row_height: 80px
+        gap: 12px
+        height: 100vh
+        debug: false
+        show_presence: true
+        show_bulk_actions: true
+        prefer_device_name: true
+        auto_areas: false
+        confirm_actions: false
+        presence:
+          - person.alex
+          - person.partner
+        scenes:
+          - scene.good_night
+        scripts:
+          - script.leave_home
+        floors:
+          - name: Main
+            entities:
+              - entity: light.hallway
+            rooms:
+              - name: Living room
+                icon: mdi:sofa
+                entities:
+                  - entity: light.living_room
+                  - entity: cover.living_blinds
+                    name: Blinds
+                  - entity: fan.living
+                  - entity: switch.living_outlet
+                  - entity: climate.living_ac
+                  - entity: sensor.living_temperature
+              - name: Kitchen
+                icon: mdi:countertop
+                entities:
+                  - entity: light.kitchen
+                  - entity: switch.kettle
+                  - entity: vacuum.kitchen_bot
+              - name: Utility
+                icon: mdi:water-boiler
+                entities:
+                  - entity: water_heater.main
+                  - entity: fan.utility
+        multi_entity:
+          - name: All living lights
+            icon: mdi:lightbulb-group
+            room_id: living_room
+            entities:
+              - light.living_room
+              - switch.living_outlet
+
+  - title: Calendar
+    path: atrium-calendar
+    type: panel
+    cards:
+      - type: custom:au-calendar-card
+        title: Calendar
+        view: agenda
+        days: 31
+        max_events: 12
+        refresh_minutes: 60
+        expand_on_tap: true
+        show_location: true
+        show_calendar_label: true
+        show_view_picker: true
+        entities:
+          - entity: calendar.personal
+            color: "#FF3B30"
+            label: Personal
+          - entity: calendar.family
+            color: "#34C759"
+            label: Family

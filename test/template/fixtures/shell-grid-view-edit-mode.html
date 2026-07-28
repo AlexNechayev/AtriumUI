@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>au-shell-grid custom-view edit-mode fixture</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      au-shell-grid {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <au-shell-grid id="grid"></au-shell-grid>
+    <script type="module">
+      await import('/dist/atrium-ui.js');
+
+      const grid = document.getElementById('grid');
+      const lovelace = { editMode: false, config: { views: [] } };
+
+      lovelace.editMode = new URLSearchParams(location.search).get('edit') === '1';
+      grid.lovelace = lovelace;
+      grid.setConfig({
+        type: 'custom:au-shell-grid',
+        columns: 12,
+        cards: [
+          {
+            type: 'custom:au-action-card',
+            id: 'tile-1',
+            entity: 'light.kitchen',
+            layout: { x: 0, y: 0, w: 4, h: 2 },
+          },
+        ],
+      });
+
+      window.__fixture = { grid, lovelace };
+    </script>
+  </body>
+</html>
