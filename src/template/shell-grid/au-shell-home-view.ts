@@ -183,6 +183,14 @@ export class AuShellHomeView extends LitElement {
   /** Wall clock for toolbar time display. */
   @state() private _clockNow = Date.now();
   private _clockInterval?: ReturnType<typeof setInterval>;
+  private _roomIdleTimer?: ReturnType<typeof setTimeout>;
+
+  private static readonly _idleActivityEvents = [
+    'pointerdown',
+    'touchstart',
+    'keydown',
+    'wheel',
+  ] as const;
 
   protected override shouldUpdate(changed: PropertyValues): boolean {
     if (
@@ -274,6 +282,9 @@ export class AuShellHomeView extends LitElement {
     this._clockInterval = setInterval(() => {
       this._clockNow = Date.now();
     }, 1000);
+    for (const type of AuShellHomeView._idleActivityEvents) {
+      this.addEventListener(type, this._onRoomActivity, { passive: true });
+    }
     if (typeof ResizeObserver !== 'undefined') {
       this._resizeObserver = new ResizeObserver((entries) => {
         const rect = entries[0]?.contentRect;
@@ -295,6 +306,10 @@ export class AuShellHomeView extends LitElement {
     if (this._clockInterval !== undefined) {
       clearInterval(this._clockInterval);
       this._clockInterval = undefined;
+    }
+    this._clearRoomIdleTimer();
+    for (const type of AuShellHomeView._idleActivityEvents) {
+      this.removeEventListener(type, this._onRoomActivity);
     }
     this._resizeObserver?.disconnect();
     this._resizeObserver = undefined;
@@ -338,6 +353,7 @@ export class AuShellHomeView extends LitElement {
       changed.has('config')
     ) {
       this._syncEditSession();
+      this._armRoomIdleTimer();
     }
     this._syncEntityChildCards();
     this._attachCardEditorEl();
@@ -1599,6 +1615,7 @@ export class AuShellHomeView extends LitElement {
   };
 
   private _goHome = (): void => {
+    this._clearRoomIdleTimer();
     this._view = { kind: 'home' };
     this._confirmBulk = false;
   };
@@ -1607,6 +1624,34 @@ export class AuShellHomeView extends LitElement {
     this._view = { kind: 'room', roomId };
     this._confirmBulk = false;
     auDebug(this.config?.debug, 'home-dashboard', 'open room', roomId);
+    this._armRoomIdleTimer();
+  };
+
+  private _roomIdleSeconds(): number {
+    return Math.max(0, Number(this.config?.room_idle_timeout) || 0);
+  }
+
+  private _clearRoomIdleTimer = (): void => {
+    if (this._roomIdleTimer !== undefined) {
+      clearTimeout(this._roomIdleTimer);
+      this._roomIdleTimer = undefined;
+    }
+  };
+
+  private _armRoomIdleTimer = (): void => {
+    this._clearRoomIdleTimer();
+    if (this._view.kind !== 'room' || this.layoutEditing) return;
+    const seconds = this._roomIdleSeconds();
+    if (seconds <= 0) return;
+    this._roomIdleTimer = setTimeout(() => {
+      this._roomIdleTimer = undefined;
+      this._goHome();
+    }, seconds * 1000);
+  };
+
+  private _onRoomActivity = (): void => {
+    if (this._view.kind !== 'room') return;
+    this._armRoomIdleTimer();
   };
 
   private async _runBulkOff(entityIds: string[]): Promise<void> {

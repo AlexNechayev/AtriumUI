@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "src/template/shell-grid/au-shell-home-view.ts": {
-    "mtime": 1784806780.8038383,
-    "ast_hash": "4ff35a008533f34a241bb8925185d9b5",
+    "mtime": 1785263185.4635992,
+    "ast_hash": "fe663b0baf1a3dac300fee4690d8b76c",
     "semantic_hash": ""
   },
   "src/template/shell-grid/config-persist.ts": {
@@ -615,8 +615,8 @@
     "semantic_hash": ""
   },
   "src/template/shell-grid/home-edit-room-modal.ts": {
-    "mtime": 1784387711.2089546,
-    "ast_hash": "349e3e54bc85a5735490c6440da363a4",
+    "mtime": 1785263170.3325996,
+    "ast_hash": "ecb544ba81371c42485d50a63e4bc8a8",
     "semantic_hash": ""
   },
   "src/template/shell-grid/home-picker-modals.ts": {
@@ -640,8 +640,8 @@
     "semantic_hash": ""
   },
   "src/template/shell-grid/home-grid-items.ts": {
-    "mtime": 1784389440.870436,
-    "ast_hash": "82ab01019a5590f0e5da08910489df74",
+    "mtime": 1785263186.0393956,
+    "ast_hash": "cb2f79de3cf2f50a359eccfd0aba88dc",
     "semantic_hash": ""
   },
   "src/utils/debounce.ts": {
@@ -907,6 +907,11 @@
   "test/utils/vacuum-device-catalog.test.ts": {
     "mtime": 1784829716.2014878,
     "ast_hash": "8acd0afc25f1980d599464272e6c1ab0",
+    "semantic_hash": ""
+  },
+  "test/template/home-edit-room-modal.test.ts": {
+    "mtime": 1785263203.3785007,
+    "ast_hash": "3745b26f70f58260e7ee9687f12353e9",
     "semantic_hash": ""
   }
 }

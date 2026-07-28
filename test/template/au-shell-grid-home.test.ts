@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { afterEach, describe, it, expect, vi } from 'vitest';
 import '../../src/index';
 import { AuShellGrid } from '../../src/template/shell-grid/au-shell-grid';
 import { isShellHomeMode } from '../../src/types/config';
@@ -1794,6 +1794,122 @@ describe('au-shell-grid home', () => {
     ] as HTMLElement[];
     expect(chips).toHaveLength(1);
     expect(chips[0]?.dataset.entity).toBe('light.hall');
+    el.remove();
+  });
+});
+
+function isShowingRoomView(home: Element | null | undefined): boolean {
+  return home?.shadowRoot?.querySelector('.toolbar-start .back') != null;
+}
+
+describe('au-shell-grid home room idle timeout', () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  const idleFloors = [
+    {
+      name: 'Main',
+      rooms: [
+        {
+          id: 'hall',
+          name: 'Hall',
+          entities: [{ entity: 'switch.lamp' }],
+        },
+      ],
+    },
+  ];
+
+  async function renderIdleHome(
+    room_idle_timeout?: number,
+  ): Promise<{
+    el: AuShellGrid;
+    home: HTMLElement & { updateComplete: Promise<unknown>; layoutEditing: boolean };
+  }> {
+    const { el } = await renderShell(
+      {
+        type: 'custom:au-shell-grid',
+        ...(room_idle_timeout !== undefined ? { room_idle_timeout } : {}),
+        floors: idleFloors,
+      },
+      { 'switch.lamp': makeEntity('switch.lamp', 'on') },
+    );
+    const home = el.shadowRoot?.querySelector('au-shell-home-view') as HTMLElement & {
+      updateComplete: Promise<unknown>;
+      layoutEditing: boolean;
+    };
+    expect(home).not.toBeNull();
+    await home.updateComplete;
+    return { el, home };
+  }
+
+  it('stays in room when room_idle_timeout is unset or 0', async () => {
+    vi.useFakeTimers();
+    const { el, home } = await renderIdleHome(0);
+    await openHomeRoom(home, 'hall');
+    expect(isShowingRoomView(home)).toBe(true);
+
+    await vi.advanceTimersByTimeAsync(60_000);
+    await home.updateComplete;
+    expect(isShowingRoomView(home)).toBe(true);
+    el.remove();
+
+    const again = await renderIdleHome();
+    await openHomeRoom(again.home, 'hall');
+    await vi.advanceTimersByTimeAsync(60_000);
+    await again.home.updateComplete;
+    expect(isShowingRoomView(again.home)).toBe(true);
+    again.el.remove();
+  });
+
+  it('returns to Home after room_idle_timeout seconds of inactivity', async () => {
+    vi.useFakeTimers();
+    const { el, home } = await renderIdleHome(5);
+    await openHomeRoom(home, 'hall');
+    expect(isShowingRoomView(home)).toBe(true);
+
+    await vi.advanceTimersByTimeAsync(4_999);
+    await home.updateComplete;
+    expect(isShowingRoomView(home)).toBe(true);
+
+    await vi.advanceTimersByTimeAsync(1);
+    await home.updateComplete;
+    expect(isShowingRoomView(home)).toBe(false);
+    expect(home.shadowRoot?.querySelector('.toolbar-start .title')).not.toBeNull();
+    el.remove();
+  });
+
+  it('resets the idle timer on pointer activity', async () => {
+    vi.useFakeTimers();
+    const { el, home } = await renderIdleHome(5);
+    await openHomeRoom(home, 'hall');
+    expect(isShowingRoomView(home)).toBe(true);
+
+    await vi.advanceTimersByTimeAsync(4_000);
+    home.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+    await home.updateComplete;
+
+    await vi.advanceTimersByTimeAsync(4_000);
+    await home.updateComplete;
+    expect(isShowingRoomView(home)).toBe(true);
+
+    await vi.advanceTimersByTimeAsync(1_000);
+    await home.updateComplete;
+    expect(isShowingRoomView(home)).toBe(false);
+    el.remove();
+  });
+
+  it('does not auto-return while layout editing', async () => {
+    vi.useFakeTimers();
+    const { el, home } = await renderIdleHome(5);
+    home.layoutEditing = true;
+    await home.updateComplete;
+    await openHomeRoom(home, 'hall');
+    expect(isShowingRoomView(home)).toBe(true);
+
+    await vi.advanceTimersByTimeAsync(10_000);
+    await home.updateComplete;
+    expect(isShowingRoomView(home)).toBe(true);
     el.remove();
   });
 });

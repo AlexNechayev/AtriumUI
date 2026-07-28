@@ -115,6 +115,11 @@ export interface AuShellGridConfig extends LovelaceCardConfig {
   scripts?: string[];
   /** Confirm before bulk / high-stakes device actions. */
   confirm_actions?: boolean;
+  /**
+   * Seconds of inactivity in a room before returning to Home.
+   * `0` or unset = off.
+   */
+  room_idle_timeout?: number;
 
   /**
    * @deprecated Legacy auto-fit column width. Retained for backward

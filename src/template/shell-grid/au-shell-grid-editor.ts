@@ -189,6 +189,17 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
     { name: 'auto_areas', selector: { boolean: {} } },
     { name: 'prefer_device_name', selector: { boolean: {} } },
     { name: 'confirm_actions', selector: { boolean: {} } },
+    {
+      name: 'room_idle_timeout',
+      selector: {
+        number: {
+          min: 0,
+          max: 3600,
+          mode: 'box',
+          unit_of_measurement: 's',
+        },
+      },
+    },
     { name: 'debug', selector: { boolean: {} } },
     {
       name: 'presence',
@@ -286,6 +297,7 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
       auto_areas: 'Auto-discover entities from room area',
       prefer_device_name: 'Prefer device registry names',
       confirm_actions: 'Confirm high-stakes actions',
+      room_idle_timeout: 'Return to Home after idle (0 = off)',
       debug: 'Debug logging',
       presence: 'People (presence)',
       scenes: 'Scene shortcuts',
@@ -327,6 +339,11 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
       clock_show_day: config.clock_show_day !== false,
       clock_day_format:
         config.clock_day_format === 'long' ? 'long' : 'short',
+      room_idle_timeout:
+        typeof config.room_idle_timeout === 'number' &&
+        Number.isFinite(config.room_idle_timeout)
+          ? Math.max(0, config.room_idle_timeout)
+          : 0,
       cards: config.cards ?? [],
     });
   }
@@ -405,6 +422,11 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
         cfg.clock_date_format === 'mm/dd' ? 'mm/dd' : 'dd/mm',
       clock_show_day: cfg.clock_show_day !== false,
       clock_day_format: cfg.clock_day_format === 'long' ? 'long' : 'short',
+      room_idle_timeout:
+        typeof cfg.room_idle_timeout === 'number' &&
+        Number.isFinite(cfg.room_idle_timeout)
+          ? Math.max(0, cfg.room_idle_timeout)
+          : 0,
       room_controls: {
         show: cfg.room_controls?.show !== false,
         include: cfg.room_controls?.include ?? [],

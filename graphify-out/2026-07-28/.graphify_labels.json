@@ -71,5 +71,10 @@
   "69": "au-light-card-editor.ts",
   "70": "._renderSectionBody",
   "71": "shell-grid-add-card.test.ts",
-  "72": "reactive-update.test.ts"
+  "72": "reactive-update.test.ts",
+  "73": "isLightCardCompact",
+  "74": "AuRoomCardEditor",
+  "75": ".render",
+  "76": "AuActionCardEditor",
+  "77": "displayColumnsForWidth"
 }
