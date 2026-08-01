@@ -344,8 +344,11 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
   @state() private _activeView: AuCalendarView = 'agenda';
   @state() private _selectedDay: Date = startOfLocalDay(new Date());
   @state() private _detail: AuCalendarEvent | null = null;
+  /** Live clock for dropping events after they end between polls. */
+  @state() private _now = Date.now();
 
   private _pollStarted = false;
+  private _clockStarted = false;
   private _fetchGen = 0;
 
   public static getConfigElement(): HTMLElement {
@@ -413,6 +416,15 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
     return Math.max(1, base);
   }
 
+  private _timeFormat(): '12h' | '24h' {
+    return this._config?.time_format === '12h' ? '12h' : '24h';
+  }
+
+  /** Events still active at `_now` (end exclusive). */
+  private _activeEvents(): AuCalendarEvent[] {
+    return this._events.filter((e) => e.end.getTime() > this._now);
+  }
+
   protected override updated(changed: PropertyValues): void {
     if (changed.has('_config')) {
       const view = isAuCalendarView(this._config?.view)
@@ -421,11 +433,13 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
       this._activeView = view;
       this._expanded = false;
       this._ensurePoll();
+      this._ensureClock();
       void this._refresh();
       return;
     }
     if (changed.has('hass')) {
       this._ensurePoll();
+      this._ensureClock();
       const prev = changed.get('hass') as typeof this.hass;
       const ids = this.watchedEntities();
       const entityChanged =
@@ -455,6 +469,16 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
     );
   }
 
+  private _ensureClock(): void {
+    if (this._clockStarted || !this._config) return;
+    this._clockStarted = true;
+    this._now = Date.now();
+    const id = window.setInterval(() => {
+      this._now = Date.now();
+    }, 60_000);
+    this.registerTeardown(() => window.clearInterval(id));
+  }
+
   private async _refresh(): Promise<void> {
     if (!this.hass || !this._config) return;
 
@@ -480,6 +504,7 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
         hideAllDay: this._config.hide_all_day === true,
         allowlist: this._config.allowlist,
         blocklist: this._config.blocklist,
+        now: new Date(),
         maxEvents:
           view === 'agenda' || view === 'today'
             ? this._maxEvents()
@@ -523,7 +548,7 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
   };
 
   private _eventsForDay(day: Date): AuCalendarEvent[] {
-    return this._events.filter((e) => isSameLocalDay(e.start, day));
+    return this._activeEvents().filter((e) => isSameLocalDay(e.start, day));
   }
 
   private _renderEventRow(event: AuCalendarEvent): TemplateResult {
@@ -531,7 +556,7 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
     const showLoc = this._config?.show_location !== false;
     const time = formatEventTimeRange(
       event,
-      this.hass,
+      this._timeFormat(),
       this._config?.timezone ?? 'local',
       this._t('calendar.all_day'),
     );
@@ -699,7 +724,7 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
     if (!event) return nothing;
     const time = formatEventTimeRange(
       event,
-      this.hass,
+      this._timeFormat(),
       this._config?.timezone ?? 'local',
       this._t('calendar.all_day'),
     );
@@ -756,7 +781,7 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
     if (view === 'today') return this._renderToday();
     if (view === 'week') return this._renderWeek();
     if (view === 'month') return this._renderMonth();
-    return this._renderAgenda(this._events);
+    return this._renderAgenda(this._activeEvents());
   }
 
   protected render(): TemplateResult | typeof nothing {

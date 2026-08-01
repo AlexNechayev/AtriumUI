@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import {
   computeFetchWindow,
+  formatEventTimeRange,
   formatHaDateTime,
   groupEventsByDay,
   normalizeCalendarEvents,
@@ -9,6 +10,7 @@ import {
   startOfLocalDay,
   fetchCalendarEvents,
 } from '../../src/utils/calendar';
+import type { AuCalendarEvent } from '../../src/types/calendar';
 import { normalizeCalendarEntities } from '../../src/types/calendar';
 import { makeHass } from '../helpers';
 
@@ -126,6 +128,73 @@ describe('calendar utils', () => {
     const allDay = parseInstant('2026-07-26');
     expect(allDay?.allDay).toBe(true);
     expect(allDay?.date.getDate()).toBe(26);
+  });
+
+  it('normalizeCalendarEvents drops ended events before maxEvents', () => {
+    const entities = normalizeCalendarEntities([
+      { entity: 'calendar.a', color: '#f00' },
+    ]);
+    const now = new Date('2026-07-18T15:30:00');
+    const events = normalizeCalendarEvents(
+      {
+        'calendar.a': [
+          {
+            summary: 'Ended',
+            start: '2026-07-18T14:00:00',
+            end: '2026-07-18T15:00:00',
+          },
+          {
+            summary: 'Ongoing',
+            start: '2026-07-18T14:00:00',
+            end: '2026-07-18T16:00:00',
+          },
+          {
+            summary: 'Later',
+            start: '2026-07-18T17:00:00',
+            end: '2026-07-18T18:00:00',
+          },
+        ],
+      },
+      entities,
+      { now, maxEvents: 1 },
+    );
+    expect(events).toHaveLength(1);
+    expect(events[0]?.summary).toBe('Ongoing');
+  });
+
+  it('normalizeCalendarEvents keeps events still running at now', () => {
+    const entities = normalizeCalendarEntities(['calendar.a']);
+    const now = new Date('2026-07-18T14:30:00');
+    const events = normalizeCalendarEvents(
+      {
+        'calendar.a': [
+          {
+            summary: 'Meet',
+            start: '2026-07-18T14:00:00',
+            end: '2026-07-18T15:00:00',
+          },
+        ],
+      },
+      entities,
+      { now },
+    );
+    expect(events).toHaveLength(1);
+    expect(events[0]?.summary).toBe('Meet');
+  });
+
+  it('formatEventTimeRange uses 24h by default and supports 12h', () => {
+    const event: AuCalendarEvent = {
+      uid: '1',
+      summary: 'Meet',
+      start: new Date(2026, 6, 18, 14, 0, 0),
+      end: new Date(2026, 6, 18, 15, 30, 0),
+      allDay: false,
+      entityId: 'calendar.a',
+      color: '#f00',
+    };
+    expect(formatEventTimeRange(event)).toBe('14:00 – 15:30');
+    expect(formatEventTimeRange(event, '24h')).toBe('14:00 – 15:30');
+    expect(formatEventTimeRange(event, '12h')).toBe('2:00 PM – 3:30 PM');
   });
 
   it('normalizeCalendarEvents accepts HA get_events date strings', () => {

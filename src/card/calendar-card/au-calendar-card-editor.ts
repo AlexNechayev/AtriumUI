@@ -40,6 +40,7 @@ export class AuCalendarCardEditor extends AuBaseEditor<AuCalendarCardConfig> {
     const config = this._config!;
     return {
       ...config,
+      time_format: config.time_format === '12h' ? '12h' : '24h',
       entities: normalizeCalendarEntities(config.entities).map((e) => e.entity),
     };
   }

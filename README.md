@@ -544,6 +544,7 @@ days: 31                         # agenda horizon (default 31)
 max_events: 12
 refresh_minutes: 60
 timezone: local                 # local | event
+time_format: 24h                # 24h | 12h (default 24h)
 expand_on_tap: true
 show_location: true
 show_description: false
