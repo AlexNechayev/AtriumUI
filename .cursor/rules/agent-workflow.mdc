@@ -1,5 +1,5 @@
 ---
-description: Session bootstrap, feature branch/worktree workflow, docs/imp logging, session follow-ups backlog, docs compliance gate, mandatory TDD, and post-implementation verification
+description: Session bootstrap; auto-create feature branch+worktree for every implementation session/plan (no user prompt); docs/imp logging; session follow-ups; docs compliance gate; mandatory TDD; post-implementation verification
 alwaysApply: true
 ---
 
@@ -13,15 +13,40 @@ Before other exploration or implementation:
 
 1. Read `README.md` and `MASTER_ASSESSMENT.md`
 2. Read docs under `docs/` — at minimum `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/SCOPE_AND_FEATURES.md` (precedence note), and any linked specs in `docs/prd/**` or `docs/ops/**` that apply to the task
-3. Then proceed — for code exploration, use graphify first (`graphify query` / `path` / `explain`) per the project graphify rule
+3. If this session will implement or plan implementation: create branch + worktree per §2 **now** (do not ask the user)
+4. Then proceed — for code exploration, use graphify first (`graphify query` / `path` / `explain`) per the project graphify rule
 
-## 2. Feature isolation: branch + worktree
+## 2. Feature isolation: branch + worktree (automatic — do not ask)
 
-For each new feature implementation:
+**Hard requirement:** Every new agentic **implementation session** or **implementation plan** MUST start by creating a fresh feature branch and git worktree **before** writing code, planning implementation steps that touch the repo, or editing production files. Do this proactively — **never wait for the user to request a branch or worktree**.
 
-- Branch from `main`: `feature/<short-kebab-slug>` (use `fix/` or `docs/` only when clearly that change type)
-- Worktree at `.worktrees/<branch-with-slashes-as-dashes>` under the project root (e.g. `feature/home-tiles` → `.worktrees/feature-home-tiles`)
-- Do all feature work in that worktree/branch — never on `main`
+Triggers (any of these → create branch + worktree immediately after §1 bootstrap):
+
+- User asks to implement, build, fix, refactor, or otherwise change production code
+- User asks for an implementation plan that will lead to code changes
+- A new feature/fix effort begins in this chat (even if prior chat already used another branch)
+
+Setup (run before other work):
+
+1. Ensure `main` is current enough to branch from (`git fetch` / checkout `main` as needed in the primary repo)
+2. Create branch from `main`: `feature/<short-kebab-slug>` (use `fix/` or `docs/` only when clearly that change type)
+3. Add worktree at `.worktrees/<branch-with-slashes-as-dashes>` under the project root (e.g. `feature/home-tiles` → `.worktrees/feature-home-tiles`)
+4. Tell the user the branch name and worktree path in one short line, then continue — no approval gate
+5. Do **all** subsequent feature work (edits, tests, commits when asked) inside that worktree/branch — never on `main`, never in the primary checkout unless already inside the matching worktree
+
+Example:
+
+```bash
+git fetch origin main
+git branch feature/home-tiles origin/main   # or: git checkout -b … then worktree add
+git worktree add .worktrees/feature-home-tiles feature/home-tiles
+# cd / work only under .worktrees/feature-home-tiles from here on
+```
+
+Rules of engagement:
+
+- If already on a matching feature branch/worktree for **this** task, reuse it; do not create a duplicate
+- If the session is docs-only Q&A with no planned code changes, skip branch/worktree until implementation begins — then create immediately
 - Do not merge to `main` unless the user explicitly asks
 - After the user confirms merge into `main`: remove the worktree, delete the local feature branch, run `git worktree prune` as needed
 
