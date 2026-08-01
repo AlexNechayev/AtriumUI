@@ -6,6 +6,9 @@ export type AuCalendarView = 'agenda' | 'today' | 'week' | 'month';
 /** How event times are displayed. */
 export type AuCalendarTimezoneMode = 'local' | 'event';
 
+/** Wall-clock format for event time ranges. Default `24h`. */
+export type AuCalendarTimeFormat = '12h' | '24h';
+
 /** One calendar entity shown in the preview. */
 export interface AuCalendarEntityConfig {
   entity: string;
@@ -37,6 +40,8 @@ export interface AuCalendarCardConfig extends LovelaceCardConfig {
   refresh_minutes?: number;
   /** Default `local`. */
   timezone?: AuCalendarTimezoneMode;
+  /** Event time display. Default `24h`. */
+  time_format?: AuCalendarTimeFormat;
   /** Default true. */
   expand_on_tap?: boolean;
   show_location?: boolean;

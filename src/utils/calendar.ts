@@ -252,6 +252,8 @@ export interface NormalizeCalendarOptions {
   allowlist?: string;
   blocklist?: string;
   maxEvents?: number;
+  /** Drop events whose end is at or before this instant (before maxEvents). */
+  now?: Date;
 }
 
 function compileFilter(source: string | undefined): RegExp | undefined {
@@ -294,6 +296,7 @@ export function normalizeCalendarEvents(
       if (block && block.test(summary)) continue;
       const start = startParsed.date;
       const end = endParsed?.date ?? new Date(start.getTime() + 60 * 60 * 1000);
+      if (options.now && end.getTime() <= options.now.getTime()) continue;
       const uid =
         typeof raw.uid === 'string' && raw.uid.trim()
           ? raw.uid.trim()
@@ -348,24 +351,15 @@ export function groupEventsByDay(
     .map(([key, value]) => ({ key, date: value.date, events: value.events }));
 }
 
-function resolveClockFormat(
-  hass: HomeAssistant | undefined,
-): ClockFormat {
-  const tf = hass?.locale?.time_format;
-  if (tf === '12' || tf === 'am_pm' || tf === 'language') return '12h';
-  if (tf === '24') return '24h';
-  return '24h';
-}
-
-/** Format an event's time range for display. */
+/** Format an event's time range for display. Default `24h`. */
 export function formatEventTimeRange(
   event: AuCalendarEvent,
-  hass: HomeAssistant | undefined,
+  timeFormat: ClockFormat = '24h',
   _timezone: AuCalendarTimezoneMode = 'local',
   allDayLabel = 'All day',
 ): string {
   if (event.allDay) return allDayLabel;
-  const fmt = resolveClockFormat(hass);
+  const fmt: ClockFormat = timeFormat === '12h' ? '12h' : '24h';
   // `timezone: event` still displays in the browser local clock for v1;
   // HA payloads are already converted when served as ISO strings.
   const start = formatClock(event.start.getTime(), fmt);

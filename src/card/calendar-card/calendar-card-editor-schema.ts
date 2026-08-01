@@ -50,6 +50,18 @@ export const calendarCardEditorSchema = [
       },
     },
   },
+  {
+    name: 'time_format',
+    selector: {
+      select: {
+        mode: 'dropdown',
+        options: [
+          { value: '24h', label: '24-hour' },
+          { value: '12h', label: '12-hour' },
+        ],
+      },
+    },
+  },
   { name: 'expand_on_tap', selector: { boolean: {} } },
   { name: 'show_location', selector: { boolean: {} } },
   { name: 'show_description', selector: { boolean: {} } },
@@ -68,6 +80,7 @@ export const calendarCardEditorLabels: Record<string, string> = {
   max_events: 'Max events',
   refresh_minutes: 'Refresh (minutes)',
   timezone: 'Timezone',
+  time_format: 'Time format',
   expand_on_tap: 'Expand on tap',
   show_location: 'Show location',
   show_description: 'Show description',
