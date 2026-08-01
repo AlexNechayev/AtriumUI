@@ -1,0 +1,111 @@
+---
+description: Session bootstrap, feature branch/worktree workflow, docs/imp logging, session follow-ups backlog, docs compliance gate, mandatory TDD, and post-implementation verification
+alwaysApply: true
+---
+
+# Agent workflow
+
+Every agentic session in this project MUST follow these rules.
+
+## 1. Session bootstrap
+
+Before other exploration or implementation:
+
+1. Read `README.md` and `MASTER_ASSESSMENT.md`
+2. Read docs under `docs/` — at minimum `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/SCOPE_AND_FEATURES.md` (precedence note), and any linked specs in `docs/prd/**` or `docs/ops/**` that apply to the task
+3. Then proceed — for code exploration, use graphify first (`graphify query` / `path` / `explain`) per the project graphify rule
+
+## 2. Feature isolation: branch + worktree
+
+For each new feature implementation:
+
+- Branch from `main`: `feature/<short-kebab-slug>` (use `fix/` or `docs/` only when clearly that change type)
+- Worktree at `.worktrees/<branch-with-slashes-as-dashes>` under the project root (e.g. `feature/home-tiles` → `.worktrees/feature-home-tiles`)
+- Do all feature work in that worktree/branch — never on `main`
+- Do not merge to `main` unless the user explicitly asks
+- After the user confirms merge into `main`: remove the worktree, delete the local feature branch, run `git worktree prune` as needed
+
+## 3. Implementation record in `docs/imp`
+
+For each feature branch, create and maintain a matching record:
+
+- Path mirrors the branch name: `feature/accounts` → `docs/imp/feature/accounts.md`
+- Create when starting the feature; update as work progresses
+- Include: goal, linked official docs (PRD/architecture paths), decisions, files touched, leftover cleanup status, **TDD** (see §5), **Verification** (see §6)
+
+## 4. Docs compliance gate (hard stop)
+
+All implementation MUST obey official docs (`README.md`, `MASTER_ASSESSMENT.md`, `docs/**`). On conflict: PRD/feature specs (`docs/prd/**`) and architecture win over `docs/SCOPE_AND_FEATURES.md`.
+
+If a requested change conflicts with or is not covered by official docs:
+
+1. Stop implementation immediately
+2. Cite the conflicting/missing doc paths
+3. Ask the user for directions before continuing
+
+## 5. Test-driven development (hard stop)
+
+All `feature/` work that changes production code MUST follow **red → green → refactor**. The same applies to `fix/` when it changes production code. Pure `docs/` markdown-only changes are exempt.
+
+1. **Red first**: Before writing or changing production code, add/adjust automated tests that encode the intended behavior (prefer linked PRD feature §7 acceptance criteria). Run them and confirm they **fail** for the right reason.
+2. **Green**: Implement the **minimum** production code to make those tests pass. Do not expand scope beyond the failing tests.
+3. **Refactor**: Clean up only while keeping the suite green. Do not add behavior without a new failing test.
+4. **Hard stop**: Do not ship or hand off a feature whose production behavior was written before a failing test existed for that behavior. If caught mid-stream, stop, write the missing failing tests, then re-implement to green.
+5. **Where tests live**: Vitest under `test/**/*.test.ts` — run `npm test` (watch: `npm run test:watch`), matching current patterns.
+6. **`docs/imp` evidence**: Record a short **TDD** subsection in the feature’s imp file: which tests were added first, a failing command/output summary, then the green command.
+
+Example `docs/imp` TDD shape:
+
+```markdown
+## TDD
+
+- Red: added `test/template/foo.test.ts` — `npm test` failed (expected X, got …)
+- Green: implemented … — `npm test` passed
+- Refactor: …
+```
+
+## 6. Post-implementation verification
+
+After implementation is finished (before treating the feature as done / handing off), the agent MUST:
+
+1. **List verification methods** in the final user-facing response **and** under `## Verification` in the matching `docs/imp/...` file (same content).
+2. Cover these categories when applicable (skip only what does not apply, and say so):
+   - **Automated**: exact copy-pasteable commands from the worktree (prefer `npm run verify`; else `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`). Include the tests introduced via TDD (§5).
+   - **Acceptance**: map checks to the linked PRD feature §7 acceptance criteria (and Architecture ACs if relevant)
+   - **Manual / UI / ops**: numbered step-by-step checks (HA resource load, `dev:ha`, Lovelace YAML, Home/classic shell flows — see `docs/ops/**`)
+3. Prefer copy-pasteable commands and numbered manual steps — never vague “test it” language.
+4. The agent **MUST** run the relevant automated suite before handoff; manual steps remain listed so the user or a later agent can complete them.
+
+Example shape for `docs/imp` and the handoff response:
+
+```markdown
+## Verification
+
+### Automated
+- `npm run verify`
+
+### Acceptance (from docs/prd/...)
+- AC1: …
+- AC2: …
+
+### Manual
+1. `HA_WWW=/path/to/config/www/atrium-ui npm run dev:ha`
+2. Reload Lovelace resources; open the Panel view and confirm …
+```
+
+## 7. Session follow-ups
+
+Maintain [`docs/session-followups.md`](../../docs/session-followups.md) as the permanent backlog for deferred questions from **any** session (not Graphify-only).
+
+1. **Park before ending**: when a question, investigation, or decision is deferred (“check later”, cannot answer now, blocked pending user input that will be handled later), append it under `## Open` before ending the session — unless the user explicitly says not to.
+2. **Dedup**: do not re-add items already present (match on question text). If new context appears, update that entry’s Notes / Context instead.
+3. **Investigate**: when the user asks to address an open follow-up, record findings under that entry; move it to `## Answered` when resolved (or leave open with partial notes).
+4. **Graphify sync**: after a full `/graphify` pipeline or `graphify update` that regenerates `graphify-out/GRAPH_REPORT.md`, merge new Suggested Questions into the same file (append-only; stamp first-seen date; never wipe answered entries).
+
+No mandatory full-backlog read on every bootstrap. Touch the file when parking a follow-up, syncing Graphify questions, or when the user asks about open follow-ups.
+
+## 8. Graphify
+
+- Before exploring the codebase with Read/Grep/Glob/Bash, use `graphify query` / `path` / `explain` first (see project graphify rule).
+- After modifying code files, run `graphify update .` to keep `graphify-out/` current (AST-only).
+- After regenerating `GRAPH_REPORT.md`, sync Suggested Questions into `docs/session-followups.md` per §7.
