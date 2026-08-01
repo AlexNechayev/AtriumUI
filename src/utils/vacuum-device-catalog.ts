@@ -348,6 +348,107 @@ export function roomDisplayName(
   return `Room ${room.index}`;
 }
 
-export function entityLabel(entity: HassEntity | undefined, entityId: string): string {
-  return entity?.attributes.friendly_name ?? entityId;
+/**
+ * Humanize vacuum object_id tokens into display-name candidates
+ * (e.g. `vacuum.x40_ultra` → `"X40 Ultra"`, `vacuum.dreame_x40_ultra` →
+ * `"Dreame X40 Ultra"` and `"X40 Ultra"`).
+ */
+function prefixesFromVacuumEntityId(vacuumEntityId: string): string[] {
+  const objectId = vacuumEntityId.includes('.')
+    ? vacuumEntityId.slice(vacuumEntityId.indexOf('.') + 1)
+    : vacuumEntityId;
+  const parts = objectId.split('_').filter(Boolean);
+  if (!parts.length) return [];
+
+  const humanize = (tokens: string[]): string =>
+    tokens
+      .map((p) => {
+        if (/^[a-z]+\d/i.test(p) || (p.length <= 3 && /\d/.test(p))) {
+          return p.toUpperCase();
+        }
+        return p.charAt(0).toUpperCase() + p.slice(1).toLowerCase();
+      })
+      .join(' ');
+
+  const out: string[] = [];
+  for (let start = 0; start < parts.length; start++) {
+    const slice = parts.slice(start);
+    if (!slice.length) continue;
+    const name = humanize(slice);
+    if (name && !out.includes(name)) out.push(name);
+  }
+  return out;
+}
+
+/**
+ * Resolve candidate device-name prefixes to strip from child entity labels.
+ * Prefers device registry names (what HA usually prefixes onto members), then
+ * vacuum friendly_name / overlay title / humanized entity_id tokens.
+ */
+export function vacuumLabelPrefixes(
+  hass: HomeAssistant | undefined,
+  vacuumEntityId: string,
+  title?: string,
+): string[] {
+  const names: string[] = [];
+  const push = (value: unknown) => {
+    if (typeof value !== 'string') return;
+    const trimmed = value.trim();
+    if (trimmed && !names.includes(trimmed)) names.push(trimmed);
+  };
+
+  const deviceId = hass?.entities?.[vacuumEntityId]?.device_id ?? undefined;
+  const device = deviceId ? hass?.devices?.[deviceId] : undefined;
+  push(device?.name_by_user);
+  push(device?.name);
+  push(hass?.states[vacuumEntityId]?.attributes.friendly_name);
+  push(title);
+  for (const candidate of prefixesFromVacuumEntityId(vacuumEntityId)) {
+    push(candidate);
+  }
+
+  return names;
+}
+
+function stripDevicePrefix(raw: string, prefix: string): string | undefined {
+  const trimmedPrefix = prefix.trim();
+  if (!trimmedPrefix) return undefined;
+
+  const lowerRaw = raw.toLowerCase();
+  const lowerPrefix = trimmedPrefix.toLowerCase();
+  if (!lowerRaw.startsWith(lowerPrefix)) return undefined;
+
+  let rest = raw.slice(trimmedPrefix.length);
+  if (rest.length === 0) return undefined;
+
+  // Allow "Name Foo", "Name: Foo", "Name - Foo"
+  const sep = rest.match(/^(\s*[-:]\s+|\s+)/);
+  if (!sep) return undefined;
+
+  const stripped = rest.slice(sep[0].length);
+  return stripped || undefined;
+}
+
+export function entityLabel(
+  entity: HassEntity | undefined,
+  entityId: string,
+  deviceName?: string | readonly string[],
+): string {
+  const raw = entity?.attributes.friendly_name ?? entityId;
+  const candidates = (
+    Array.isArray(deviceName)
+      ? deviceName
+      : deviceName
+        ? [deviceName]
+        : []
+  )
+    .map((n) => n.trim())
+    .filter(Boolean)
+    .sort((a, b) => b.length - a.length);
+
+  for (const prefix of candidates) {
+    const stripped = stripDevicePrefix(raw, prefix);
+    if (stripped) return stripped;
+  }
+  return raw;
 }

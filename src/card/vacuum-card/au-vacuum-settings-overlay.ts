@@ -26,6 +26,7 @@ import {
   entriesForSection,
   filterCatalogSections,
   roomDisplayName,
+  vacuumLabelPrefixes,
   type VacuumCatalogEntry,
   type VacuumDeviceCatalog,
 } from '../../utils/vacuum-device-catalog';
@@ -979,6 +980,17 @@ export class AuVacuumSettingsOverlay extends LitElement {
     };
   }
 
+  private _entityLabel(
+    entity: HassEntity | undefined,
+    entityId: string,
+  ): string {
+    return entityLabel(
+      entity,
+      entityId,
+      vacuumLabelPrefixes(this.hass, this.vacuumEntityId, this.title),
+    );
+  }
+
   private _renderSwitchRow(
     entityId: string,
     entity: HassEntity | undefined,
@@ -992,7 +1004,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
         data-entity=${entityId}
       >
         <div class="row-label">
-          <div class="name">${entityLabel(entity, entityId)}</div>
+          <div class="name">${this._entityLabel(entity, entityId)}</div>
           <div class="meta">${state}</div>
         </div>
         <button
@@ -1022,7 +1034,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
         data-entity=${entityId}
       >
         <div class="row-label">
-          <div class="name">${entityLabel(entity, entityId)}</div>
+          <div class="name">${this._entityLabel(entity, entityId)}</div>
           <div class="meta">${current}</div>
         </div>
         <button
@@ -1082,7 +1094,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
           data-entity=${entityId}
         >
           <div class="row-label">
-            <div class="name">${entityLabel(entity, entityId)}</div>
+            <div class="name">${this._entityLabel(entity, entityId)}</div>
             <div class="meta">${unit || 'Volume'}</div>
           </div>
           <span class="chip">${value}${unit ? ` ${unit}` : ''}</span>
@@ -1093,7 +1105,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
               .step=${step}
               .value=${value}
               .disabled=${disabled}
-              label=${entityLabel(entity, entityId)}
+              label=${this._entityLabel(entity, entityId)}
               .ariaValueText=${`${value}${unit}`}
               @value-changing=${(ev: CustomEvent<{ value: number }>) => {
                 this._scheduleNumberDraft(entityId, ev.detail.value);
@@ -1113,7 +1125,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
         data-entity=${entityId}
       >
         <div class="row-label">
-          <div class="name">${entityLabel(entity, entityId)}</div>
+          <div class="name">${this._entityLabel(entity, entityId)}</div>
           <div class="meta">${unit}</div>
         </div>
         <div class="stepper">
@@ -1158,7 +1170,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
         data-entity=${entityId}
       >
         <div class="row-label">
-          <div class="name">${entityLabel(entity, entityId)}</div>
+          <div class="name">${this._entityLabel(entity, entityId)}</div>
         </div>
         <input
           class="time-input"
@@ -1188,7 +1200,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
         data-entity=${entityId}
       >
         <div class="row-label">
-          <div class="name">${entityLabel(entity, entityId)}</div>
+          <div class="name">${this._entityLabel(entity, entityId)}</div>
         </div>
         <button
           class="action-btn"
@@ -1245,7 +1257,7 @@ export class AuVacuumSettingsOverlay extends LitElement {
         data-entity=${entityId}
       >
         <div class="row-label">
-          <div class="name">${entityLabel(entity, entityId)}</div>
+          <div class="name">${this._entityLabel(entity, entityId)}</div>
         </div>
         <span class="chip">${entity?.state ?? '—'}${unit}</span>
       </div>

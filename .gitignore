@@ -1,3 +1,6 @@
+# Feature worktrees
+.worktrees/
+
 # Dependencies
 node_modules/
 
@@ -22,3 +25,16 @@ coverage/
 # Env
 .env
 .env.*
+
+# graphify working sidecars (keep graph.json / report / manifest / dated backups)
+graphify-out/.graphify_detect.json
+graphify-out/.graphify_extract.json
+graphify-out/.graphify_incremental.json
+graphify-out/.graphify_semantic.json
+graphify-out/.graphify_semantic_new.json
+graphify-out/.graphify_cached.json
+graphify-out/.graphify_uncached.txt
+graphify-out/.graphify_analysis.json
+graphify-out/.graphify_chunk_*.json
+graphify-out/.graphify_labels.json.sig
+graphify-out/.needs_update
