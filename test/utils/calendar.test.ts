@@ -1,13 +1,20 @@
 import { describe, it, expect, vi } from 'vitest';
 import {
+  buildMonthGrid,
   computeFetchWindow,
+  eventOverlapsLocalDay,
   formatEventTimeRange,
   formatHaDateTime,
   groupEventsByDay,
+  isSpanningEvent,
+  layoutMonthSpanBars,
   normalizeCalendarEvents,
+  packMonthDayChips,
   parseGetEventsResponse,
   parseInstant,
   startOfLocalDay,
+  startOfLocalMonth,
+  startOfLocalWeek,
   fetchCalendarEvents,
 } from '../../src/utils/calendar';
 import type { AuCalendarEvent } from '../../src/types/calendar';
@@ -36,9 +43,84 @@ describe('calendar utils', () => {
 
     const week = computeFetchWindow('week', 7, now);
     expect(week.end.getTime() - week.start.getTime()).toBe(7 * 24 * 60 * 60 * 1000);
+    // 2026-07-15 is Wednesday → Sunday-start week begins 2026-07-12
+    expect(week.start.getDay()).toBe(0);
+    expect(week.start.getDate()).toBe(12);
 
     const agenda = computeFetchWindow('agenda', 3, now);
     expect(agenda.end.getDate()).toBe(18);
+  });
+
+  it('startOfLocalWeek is Sunday-start', () => {
+    const wed = new Date('2026-07-15T12:00:00');
+    const start = startOfLocalWeek(wed);
+    expect(start.getDay()).toBe(0);
+    expect(start.getDate()).toBe(12);
+    expect(startOfLocalWeek(new Date('2026-07-12T08:00:00')).getDate()).toBe(12);
+  });
+
+  it('buildMonthGrid starts on Sunday', () => {
+    const grid = buildMonthGrid(startOfLocalMonth(new Date('2026-07-01T12:00:00')));
+    expect(grid).toHaveLength(42);
+    expect(grid[0]!.getDay()).toBe(0);
+    // July 2026 starts Wednesday → grid starts June 28
+    expect(grid[0]!.getMonth()).toBe(5);
+    expect(grid[0]!.getDate()).toBe(28);
+  });
+
+  it('eventOverlapsLocalDay includes multi-day spans', () => {
+    const event: AuCalendarEvent = {
+      uid: 'trip',
+      summary: 'Trip',
+      start: new Date(2026, 6, 18, 0, 0, 0),
+      end: new Date(2026, 6, 21, 0, 0, 0),
+      allDay: true,
+      entityId: 'calendar.a',
+      color: '#f00',
+    };
+    expect(eventOverlapsLocalDay(event, new Date(2026, 6, 18))).toBe(true);
+    expect(eventOverlapsLocalDay(event, new Date(2026, 6, 20))).toBe(true);
+    expect(eventOverlapsLocalDay(event, new Date(2026, 6, 21))).toBe(false);
+  });
+
+  it('packMonthDayChips packs lines and reports overflow', () => {
+    const mk = (summary: string, hour: number): AuCalendarEvent => ({
+      uid: summary,
+      summary,
+      start: new Date(2026, 6, 18, hour, 0, 0),
+      end: new Date(2026, 6, 18, hour + 1, 0, 0),
+      allDay: false,
+      entityId: 'calendar.a',
+      color: '#f00',
+    });
+    const packed = packMonthDayChips(
+      [mk('A', 9), mk('B', 10), mk('C', 11), mk('D', 12)],
+      2,
+      { cellWidthPx: 120, timeFormat: '24h' },
+    );
+    expect(packed.chips).toHaveLength(2);
+    expect(packed.overflow).toBe(2);
+    expect(packed.chips[0]!.text).toMatch(/09:00/);
+    expect(packed.chips[0]!.text).toMatch(/A/);
+  });
+
+  it('layoutMonthSpanBars places multi-day events across columns', () => {
+    const grid = buildMonthGrid(startOfLocalMonth(new Date('2026-07-01')));
+    const event: AuCalendarEvent = {
+      uid: 'camp',
+      summary: 'Camp',
+      start: new Date(2026, 6, 15, 0, 0, 0),
+      end: new Date(2026, 6, 18, 0, 0, 0),
+      allDay: true,
+      entityId: 'calendar.a',
+      color: '#0f0',
+    };
+    expect(isSpanningEvent(event)).toBe(true);
+    const bars = layoutMonthSpanBars([event], grid);
+    expect(bars.length).toBeGreaterThanOrEqual(1);
+    const first = bars[0]!;
+    expect(first.startCol).toBeGreaterThanOrEqual(0);
+    expect(first.spanDays).toBeGreaterThanOrEqual(2);
   });
 
   it('parseGetEventsResponse maps entity events', () => {

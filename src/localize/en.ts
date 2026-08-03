@@ -39,15 +39,19 @@ export const en = {
   'calendar.no_events': 'No events',
   'calendar.error': 'Could not load calendar',
   'calendar.all_day': 'All day',
-  'calendar.expand': 'Expand',
-  'calendar.collapse': 'Collapse',
+  'calendar.fullscreen': 'Fullscreen',
   'calendar.close': 'Close',
+  'calendar.refresh': 'Refresh',
+  'calendar.filter': 'Filter',
+  'calendar.prev_month': 'Previous month',
+  'calendar.next_month': 'Next month',
   'calendar.view.agenda': 'Agenda',
   'calendar.view.today': 'Today',
   'calendar.view.week': 'Week',
   'calendar.view.month': 'Month',
   'calendar.location': 'Location',
   'calendar.description': 'Notes',
+  'calendar.more_events': '+{n} more',
 } as const;
 
 export type TranslationKey = keyof typeof en;

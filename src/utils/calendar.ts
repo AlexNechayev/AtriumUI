@@ -36,14 +36,16 @@ export function endOfLocalDay(d: Date): Date {
   return out;
 }
 
-/** Monday-start week containing `d` (local). */
+/** Sunday-start week containing `d` (local). */
 export function startOfLocalWeek(d: Date): Date {
   const day = startOfLocalDay(d);
   const weekday = day.getDay(); // 0 Sun … 6 Sat
-  const offset = weekday === 0 ? -6 : 1 - weekday;
-  day.setDate(day.getDate() + offset);
+  day.setDate(day.getDate() - weekday);
   return day;
 }
+
+/** Compact DOW headers for Sunday-start grids. */
+export const WEEKDAY_LABELS_SUN = ['S', 'M', 'T', 'W', 'T', 'F', 'S'] as const;
 
 /** First day of the month containing `d` (local). */
 export function startOfLocalMonth(d: Date): Date {
@@ -383,7 +385,7 @@ export function formatDayHeader(
   }
 }
 
-/** Days in the month grid (includes leading/trailing padding Mon–Sun). */
+/** Days in the month grid (includes leading/trailing padding Sun–Sat). */
 export function buildMonthGrid(monthStart: Date): Date[] {
   const start = startOfLocalMonth(monthStart);
   const gridStart = startOfLocalWeek(start);
@@ -396,10 +398,160 @@ export function buildMonthGrid(monthStart: Date): Date[] {
   return days;
 }
 
+/** Inclusive local-day fetch window covering a month grid (42 days). */
+export function computeMonthGridWindow(monthStart: Date): {
+  start: Date;
+  end: Date;
+} {
+  const grid = buildMonthGrid(monthStart);
+  const start = startOfLocalDay(grid[0]!);
+  const end = endOfLocalDay(grid[grid.length - 1]!);
+  return { start, end };
+}
+
 export function isSameLocalDay(a: Date, b: Date): boolean {
   return (
     a.getFullYear() === b.getFullYear() &&
     a.getMonth() === b.getMonth() &&
     a.getDate() === b.getDate()
   );
+}
+
+/** True when `event` intersects the local calendar day `[day, nextDay)`. */
+export function eventOverlapsLocalDay(
+  event: AuCalendarEvent,
+  day: Date,
+): boolean {
+  const dayStart = startOfLocalDay(day).getTime();
+  const dayEnd = endOfLocalDay(day).getTime();
+  return event.start.getTime() < dayEnd && event.end.getTime() > dayStart;
+}
+
+/** True when the event covers more than one local calendar day. */
+export function isSpanningEvent(event: AuCalendarEvent): boolean {
+  return event.end.getTime() > endOfLocalDay(event.start).getTime();
+}
+
+export interface MonthDayChip {
+  event: AuCalendarEvent;
+  text: string;
+}
+
+export interface MonthDayPack {
+  chips: MonthDayChip[];
+  overflow: number;
+}
+
+/**
+ * Pack single-day (non-spanning) event chips into a month cell.
+ * Shows a clock prefix when the cell is wide enough.
+ */
+export function packMonthDayChips(
+  events: AuCalendarEvent[],
+  maxLines: number,
+  options: {
+    cellWidthPx?: number;
+    timeFormat?: ClockFormat;
+    minWidthForTime?: number;
+  } = {},
+): MonthDayPack {
+  const lines = Math.max(0, Math.floor(maxLines));
+  if (lines === 0) {
+    return { chips: [], overflow: events.length };
+  }
+  const minW = options.minWidthForTime ?? 88;
+  const showTime = (options.cellWidthPx ?? 120) >= minW;
+  const fmt: ClockFormat = options.timeFormat === '12h' ? '12h' : '24h';
+  const visible = events.slice(0, lines);
+  const chips = visible.map((event) => {
+    if (showTime && !event.allDay) {
+      return {
+        event,
+        text: `${formatClock(event.start.getTime(), fmt)} ${event.summary}`,
+      };
+    }
+    return { event, text: event.summary };
+  });
+  return {
+    chips,
+    overflow: Math.max(0, events.length - chips.length),
+  };
+}
+
+export interface MonthSpanBar {
+  event: AuCalendarEvent;
+  weekRow: number;
+  startCol: number;
+  /** Inclusive length in columns (1–7). */
+  spanDays: number;
+  lane: number;
+}
+
+/**
+ * Layout multi-day events as Apple-like bars within each week row of a
+ * 42-day Sunday-start month grid.
+ */
+export function layoutMonthSpanBars(
+  events: AuCalendarEvent[],
+  grid: Date[],
+): MonthSpanBar[] {
+  if (grid.length < 7) return [];
+  type Seg = Omit<MonthSpanBar, 'lane'> & { lane?: number };
+  const segs: Seg[] = [];
+
+  for (const event of events) {
+    if (!isSpanningEvent(event)) continue;
+    for (let weekRow = 0; weekRow < 6; weekRow += 1) {
+      let startCol = -1;
+      let endCol = -1;
+      for (let col = 0; col < 7; col += 1) {
+        const day = grid[weekRow * 7 + col];
+        if (!day) continue;
+        if (eventOverlapsLocalDay(event, day)) {
+          if (startCol < 0) startCol = col;
+          endCol = col;
+        }
+      }
+      if (startCol >= 0 && endCol >= startCol) {
+        segs.push({
+          event,
+          weekRow,
+          startCol,
+          spanDays: endCol - startCol + 1,
+        });
+      }
+    }
+  }
+
+  // Assign lanes per week row (greedy by startCol).
+  const byRow = new Map<number, Seg[]>();
+  for (const seg of segs) {
+    const list = byRow.get(seg.weekRow) ?? [];
+    list.push(seg);
+    byRow.set(seg.weekRow, list);
+  }
+
+  const out: MonthSpanBar[] = [];
+  for (const [, rowSegs] of byRow) {
+    rowSegs.sort(
+      (a, b) =>
+        a.startCol - b.startCol ||
+        b.spanDays - a.spanDays ||
+        a.event.start.getTime() - b.event.start.getTime(),
+    );
+    const laneEnds: number[] = [];
+    for (const seg of rowSegs) {
+      let lane = 0;
+      while (
+        lane < laneEnds.length &&
+        seg.startCol <= (laneEnds[lane] ?? -1)
+      ) {
+        lane += 1;
+      }
+      const endCol = seg.startCol + seg.spanDays - 1;
+      laneEnds[lane] = endCol;
+      out.push({ ...seg, lane });
+    }
+  }
+  return out;
 }

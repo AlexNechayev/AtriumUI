@@ -24,6 +24,8 @@ import {
 import {
   buildMonthGrid,
   computeFetchWindow,
+  computeMonthGridWindow,
+  eventOverlapsLocalDay,
   fetchCalendarEvents,
   formatDayHeader,
   formatEventTimeRange,
@@ -33,7 +35,12 @@ import {
   startOfLocalDay,
   startOfLocalMonth,
   startOfLocalWeek,
+  WEEKDAY_LABELS_SUN,
 } from '../../utils/calendar';
+import {
+  ensureCalendarFullscreenOverlay,
+  type AuCalendarFullscreenOverlay,
+} from './au-calendar-fullscreen-overlay';
 import './au-calendar-card-editor';
 
 const VIEW_KEYS: Record<AuCalendarView, TranslationKey> = {
@@ -340,7 +347,6 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
   @state() private _events: AuCalendarEvent[] = [];
   @state() private _loading = false;
   @state() private _error: string | null = null;
-  @state() private _expanded = false;
   @state() private _activeView: AuCalendarView = 'agenda';
   @state() private _selectedDay: Date = startOfLocalDay(new Date());
   @state() private _detail: AuCalendarEvent | null = null;
@@ -350,6 +356,9 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
   private _pollStarted = false;
   private _clockStarted = false;
   private _fetchGen = 0;
+  /** When set, fetch covers this month grid (fullscreen open). */
+  private _fsMonth: Date | null = null;
+  private _fsOverlay: AuCalendarFullscreenOverlay | null = null;
 
   public static getConfigElement(): HTMLElement {
     return document.createElement('au-calendar-card-editor');
@@ -386,10 +395,6 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
 
   public override getCardSize(): number {
     const view = this._resolvedView();
-    if (this._expanded) {
-      if (view === 'month' || view === 'week') return 6;
-      return 4;
-    }
     if (view === 'month') return 4;
     if (view === 'week') return 3;
     return 2;
@@ -410,7 +415,8 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
 
   private _maxEvents(): number {
     const base = this._config?.max_events ?? 12;
-    if (!this._expanded && (this._config?.expand_on_tap !== false)) {
+    // Compact card shows a shorter list; fullscreen agenda is uncapped separately.
+    if (this._config?.expand_on_tap !== false) {
       return Math.max(3, Math.ceil(base / 2));
     }
     return Math.max(1, base);
@@ -431,11 +437,19 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
         ? this._config!.view!
         : 'agenda';
       this._activeView = view;
-      this._expanded = false;
       this._ensurePoll();
       this._ensureClock();
       void this._refresh();
+      this._syncFullscreen();
       return;
+    }
+    if (
+      changed.has('_events') ||
+      changed.has('_loading') ||
+      changed.has('_error') ||
+      changed.has('_now')
+    ) {
+      this._syncFullscreen();
     }
     if (changed.has('hass')) {
       this._ensurePoll();
@@ -447,6 +461,8 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
         ids.some((id) => prev.states[id] !== this.hass?.states[id]);
       if (entityChanged || !prev) {
         void this._refresh();
+      } else {
+        this._syncFullscreen();
       }
     }
   }
@@ -487,7 +503,12 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
 
     const view = this._resolvedView();
     const days = this._config.days ?? 31;
-    const { start, end } = computeFetchWindow(view, days);
+    const fsOpen = this._fsOverlay?.isOpen === true && this._fsMonth != null;
+    const { start, end } = fsOpen
+      ? computeMonthGridWindow(this._fsMonth!)
+      : view === 'month'
+        ? computeMonthGridWindow(startOfLocalMonth(new Date()))
+        : computeFetchWindow(view, days);
     const gen = ++this._fetchGen;
     this._loading = true;
     this._error = null;
@@ -500,13 +521,16 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
         end,
       );
       if (gen !== this._fetchGen) return;
+      // Drop ended events only for compact agenda preview. Fullscreen (and
+      // week/month/today) keep the full day so past events remain visible.
+      const compactAgenda = !fsOpen && view === 'agenda';
       this._events = normalizeCalendarEvents(raw, entities, {
         hideAllDay: this._config.hide_all_day === true,
         allowlist: this._config.allowlist,
         blocklist: this._config.blocklist,
-        now: new Date(),
+        now: compactAgenda ? new Date() : undefined,
         maxEvents:
-          view === 'agenda' || view === 'today'
+          !fsOpen && (view === 'agenda' || view === 'today')
             ? this._maxEvents()
             : undefined,
       });
@@ -519,10 +543,46 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
     }
   }
 
-  private _toggleExpand = (ev: Event): void => {
+  private _fullscreenPayload() {
+    const title = this._config?.title?.trim() || this._t('calendar.title');
+    return {
+      title,
+      events: this._events,
+      entities: this._entityConfigs(),
+      config: this._config!,
+      language: this.hass?.language,
+      now: this._now,
+      loading: this._loading,
+      error: this._error,
+    };
+  }
+
+  private _syncFullscreen(): void {
+    if (!this._fsOverlay?.isOpen || !this._config) return;
+    this._fsOverlay.sync(this._fullscreenPayload());
+  }
+
+  private _openFullscreen = (ev: Event): void => {
     ev.stopPropagation();
-    if (this._config?.expand_on_tap === false) return;
-    this._expanded = !this._expanded;
+    if (!this._config || this._config.expand_on_tap === false) return;
+    const overlay = ensureCalendarFullscreenOverlay();
+    this._fsOverlay = overlay;
+    this._fsMonth = startOfLocalMonth(new Date());
+    overlay.open({
+      ...this._fullscreenPayload(),
+      onRefresh: () => {
+        void this._refresh();
+      },
+      onMonthChange: (monthStart) => {
+        this._fsMonth = startOfLocalMonth(monthStart);
+        void this._refresh();
+      },
+      onClose: () => {
+        this._fsMonth = null;
+        this._fsOverlay = null;
+        void this._refresh();
+      },
+    });
     void this._refresh();
   };
 
@@ -548,7 +608,7 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
   };
 
   private _eventsForDay(day: Date): AuCalendarEvent[] {
-    return this._activeEvents().filter((e) => isSameLocalDay(e.start, day));
+    return this._events.filter((e) => eventOverlapsLocalDay(e, day));
   }
 
   private _renderEventRow(event: AuCalendarEvent): TemplateResult {
@@ -632,7 +692,7 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
       return d;
     });
     const now = new Date();
-    const limit = this._expanded ? 4 : 2;
+    const limit = 2;
     return html`
       <div class="week">
         ${days.map((day) => {
@@ -669,10 +729,9 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
     const monthStart = startOfLocalMonth(new Date());
     const cells = buildMonthGrid(monthStart);
     const now = new Date();
-    const dow = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
     return html`
       <div class="month">
-        ${dow.map((d) => html`<div class="month-dow">${d}</div>`)}
+        ${WEEKDAY_LABELS_SUN.map((d) => html`<div class="month-dow">${d}</div>`)}
         ${cells.map((day) => {
           const dayEvents = this._eventsForDay(day);
           const colors = [...new Set(dayEvents.map((e) => e.color))].slice(0, 3);
@@ -787,26 +846,23 @@ export class AuCalendarCard extends AuCardContent<AuCalendarCardConfig> {
   protected render(): TemplateResult | typeof nothing {
     if (!this._config) return nothing;
     const title = this._config.title?.trim() || this._t('calendar.title');
-    const expandEnabled = this._config.expand_on_tap !== false;
-    const showPicker = this._config.show_view_picker === true || this._expanded;
+    const fullscreenEnabled = this._config.expand_on_tap !== false;
+    const showPicker = this._config.show_view_picker === true;
 
     return this.renderCardRoot(
       {
         'calendar-card': true,
         'home-tile': true,
-        compact: !this._expanded,
-        expanded: this._expanded,
+        compact: true,
       },
       html`
         <div class="cal">
           <div class="toolbar">
             <div class="title">${title}</div>
-            ${expandEnabled
+            ${fullscreenEnabled
               ? html`
-                  <button type="button" @click=${this._toggleExpand}>
-                    ${this._expanded
-                      ? this._t('calendar.collapse')
-                      : this._t('calendar.expand')}
+                  <button type="button" @click=${this._openFullscreen}>
+                    ${this._t('calendar.fullscreen')}
                   </button>
                 `
               : nothing}

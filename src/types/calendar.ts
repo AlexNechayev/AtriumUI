@@ -42,7 +42,7 @@ export interface AuCalendarCardConfig extends LovelaceCardConfig {
   timezone?: AuCalendarTimezoneMode;
   /** Event time display. Default `24h`. */
   time_format?: AuCalendarTimeFormat;
-  /** Default true. */
+  /** Show Fullscreen control (default true). Kept key for YAML compat. */
   expand_on_tap?: boolean;
   show_location?: boolean;
   show_description?: boolean;
