@@ -81,7 +81,7 @@ export const calendarCardEditorLabels: Record<string, string> = {
   refresh_minutes: 'Refresh (minutes)',
   timezone: 'Timezone',
   time_format: 'Time format',
-  expand_on_tap: 'Expand on tap',
+  expand_on_tap: 'Fullscreen',
   show_location: 'Show location',
   show_description: 'Show description',
   show_calendar_label: 'Show calendar label',

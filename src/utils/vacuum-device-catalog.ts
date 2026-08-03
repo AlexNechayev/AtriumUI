@@ -418,7 +418,7 @@ function stripDevicePrefix(raw: string, prefix: string): string | undefined {
   const lowerPrefix = trimmedPrefix.toLowerCase();
   if (!lowerRaw.startsWith(lowerPrefix)) return undefined;
 
-  let rest = raw.slice(trimmedPrefix.length);
+  const rest = raw.slice(trimmedPrefix.length);
   if (rest.length === 0) return undefined;
 
   // Allow "Name Foo", "Name: Foo", "Name - Foo"

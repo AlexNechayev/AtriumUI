@@ -1,1057 +1,1077 @@
 {
   "hacs.json": {
-    "mtime": 1783767340.4661343,
+    "mtime": 1785616110.7513812,
     "ast_hash": "d5333ba8835a1c699da19549bc34e2ff",
     "semantic_hash": "d5333ba8835a1c699da19549bc34e2ff"
   },
   "package.json": {
-    "mtime": 1785582436.661365,
+    "mtime": 1785616110.75525,
     "ast_hash": "32c353cecfb14057fe5edfcad8011f26",
     "semantic_hash": "32c353cecfb14057fe5edfcad8011f26"
   },
   "src/card/action-card/action-card-editor-schema.ts": {
-    "mtime": 1784271086.610662,
+    "mtime": 1785616110.755656,
     "ast_hash": "7be87a409085af3e1b4dd456a600c53c",
     "semantic_hash": "7be87a409085af3e1b4dd456a600c53c"
   },
   "src/card/action-card/au-action-card-editor.ts": {
-    "mtime": 1783767340.466242,
+    "mtime": 1785616110.7559872,
     "ast_hash": "544e26c401e5a6175225b0e585a5c04a",
     "semantic_hash": "544e26c401e5a6175225b0e585a5c04a"
   },
   "src/card/action-card/au-action-card.ts": {
-    "mtime": 1784392470.6363463,
+    "mtime": 1785616110.7562916,
     "ast_hash": "5ddf277f3e1d468db9f1aa52f3337784",
     "semantic_hash": "5ddf277f3e1d468db9f1aa52f3337784"
   },
   "src/card/climate-card/au-climate-card-editor.ts": {
-    "mtime": 1784143338.359494,
+    "mtime": 1785616110.757733,
     "ast_hash": "f9d8160a6f4543b15a84d47f01f454c7",
     "semantic_hash": "f9d8160a6f4543b15a84d47f01f454c7"
   },
   "src/card/climate-card/au-climate-card.ts": {
-    "mtime": 1784400266.0464165,
+    "mtime": 1785616110.7580557,
     "ast_hash": "eb33329be4c4ccda67ab91adb059daca",
     "semantic_hash": "eb33329be4c4ccda67ab91adb059daca"
   },
   "src/card/climate-card/climate-card-editor-schema.ts": {
-    "mtime": 1784387476.2071233,
+    "mtime": 1785616110.7582526,
     "ast_hash": "ccc29100f0e4e11f3d19b1b2b150c6fc",
     "semantic_hash": "ccc29100f0e4e11f3d19b1b2b150c6fc"
   },
   "src/card/device-card/au-device-card-editor.ts": {
-    "mtime": 1784148986.625259,
+    "mtime": 1785616110.7594006,
     "ast_hash": "fbeb674360aaecaa705740bd581eaec2",
     "semantic_hash": "fbeb674360aaecaa705740bd581eaec2"
   },
   "src/card/device-card/au-device-card.ts": {
-    "mtime": 1784826730.6855583,
+    "mtime": 1785616110.7596343,
     "ast_hash": "c51fc3765e5ab9336700d220bc35d8d3",
     "semantic_hash": "c51fc3765e5ab9336700d220bc35d8d3"
   },
   "src/card/device-card/device-card-editor-schema.ts": {
-    "mtime": 1784826715.7599154,
+    "mtime": 1785616110.7598722,
     "ast_hash": "b2049fcad53cfe777930c63ddddc3839",
     "semantic_hash": "b2049fcad53cfe777930c63ddddc3839"
   },
   "src/card/light-card/au-light-card-editor.ts": {
-    "mtime": 1783767340.4662993,
+    "mtime": 1785616110.7612371,
     "ast_hash": "78fda1ef36bef1febc35c2e33fc2f87f",
     "semantic_hash": "78fda1ef36bef1febc35c2e33fc2f87f"
   },
   "src/card/light-card/au-light-card.ts": {
-    "mtime": 1784800826.8447378,
+    "mtime": 1785616110.7615085,
     "ast_hash": "e15f8c4ceea9f18a02f37f1216981aab",
     "semantic_hash": "e15f8c4ceea9f18a02f37f1216981aab"
   },
   "src/card/light-card/light-card-editor-schema.ts": {
-    "mtime": 1784387472.6735768,
+    "mtime": 1785616110.7617152,
     "ast_hash": "a9a6eb2599aa75a2c0695fd4bba77a9c",
     "semantic_hash": "a9a6eb2599aa75a2c0695fd4bba77a9c"
   },
   "src/card/room-card/au-room-card-editor.ts": {
-    "mtime": 1784322576.5950856,
+    "mtime": 1785616110.7619452,
     "ast_hash": "92a207f553ac29ea7a6afe959b996126",
     "semantic_hash": "92a207f553ac29ea7a6afe959b996126"
   },
   "src/card/room-card/au-room-card.ts": {
-    "mtime": 1784800815.638972,
+    "mtime": 1785616110.762253,
     "ast_hash": "ce56ce9a902afc01f831c63580a0efc0",
     "semantic_hash": "ce56ce9a902afc01f831c63580a0efc0"
   },
   "src/card/room-card/room-card-editor-schema.ts": {
-    "mtime": 1784389462.7784393,
+    "mtime": 1785616110.7625787,
     "ast_hash": "f8e449f046fd3923e308caadaf645183",
     "semantic_hash": "f8e449f046fd3923e308caadaf645183"
   },
   "src/card/sensor-card/au-sensor-card-editor.ts": {
-    "mtime": 1783767340.4666452,
+    "mtime": 1785616110.7628846,
     "ast_hash": "b66f44ff0a32ae03f80b739551ed0ef1",
     "semantic_hash": "b66f44ff0a32ae03f80b739551ed0ef1"
   },
   "src/card/sensor-card/au-sensor-card.ts": {
-    "mtime": 1784389243.6687706,
+    "mtime": 1785616110.7631476,
     "ast_hash": "40a80377d8dcb533bb1e456c6411b4d1",
     "semantic_hash": "40a80377d8dcb533bb1e456c6411b4d1"
   },
   "src/components/au-climate-selectors.ts": {
-    "mtime": 1784400269.169252,
+    "mtime": 1785616110.7651057,
     "ast_hash": "d9f7c55eed2aa46ae3ddf0e44effd079",
     "semantic_hash": "d9f7c55eed2aa46ae3ddf0e44effd079"
   },
   "src/components/au-light-slider.ts": {
-    "mtime": 1784389334.4215178,
+    "mtime": 1785616110.7656155,
     "ast_hash": "e302011a84c5ee5b228d17a98619cc07",
     "semantic_hash": "e302011a84c5ee5b228d17a98619cc07"
   },
   "src/components/au-temp-stepper.ts": {
-    "mtime": 1784389586.1361034,
+    "mtime": 1785616110.7658622,
     "ast_hash": "02340faaa11a05cca6a3f5d730989051",
     "semantic_hash": "02340faaa11a05cca6a3f5d730989051"
   },
   "src/core/action-card.ts": {
-    "mtime": 1784790222.866004,
+    "mtime": 1785616110.7665248,
     "ast_hash": "3cc16b70d58a2b24277e954f44090e7a",
     "semantic_hash": "3cc16b70d58a2b24277e954f44090e7a"
   },
   "src/core/base-card.ts": {
-    "mtime": 1784790221.5870473,
+    "mtime": 1785616110.7669728,
     "ast_hash": "409f95c3ff3524bc3b5483b6176b8b5f",
     "semantic_hash": "409f95c3ff3524bc3b5483b6176b8b5f"
   },
   "src/core/base-editor.ts": {
-    "mtime": 1784806741.3396723,
+    "mtime": 1785616110.7673275,
     "ast_hash": "50860ca13f9b356a07a92481cfede7fe",
     "semantic_hash": "50860ca13f9b356a07a92481cfede7fe"
   },
   "src/core/card-content.ts": {
-    "mtime": 1784387813.9306393,
+    "mtime": 1785616110.7676277,
     "ast_hash": "25c6da0d6fdffb8ae026e5ba13be1aed",
     "semantic_hash": "25c6da0d6fdffb8ae026e5ba13be1aed"
   },
   "src/index.ts": {
-    "mtime": 1784829703.2377744,
+    "mtime": 1785616110.7678404,
     "ast_hash": "a122f3bd124acbedddb0bf7f40a8e6e4",
     "semantic_hash": "a122f3bd124acbedddb0bf7f40a8e6e4"
   },
   "src/localize/en.ts": {
-    "mtime": 1784808221.5858204,
-    "ast_hash": "5d11f5f682f42490c31a6f970d9d895a",
-    "semantic_hash": "5d11f5f682f42490c31a6f970d9d895a"
+    "mtime": 1785616206.4371672,
+    "ast_hash": "2e907ec52a690cf8ed47f232846f4a7b",
+    "semantic_hash": ""
   },
   "src/localize/he.ts": {
-    "mtime": 1784808223.7592106,
-    "ast_hash": "cb562d91cacbbe014248a48a6e81e857",
-    "semantic_hash": "cb562d91cacbbe014248a48a6e81e857"
+    "mtime": 1785616211.1992848,
+    "ast_hash": "a85f51b6f45325a89069810a6d2f3009",
+    "semantic_hash": ""
   },
   "src/localize/localize.ts": {
-    "mtime": 1784148929.4731126,
+    "mtime": 1785616110.7686796,
     "ast_hash": "2254c5365563fbb5898ef70cb9cd773f",
     "semantic_hash": "2254c5365563fbb5898ef70cb9cd773f"
   },
   "src/localize/ru.ts": {
-    "mtime": 1784808222.8805041,
-    "ast_hash": "3481f94d0bc961fc174bd94da69f0aa3",
-    "semantic_hash": "3481f94d0bc961fc174bd94da69f0aa3"
+    "mtime": 1785616208.8722463,
+    "ast_hash": "db2a7d1ac43607d31fd4cd34f11e1f7c",
+    "semantic_hash": ""
   },
   "src/template/shell-grid/au-shell-grid-editor.ts": {
-    "mtime": 1785266326.4240055,
+    "mtime": 1785616110.7692776,
     "ast_hash": "e320f9d13ec53657b4634324ac3e3f48",
     "semantic_hash": "e320f9d13ec53657b4634324ac3e3f48"
   },
   "src/template/shell-grid/au-shell-grid.ts": {
-    "mtime": 1784389783.3572373,
+    "mtime": 1785616110.7696216,
     "ast_hash": "a9b4817118b16293b78bc48fd61f1d0d",
     "semantic_hash": "a9b4817118b16293b78bc48fd61f1d0d"
   },
   "src/template/shell-grid/au-shell-home-view.ts": {
-    "mtime": 1785266326.4249094,
+    "mtime": 1785616110.7701206,
     "ast_hash": "890e10ee42ec39081b7d6672a02164c0",
     "semantic_hash": "890e10ee42ec39081b7d6672a02164c0"
   },
   "src/template/shell-grid/config-persist.ts": {
-    "mtime": 1784196918.0492246,
+    "mtime": 1785616110.770355,
     "ast_hash": "fcc69e2f77273ded7f9c3964d2170830",
     "semantic_hash": "fcc69e2f77273ded7f9c3964d2170830"
   },
   "src/template/shell-grid/create-child-card.ts": {
-    "mtime": 1784389783.358641,
+    "mtime": 1785616110.7706733,
     "ast_hash": "e27fdff83886bd756aff3355871fa843",
     "semantic_hash": "e27fdff83886bd756aff3355871fa843"
   },
   "src/template/shell-grid/grid-engine.ts": {
-    "mtime": 1784389783.3585863,
+    "mtime": 1785616110.7709157,
     "ast_hash": "8f57219219bdb287a2da3f0f918c5805",
     "semantic_hash": "8f57219219bdb287a2da3f0f918c5805"
   },
   "src/template/shell-grid/home-drag-resize.ts": {
-    "mtime": 1784266856.227401,
+    "mtime": 1785616110.7714727,
     "ast_hash": "5624b131891cb10572f11c08fb483265",
     "semantic_hash": "5624b131891cb10572f11c08fb483265"
   },
   "src/template/shell-grid/home-edit-commit.ts": {
-    "mtime": 1784323216.1254885,
+    "mtime": 1785616110.7716844,
     "ast_hash": "5fd723705bb829094e30c78ed6d3ff1c",
     "semantic_hash": "5fd723705bb829094e30c78ed6d3ff1c"
   },
   "src/template/shell-grid/home-grid-types.ts": {
-    "mtime": 1784323211.352164,
+    "mtime": 1785616110.7725923,
     "ast_hash": "e4ce2903feb7bbef0746e623412682f7",
     "semantic_hash": "e4ce2903feb7bbef0746e623412682f7"
   },
   "src/template/shell-grid/room-controls.ts": {
-    "mtime": 1784798520.2995934,
+    "mtime": 1785616110.773234,
     "ast_hash": "14eff012ceb1db998a493be6aaf30678",
     "semantic_hash": "14eff012ceb1db998a493be6aaf30678"
   },
   "src/theme/action-tile-layout.ts": {
-    "mtime": 1784319010.5336452,
+    "mtime": 1785616110.773562,
     "ast_hash": "5b1524d2200bf9a0054c24ece6e1b156",
     "semantic_hash": "5b1524d2200bf9a0054c24ece6e1b156"
   },
   "src/theme/home-style.ts": {
-    "mtime": 1784389224.9475927,
+    "mtime": 1785616110.7737374,
     "ast_hash": "4770724a2fac89a4cca2629052121389",
     "semantic_hash": "4770724a2fac89a4cca2629052121389"
   },
   "src/theme/tokens.ts": {
-    "mtime": 1784390137.6503842,
+    "mtime": 1785616110.773949,
     "ast_hash": "4ec9b7ef7f99d0a908b4297cb95112fb",
     "semantic_hash": "4ec9b7ef7f99d0a908b4297cb95112fb"
   },
   "src/types/action.ts": {
-    "mtime": 1784798521.0382833,
+    "mtime": 1785616110.7742143,
     "ast_hash": "5132d015598bb19ee25586c07b087e1c",
     "semantic_hash": "5132d015598bb19ee25586c07b087e1c"
   },
   "src/types/climate.ts": {
-    "mtime": 1784276493.6387918,
+    "mtime": 1785616110.7747576,
     "ast_hash": "42b2cf0ea9f0ff1c25b6c03491ae83eb",
     "semantic_hash": "42b2cf0ea9f0ff1c25b6c03491ae83eb"
   },
   "src/types/config.ts": {
-    "mtime": 1785266326.4253683,
+    "mtime": 1785616110.7750194,
     "ast_hash": "18838984840b020ab507eefd6a8e3f5a",
     "semantic_hash": "18838984840b020ab507eefd6a8e3f5a"
   },
   "src/types/device.ts": {
-    "mtime": 1784826704.4471996,
+    "mtime": 1785616110.7753243,
     "ast_hash": "5747068df90b762ae4f58aafdecfca9a",
     "semantic_hash": "5747068df90b762ae4f58aafdecfca9a"
   },
   "src/types/home-assistant.ts": {
-    "mtime": 1784398336.6360605,
+    "mtime": 1785616110.7756443,
     "ast_hash": "e2d4d7eef1f8c9e0882e536739ef03a9",
     "semantic_hash": "e2d4d7eef1f8c9e0882e536739ef03a9"
   },
   "src/types/home.ts": {
-    "mtime": 1784806783.9355812,
+    "mtime": 1785616110.7758687,
     "ast_hash": "f5c8feaf6f32e5aec5d275efc55bbc61",
     "semantic_hash": "f5c8feaf6f32e5aec5d275efc55bbc61"
   },
   "src/types/index.ts": {
-    "mtime": 1784826709.098621,
+    "mtime": 1785616110.776518,
     "ast_hash": "9ce0e49aa7084ddb7bd1ae3c201f3689",
     "semantic_hash": "9ce0e49aa7084ddb7bd1ae3c201f3689"
   },
   "src/types/light.ts": {
-    "mtime": 1783767340.4667125,
+    "mtime": 1785616110.777123,
     "ast_hash": "20fc462581acc8b2781887514449972f",
     "semantic_hash": "20fc462581acc8b2781887514449972f"
   },
   "src/types/room-card.ts": {
-    "mtime": 1784798523.601723,
+    "mtime": 1785616110.7774734,
     "ast_hash": "30ff577b5c417b870b6deeea19828ca9",
     "semantic_hash": "30ff577b5c417b870b6deeea19828ca9"
   },
   "src/utils/action.ts": {
-    "mtime": 1784800811.3671772,
+    "mtime": 1785616110.7785914,
     "ast_hash": "513266b7737a73a8c377ae393db4696d",
     "semantic_hash": "513266b7737a73a8c377ae393db4696d"
   },
   "src/utils/areas.ts": {
-    "mtime": 1784389686.0585527,
+    "mtime": 1785616110.7788086,
     "ast_hash": "ebdcba1909e778b8e7dd3488177a59a7",
     "semantic_hash": "ebdcba1909e778b8e7dd3488177a59a7"
   },
   "src/utils/bulk-action.ts": {
-    "mtime": 1784389462.7090545,
+    "mtime": 1785616110.7797318,
     "ast_hash": "14d966774e9332888326d03d9ee98575",
     "semantic_hash": "14d966774e9332888326d03d9ee98575"
   },
   "src/utils/climate.ts": {
-    "mtime": 1784389715.5158408,
+    "mtime": 1785616110.780351,
     "ast_hash": "03d12703225427676c0a5a54b6a9d4ed",
     "semantic_hash": "03d12703225427676c0a5a54b6a9d4ed"
   },
   "src/utils/cover.ts": {
-    "mtime": 1784812135.7492337,
+    "mtime": 1785616110.780783,
     "ast_hash": "30bcaae9d852e34e187529c9b4d33963",
     "semantic_hash": "30bcaae9d852e34e187529c9b4d33963"
   },
   "src/utils/debug.ts": {
-    "mtime": 1784148932.201797,
+    "mtime": 1785616110.7814171,
     "ast_hash": "f1a3bb2ca0aa371f8c80b634702fb6db",
     "semantic_hash": "f1a3bb2ca0aa371f8c80b634702fb6db"
   },
   "src/utils/device.ts": {
-    "mtime": 1784826698.1837344,
+    "mtime": 1785616110.7818458,
     "ast_hash": "56e3e9101183a5f708451f2bdf66678c",
     "semantic_hash": "56e3e9101183a5f708451f2bdf66678c"
   },
   "src/utils/domain-controls.ts": {
-    "mtime": 1784826702.3596535,
+    "mtime": 1785616110.7820468,
     "ast_hash": "029f03e52b5e9a7d1c1f5f83c6b64625",
     "semantic_hash": "029f03e52b5e9a7d1c1f5f83c6b64625"
   },
   "src/utils/entity.ts": {
-    "mtime": 1784389454.067047,
+    "mtime": 1785616110.7826908,
     "ast_hash": "ff8002b97de3d383903a958fa0bc1e90",
     "semantic_hash": "ff8002b97de3d383903a958fa0bc1e90"
   },
   "src/utils/fan.ts": {
-    "mtime": 1784809362.0320415,
+    "mtime": 1785616110.7859437,
     "ast_hash": "5d13a848d5ef5168e9f46b22d03eda23",
     "semantic_hash": "5d13a848d5ef5168e9f46b22d03eda23"
   },
   "src/utils/fire-event.ts": {
-    "mtime": 1783767340.4666932,
+    "mtime": 1785616110.786597,
     "ast_hash": "6e31f92512ca5df8d5fdc7a993c91eac",
     "semantic_hash": "6e31f92512ca5df8d5fdc7a993c91eac"
   },
   "src/utils/light-card-layout.ts": {
-    "mtime": 1783767340.4570975,
+    "mtime": 1785616110.789186,
     "ast_hash": "70e582699ad15d5d131256ff35ec5ab1",
     "semantic_hash": "70e582699ad15d5d131256ff35ec5ab1"
   },
   "src/utils/light.ts": {
-    "mtime": 1784798093.0490465,
+    "mtime": 1785616110.7894716,
     "ast_hash": "bec482b50e77ddc7a2b08f8b32b0df76",
     "semantic_hash": "bec482b50e77ddc7a2b08f8b32b0df76"
   },
   "src/utils/pointer-gestures.ts": {
-    "mtime": 1784387462.5956805,
+    "mtime": 1785616110.789848,
     "ast_hash": "7d0c6191c35581979e38f9e774b9b12f",
     "semantic_hash": "7d0c6191c35581979e38f9e774b9b12f"
   },
   "src/utils/presence.ts": {
-    "mtime": 1784148950.3411195,
+    "mtime": 1785616110.7903461,
     "ast_hash": "159df66b856b111573dcd482f074d10e",
     "semantic_hash": "159df66b856b111573dcd482f074d10e"
   },
   "src/utils/touch-click.ts": {
-    "mtime": 1784400233.9744837,
+    "mtime": 1785616110.7921946,
     "ast_hash": "d5573908a3595fb914f9303a18562004",
     "semantic_hash": "d5573908a3595fb914f9303a18562004"
   },
   "src/utils/vacuum.ts": {
-    "mtime": 1784826657.6583722,
+    "mtime": 1785616110.7934456,
     "ast_hash": "d93f5651ea6c57ecf251287db7f32cf6",
     "semantic_hash": "d93f5651ea6c57ecf251287db7f32cf6"
   },
   "src/utils/water-heater-timer.ts": {
-    "mtime": 1784312936.1106791,
+    "mtime": 1785616110.7939036,
     "ast_hash": "bc70410bb50bc9d2a43862e3815c9ae4",
     "semantic_hash": "bc70410bb50bc9d2a43862e3815c9ae4"
   },
   "src/utils/water-heater.ts": {
-    "mtime": 1784148948.669986,
+    "mtime": 1785616110.794136,
     "ast_hash": "04f5a99d82158fea1581acd25e0088fa",
     "semantic_hash": "04f5a99d82158fea1581acd25e0088fa"
   },
   "test/card/action-card-base.test.ts": {
-    "mtime": 1784392476.466422,
+    "mtime": 1785616110.7946203,
     "ast_hash": "c43cd93c7dbb308e2f27b3b08c579df1",
     "semantic_hash": "c43cd93c7dbb308e2f27b3b08c579df1"
   },
   "test/card/action.test.ts": {
-    "mtime": 1784799066.350898,
+    "mtime": 1785616110.7948852,
     "ast_hash": "102b7323bbe9e32dbaa674505392e699",
     "semantic_hash": "102b7323bbe9e32dbaa674505392e699"
   },
   "test/card/au-climate-card-home.test.ts": {
-    "mtime": 1784389791.989265,
+    "mtime": 1785616110.7957485,
     "ast_hash": "2244b8251424becc03265a2d5a0b66b6",
     "semantic_hash": "2244b8251424becc03265a2d5a0b66b6"
   },
   "test/card/au-climate-card.test.ts": {
-    "mtime": 1784276890.0497658,
+    "mtime": 1785616110.7961142,
     "ast_hash": "6862cc00ab3e02f38665b348505294e4",
     "semantic_hash": "6862cc00ab3e02f38665b348505294e4"
   },
   "test/card/au-device-card.test.ts": {
-    "mtime": 1784826780.9489174,
+    "mtime": 1785616110.7980514,
     "ast_hash": "daedf662ae6b2dbe98afa36ba777a1d8",
     "semantic_hash": "daedf662ae6b2dbe98afa36ba777a1d8"
   },
   "test/card/au-light-card.test.ts": {
-    "mtime": 1784787630.4990408,
+    "mtime": 1785616110.8010256,
     "ast_hash": "c84f8bca1b32a49f3a253aa165d377cb",
     "semantic_hash": "c84f8bca1b32a49f3a253aa165d377cb"
   },
   "test/card/au-room-card.test.ts": {
-    "mtime": 1784799075.9727,
+    "mtime": 1785616110.8016336,
     "ast_hash": "bbe4dbaadff4303b2f3e443841d03ca1",
     "semantic_hash": "bbe4dbaadff4303b2f3e443841d03ca1"
   },
   "test/card/au-sensor-card.test.ts": {
-    "mtime": 1784267032.5898724,
+    "mtime": 1785616110.8020692,
     "ast_hash": "d2544b1666d828dcd06ca9e2b3ae1187",
     "semantic_hash": "d2544b1666d828dcd06ca9e2b3ae1187"
   },
   "test/card/card-content.test.ts": {
-    "mtime": 1783767340.466255,
+    "mtime": 1785616110.8029525,
     "ast_hash": "79ed8b3dd13f742022e04edf41b915c1",
     "semantic_hash": "79ed8b3dd13f742022e04edf41b915c1"
   },
   "test/card/home-variant.test.ts": {
-    "mtime": 1784826787.063074,
+    "mtime": 1785616110.8031547,
     "ast_hash": "15650157d91781c81769e3dd80915211",
     "semantic_hash": "15650157d91781c81769e3dd80915211"
   },
   "test/card/reactive-update.test.ts": {
-    "mtime": 1784799066.7606523,
+    "mtime": 1785616110.8033571,
     "ast_hash": "2a5c06efd6445d6f942fd7d5365b8f32",
     "semantic_hash": "2a5c06efd6445d6f942fd7d5365b8f32"
   },
   "test/card/set-config.test.ts": {
-    "mtime": 1784187822.04964,
+    "mtime": 1785616110.803539,
     "ast_hash": "8559473b132fa84e69dbbb420e8adc08",
     "semantic_hash": "8559473b132fa84e69dbbb420e8adc08"
   },
   "test/components/au-climate-selectors.test.ts": {
-    "mtime": 1784284467.122908,
+    "mtime": 1785616110.80398,
     "ast_hash": "92377957deb71866c902116f9a8f15b4",
     "semantic_hash": "92377957deb71866c902116f9a8f15b4"
   },
   "test/components/au-light-slider.test.ts": {
-    "mtime": 1783767340.455045,
+    "mtime": 1785616110.8041787,
     "ast_hash": "fd100d92e894903d014c946606f7dc99",
     "semantic_hash": "fd100d92e894903d014c946606f7dc99"
   },
   "test/components/au-temp-stepper.test.ts": {
-    "mtime": 1784276507.3094223,
+    "mtime": 1785616110.804412,
     "ast_hash": "781d4b2a315a8f696adbfa6234494717",
     "semantic_hash": "781d4b2a315a8f696adbfa6234494717"
   },
   "test/helpers.ts": {
-    "mtime": 1783767340.4665399,
+    "mtime": 1785616110.804966,
     "ast_hash": "60e150ba7c835b62da274479a20045ad",
     "semantic_hash": "60e150ba7c835b62da274479a20045ad"
   },
   "test/localize/localize.test.ts": {
-    "mtime": 1784149094.9110177,
+    "mtime": 1785616110.805279,
     "ast_hash": "83d6938f7717bdb3b4ab0a3a9ab12da0",
     "semantic_hash": "83d6938f7717bdb3b4ab0a3a9ab12da0"
   },
   "test/template/au-shell-grid-editor.test.ts": {
-    "mtime": 1784389757.4011955,
+    "mtime": 1785616110.8059297,
     "ast_hash": "00015b760917da05f6dbade0a49b2c94",
     "semantic_hash": "00015b760917da05f6dbade0a49b2c94"
   },
   "test/template/au-shell-grid-home.test.ts": {
-    "mtime": 1785266326.4260247,
+    "mtime": 1785616110.806363,
     "ast_hash": "2be646ec3bf39096b48fc6efccc3dbd8",
     "semantic_hash": "2be646ec3bf39096b48fc6efccc3dbd8"
   },
   "test/template/config-persist.test.ts": {
-    "mtime": 1784197012.6066995,
+    "mtime": 1785616110.8072429,
     "ast_hash": "6fa0eab5d89b903ab0c6a2a5a67f058a",
     "semantic_hash": "6fa0eab5d89b903ab0c6a2a5a67f058a"
   },
   "test/template/create-child-card.test.ts": {
-    "mtime": 1784267029.7886093,
+    "mtime": 1785616110.8076448,
     "ast_hash": "2beb90faa9e747e30ed235db2f825066",
     "semantic_hash": "2beb90faa9e747e30ed235db2f825066"
   },
   "test/template/grid-engine.test.ts": {
-    "mtime": 1784271712.5706673,
+    "mtime": 1785616110.8086908,
     "ast_hash": "4dd9cdb83b2646fc39f24ff71379a050",
     "semantic_hash": "4dd9cdb83b2646fc39f24ff71379a050"
   },
   "test/template/home-drag-resize.test.ts": {
-    "mtime": 1784267093.3622262,
+    "mtime": 1785616110.809138,
     "ast_hash": "8584ce0e8765690f945499a6a4cc0e0c",
     "semantic_hash": "8584ce0e8765690f945499a6a4cc0e0c"
   },
   "test/template/home-edit-commit.test.ts": {
-    "mtime": 1784323262.4710305,
+    "mtime": 1785616110.8094625,
     "ast_hash": "bd27649960ab62518b8dd82760967c5f",
     "semantic_hash": "bd27649960ab62518b8dd82760967c5f"
   },
   "test/template/room-controls.test.ts": {
-    "mtime": 1784400946.362463,
+    "mtime": 1785616110.8116086,
     "ast_hash": "5465c7b44a0ce599189f6abb2b85ca36",
     "semantic_hash": "5465c7b44a0ce599189f6abb2b85ca36"
   },
   "test/template/shell-grid-add-card.test.ts": {
-    "mtime": 1784193296.1136653,
+    "mtime": 1785616110.8118927,
     "ast_hash": "ae0bab7cdaa1100dd45211e4e66e75f1",
     "semantic_hash": "ae0bab7cdaa1100dd45211e4e66e75f1"
   },
   "test/utils/areas.test.ts": {
-    "mtime": 1784149094.767725,
+    "mtime": 1785616110.812509,
     "ast_hash": "09864951eee588ee24fb85b6c9c26221",
     "semantic_hash": "09864951eee588ee24fb85b6c9c26221"
   },
   "test/utils/bulk-action.test.ts": {
-    "mtime": 1784149091.6350229,
+    "mtime": 1785616110.8130012,
     "ast_hash": "02c61713d28b53d2077d652cc0c7ebbd",
     "semantic_hash": "02c61713d28b53d2077d652cc0c7ebbd"
   },
   "test/utils/climate.test.ts": {
-    "mtime": 1784143338.352362,
+    "mtime": 1785616110.8138132,
     "ast_hash": "423a097b0e96ae63d95e508f36781c9f",
     "semantic_hash": "423a097b0e96ae63d95e508f36781c9f"
   },
   "test/utils/cover.test.ts": {
-    "mtime": 1784812369.948954,
+    "mtime": 1785616110.81399,
     "ast_hash": "b4b409e367593b20bf509a4006543572",
     "semantic_hash": "b4b409e367593b20bf509a4006543572"
   },
   "test/utils/device.test.ts": {
-    "mtime": 1784826765.1974826,
+    "mtime": 1785616110.814159,
     "ast_hash": "5a273293b84dac95179dd7b9f8e23ead",
     "semantic_hash": "5a273293b84dac95179dd7b9f8e23ead"
   },
   "test/utils/domain-controls.test.ts": {
-    "mtime": 1784826766.8201916,
+    "mtime": 1785616110.8143187,
     "ast_hash": "a5801e2259d1f13606cef96538f9ad47",
     "semantic_hash": "a5801e2259d1f13606cef96538f9ad47"
   },
   "test/utils/entity.test.ts": {
-    "mtime": 1784312355.413834,
+    "mtime": 1785616110.8146827,
     "ast_hash": "8ddefe42e7dd09f92bb8204859e0360e",
     "semantic_hash": "8ddefe42e7dd09f92bb8204859e0360e"
   },
   "test/utils/fan.test.ts": {
-    "mtime": 1784809343.645241,
+    "mtime": 1785616110.8148634,
     "ast_hash": "2f898ca9ab1a3995c0aaeb0105785e39",
     "semantic_hash": "2f898ca9ab1a3995c0aaeb0105785e39"
   },
   "test/utils/light-card-layout.test.ts": {
-    "mtime": 1783767340.453102,
+    "mtime": 1785616110.8184721,
     "ast_hash": "e98c71622c746a7fe53c310565da3c38",
     "semantic_hash": "e98c71622c746a7fe53c310565da3c38"
   },
   "test/utils/light.test.ts": {
-    "mtime": 1784787630.1138473,
+    "mtime": 1785616110.8187718,
     "ast_hash": "dc1d0028f91921b97c4c9e3c06d53037",
     "semantic_hash": "dc1d0028f91921b97c4c9e3c06d53037"
   },
   "test/utils/pointer-gestures.test.ts": {
-    "mtime": 1784314210.2747014,
+    "mtime": 1785616110.8189747,
     "ast_hash": "7d8d98fc5844cbe10e98526231e8bcb7",
     "semantic_hash": "7d8d98fc5844cbe10e98526231e8bcb7"
   },
   "test/utils/presence.test.ts": {
-    "mtime": 1784149089.6496902,
+    "mtime": 1785616110.8191757,
     "ast_hash": "92ebf3e8f4ac4e0ea8b0fcf88720e1b1",
     "semantic_hash": "92ebf3e8f4ac4e0ea8b0fcf88720e1b1"
   },
   "test/utils/touch-click.test.ts": {
-    "mtime": 1784387479.8451405,
+    "mtime": 1785616110.8205109,
     "ast_hash": "0721491efcd8de289d554af92d1a2953",
     "semantic_hash": "0721491efcd8de289d554af92d1a2953"
   },
   "test/utils/vacuum.test.ts": {
-    "mtime": 1784826773.1152961,
+    "mtime": 1785616110.8210201,
     "ast_hash": "0d8630aeeb3eb098f2f34a37509cbac3",
     "semantic_hash": "0d8630aeeb3eb098f2f34a37509cbac3"
   },
   "test/utils/water-heater-timer.test.ts": {
-    "mtime": 1784312956.6646593,
+    "mtime": 1785616110.821183,
     "ast_hash": "b6f59f83ff03e3b59cb536cf200c1059",
     "semantic_hash": "b6f59f83ff03e3b59cb536cf200c1059"
   },
   "test/utils/water-heater.test.ts": {
-    "mtime": 1784267004.6097035,
+    "mtime": 1785616110.821345,
     "ast_hash": "14334159a40404631cfc6e24e45dff5c",
     "semantic_hash": "14334159a40404631cfc6e24e45dff5c"
   },
   "tsconfig.build.json": {
-    "mtime": 1783767340.4532042,
+    "mtime": 1785616110.821607,
     "ast_hash": "74370e28d4c1777478ff81c92569baba",
     "semantic_hash": "74370e28d4c1777478ff81c92569baba"
   },
   "tsconfig.json": {
-    "mtime": 1783767340.4531739,
+    "mtime": 1785616110.8219426,
     "ast_hash": "0d9e09f01782753c37a150245912fe71",
     "semantic_hash": "0d9e09f01782753c37a150245912fe71"
   },
   "vite.config.ts": {
-    "mtime": 1783767340.4475207,
+    "mtime": 1785616110.8222249,
     "ast_hash": "8355a4b4dbd50656820894ef2b0d2bca",
     "semantic_hash": "8355a4b4dbd50656820894ef2b0d2bca"
   },
   "README.md": {
-    "mtime": 1784829730.6952302,
-    "ast_hash": "aed1d522429e26bc12a5bd23fb4e11f2",
-    "semantic_hash": "aed1d522429e26bc12a5bd23fb4e11f2"
+    "mtime": 1785616317.7891192,
+    "ast_hash": "2c41b1d699db828509f3d24282d46c34",
+    "semantic_hash": ""
   },
   "demo/home-dashboard.yaml": {
-    "mtime": 1784398351.5750704,
+    "mtime": 1785616110.6952028,
     "ast_hash": "30055a004a636a5d77dfa9a4e9ef3b8d",
     "semantic_hash": "30055a004a636a5d77dfa9a4e9ef3b8d"
   },
   "test/template/fixtures/shell-grid-edit-mode.html": {
-    "mtime": 1783767340.466673,
+    "mtime": 1785616110.80813,
     "ast_hash": "1b216b81212c26ad69eeda1bdc05a845",
     "semantic_hash": "1b216b81212c26ad69eeda1bdc05a845"
   },
   "test/template/fixtures/shell-grid-view-edit-mode.html": {
-    "mtime": 1783767340.4530783,
+    "mtime": 1785616110.808399,
     "ast_hash": "655d4464aa5b64d6e875f5a9203c3d04",
     "semantic_hash": "655d4464aa5b64d6e875f5a9203c3d04"
   },
   "src/template/shell-grid/home-child-config.ts": {
-    "mtime": 1784826716.2421198,
+    "mtime": 1785616110.7711058,
     "ast_hash": "e89220897ff14a4a9745d5443ad3c0ed",
     "semantic_hash": "e89220897ff14a4a9745d5443ad3c0ed"
   },
   "src/template/shell-grid/home-child-host.ts": {
-    "mtime": 1784389783.3585432,
+    "mtime": 1785616110.7712936,
     "ast_hash": "713587fd7bf1a4f8958a7aea70446df2",
     "semantic_hash": "713587fd7bf1a4f8958a7aea70446df2"
   },
   "src/template/shell-grid/home-edit-room-modal.ts": {
-    "mtime": 1785263170.3325996,
+    "mtime": 1785616110.7719753,
     "ast_hash": "ecb544ba81371c42485d50a63e4bc8a8",
     "semantic_hash": "ecb544ba81371c42485d50a63e4bc8a8"
   },
   "src/template/shell-grid/home-picker-modals.ts": {
-    "mtime": 1784387731.363204,
+    "mtime": 1785616110.7728045,
     "ast_hash": "2b726a34bd7787d01e1b6ae626084650",
     "semantic_hash": "2b726a34bd7787d01e1b6ae626084650"
   },
   "src/template/shell-grid/home-view-styles.ts": {
-    "mtime": 1784390528.0690904,
+    "mtime": 1785616110.7730694,
     "ast_hash": "a2c22db34306909d49e6a44178d2029c",
     "semantic_hash": "a2c22db34306909d49e6a44178d2029c"
   },
   "src/utils/stop-bubble.ts": {
-    "mtime": 1784387813.3146296,
+    "mtime": 1785616110.7905214,
     "ast_hash": "7a1465ec53ad44d1c45476701ad62612",
     "semantic_hash": "7a1465ec53ad44d1c45476701ad62612"
   },
   "src/template/shell-grid/home-edit-session.ts": {
-    "mtime": 1784389451.471132,
+    "mtime": 1785616110.7722356,
     "ast_hash": "9dc6355ca01e7f3b8d50d3c50d8523a8",
     "semantic_hash": "9dc6355ca01e7f3b8d50d3c50d8523a8"
   },
   "src/template/shell-grid/home-grid-items.ts": {
-    "mtime": 1785263186.0393956,
+    "mtime": 1785616110.7724183,
     "ast_hash": "cb2f79de3cf2f50a359eccfd0aba88dc",
     "semantic_hash": "cb2f79de3cf2f50a359eccfd0aba88dc"
   },
   "src/utils/debounce.ts": {
-    "mtime": 1784389322.667208,
+    "mtime": 1785616110.7810426,
     "ast_hash": "ab0108e9208b8186d3a2070f7fa1a13d",
     "semantic_hash": "ab0108e9208b8186d3a2070f7fa1a13d"
   },
   "src/utils/domain-icons.ts": {
-    "mtime": 1784389344.2044802,
+    "mtime": 1785616110.7823243,
     "ast_hash": "546e2c3447e0d1c3610bc6c759ab4f2f",
     "semantic_hash": "546e2c3447e0d1c3610bc6c759ab4f2f"
   },
   "src/utils/domains.ts": {
-    "mtime": 1784826704.9460666,
+    "mtime": 1785616110.7824981,
     "ast_hash": "1b8788dbc2099d8460687098eb46fa77",
     "semantic_hash": "1b8788dbc2099d8460687098eb46fa77"
   },
   "src/utils/pending-control.ts": {
-    "mtime": 1784389323.562978,
+    "mtime": 1785616110.789659,
     "ast_hash": "65b88b4747e685fd5c8bfd068cd63111",
     "semantic_hash": "65b88b4747e685fd5c8bfd068cd63111"
   },
   "src/utils/pointer-value.ts": {
-    "mtime": 1784389325.2316558,
+    "mtime": 1785616110.7900236,
     "ast_hash": "075a0f33f3543d2115cbc8cb14d99a8a",
     "semantic_hash": "075a0f33f3543d2115cbc8cb14d99a8a"
   },
   "MASTER_ASSESSMENT.md": {
-    "mtime": 1785584599.4628751,
+    "mtime": 1785616110.6943285,
     "ast_hash": "3f450e9d680aae4de1f933055fa3c8e3",
     "semantic_hash": "3f450e9d680aae4de1f933055fa3c8e3"
   },
   ".prettierrc.json": {
-    "mtime": 1784389695.2974882,
+    "mtime": 1785616110.6941087,
     "ast_hash": "8efc7b456c10ee8723834a2a49a2975c",
     "semantic_hash": "8efc7b456c10ee8723834a2a49a2975c"
   },
   "eslint.config.js": {
-    "mtime": 1784389694.9882512,
+    "mtime": 1785616110.7040992,
     "ast_hash": "cc1bccbd3b1edf1b128682cb7a581a68",
     "semantic_hash": "cc1bccbd3b1edf1b128682cb7a581a68"
   },
   "test/core/set-config-copy.test.ts": {
-    "mtime": 1784389701.4441798,
+    "mtime": 1785616110.804668,
     "ast_hash": "87143c0ab5925662475c49c253962011",
     "semantic_hash": "87143c0ab5925662475c49c253962011"
   },
   "src/utils/format-clock.ts": {
-    "mtime": 1784801656.6745183,
+    "mtime": 1785616110.7877233,
     "ast_hash": "576f439379c388aa1cab84c56bd38b53",
     "semantic_hash": "576f439379c388aa1cab84c56bd38b53"
   },
   "test/utils/format-clock.test.ts": {
-    "mtime": 1784801683.5364628,
+    "mtime": 1785616110.8169146,
     "ast_hash": "69818698342977136798ed534b50bdbc",
     "semantic_hash": "69818698342977136798ed534b50bdbc"
   },
   "src/card/calendar-card/au-calendar-card-editor.ts": {
-    "mtime": 1784398064.7330737,
-    "ast_hash": "11494dafff6c80f5542956cc9ae53bcc",
-    "semantic_hash": "11494dafff6c80f5542956cc9ae53bcc"
+    "mtime": 1785616110.7566729,
+    "ast_hash": "c9217e1091a07d52d7176be0868c9c78",
+    "semantic_hash": ""
   },
   "src/card/calendar-card/au-calendar-card.ts": {
-    "mtime": 1784400267.701831,
-    "ast_hash": "1b4f9af9a7347939f31ca508e7d9c0fe",
-    "semantic_hash": "1b4f9af9a7347939f31ca508e7d9c0fe"
+    "mtime": 1785616907.2800605,
+    "ast_hash": "dfd4af27f7bbf2db36893dda992e6524",
+    "semantic_hash": ""
   },
   "src/card/calendar-card/calendar-card-editor-schema.ts": {
-    "mtime": 1784400232.6183558,
-    "ast_hash": "65a75b0c182efa04895645542ef7922a",
-    "semantic_hash": "65a75b0c182efa04895645542ef7922a"
+    "mtime": 1785616211.6354103,
+    "ast_hash": "3887c2841fcc0cccff15e15be15855b3",
+    "semantic_hash": ""
   },
   "src/types/calendar.ts": {
-    "mtime": 1784400218.852172,
-    "ast_hash": "9e290558df7c26f50481132df48dc936",
-    "semantic_hash": "9e290558df7c26f50481132df48dc936"
+    "mtime": 1785616315.2801068,
+    "ast_hash": "7bb18ea58d4a933c231688f91c157efc",
+    "semantic_hash": ""
   },
   "src/utils/calendar.ts": {
-    "mtime": 1784398346.0191786,
-    "ast_hash": "d12f92eaaee35538a8239c94003ab4e5",
-    "semantic_hash": "d12f92eaaee35538a8239c94003ab4e5"
+    "mtime": 1785616181.016681,
+    "ast_hash": "a9882f87eef8450483658d4a4337870a",
+    "semantic_hash": ""
   },
   "test/card/au-calendar-card.test.ts": {
-    "mtime": 1784400275.2564788,
-    "ast_hash": "ef222035d3eab621d7c0645b3eeb7ab1",
-    "semantic_hash": "ef222035d3eab621d7c0645b3eeb7ab1"
+    "mtime": 1785616306.9889705,
+    "ast_hash": "e5cbd15860ce29c51136994659da32b2",
+    "semantic_hash": ""
   },
   "test/utils/calendar.test.ts": {
-    "mtime": 1784398356.042091,
-    "ast_hash": "5c493c6530f65f86fa170df7dd4eb519",
-    "semantic_hash": "5c493c6530f65f86fa170df7dd4eb519"
+    "mtime": 1785616167.0209742,
+    "ast_hash": "834a099379e988536889e8db12646320",
+    "semantic_hash": ""
   },
   "test/card/au-calendar-card-editor.test.ts": {
-    "mtime": 1784398071.4892104,
+    "mtime": 1785616110.7952173,
     "ast_hash": "9fc4320e8db1be140f5c4cecececbb00",
     "semantic_hash": "9fc4320e8db1be140f5c4cecececbb00"
   },
   "src/utils/hass-entity.ts": {
-    "mtime": 1784790201.1175568,
+    "mtime": 1785616110.7886312,
     "ast_hash": "20fe9069b09081f9a5678b8b3a7053ad",
     "semantic_hash": "20fe9069b09081f9a5678b8b3a7053ad"
   },
   "src/utils/sync-debug.ts": {
-    "mtime": 1784800798.8626156,
+    "mtime": 1785616110.79097,
     "ast_hash": "dc6fabd21d98033b5e1e66c9472b1708",
     "semantic_hash": "dc6fabd21d98033b5e1e66c9472b1708"
   },
   "test/utils/sync-debug.test.ts": {
-    "mtime": 1784798570.1024427,
+    "mtime": 1785616110.8201032,
     "ast_hash": "086c081eaed7e2579aab2cfa990a5b0c",
     "semantic_hash": "086c081eaed7e2579aab2cfa990a5b0c"
   },
   "src/utils/format-greeting.ts": {
-    "mtime": 1784801650.4717808,
+    "mtime": 1785616110.7881782,
     "ast_hash": "c06ec2f678c1cf9973919d9bcc06f02a",
     "semantic_hash": "c06ec2f678c1cf9973919d9bcc06f02a"
   },
   "src/utils/home-card-type.ts": {
-    "mtime": 1784826705.5554113,
+    "mtime": 1785616110.7889454,
     "ast_hash": "6ad26b40972ab00d4aaec628f985d668",
     "semantic_hash": "6ad26b40972ab00d4aaec628f985d668"
   },
   "test/template/home-child-config.test.ts": {
-    "mtime": 1784812340.6938796,
+    "mtime": 1785616110.808933,
     "ast_hash": "36b541175f8c68a71c54d9b1de39e3f4",
     "semantic_hash": "36b541175f8c68a71c54d9b1de39e3f4"
   },
   "test/utils/home-card-type.test.ts": {
-    "mtime": 1784826769.8794887,
+    "mtime": 1785616110.818051,
     "ast_hash": "9a0ccedad544d5ebf6cb6362a02b02a9",
     "semantic_hash": "9a0ccedad544d5ebf6cb6362a02b02a9"
   },
   "src/card/fan-card/au-fan-card-editor.ts": {
-    "mtime": 1784808268.5132346,
+    "mtime": 1785616110.7601268,
     "ast_hash": "344c42ac67d4766f57f20c726c94f2af",
     "semantic_hash": "344c42ac67d4766f57f20c726c94f2af"
   },
   "src/card/fan-card/au-fan-card.ts": {
-    "mtime": 1784810770.3996212,
+    "mtime": 1785616110.7604396,
     "ast_hash": "f6699be218d6e94b0c029dd054a08582",
     "semantic_hash": "f6699be218d6e94b0c029dd054a08582"
   },
   "src/card/fan-card/fan-card-editor-schema.ts": {
-    "mtime": 1784810243.5529768,
+    "mtime": 1785616110.7607374,
     "ast_hash": "b17ecb66762b148687c9f7216e35cba2",
     "semantic_hash": "b17ecb66762b148687c9f7216e35cba2"
   },
   "src/types/fan.ts": {
-    "mtime": 1784810263.9704936,
+    "mtime": 1785616110.7754734,
     "ast_hash": "4d1c6022e0434ad42f55adaf41a094af",
     "semantic_hash": "4d1c6022e0434ad42f55adaf41a094af"
   },
   "test/card/au-fan-card.test.ts": {
-    "mtime": 1784810781.291714,
+    "mtime": 1785616110.79835,
     "ast_hash": "d8ca1386b794e1e0c3f33eccbe0b82a2",
     "semantic_hash": "d8ca1386b794e1e0c3f33eccbe0b82a2"
   },
   "src/card/cover-card/au-cover-card-editor.ts": {
-    "mtime": 1784812144.6894157,
+    "mtime": 1785616110.7584856,
     "ast_hash": "33e4f53fd32d541a4f2359056643ff66",
     "semantic_hash": "33e4f53fd32d541a4f2359056643ff66"
   },
   "src/card/cover-card/au-cover-card.ts": {
-    "mtime": 1784812170.331795,
+    "mtime": 1785616110.758688,
     "ast_hash": "1febd360ae78095df6c455ba6e2d01c1",
     "semantic_hash": "1febd360ae78095df6c455ba6e2d01c1"
   },
   "src/card/cover-card/cover-card-editor-schema.ts": {
-    "mtime": 1784812140.6510553,
+    "mtime": 1785616110.7589805,
     "ast_hash": "e26323df38bf79481dc6e99ec94d46d8",
     "semantic_hash": "e26323df38bf79481dc6e99ec94d46d8"
   },
   "src/card/switch-card/au-switch-card-editor.ts": {
-    "mtime": 1784812145.0919268,
+    "mtime": 1785616110.7634826,
     "ast_hash": "1951481b473f176c744c4fe43558f85f",
     "semantic_hash": "1951481b473f176c744c4fe43558f85f"
   },
   "src/card/switch-card/au-switch-card.ts": {
-    "mtime": 1784812170.6922364,
+    "mtime": 1785616110.7636783,
     "ast_hash": "361878750f37342739076a712f083b0b",
     "semantic_hash": "361878750f37342739076a712f083b0b"
   },
   "src/card/switch-card/switch-card-editor-schema.ts": {
-    "mtime": 1784812142.8666081,
+    "mtime": 1785616110.763831,
     "ast_hash": "225f98dd58717b2b8d80e59c5a7af24f",
     "semantic_hash": "225f98dd58717b2b8d80e59c5a7af24f"
   },
   "src/components/au-fan-speed-selector.ts": {
-    "mtime": 1784810765.7023804,
+    "mtime": 1785616110.765434,
     "ast_hash": "6dc266963ffb6c3c76dc57de1e5d41b3",
     "semantic_hash": "6dc266963ffb6c3c76dc57de1e5d41b3"
   },
   "src/types/cover.ts": {
-    "mtime": 1784812137.6409264,
+    "mtime": 1785616110.7751725,
     "ast_hash": "807279f64aa5d43c05c0741cf1eb395a",
     "semantic_hash": "807279f64aa5d43c05c0741cf1eb395a"
   },
   "src/types/switch.ts": {
-    "mtime": 1784812139.4116514,
+    "mtime": 1785616110.7778428,
     "ast_hash": "ae2bdf0eaff3a6e6ea48292b3bc31412",
     "semantic_hash": "ae2bdf0eaff3a6e6ea48292b3bc31412"
   },
   "src/utils/switch.ts": {
-    "mtime": 1784812137.1007051,
+    "mtime": 1785616110.7907305,
     "ast_hash": "ec431d3aeaf0b06ba829fb87b8dfcf5d",
     "semantic_hash": "ec431d3aeaf0b06ba829fb87b8dfcf5d"
   },
   "test/card/au-cover-card.test.ts": {
-    "mtime": 1784812321.5323203,
+    "mtime": 1785616110.7977057,
     "ast_hash": "28ae5f8ad535643248b9c4ebfa099ea9",
     "semantic_hash": "28ae5f8ad535643248b9c4ebfa099ea9"
   },
   "test/card/au-switch-card.test.ts": {
-    "mtime": 1784812324.2152176,
+    "mtime": 1785616110.8025136,
     "ast_hash": "038844314c4872b3084c3be47cc9116b",
     "semantic_hash": "038844314c4872b3084c3be47cc9116b"
   },
   "test/utils/switch.test.ts": {
-    "mtime": 1784812370.353203,
+    "mtime": 1785616110.8197248,
     "ast_hash": "b224bcc98f21bf0e1bf0329293f112a8",
     "semantic_hash": "b224bcc98f21bf0e1bf0329293f112a8"
   },
   "src/card/vacuum-card/au-vacuum-card-editor.ts": {
-    "mtime": 1784826671.4986522,
+    "mtime": 1785616110.7641356,
     "ast_hash": "26523184f97d3f90f68ec9a54fda6487",
     "semantic_hash": "26523184f97d3f90f68ec9a54fda6487"
   },
   "src/card/vacuum-card/au-vacuum-card.ts": {
-    "mtime": 1784829701.1734052,
+    "mtime": 1785616110.7643964,
     "ast_hash": "40e2cd025b4034484c9e2a06282985ba",
     "semantic_hash": "40e2cd025b4034484c9e2a06282985ba"
   },
   "src/card/vacuum-card/vacuum-card-editor-schema.ts": {
-    "mtime": 1784829701.7807994,
+    "mtime": 1785616110.7648692,
     "ast_hash": "2f040e49f27d1265b8ef54666965a66c",
     "semantic_hash": "2f040e49f27d1265b8ef54666965a66c"
   },
   "src/types/vacuum.ts": {
-    "mtime": 1784829588.4101884,
+    "mtime": 1785616110.7782679,
     "ast_hash": "20a7ea5d0fecc67ae129d57c928fc00d",
     "semantic_hash": "20a7ea5d0fecc67ae129d57c928fc00d"
   },
   "test/card/au-vacuum-card.test.ts": {
-    "mtime": 1784829729.8769107,
+    "mtime": 1785616110.8027387,
     "ast_hash": "026f75dd94ab12c906b7ef503edd41dd",
     "semantic_hash": "026f75dd94ab12c906b7ef503edd41dd"
   },
   "src/card/vacuum-card/au-vacuum-settings-overlay.ts": {
-    "mtime": 1785581714.6875138,
+    "mtime": 1785616110.7646995,
     "ast_hash": "c7a3836e48318b2585660f89b73ff9da",
     "semantic_hash": "c7a3836e48318b2585660f89b73ff9da"
   },
   "src/utils/vacuum-device-catalog.ts": {
-    "mtime": 1785581765.9259489,
-    "ast_hash": "f184cf02f55b9605823108e74a879dd1",
-    "semantic_hash": "f184cf02f55b9605823108e74a879dd1"
+    "mtime": 1785616338.9684134,
+    "ast_hash": "3a42f2b5e7904f7b1b529835fb3bc9ca",
+    "semantic_hash": ""
   },
   "src/utils/vacuum-settings-draft.ts": {
-    "mtime": 1784829592.1818233,
+    "mtime": 1785616110.793153,
     "ast_hash": "249f68872f1cd423e96c5c3125307bdc",
     "semantic_hash": "249f68872f1cd423e96c5c3125307bdc"
   },
   "test/utils/vacuum-device-catalog.test.ts": {
-    "mtime": 1785581745.5894234,
+    "mtime": 1785616110.8208385,
     "ast_hash": "11b06848e30a028da7f6e98eec039883",
     "semantic_hash": "11b06848e30a028da7f6e98eec039883"
   },
   "test/template/home-edit-room-modal.test.ts": {
-    "mtime": 1785263203.3785007,
+    "mtime": 1785616110.8112204,
     "ast_hash": "3745b26f70f58260e7ee9687f12353e9",
     "semantic_hash": "3745b26f70f58260e7ee9687f12353e9"
   },
   ".github/workflows/ci.yml": {
-    "mtime": 1785582437.0945714,
+    "mtime": 1785616110.6933613,
     "ast_hash": "a13de39238d705ad26209851dfc773cf",
     "semantic_hash": "a13de39238d705ad26209851dfc773cf"
   },
   "docs/ARCHITECTURE.md": {
-    "mtime": 1785582232.8537505,
+    "mtime": 1785616110.695731,
     "ast_hash": "ef3fedd6c6166552f7b9c0e6cfdf0685",
     "semantic_hash": "ef3fedd6c6166552f7b9c0e6cfdf0685"
   },
   "docs/PHASE_0.md": {
-    "mtime": 1785584644.4433298,
+    "mtime": 1785616110.6963584,
     "ast_hash": "a1db17a793d3ccef6f87598cdb8b1e6e",
     "semantic_hash": "a1db17a793d3ccef6f87598cdb8b1e6e"
   },
   "docs/PRD.md": {
-    "mtime": 1785584644.4000528,
-    "ast_hash": "05a9a4c30eb88e969996ca52e64a2534",
-    "semantic_hash": "05a9a4c30eb88e969996ca52e64a2534"
+    "mtime": 1785616110.6968532,
+    "ast_hash": "336e6091be8254b8a4e6db0e6454bf86",
+    "semantic_hash": ""
   },
   "docs/SCOPE_AND_FEATURES.md": {
-    "mtime": 1785584586.8510263,
-    "ast_hash": "8ee93beecbdbf2d43dbefa6e1077a600",
-    "semantic_hash": "8ee93beecbdbf2d43dbefa6e1077a600"
+    "mtime": 1785616110.697071,
+    "ast_hash": "c6e28f5c64a82aefbd1d8bf153450f09",
+    "semantic_hash": ""
   },
   "docs/imp/feature/room-idle-timeout.md": {
-    "mtime": 1785582432.8778398,
+    "mtime": 1785616110.698231,
     "ast_hash": "c3c4adad585f7d09357127796230b51e",
     "semantic_hash": "c3c4adad585f7d09357127796230b51e"
   },
   "docs/ops/install-and-resource.md": {
-    "mtime": 1785582426.23577,
+    "mtime": 1785616110.6984968,
     "ast_hash": "14ec52027702ba68dd262a0f53f7c50b",
     "semantic_hash": "14ec52027702ba68dd262a0f53f7c50b"
   },
   "docs/ops/local-dev-ha.md": {
-    "mtime": 1785582428.612225,
+    "mtime": 1785616110.6987245,
     "ast_hash": "dfe79e178c96b1eed81b009a8c9d0fe8",
     "semantic_hash": "dfe79e178c96b1eed81b009a8c9d0fe8"
   },
   "docs/prd/_TEMPLATE.md": {
-    "mtime": 1785584644.407896,
+    "mtime": 1785616110.6990304,
     "ast_hash": "1c2c24027914c391c1f107cc3cd9e74e",
     "semantic_hash": "1c2c24027914c391c1f107cc3cd9e74e"
   },
   "docs/prd/platform/card-contract.md": {
-    "mtime": 1785584562.8879755,
+    "mtime": 1785616110.6994283,
     "ast_hash": "4bc5c485677ef6aafa0839c05f1e29c0",
     "semantic_hash": "4bc5c485677ef6aafa0839c05f1e29c0"
   },
   "docs/prd/platform/distribution-hacs.md": {
-    "mtime": 1785582314.351767,
+    "mtime": 1785616110.6997156,
     "ast_hash": "b5689b5423eb960bae882c9c9fc168b4",
     "semantic_hash": "b5689b5423eb960bae882c9c9fc168b4"
   },
   "docs/prd/platform/shell-grid.md": {
-    "mtime": 1785584559.1212964,
+    "mtime": 1785616110.699889,
     "ast_hash": "6a28b4fb0060806eed4a0e83236af928",
     "semantic_hash": "6a28b4fb0060806eed4a0e83236af928"
   },
   "docs/prd/product/action-card.md": {
-    "mtime": 1785584644.4362555,
+    "mtime": 1785616110.7001092,
     "ast_hash": "9591df0300b35eb76fa6647bfeb3ca23",
     "semantic_hash": "9591df0300b35eb76fa6647bfeb3ca23"
   },
   "docs/prd/product/calendar-card.md": {
-    "mtime": 1785582404.8192627,
-    "ast_hash": "3cf4737f81a91a0ebdaa84506663cc22",
-    "semantic_hash": "3cf4737f81a91a0ebdaa84506663cc22"
+    "mtime": 1785616128.6229215,
+    "ast_hash": "6312fd8ce088c10a898df802575550a1",
+    "semantic_hash": ""
   },
   "docs/prd/product/climate-card.md": {
-    "mtime": 1785582355.2149384,
+    "mtime": 1785616110.7007143,
     "ast_hash": "81b5efe5bf45ddc5bd831fc70e37b518",
     "semantic_hash": "81b5efe5bf45ddc5bd831fc70e37b518"
   },
   "docs/prd/product/cover-card.md": {
-    "mtime": 1785582361.2234843,
+    "mtime": 1785616110.700912,
     "ast_hash": "19999e2964c5b296e8a461bddf11f549",
     "semantic_hash": "19999e2964c5b296e8a461bddf11f549"
   },
   "docs/prd/product/device-card.md": {
-    "mtime": 1785584581.1635,
+    "mtime": 1785616110.7010972,
     "ast_hash": "d51b5e30f77b34f986ad8322834fb5ec",
     "semantic_hash": "d51b5e30f77b34f986ad8322834fb5ec"
   },
   "docs/prd/product/fan-card.md": {
-    "mtime": 1785582358.1278062,
+    "mtime": 1785616110.7014978,
     "ast_hash": "b76ffaa8270daeb09a1afe203494120d",
     "semantic_hash": "b76ffaa8270daeb09a1afe203494120d"
   },
   "docs/prd/product/light-card.md": {
-    "mtime": 1785582351.2941332,
+    "mtime": 1785616110.7016594,
     "ast_hash": "b8806f35dc7bcc56c64175ca13ea79ca",
     "semantic_hash": "b8806f35dc7bcc56c64175ca13ea79ca"
   },
   "docs/prd/product/room-card.md": {
-    "mtime": 1785582402.641879,
+    "mtime": 1785616110.7020974,
     "ast_hash": "7992f3863e8f96b20e5c3cc2cfb7bbfd",
     "semantic_hash": "7992f3863e8f96b20e5c3cc2cfb7bbfd"
   },
   "docs/prd/product/sensor-card.md": {
-    "mtime": 1785584644.422042,
+    "mtime": 1785616110.7022753,
     "ast_hash": "c711ef1999ef58afd99a2259efc86551",
     "semantic_hash": "c711ef1999ef58afd99a2259efc86551"
   },
   "docs/prd/product/switch-card.md": {
-    "mtime": 1785582365.0867913,
+    "mtime": 1785616110.70245,
     "ast_hash": "9eea516ec18f2fd2615a65b776991b6a",
     "semantic_hash": "9eea516ec18f2fd2615a65b776991b6a"
   },
   "docs/prd/product/vacuum-card.md": {
-    "mtime": 1785584571.6211264,
+    "mtime": 1785616110.702639,
     "ast_hash": "aafa1caabf0fde1caf0acc5452a1ac61",
     "semantic_hash": "aafa1caabf0fde1caf0acc5452a1ac61"
   },
   "docs/prd/ux/edit-mode.md": {
-    "mtime": 1785584644.4291399,
+    "mtime": 1785616110.703184,
     "ast_hash": "8dda2ce5fa89cc2ba6eb5e3e96c47481",
     "semantic_hash": "8dda2ce5fa89cc2ba6eb5e3e96c47481"
   },
   "docs/prd/ux/home-tiles.md": {
-    "mtime": 1785584644.4150832,
+    "mtime": 1785616110.703466,
     "ast_hash": "03279fdbae3e036cd7308c0005ea5e4a",
     "semantic_hash": "03279fdbae3e036cd7308c0005ea5e4a"
   },
   "docs/prd/ux/localize.md": {
-    "mtime": 1785584572.6183436,
+    "mtime": 1785616110.7036388,
     "ast_hash": "4f0e72e26b914371d6291b3fbf69f203",
     "semantic_hash": "4f0e72e26b914371d6291b3fbf69f203"
   },
   "docs/prd/ux/design-system.md": {
-    "mtime": 1785584644.4501798,
-    "ast_hash": "631d9cde037599175f95b9dc812b7923",
-    "semantic_hash": "631d9cde037599175f95b9dc812b7923"
+    "mtime": 1785616110.7029057,
+    "ast_hash": "c30c2194c87b7d9add49e36fce7af3ed",
+    "semantic_hash": ""
   },
   "docs/session-followups.md": {
-    "mtime": 1785584610.4076283,
-    "ast_hash": "9cac9c1e28f39ba1b2d9e0b3af0020de",
-    "semantic_hash": "9cac9c1e28f39ba1b2d9e0b3af0020de"
+    "mtime": 1785616401.3363254,
+    "ast_hash": "6223c9ab4261b394944440d53b83f9de",
+    "semantic_hash": ""
+  },
+  "src/card/calendar-card/au-calendar-fullscreen-overlay.ts": {
+    "mtime": 1785775621.0023737,
+    "ast_hash": "43334659a9152f5f29c5580b32bac5b5",
+    "semantic_hash": ""
+  },
+  "test/card/au-calendar-fullscreen-overlay.test.ts": {
+    "mtime": 1785616913.8106623,
+    "ast_hash": "89773af7fe69bef74c5f059eeb8725de",
+    "semantic_hash": ""
+  },
+  "docs/imp/feature/calendar-fullscreen.md": {
+    "mtime": 1785616916.9852793,
+    "ast_hash": "bb821859874288ce8e256b396120283e",
+    "semantic_hash": ""
+  },
+  "docs/imp/feature/calendar-time-improvements.md": {
+    "mtime": 1785616110.6978414,
+    "ast_hash": "cde79234174f460974dc3cf40356eecd",
+    "semantic_hash": ""
   }
 }

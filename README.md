@@ -523,8 +523,8 @@ CalDAV/iCloud, Local Calendar, etc.). Configure those integrations in HA first â
 card does not talk to Google/Apple APIs directly.
 
 Default view is an agenda list; also supports today strip, week grid, and month
-mini-calendar. Multi-calendar color coding, expand-on-tap, optional view picker,
-allowlist/blocklist filters.
+mini-calendar. Multi-calendar color coding, fullscreen overlay (agenda + rich
+month), optional view picker, allowlist/blocklist filters. Weeks start on Sunday.
 
 Requires Home Assistant **2023.12+** for `calendar.get_events` response data
 (falls back to WebSocket when available).
@@ -545,7 +545,7 @@ max_events: 12
 refresh_minutes: 60
 timezone: local                 # local | event
 time_format: 24h                # 24h | 12h (default 24h)
-expand_on_tap: true
+expand_on_tap: true               # show Fullscreen control (default true)
 show_location: true
 show_description: false
 show_calendar_label: true
@@ -554,6 +554,11 @@ show_view_picker: false
 # blocklist: "Private"
 # hide_all_day: false
 ```
+
+**Fullscreen:** Opens a body-portal overlay (vacuum-style margin) with selected-day
+agenda (~1/6) and an Apple-like month grid (~5/6). Close via X or backdrop.
+Tablet-first; narrow/portrait stacks agenda above the month.
+
 
 ## Design system
 

@@ -115,3 +115,15 @@ See [`SCOPE_AND_FEATURES.md`](./SCOPE_AND_FEATURES.md) §4 and [`PRD.md`](./PRD.
 **Question:** Should `Sliders and Steppers` be split into smaller, more focused modules?
 
 **Answer:** Prefer consolidating shared gesture/pending-control into one util path (Phase 3) over splitting the community. Light slider + temp stepper already share a visual/control niche; the debt is duplicated interaction logic, not folder layout. **Action:** same as Light Card Controls — Phase 3 shared gestures.
+
+### What connects Prettier config tokens to the system?
+
+| Field | Value |
+| --- | --- |
+| Status | answered |
+| First seen | 2026-08-01 |
+| Source | graphify Suggested Questions (calendar-fullscreen graphify update) |
+
+**Question:** What connects `singleQuote`, `trailingComma`, `printWidth` to the rest of the system?
+
+**Answer:** Tooling leaf nodes from Prettier/config extraction; weak connectivity is expected and not a product gap. **Action:** ignore.

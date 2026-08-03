@@ -113,4 +113,45 @@ describe('au-calendar-card', () => {
     const editor = AuCalendarCard.getConfigElement();
     expect(editor.localName).toBe('au-calendar-card-editor');
   });
+
+  it('shows Fullscreen control and opens overlay on today', async () => {
+    const el = document.createElement('au-calendar-card') as AuCalendarCard;
+    document.body.appendChild(el);
+    el.setConfig({
+      type: 'custom:au-calendar-card',
+      entities: ['calendar.personal'],
+      expand_on_tap: true,
+    });
+    el.hass = makeCalendarHass();
+    await el.updateComplete;
+    await flush();
+    await el.updateComplete;
+
+    const btn = [...(el.shadowRoot?.querySelectorAll('button') ?? [])].find(
+      (b) => b.textContent?.includes('Fullscreen'),
+    );
+    expect(btn).toBeTruthy();
+    btn!.click();
+    await el.updateComplete;
+    await flush();
+
+    const overlay = document.querySelector('au-calendar-fullscreen-overlay');
+    expect(overlay).toBeTruthy();
+    expect(overlay?.hasAttribute('open')).toBe(true);
+    expect(document.body.style.overflow).toBe('hidden');
+  });
+
+  it('hides Fullscreen when expand_on_tap is false', async () => {
+    const el = document.createElement('au-calendar-card') as AuCalendarCard;
+    document.body.appendChild(el);
+    el.setConfig({
+      type: 'custom:au-calendar-card',
+      entities: ['calendar.personal'],
+      expand_on_tap: false,
+    });
+    el.hass = makeCalendarHass();
+    await el.updateComplete;
+    await flush();
+    expect(el.shadowRoot?.textContent).not.toMatch(/Fullscreen/);
+  });
 });
