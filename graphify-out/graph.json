@@ -274,8 +274,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ref_lit",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "lit"
     },
     {
@@ -890,8 +890,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_card_action_card_au_action_card_auactioncard_getstubconfig",
-      "community": 38,
-      "community_name": "._renderChildCard",
+      "community": 25,
+      "community_name": "Distribution and HACS Feature",
       "norm_label": ".getstubconfig()"
     },
     {
@@ -912,8 +912,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_card_action_card_au_action_card_auactioncard_render",
-      "community": 26,
-      "community_name": "device.ts",
+      "community": 25,
+      "community_name": "Distribution and HACS Feature",
       "norm_label": ".render()"
     },
     {
@@ -934,8 +934,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_card_editor",
-      "community": 17,
-      "community_name": "au-calendar-card-editor.ts",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "au-calendar-card-editor.ts"
     },
     {
@@ -1022,8 +1022,8 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_card_editor_htmlelementtagnamemap",
-      "community": 17,
-      "community_name": "au-calendar-card-editor.ts",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -1110,8 +1110,8 @@
       "source_location": "L378",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_card_aucalendarcard_validateconfig",
-      "community": 33,
-      "community_name": "create-child-card.ts",
+      "community": 17,
+      "community_name": "au-calendar-card-editor.ts",
       "norm_label": ".validateconfig()"
     },
     {
@@ -1198,8 +1198,8 @@
       "source_location": "L430",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_card_aucalendarcard_activeevents",
-      "community": 17,
-      "community_name": "au-calendar-card-editor.ts",
+      "community": 33,
+      "community_name": "create-child-card.ts",
       "norm_label": "._activeevents()"
     },
     {
@@ -1440,8 +1440,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_fullscreen_overlay",
-      "community": 13,
-      "community_name": "AuCalendarCard",
+      "community": 17,
+      "community_name": "au-calendar-card-editor.ts",
       "norm_label": "au-calendar-fullscreen-overlay.ts"
     },
     {
@@ -1451,8 +1451,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_fullscreen_overlay_view_keys",
-      "community": 13,
-      "community_name": "AuCalendarCard",
+      "community": 17,
+      "community_name": "au-calendar-card-editor.ts",
       "norm_label": "view_keys"
     },
     {
@@ -1737,8 +1737,8 @@
       "source_location": "L761",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_fullscreen_overlay_aucalendarfullscreenoverlay_gotoday",
-      "community": 20,
-      "community_name": "home-child-config.ts",
+      "community": 13,
+      "community_name": "AuCalendarCard",
       "norm_label": "._gotoday()"
     },
     {
@@ -1792,8 +1792,8 @@
       "source_location": "L805",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_fullscreen_overlay_aucalendarfullscreenoverlay_selectday",
-      "community": 20,
-      "community_name": "home-child-config.ts",
+      "community": 13,
+      "community_name": "AuCalendarCard",
       "norm_label": "._selectday()"
     },
     {
@@ -1825,8 +1825,8 @@
       "source_location": "L820",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_fullscreen_overlay_aucalendarfullscreenoverlay_monthtitle",
-      "community": 20,
-      "community_name": "home-child-config.ts",
+      "community": 13,
+      "community_name": "AuCalendarCard",
       "norm_label": "._monthtitle()"
     },
     {
@@ -1880,8 +1880,8 @@
       "source_location": "L933",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_fullscreen_overlay_aucalendarfullscreenoverlay_renderrichmonth",
-      "community": 20,
-      "community_name": "home-child-config.ts",
+      "community": 13,
+      "community_name": "AuCalendarCard",
       "norm_label": "._renderrichmonth()"
     },
     {
@@ -1924,8 +1924,8 @@
       "source_location": "L1241",
       "_origin": "ast",
       "id": "src_card_calendar_card_au_calendar_fullscreen_overlay_htmlelementtagnamemap",
-      "community": 13,
-      "community_name": "AuCalendarCard",
+      "community": 17,
+      "community_name": "au-calendar-card-editor.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -1946,8 +1946,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_calendar_card_calendar_card_editor_schema",
-      "community": 17,
-      "community_name": "au-calendar-card-editor.ts",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "calendar-card-editor-schema.ts"
     },
     {
@@ -1957,8 +1957,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_calendar_card_calendar_card_editor_schema_calendarcardeditorschema",
-      "community": 17,
-      "community_name": "au-calendar-card-editor.ts",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "calendarcardeditorschema"
     },
     {
@@ -1968,8 +1968,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_card_calendar_card_calendar_card_editor_schema_calendarcardeditorlabels",
-      "community": 17,
-      "community_name": "au-calendar-card-editor.ts",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "calendarcardeditorlabels"
     },
     {
@@ -1979,8 +1979,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_climate_card_au_climate_card_editor",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "au-climate-card-editor.ts"
     },
     {
@@ -1990,8 +1990,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_card_climate_card_au_climate_card_editor_auclimatecardeditor",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": "auclimatecardeditor"
     },
     {
@@ -2001,8 +2001,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_card_climate_card_au_climate_card_editor_ts_customelement",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": "customelement"
     },
     {
@@ -2012,8 +2012,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_card_climate_card_au_climate_card_editor_auclimatecardeditor_computelabel",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": "._computelabel()"
     },
     {
@@ -2023,8 +2023,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_card_climate_card_au_climate_card_editor_auclimatecardeditor_render",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": ".render()"
     },
     {
@@ -2034,8 +2034,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_card_climate_card_au_climate_card_editor_htmlelementtagnamemap",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -2386,8 +2386,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_climate_card_climate_card_editor_schema",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "climate-card-editor-schema.ts"
     },
     {
@@ -2397,8 +2397,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_card_climate_card_climate_card_editor_schema_climatecardeditorschema",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "climatecardeditorschema"
     },
     {
@@ -2408,8 +2408,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_card_climate_card_climate_card_editor_schema_climatecardeditorlabels",
-      "community": 62,
-      "community_name": "au-switch-card-editor.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "climatecardeditorlabels"
     },
     {
@@ -2419,8 +2419,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_editor",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "au-cover-card-editor.ts"
     },
     {
@@ -2430,8 +2430,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_editor_aucovercardeditor",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": "aucovercardeditor"
     },
     {
@@ -2441,8 +2441,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_editor_ts_customelement",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": "customelement"
     },
     {
@@ -2452,8 +2452,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_editor_aucovercardeditor_computelabel",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": "._computelabel()"
     },
     {
@@ -2463,8 +2463,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_editor_aucovercardeditor_render",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 2,
+      "community_name": "AuTempStepper",
       "norm_label": ".render()"
     },
     {
@@ -2474,8 +2474,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_editor_htmlelementtagnamemap",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -2485,8 +2485,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "au-cover-card.ts"
     },
     {
@@ -2639,8 +2639,8 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_aucovercard_fireresolvedaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": ".fireresolvedaction()"
     },
     {
@@ -2661,8 +2661,8 @@
       "source_location": "L287",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_aucovercard_renderactionbody",
-      "community": 27,
-      "community_name": "AuDeviceCard",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".renderactionbody()"
     },
     {
@@ -2683,8 +2683,8 @@
       "source_location": "L340",
       "_origin": "ast",
       "id": "src_card_cover_card_au_cover_card_htmlelementtagnamemap",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -2694,8 +2694,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_cover_card_cover_card_editor_schema",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "cover-card-editor-schema.ts"
     },
     {
@@ -2705,8 +2705,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_card_cover_card_cover_card_editor_schema_covercardeditorschema",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "covercardeditorschema"
     },
     {
@@ -2716,8 +2716,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_card_cover_card_cover_card_editor_schema_covercardeditorlabels",
-      "community": 82,
-      "community_name": "shell-grid-add-card.test.ts",
+      "community": 35,
+      "community_name": "tokens.ts",
       "norm_label": "covercardeditorlabels"
     },
     {
@@ -2793,8 +2793,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 40,
+      "community_name": "au-shell-grid-home.test.ts",
       "norm_label": "au-device-card.ts"
     },
     {
@@ -2848,8 +2848,8 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_getstubconfig",
-      "community": 27,
-      "community_name": "AuDeviceCard",
+      "community": 38,
+      "community_name": "._renderChildCard",
       "norm_label": ".getstubconfig()"
     },
     {
@@ -2870,8 +2870,8 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_resolvesecondarytext",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 27,
+      "community_name": "AuDeviceCard",
       "norm_label": ".resolvesecondarytext()"
     },
     {
@@ -2881,8 +2881,8 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_updated",
-      "community": 27,
-      "community_name": "AuDeviceCard",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": ".updated()"
     },
     {
@@ -2914,8 +2914,8 @@
       "source_location": "L206",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_timerpresets",
-      "community": 40,
-      "community_name": "au-shell-grid-home.test.ts",
+      "community": 27,
+      "community_name": "AuDeviceCard",
       "norm_label": "._timerpresets()"
     },
     {
@@ -2991,8 +2991,8 @@
       "source_location": "L282",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_startwaterheatertimer",
-      "community": 27,
-      "community_name": "AuDeviceCard",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": "._startwaterheatertimer()"
     },
     {
@@ -3035,8 +3035,8 @@
       "source_location": "L315",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_withconfirm",
-      "community": 27,
-      "community_name": "AuDeviceCard",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": "._withconfirm()"
     },
     {
@@ -3068,8 +3068,8 @@
       "source_location": "L345",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_fireresolvedaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": ".fireresolvedaction()"
     },
     {
@@ -3123,8 +3123,8 @@
       "source_location": "L502",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_audevicecard_render",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 27,
+      "community_name": "AuDeviceCard",
       "norm_label": ".render()"
     },
     {
@@ -3134,8 +3134,8 @@
       "source_location": "L551",
       "_origin": "ast",
       "id": "src_card_device_card_au_device_card_htmlelementtagnamemap",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 40,
+      "community_name": "au-shell-grid-home.test.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -3189,8 +3189,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_editor",
-      "community": 35,
-      "community_name": "tokens.ts",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "au-fan-card-editor.ts"
     },
     {
@@ -3200,8 +3200,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_editor_aufancardeditor",
-      "community": 2,
-      "community_name": "AuTempStepper",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "aufancardeditor"
     },
     {
@@ -3211,8 +3211,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_editor_ts_customelement",
-      "community": 2,
-      "community_name": "AuTempStepper",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "customelement"
     },
     {
@@ -3222,8 +3222,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_editor_aufancardeditor_computelabel",
-      "community": 2,
-      "community_name": "AuTempStepper",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "._computelabel()"
     },
     {
@@ -3233,8 +3233,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_editor_aufancardeditor_render",
-      "community": 2,
-      "community_name": "AuTempStepper",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": ".render()"
     },
     {
@@ -3244,8 +3244,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_editor_htmlelementtagnamemap",
-      "community": 35,
-      "community_name": "tokens.ts",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -3255,8 +3255,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "au-fan-card.ts"
     },
     {
@@ -3266,8 +3266,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "aufancard"
     },
     {
@@ -3277,8 +3277,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_ts_customelement",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "customelement"
     },
     {
@@ -3288,8 +3288,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_ts_state",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "state"
     },
     {
@@ -3299,8 +3299,8 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_getconfigelement",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".getconfigelement()"
     },
     {
@@ -3310,8 +3310,8 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_getstubconfig",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 38,
+      "community_name": "._renderChildCard",
       "norm_label": ".getstubconfig()"
     },
     {
@@ -3321,8 +3321,8 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_validateconfig",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".validateconfig()"
     },
     {
@@ -3332,8 +3332,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_getcardsize",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".getcardsize()"
     },
     {
@@ -3343,8 +3343,8 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_connectedcallback",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".connectedcallback()"
     },
     {
@@ -3354,8 +3354,8 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_updated",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".updated()"
     },
     {
@@ -3365,8 +3365,8 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_resolvesecondarytext",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".resolvesecondarytext()"
     },
     {
@@ -3376,8 +3376,8 @@
       "source_location": "L186",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_speedcontrol",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._speedcontrol()"
     },
     {
@@ -3387,8 +3387,8 @@
       "source_location": "L192",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_t",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._t()"
     },
     {
@@ -3398,8 +3398,8 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_stop",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._stop()"
     },
     {
@@ -3409,8 +3409,8 @@
       "source_location": "L200",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_fireresolvedaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": ".fireresolvedaction()"
     },
     {
@@ -3420,8 +3420,8 @@
       "source_location": "L224",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_controlflags",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._controlflags()"
     },
     {
@@ -3431,8 +3431,8 @@
       "source_location": "L239",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_renderspeed",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._renderspeed()"
     },
     {
@@ -3442,8 +3442,8 @@
       "source_location": "L297",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_renderpresets",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._renderpresets()"
     },
     {
@@ -3453,8 +3453,8 @@
       "source_location": "L330",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_renderoscillate",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._renderoscillate()"
     },
     {
@@ -3464,8 +3464,8 @@
       "source_location": "L356",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_renderdirection",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._renderdirection()"
     },
     {
@@ -3475,8 +3475,8 @@
       "source_location": "L390",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_rendercontrols",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "._rendercontrols()"
     },
     {
@@ -3486,8 +3486,8 @@
       "source_location": "L408",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_renderactionbody",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".renderactionbody()"
     },
     {
@@ -3497,8 +3497,8 @@
       "source_location": "L418",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_aufancard_render",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".render()"
     },
     {
@@ -3508,8 +3508,8 @@
       "source_location": "L459",
       "_origin": "ast",
       "id": "src_card_fan_card_au_fan_card_htmlelementtagnamemap",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -3519,8 +3519,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_fan_card_fan_card_editor_schema",
-      "community": 35,
-      "community_name": "tokens.ts",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "fan-card-editor-schema.ts"
     },
     {
@@ -3530,8 +3530,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_card_fan_card_fan_card_editor_schema_fancardeditorschema",
-      "community": 35,
-      "community_name": "tokens.ts",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "fancardeditorschema"
     },
     {
@@ -3541,8 +3541,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_card_fan_card_fan_card_editor_schema_fancardeditorlabels",
-      "community": 35,
-      "community_name": "tokens.ts",
+      "community": 85,
+      "community_name": "typescript-eslint",
       "norm_label": "fancardeditorlabels"
     },
     {
@@ -3618,8 +3618,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_light_card_au_light_card",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": "au-light-card.ts"
     },
     {
@@ -3673,8 +3673,8 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "src_card_light_card_au_light_card_aulightcard_getstubconfig",
-      "community": 1,
-      "community_name": "light.ts",
+      "community": 38,
+      "community_name": "._renderChildCard",
       "norm_label": ".getstubconfig()"
     },
     {
@@ -3761,8 +3761,8 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "src_card_light_card_au_light_card_aulightcard_fireresolvedaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": ".fireresolvedaction()"
     },
     {
@@ -3871,8 +3871,8 @@
       "source_location": "L438",
       "_origin": "ast",
       "id": "src_card_light_card_au_light_card_aulightcard_renderactionbody",
-      "community": 1,
-      "community_name": "light.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": ".renderactionbody()"
     },
     {
@@ -3893,8 +3893,8 @@
       "source_location": "L483",
       "_origin": "ast",
       "id": "src_card_light_card_au_light_card_htmlelementtagnamemap",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -4069,8 +4069,8 @@
       "source_location": "L203",
       "_origin": "ast",
       "id": "src_card_room_card_au_room_card_auroomcard_getstubconfig",
-      "community": 38,
-      "community_name": "._renderChildCard",
+      "community": 5,
+      "community_name": "AuRoomCard",
       "norm_label": ".getstubconfig()"
     },
     {
@@ -4080,8 +4080,8 @@
       "source_location": "L213",
       "_origin": "ast",
       "id": "src_card_room_card_au_room_card_auroomcard_validateconfig",
-      "community": 38,
-      "community_name": "._renderChildCard",
+      "community": 5,
+      "community_name": "AuRoomCard",
       "norm_label": ".validateconfig()"
     },
     {
@@ -4113,8 +4113,8 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "src_card_room_card_au_room_card_auroomcard_entities",
-      "community": 54,
-      "community_name": "au-room-card-editor.ts",
+      "community": 5,
+      "community_name": "AuRoomCard",
       "norm_label": "._entities()"
     },
     {
@@ -4553,8 +4553,8 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "src_card_sensor_card_au_sensor_card_ausensorcard_severitylevel",
-      "community": 25,
-      "community_name": "Distribution and HACS Feature",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "._severitylevel()"
     },
     {
@@ -4762,8 +4762,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_card_switch_card_au_switch_card_auswitchcard_fireresolvedaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": ".fireresolvedaction()"
     },
     {
@@ -4905,8 +4905,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_card",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 28,
+      "community_name": "au-vacuum-card.ts",
       "norm_label": "au-vacuum-card.ts"
     },
     {
@@ -5048,8 +5048,8 @@
       "source_location": "L171",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_card_auvacuumcard_fireresolvedaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": ".fireresolvedaction()"
     },
     {
@@ -5092,8 +5092,8 @@
       "source_location": "L354",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_card_htmlelementtagnamemap",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 28,
+      "community_name": "au-vacuum-card.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -5213,8 +5213,8 @@
       "source_location": "L537",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_auvacuumsettingsoverlay_updated",
-      "community": 45,
-      "community_name": "._renderEntry",
+      "community": 41,
+      "community_name": "au-shell-grid",
       "norm_label": ".updated()"
     },
     {
@@ -5246,8 +5246,8 @@
       "source_location": "L556",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_auvacuumsettingsoverlay_rebuildcatalog",
-      "community": 45,
-      "community_name": "._renderEntry",
+      "community": 41,
+      "community_name": "au-shell-grid",
       "norm_label": "._rebuildcatalog()"
     },
     {
@@ -5334,8 +5334,8 @@
       "source_location": "L621",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_auvacuumsettingsoverlay_state",
-      "community": 93,
-      "community_name": "._state",
+      "community": 45,
+      "community_name": "._renderEntry",
       "norm_label": "._state()"
     },
     {
@@ -5345,8 +5345,8 @@
       "source_location": "L625",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_auvacuumsettingsoverlay_vacuum",
-      "community": 93,
-      "community_name": "._state",
+      "community": 45,
+      "community_name": "._renderEntry",
       "norm_label": "._vacuum()"
     },
     {
@@ -5433,8 +5433,8 @@
       "source_location": "L806",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_auvacuumsettingsoverlay_renderstatusstrip",
-      "community": 93,
-      "community_name": "._state",
+      "community": 45,
+      "community_name": "._renderEntry",
       "norm_label": "._renderstatusstrip()"
     },
     {
@@ -5444,8 +5444,8 @@
       "source_location": "L836",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_auvacuumsettingsoverlay_rendersectionbody",
-      "community": 41,
-      "community_name": "au-shell-grid",
+      "community": 58,
+      "community_name": "scripts",
       "norm_label": "._rendersectionbody()"
     },
     {
@@ -5466,8 +5466,8 @@
       "source_location": "L911",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_auvacuumsettingsoverlay_renderrooms",
-      "community": 41,
-      "community_name": "au-shell-grid",
+      "community": 58,
+      "community_name": "scripts",
       "norm_label": "._renderrooms()"
     },
     {
@@ -5587,8 +5587,8 @@
       "source_location": "L1275",
       "_origin": "ast",
       "id": "src_card_vacuum_card_au_vacuum_settings_overlay_ensurevacuumsettingsoverlay",
-      "community": 55,
-      "community_name": "Feature: Card contract",
+      "community": 28,
+      "community_name": "au-vacuum-card.ts",
       "norm_label": "ensurevacuumsettingsoverlay()"
     },
     {
@@ -5631,8 +5631,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_au_climate_selectors",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "au-climate-selectors.ts"
     },
     {
@@ -5642,8 +5642,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_components_au_climate_selectors_selectorpanel",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "selectorpanel"
     },
     {
@@ -5708,8 +5708,8 @@
       "source_location": "L244",
       "_origin": "ast",
       "id": "src_components_au_climate_selectors_auclimateselectors_connectedcallback",
-      "community": 68,
-      "community_name": "package.json",
+      "community": 95,
+      "community_name": "bindStopBubble",
       "norm_label": ".connectedcallback()"
     },
     {
@@ -5829,8 +5829,8 @@
       "source_location": "L436",
       "_origin": "ast",
       "id": "src_components_au_climate_selectors_htmlelementtagnamemap",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 54,
+      "community_name": "au-room-card-editor.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -5840,8 +5840,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_au_fan_speed_selector",
-      "community": 68,
-      "community_name": "package.json",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "au-fan-speed-selector.ts"
     },
     {
@@ -5906,8 +5906,8 @@
       "source_location": "L213",
       "_origin": "ast",
       "id": "src_components_au_fan_speed_selector_aufanspeedselector_connectedcallback",
-      "community": 68,
-      "community_name": "package.json",
+      "community": 95,
+      "community_name": "bindStopBubble",
       "norm_label": ".connectedcallback()"
     },
     {
@@ -5994,8 +5994,8 @@
       "source_location": "L333",
       "_origin": "ast",
       "id": "src_components_au_fan_speed_selector_htmlelementtagnamemap",
-      "community": 68,
-      "community_name": "package.json",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -6005,8 +6005,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_au_light_slider",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 68,
+      "community_name": "package.json",
       "norm_label": "au-light-slider.ts"
     },
     {
@@ -6016,8 +6016,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_components_au_light_slider_aulightslidervariant",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 68,
+      "community_name": "package.json",
       "norm_label": "aulightslidervariant"
     },
     {
@@ -6060,8 +6060,8 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "src_components_au_light_slider_aulightslider_connectedcallback",
-      "community": 68,
-      "community_name": "package.json",
+      "community": 95,
+      "community_name": "bindStopBubble",
       "norm_label": ".connectedcallback()"
     },
     {
@@ -6192,8 +6192,8 @@
       "source_location": "L224",
       "_origin": "ast",
       "id": "src_components_au_light_slider_htmlelementtagnamemap",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 68,
+      "community_name": "package.json",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -6258,8 +6258,8 @@
       "source_location": "L200",
       "_origin": "ast",
       "id": "src_components_au_temp_stepper_autempstepper_connectedcallback",
-      "community": 68,
-      "community_name": "package.json",
+      "community": 95,
+      "community_name": "bindStopBubble",
       "norm_label": ".connectedcallback()"
     },
     {
@@ -6489,8 +6489,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_core_action_card",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "action-card.ts"
     },
     {
@@ -6511,8 +6511,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_core_action_card_actionsurfaceoptions",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "actionsurfaceoptions"
     },
     {
@@ -6731,8 +6731,8 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "src_core_action_card_auactioncardbase_tapaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": ".tapaction()"
     },
     {
@@ -6742,8 +6742,8 @@
       "source_location": "L200",
       "_origin": "ast",
       "id": "src_core_action_card_auactioncardbase_holdaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": ".holdaction()"
     },
     {
@@ -6753,8 +6753,8 @@
       "source_location": "L204",
       "_origin": "ast",
       "id": "src_core_action_card_auactioncardbase_doubletapaction",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": ".doubletapaction()"
     },
     {
@@ -6951,8 +6951,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_core_base_card_aubasecard",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": "aubasecard"
     },
     {
@@ -6962,8 +6962,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_core_base_card_ts_property",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": "property"
     },
     {
@@ -6973,8 +6973,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_core_base_card_ts_state",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": "state"
     },
     {
@@ -6984,8 +6984,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_core_base_card_aubasecard_setconfig",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": ".setconfig()"
     },
     {
@@ -6995,8 +6995,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_core_base_card_aubasecard_watchedentities",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": ".watchedentities()"
     },
     {
@@ -7017,8 +7017,8 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "src_core_base_card_aubasecard_registerteardown",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": ".registerteardown()"
     },
     {
@@ -7028,8 +7028,8 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "src_core_base_card_aubasecard_disconnectedcallback",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": ".disconnectedcallback()"
     },
     {
@@ -7039,8 +7039,8 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "src_core_base_card_aubasecard_getcardsize",
-      "community": 90,
-      "community_name": "AuVacuumSettingsSection",
+      "community": 29,
+      "community_name": "au-vacuum-settings-overlay.ts",
       "norm_label": ".getcardsize()"
     },
     {
@@ -7314,8 +7314,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_localize_localize_localize",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 44,
+      "community_name": "action-tile-layout.ts",
       "norm_label": "localize()"
     },
     {
@@ -7732,8 +7732,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_walkancestors",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 96,
+      "community_name": "._detectHaDashboardEditing",
       "norm_label": "walkancestors()"
     },
     {
@@ -7820,8 +7820,8 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_getconfigelement",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": ".getconfigelement()"
     },
     {
@@ -7875,8 +7875,8 @@
       "source_location": "L507",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_shouldupdate",
-      "community": 67,
-      "community_name": "Phase 2 Security and Runtime",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": ".shouldupdate()"
     },
     {
@@ -7886,8 +7886,8 @@
       "source_location": "L529",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_willupdate",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": ".willupdate()"
     },
     {
@@ -7897,8 +7897,8 @@
       "source_location": "L541",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_isediturl",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 96,
+      "community_name": "._detectHaDashboardEditing",
       "norm_label": "._isediturl()"
     },
     {
@@ -7908,8 +7908,8 @@
       "source_location": "L550",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_findclosestlovelace",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 96,
+      "community_name": "._detectHaDashboardEditing",
       "norm_label": "._findclosestlovelace()"
     },
     {
@@ -7919,8 +7919,8 @@
       "source_location": "L568",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_detecthadashboardediting",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 96,
+      "community_name": "._detectHaDashboardEditing",
       "norm_label": "._detecthadashboardediting()"
     },
     {
@@ -8007,8 +8007,8 @@
       "source_location": "L671",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_distributerowsactive",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._distributerowsactive()"
     },
     {
@@ -8018,8 +8018,8 @@
       "source_location": "L684",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_synchadashboardediting",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 92,
+      "community_name": "Calendar Card",
       "norm_label": "._synchadashboardediting()"
     },
     {
@@ -8029,8 +8029,8 @@
       "source_location": "L703",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_defaultwidth",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "._defaultwidth()"
     },
     {
@@ -8040,8 +8040,8 @@
       "source_location": "L708",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_rebuild",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "._rebuild()"
     },
     {
@@ -8051,8 +8051,8 @@
       "source_location": "L761",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_forwardhass",
-      "community": 67,
-      "community_name": "Phase 2 Security and Runtime",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._forwardhass()"
     },
     {
@@ -8073,8 +8073,8 @@
       "source_location": "L787",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_resolveconfigpath",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "._resolveconfigpath()"
     },
     {
@@ -8084,8 +8084,8 @@
       "source_location": "L798",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_save",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 92,
+      "community_name": "Calendar Card",
       "norm_label": "._save()"
     },
     {
@@ -8106,8 +8106,8 @@
       "source_location": "L812",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_persisttodashboard",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "._persisttodashboard()"
     },
     {
@@ -8117,8 +8117,8 @@
       "source_location": "L866",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_metrics",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._metrics()"
     },
     {
@@ -8128,8 +8128,8 @@
       "source_location": "L903",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_ondragstart",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._ondragstart()"
     },
     {
@@ -8161,8 +8161,8 @@
       "source_location": "L946",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_onresizestart",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._onresizestart()"
     },
     {
@@ -8194,8 +8194,8 @@
       "source_location": "L988",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_onremove",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._onremove()"
     },
     {
@@ -8205,8 +8205,8 @@
       "source_location": "L1003",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_opencontentedit",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._opencontentedit()"
     },
     {
@@ -8216,8 +8216,8 @@
       "source_location": "L1026",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_applycontentedit",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._applycontentedit()"
     },
     {
@@ -8227,8 +8227,8 @@
       "source_location": "L1040",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_closecontentedit",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 92,
+      "community_name": "Calendar Card",
       "norm_label": "._closecontentedit()"
     },
     {
@@ -8238,8 +8238,8 @@
       "source_location": "L1047",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_openaddcard",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 92,
+      "community_name": "Calendar Card",
       "norm_label": "._openaddcard()"
     },
     {
@@ -8249,8 +8249,8 @@
       "source_location": "L1057",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_closeaddcard",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 92,
+      "community_name": "Calendar Card",
       "norm_label": "._closeaddcard()"
     },
     {
@@ -8260,8 +8260,8 @@
       "source_location": "L1062",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_preparecardpicker",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 92,
+      "community_name": "Calendar Card",
       "norm_label": "._preparecardpicker()"
     },
     {
@@ -8271,8 +8271,8 @@
       "source_location": "L1069",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_pickfallbackcard",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 31,
+      "community_name": "._placeFloorCard",
       "norm_label": "._pickfallbackcard()"
     },
     {
@@ -8282,8 +8282,8 @@
       "source_location": "L1073",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_handlecardpicked",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "._handlecardpicked()"
     },
     {
@@ -8293,8 +8293,8 @@
       "source_location": "L1080",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_nextitemid",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "._nextitemid()"
     },
     {
@@ -8304,8 +8304,8 @@
       "source_location": "L1095",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_oncardpicked",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "._oncardpicked()"
     },
     {
@@ -8326,8 +8326,8 @@
       "source_location": "L1130",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_rendercell",
-      "community": 85,
-      "community_name": "typescript-eslint",
+      "community": 7,
+      "community_name": "AuShellGrid",
       "norm_label": "._rendercell()"
     },
     {
@@ -8348,8 +8348,8 @@
       "source_location": "L1204",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_pickerlovelace",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 31,
+      "community_name": "._placeFloorCard",
       "norm_label": "._pickerlovelace()"
     },
     {
@@ -8359,8 +8359,8 @@
       "source_location": "L1211",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_grid_aushellgrid_renderaddcardmodal",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 31,
+      "community_name": "._placeFloorCard",
       "norm_label": "._renderaddcardmodal()"
     },
     {
@@ -8392,8 +8392,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "au-shell-home-view.ts"
     },
     {
@@ -8403,8 +8403,8 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_cardeditormode",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "cardeditormode"
     },
     {
@@ -8414,8 +8414,8 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_navview",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "navview"
     },
     {
@@ -8667,8 +8667,8 @@
       "source_location": "L407",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_cleareditsession",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._cleareditsession()"
     },
     {
@@ -8678,8 +8678,8 @@
       "source_location": "L429",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_editlayoutopts",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._editlayoutopts()"
     },
     {
@@ -8689,8 +8689,8 @@
       "source_location": "L443",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_synceditsession",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._synceditsession()"
     },
     {
@@ -8733,8 +8733,8 @@
       "source_location": "L509",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_findentityconfig",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 11,
+      "community_name": "au-cover-card.ts",
       "norm_label": "._findentityconfig()"
     },
     {
@@ -9030,8 +9030,8 @@
       "source_location": "L820",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_closecardeditor",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._closecardeditor()"
     },
     {
@@ -9261,8 +9261,8 @@
       "source_location": "L1385",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_closeeditroom",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._closeeditroom()"
     },
     {
@@ -9272,8 +9272,8 @@
       "source_location": "L1390",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_patcheditroomdraft",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._patcheditroomdraft()"
     },
     {
@@ -9283,8 +9283,8 @@
       "source_location": "L1395",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_confirmeditroom",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._confirmeditroom()"
     },
     {
@@ -9294,8 +9294,8 @@
       "source_location": "L1428",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_addeditroommember",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._addeditroommember()"
     },
     {
@@ -9305,8 +9305,8 @@
       "source_location": "L1435",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_toggleeditroomentity",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._toggleeditroomentity()"
     },
     {
@@ -9316,8 +9316,8 @@
       "source_location": "L1441",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_moveeditroommember",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._moveeditroommember()"
     },
     {
@@ -9327,8 +9327,8 @@
       "source_location": "L1447",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_findcardconfig",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 11,
+      "community_name": "au-cover-card.ts",
       "norm_label": "._findcardconfig()"
     },
     {
@@ -9349,8 +9349,8 @@
       "source_location": "L1472",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_syncentitychildcards",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 11,
+      "community_name": "au-cover-card.ts",
       "norm_label": "._syncentitychildcards()"
     },
     {
@@ -9393,8 +9393,8 @@
       "source_location": "L1543",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_istoggledomain",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._istoggledomain()"
     },
     {
@@ -9404,8 +9404,8 @@
       "source_location": "L1547",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_entityison",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "._entityison()"
     },
     {
@@ -9591,8 +9591,8 @@
       "source_location": "L1684",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_childconfig",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 11,
+      "community_name": "au-cover-card.ts",
       "norm_label": "._childconfig()"
     },
     {
@@ -9668,8 +9668,8 @@
       "source_location": "L1768",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_rendercardeditormodal",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._rendercardeditormodal()"
     },
     {
@@ -9712,8 +9712,8 @@
       "source_location": "L1860",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_multientitykey",
-      "community": 0,
-      "community_name": "AuShellHomeView",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "._multientitykey()"
     },
     {
@@ -9723,8 +9723,8 @@
       "source_location": "L1868",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_findmultientitygroup",
-      "community": 0,
-      "community_name": "AuShellHomeView",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "._findmultientitygroup()"
     },
     {
@@ -9734,8 +9734,8 @@
       "source_location": "L1879",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_multientitycardconfig",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "._multientitycardconfig()"
     },
     {
@@ -9745,8 +9745,8 @@
       "source_location": "L1907",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_onmultientityheader",
-      "community": 0,
-      "community_name": "AuShellHomeView",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "._onmultientityheader()"
     },
     {
@@ -9756,8 +9756,8 @@
       "source_location": "L1922",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_rendermultientity",
-      "community": 0,
-      "community_name": "AuShellHomeView",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "._rendermultientity()"
     },
     {
@@ -9800,8 +9800,8 @@
       "source_location": "L2040",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_editroomaddcandidates",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._editroomaddcandidates()"
     },
     {
@@ -9811,8 +9811,8 @@
       "source_location": "L2061",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_rendereditroommodal",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._rendereditroommodal()"
     },
     {
@@ -9833,8 +9833,8 @@
       "source_location": "L2103",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_aushellhomeview_renderaddroommodal",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "._renderaddroommodal()"
     },
     {
@@ -9888,8 +9888,8 @@
       "source_location": "L2287",
       "_origin": "ast",
       "id": "src_template_shell_grid_au_shell_home_view_htmlelementtagnamemap",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "htmlelementtagnamemap"
     },
     {
@@ -9899,8 +9899,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_template_shell_grid_config_persist",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "config-persist.ts"
     },
     {
@@ -9910,8 +9910,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_template_shell_grid_config_persist_gridpersistitem",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "gridpersistitem"
     },
     {
@@ -9921,8 +9921,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_template_shell_grid_config_persist_buildpersistedgridconfig",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "buildpersistedgridconfig()"
     },
     {
@@ -9932,8 +9932,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_template_shell_grid_config_persist_buildpersistedhomeconfig",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "buildpersistedhomeconfig()"
     },
     {
@@ -9943,8 +9943,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_template_shell_grid_config_persist_applygridtolovelaceconfig",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "applygridtolovelaceconfig()"
     },
     {
@@ -9998,8 +9998,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_template_shell_grid_create_child_card_createchildcard",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "createchildcard()"
     },
     {
@@ -10009,8 +10009,8 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "src_template_shell_grid_create_child_card_ensurecardpickerloaded",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 92,
+      "community_name": "Calendar Card",
       "norm_label": "ensurecardpickerloaded()"
     },
     {
@@ -10295,8 +10295,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_child_config_homeawarecardconfig",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 6,
+      "community_name": "home-edit-room-modal.ts",
       "norm_label": "homeawarecardconfig()"
     },
     {
@@ -10350,8 +10350,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_child_host",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "home-child-host.ts"
     },
     {
@@ -10361,8 +10361,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_child_host_childcardmaps",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "childcardmaps"
     },
     {
@@ -10372,8 +10372,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_child_host_mountchildcard",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 11,
+      "community_name": "au-cover-card.ts",
       "norm_label": "mountchildcard()"
     },
     {
@@ -10383,8 +10383,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_child_host_attachchildtohost",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "attachchildtohost()"
     },
     {
@@ -10394,8 +10394,8 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_child_host_prunechildcards",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "prunechildcards()"
     },
     {
@@ -10515,8 +10515,8 @@
       "source_location": "L183",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_drag_resize_homegridstylevars",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 19,
+      "community_name": "grid-engine.ts",
       "norm_label": "homegridstylevars()"
     },
     {
@@ -10592,8 +10592,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_edit_room_modal_buildeditroomdraft",
-      "community": 16,
-      "community_name": "HomeAssistant",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "buildeditroomdraft()"
     },
     {
@@ -10680,8 +10680,8 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_edit_room_modal_editroommodalprops",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 24,
+      "community_name": "au-shell-grid.ts",
       "norm_label": "editroommodalprops"
     },
     {
@@ -10724,8 +10724,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_edit_session_emptyeditsessiondraft",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "emptyeditsessiondraft()"
     },
     {
@@ -10746,8 +10746,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_edit_session_beginroomeditdraft",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "beginroomeditdraft()"
     },
     {
@@ -10779,8 +10779,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_grid_items_buildroomgriditems",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "buildroomgriditems()"
     },
     {
@@ -10911,8 +10911,8 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_picker_modals_rendercardeditormodal",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "rendercardeditormodal()"
     },
     {
@@ -10933,8 +10933,8 @@
       "source_location": "L280",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_picker_modals_renderaddroommodal",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 0,
+      "community_name": "AuShellHomeView",
       "norm_label": "renderaddroommodal()"
     },
     {
@@ -10944,8 +10944,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_view_styles",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "home-view-styles.ts"
     },
     {
@@ -10955,8 +10955,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_template_shell_grid_home_view_styles_homeviewstyles",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "homeviewstyles"
     },
     {
@@ -10966,8 +10966,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_template_shell_grid_room_controls",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "room-controls.ts"
     },
     {
@@ -10977,8 +10977,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_template_shell_grid_room_controls_istoggledomain",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "istoggledomain()"
     },
     {
@@ -10988,8 +10988,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_template_shell_grid_room_controls_entityidfromhomecard",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "entityidfromhomecard()"
     },
     {
@@ -10999,8 +10999,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_template_shell_grid_room_controls_collectroomtoggleentities",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "collectroomtoggleentities()"
     },
     {
@@ -11010,8 +11010,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "src_template_shell_grid_room_controls_entityison",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "entityison()"
     },
     {
@@ -11021,8 +11021,8 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_template_shell_grid_room_controls_resolveroomcontrols",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "resolveroomcontrols()"
     },
     {
@@ -11032,8 +11032,8 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "src_template_shell_grid_room_controls_roomcontrolentities",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "roomcontrolentities()"
     },
     {
@@ -11142,8 +11142,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_types_action_actionconfig",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "actionconfig"
     },
     {
@@ -11197,8 +11197,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_types_calendar_aucalendarview",
-      "community": 13,
-      "community_name": "AuCalendarCard",
+      "community": 17,
+      "community_name": "au-calendar-card-editor.ts",
       "norm_label": "aucalendarview"
     },
     {
@@ -11285,8 +11285,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "src_types_calendar_normalizecalendarentities",
-      "community": 33,
-      "community_name": "create-child-card.ts",
+      "community": 17,
+      "community_name": "au-calendar-card-editor.ts",
       "norm_label": "normalizecalendarentities()"
     },
     {
@@ -11296,8 +11296,8 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "src_types_calendar_isaucalendarview",
-      "community": 33,
-      "community_name": "create-child-card.ts",
+      "community": 17,
+      "community_name": "au-calendar-card-editor.ts",
       "norm_label": "isaucalendarview()"
     },
     {
@@ -11307,8 +11307,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types_climate",
-      "community": 38,
-      "community_name": "._renderChildCard",
+      "community": 14,
+      "community_name": "HassEntity",
       "norm_label": "climate.ts"
     },
     {
@@ -11329,8 +11329,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_types_climate_hvacaction",
-      "community": 38,
-      "community_name": "._renderChildCard",
+      "community": 14,
+      "community_name": "HassEntity",
       "norm_label": "hvacaction"
     },
     {
@@ -11340,8 +11340,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_types_climate_auclimatecardconfig",
-      "community": 38,
-      "community_name": "._renderChildCard",
+      "community": 14,
+      "community_name": "HassEntity",
       "norm_label": "auclimatecardconfig"
     },
     {
@@ -11373,8 +11373,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_types_config_augridcardconfig",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 38,
+      "community_name": "._renderChildCard",
       "norm_label": "augridcardconfig"
     },
     {
@@ -11428,8 +11428,8 @@
       "source_location": "L186",
       "_origin": "ast",
       "id": "src_types_config_ausensorcardconfig",
-      "community": 25,
-      "community_name": "Distribution and HACS Feature",
+      "community": 38,
+      "community_name": "._renderChildCard",
       "norm_label": "ausensorcardconfig"
     },
     {
@@ -11516,8 +11516,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types_home_assistant",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "home-assistant.ts"
     },
     {
@@ -11527,8 +11527,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassentityattributebase",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "hassentityattributebase"
     },
     {
@@ -11538,8 +11538,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassentity",
-      "community": 27,
-      "community_name": "AuDeviceCard",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "hassentity"
     },
     {
@@ -11549,8 +11549,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassthemes",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "hassthemes"
     },
     {
@@ -11560,8 +11560,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassuser",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "hassuser"
     },
     {
@@ -11571,8 +11571,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassarea",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "hassarea"
     },
     {
@@ -11582,8 +11582,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassfloor",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "hassfloor"
     },
     {
@@ -11593,8 +11593,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassdevice",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "hassdevice"
     },
     {
@@ -11604,8 +11604,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "src_types_home_assistant_hassentityregistryentry",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 41,
+      "community_name": "au-shell-grid",
       "norm_label": "hassentityregistryentry"
     },
     {
@@ -11615,8 +11615,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "src_types_home_assistant_homeassistant",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 24,
+      "community_name": "au-shell-grid.ts",
       "norm_label": "homeassistant"
     },
     {
@@ -11637,8 +11637,8 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "src_types_home_assistant_homeassistant_callws",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 24,
+      "community_name": "au-shell-grid.ts",
       "norm_label": ".callws()"
     },
     {
@@ -11648,8 +11648,8 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "src_types_home_assistant_homeassistant_callapi",
-      "community": 61,
-      "community_name": "au-fan-card-editor.ts",
+      "community": 24,
+      "community_name": "au-shell-grid.ts",
       "norm_label": ".callapi()"
     },
     {
@@ -11659,8 +11659,8 @@
       "source_location": "L149",
       "_origin": "ast",
       "id": "src_types_home_assistant_lovelacecardconfig",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 38,
+      "community_name": "._renderChildCard",
       "norm_label": "lovelacecardconfig"
     },
     {
@@ -11681,8 +11681,8 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "src_types_home_assistant_lovelace",
-      "community": 7,
-      "community_name": "AuShellGrid",
+      "community": 96,
+      "community_name": "._detectHaDashboardEditing",
       "norm_label": "lovelace"
     },
     {
@@ -11692,8 +11692,8 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "src_types_home_assistant_lovelacecard",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": "lovelacecard"
     },
     {
@@ -11703,8 +11703,8 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "src_types_home_assistant_lovelacecard_setconfig",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": ".setconfig()"
     },
     {
@@ -11714,8 +11714,8 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "src_types_home_assistant_lovelacecard_getcardsize",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 36,
+      "community_name": "home-assistant.ts",
       "norm_label": ".getcardsize()"
     },
     {
@@ -11725,8 +11725,8 @@
       "source_location": "L193",
       "_origin": "ast",
       "id": "src_types_home_assistant_lovelacecardeditor",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "lovelacecardeditor"
     },
     {
@@ -11736,8 +11736,8 @@
       "source_location": "L197",
       "_origin": "ast",
       "id": "src_types_home_assistant_lovelacecardeditor_setconfig",
-      "community": 31,
-      "community_name": "._placeFloorCard",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": ".setconfig()"
     },
     {
@@ -11747,8 +11747,8 @@
       "source_location": "L201",
       "_origin": "ast",
       "id": "src_types_home_assistant_customcardentry",
-      "community": 25,
-      "community_name": "Distribution and HACS Feature",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "customcardentry"
     },
     {
@@ -11758,8 +11758,8 @@
       "source_location": "L210",
       "_origin": "ast",
       "id": "src_types_home_assistant_window",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "window"
     },
     {
@@ -11813,8 +11813,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_types_home_auhomecardconfig",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "auhomecardconfig"
     },
     {
@@ -11824,8 +11824,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "src_types_home_auhomeroomcontrolsconfig",
-      "community": 57,
-      "community_name": "water-heater-timer.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "auhomeroomcontrolsconfig"
     },
     {
@@ -11879,8 +11879,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_types_light_lightcolormode",
-      "community": 1,
-      "community_name": "light.ts",
+      "community": 38,
+      "community_name": "._renderChildCard",
       "norm_label": "lightcolormode"
     },
     {
@@ -12154,8 +12154,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_areas",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 93,
+      "community_name": "._state",
       "norm_label": "areas.ts"
     },
     {
@@ -12165,8 +12165,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_utils_areas_entitiesforarea",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 93,
+      "community_name": "._state",
       "norm_label": "entitiesforarea()"
     },
     {
@@ -12176,8 +12176,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_utils_areas_mergeareaentities",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 93,
+      "community_name": "._state",
       "norm_label": "mergeareaentities()"
     },
     {
@@ -12187,8 +12187,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_utils_areas_discoverfloorsfromareas",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 93,
+      "community_name": "._state",
       "norm_label": "discoverfloorsfromareas()"
     },
     {
@@ -12198,8 +12198,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "src_utils_areas_normalizefloors",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 93,
+      "community_name": "._state",
       "norm_label": "normalizefloors()"
     },
     {
@@ -12209,8 +12209,8 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_utils_areas_findroom",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 11,
+      "community_name": "au-cover-card.ts",
       "norm_label": "findroom()"
     },
     {
@@ -12451,8 +12451,8 @@
       "source_location": "L357",
       "_origin": "ast",
       "id": "src_utils_calendar_formateventtimerange",
-      "community": 13,
-      "community_name": "AuCalendarCard",
+      "community": 20,
+      "community_name": "home-child-config.ts",
       "norm_label": "formateventtimerange()"
     },
     {
@@ -12462,8 +12462,8 @@
       "source_location": "L373",
       "_origin": "ast",
       "id": "src_utils_calendar_formatdayheader",
-      "community": 33,
-      "community_name": "create-child-card.ts",
+      "community": 20,
+      "community_name": "home-child-config.ts",
       "norm_label": "formatdayheader()"
     },
     {
@@ -12495,8 +12495,8 @@
       "source_location": "L412",
       "_origin": "ast",
       "id": "src_utils_calendar_issamelocalday",
-      "community": 33,
-      "community_name": "create-child-card.ts",
+      "community": 13,
+      "community_name": "AuCalendarCard",
       "norm_label": "issamelocalday()"
     },
     {
@@ -13045,8 +13045,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_debug",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": "debug.ts"
     },
     {
@@ -13056,8 +13056,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_utils_debug_audebug",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": "audebug()"
     },
     {
@@ -13067,8 +13067,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_device",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "device.ts"
     },
     {
@@ -13078,8 +13078,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_utils_device_dedicated_card_domains",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "dedicated_card_domains"
     },
     {
@@ -13089,8 +13089,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_utils_device_issupporteddevicedomain",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "issupporteddevicedomain()"
     },
     {
@@ -13100,8 +13100,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_utils_device_resolvecardtypeforentity",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "resolvecardtypeforentity()"
     },
     {
@@ -13111,8 +13111,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_utils_device_devicecapabilities",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "devicecapabilities"
     },
     {
@@ -13122,8 +13122,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_utils_device_getdevicecapabilities",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "getdevicecapabilities()"
     },
     {
@@ -13133,8 +13133,8 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "src_utils_device_isdeviceactive",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "isdeviceactive()"
     },
     {
@@ -13144,8 +13144,8 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "src_utils_device_explicit_on_off_domains",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "explicit_on_off_domains"
     },
     {
@@ -13155,8 +13155,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "src_utils_device_usesexplicitonoff",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "usesexplicitonoff()"
     },
     {
@@ -13177,8 +13177,8 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "src_utils_device_runprimarydeviceaction",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "runprimarydeviceaction()"
     },
     {
@@ -13188,8 +13188,8 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "src_utils_device_slugify",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 93,
+      "community_name": "._state",
       "norm_label": "slugify()"
     },
     {
@@ -13265,8 +13265,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_domain_icons",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "domain-icons.ts"
     },
     {
@@ -13276,8 +13276,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_utils_domain_icons_controlicon",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "controlicon()"
     },
     {
@@ -13298,8 +13298,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_utils_domains_supported_device_domains",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "supported_device_domains"
     },
     {
@@ -13386,8 +13386,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_utils_entity_computedomain",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "computedomain()"
     },
     {
@@ -13441,8 +13441,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_utils_entity_isentityoffline",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": "isentityoffline()"
     },
     {
@@ -13474,8 +13474,8 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "src_utils_entity_istoggleableentity",
-      "community": 26,
-      "community_name": "device.ts",
+      "community": 10,
+      "community_name": "index.ts",
       "norm_label": "istoggleableentity()"
     },
     {
@@ -13507,8 +13507,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_fan",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "fan.ts"
     },
     {
@@ -13518,8 +13518,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_utils_fan_fan_support",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "fan_support"
     },
     {
@@ -13529,8 +13529,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_utils_fan_fancapabilities",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "fancapabilities"
     },
     {
@@ -13540,8 +13540,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_utils_fan_validatefanentity",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "validatefanentity()"
     },
     {
@@ -13551,8 +13551,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_utils_fan_getfancapabilities",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "getfancapabilities()"
     },
     {
@@ -13562,8 +13562,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "src_utils_fan_getfanpercentage",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "getfanpercentage()"
     },
     {
@@ -13573,8 +13573,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_utils_fan_getfanspeedlevels",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "getfanspeedlevels()"
     },
     {
@@ -13584,8 +13584,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "src_utils_fan_formatfanspeedlabel",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "formatfanspeedlabel()"
     },
     {
@@ -13595,8 +13595,8 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "src_utils_fan_getfanspeedicon",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "getfanspeedicon()"
     },
     {
@@ -13606,8 +13606,8 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "src_utils_fan_getfanpresetmode",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "getfanpresetmode()"
     },
     {
@@ -13617,8 +13617,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "src_utils_fan_isfanoscillating",
-      "community": 36,
-      "community_name": "home-assistant.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "isfanoscillating()"
     },
     {
@@ -13628,8 +13628,8 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "src_utils_fan_getfandirection",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "getfandirection()"
     },
     {
@@ -13639,8 +13639,8 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "src_utils_fan_formatfansecondary",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "formatfansecondary()"
     },
     {
@@ -13650,8 +13650,8 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "src_utils_fan_setfanpercentage",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "setfanpercentage()"
     },
     {
@@ -13661,8 +13661,8 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "src_utils_fan_setfanpresetmode",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "setfanpresetmode()"
     },
     {
@@ -13672,8 +13672,8 @@
       "source_location": "L165",
       "_origin": "ast",
       "id": "src_utils_fan_setfanoscillate",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "setfanoscillate()"
     },
     {
@@ -13683,8 +13683,8 @@
       "source_location": "L176",
       "_origin": "ast",
       "id": "src_utils_fan_setfandirection",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "setfandirection()"
     },
     {
@@ -13694,8 +13694,8 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "src_utils_fan_togglefan",
-      "community": 26,
-      "community_name": "device.ts",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "togglefan()"
     },
     {
@@ -13782,8 +13782,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_utils_format_clock_formatclock",
-      "community": 13,
-      "community_name": "AuCalendarCard",
+      "community": 60,
+      "community_name": "format-clock.ts",
       "norm_label": "formatclock()"
     },
     {
@@ -14134,8 +14134,8 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "src_utils_light_getlightbrightness",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": "getlightbrightness()"
     },
     {
@@ -14145,8 +14145,8 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "src_utils_light_islighton",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": "islighton()"
     },
     {
@@ -14310,8 +14310,8 @@
       "source_location": "L257",
       "_origin": "ast",
       "id": "src_utils_light_togglelight",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": "togglelight()"
     },
     {
@@ -14365,8 +14365,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_pending_control",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": "pending-control.ts"
     },
     {
@@ -14376,8 +14376,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": "pendingcontrol"
     },
     {
@@ -14387,8 +14387,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol_value",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 64,
+      "community_name": "Implementation: Room idle timeout",
       "norm_label": ".value()"
     },
     {
@@ -14398,8 +14398,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol_dragging",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": ".dragging()"
     },
     {
@@ -14409,8 +14409,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol_set",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": ".set()"
     },
     {
@@ -14420,8 +14420,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol_begindrag",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": ".begindrag()"
     },
     {
@@ -14431,8 +14431,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol_enddrag",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": ".enddrag()"
     },
     {
@@ -14442,8 +14442,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol_clearunlessdragging",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": ".clearunlessdragging()"
     },
     {
@@ -14453,8 +14453,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_utils_pending_control_pendingcontrol_clear",
-      "community": 14,
-      "community_name": "HassEntity",
+      "community": 1,
+      "community_name": "light.ts",
       "norm_label": ".clear()"
     },
     {
@@ -14464,8 +14464,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "pointer-gestures.ts"
     },
     {
@@ -14475,8 +14475,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_gesturekind",
-      "community": 10,
-      "community_name": "index.ts",
+      "community": 62,
+      "community_name": "au-switch-card-editor.ts",
       "norm_label": "gesturekind"
     },
     {
@@ -14486,8 +14486,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_pointergesturecallbacks",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "pointergesturecallbacks"
     },
     {
@@ -14497,8 +14497,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_pointergesturestate",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "pointergesturestate"
     },
     {
@@ -14508,8 +14508,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_createpointergesturestate",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "createpointergesturestate()"
     },
     {
@@ -14519,8 +14519,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_clearholdtimer",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "clearholdtimer()"
     },
     {
@@ -14530,8 +14530,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_cleartaptimer",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "cleartaptimer()"
     },
     {
@@ -14541,8 +14541,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_handlegesturepointerdown",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "handlegesturepointerdown()"
     },
     {
@@ -14552,8 +14552,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_handlegesturepointerup",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "handlegesturepointerup()"
     },
     {
@@ -14563,8 +14563,8 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "src_utils_pointer_gestures_handlegesturepointercancel",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "handlegesturepointercancel()"
     },
     {
@@ -14673,8 +14673,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_utils_stop_bubble_bindstopbubble",
-      "community": 68,
-      "community_name": "package.json",
+      "community": 95,
+      "community_name": "bindStopBubble",
       "norm_label": "bindstopbubble()"
     },
     {
@@ -14750,8 +14750,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_sync_debug",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "sync-debug.ts"
     },
     {
@@ -14761,8 +14761,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_utils_sync_debug_entitysyncsnapshot",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "entitysyncsnapshot"
     },
     {
@@ -14772,8 +14772,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_utils_sync_debug_entitydisplayon",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "entitydisplayon()"
     },
     {
@@ -14783,8 +14783,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_utils_sync_debug_captureentitysync",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "captureentitysync()"
     },
     {
@@ -14794,8 +14794,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_utils_sync_debug_logentitysync",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 26,
+      "community_name": "device.ts",
       "norm_label": "logentitysync()"
     },
     {
@@ -14805,8 +14805,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_touch_click",
-      "community": 5,
-      "community_name": "AuRoomCard",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "touch-click.ts"
     },
     {
@@ -14816,8 +14816,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_utils_touch_click_recentactivate",
-      "community": 5,
-      "community_name": "AuRoomCard",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "recentactivate"
     },
     {
@@ -14827,8 +14827,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_utils_touch_click_markactivated",
-      "community": 5,
-      "community_name": "AuRoomCard",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "markactivated()"
     },
     {
@@ -14838,8 +14838,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_utils_touch_click_activateonce",
-      "community": 5,
-      "community_name": "AuRoomCard",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "activateonce()"
     },
     {
@@ -14893,8 +14893,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_utils_vacuum_device_catalog_vacuumdevicecatalog",
-      "community": 41,
-      "community_name": "au-shell-grid",
+      "community": 58,
+      "community_name": "scripts",
       "norm_label": "vacuumdevicecatalog"
     },
     {
@@ -14981,8 +14981,8 @@
       "source_location": "L305",
       "_origin": "ast",
       "id": "src_utils_vacuum_device_catalog_filtercatalogsections",
-      "community": 45,
-      "community_name": "._renderEntry",
+      "community": 41,
+      "community_name": "au-shell-grid",
       "norm_label": "filtercatalogsections()"
     },
     {
@@ -15003,8 +15003,8 @@
       "source_location": "L335",
       "_origin": "ast",
       "id": "src_utils_vacuum_device_catalog_roomdisplayname",
-      "community": 41,
-      "community_name": "au-shell-grid",
+      "community": 58,
+      "community_name": "scripts",
       "norm_label": "roomdisplayname()"
     },
     {
@@ -15058,8 +15058,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_vacuum_settings_draft",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 64,
+      "community_name": "Implementation: Room idle timeout",
       "norm_label": "vacuum-settings-draft.ts"
     },
     {
@@ -15069,8 +15069,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_utils_vacuum_settings_draft_vacuumdraftvalue",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 64,
+      "community_name": "Implementation: Room idle timeout",
       "norm_label": "vacuumdraftvalue"
     },
     {
@@ -15201,8 +15201,8 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "src_utils_vacuum_settings_draft_pressvacuumbutton",
-      "community": 58,
-      "community_name": "scripts",
+      "community": 64,
+      "community_name": "Implementation: Room idle timeout",
       "norm_label": "pressvacuumbutton()"
     },
     {
@@ -15289,8 +15289,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_utils_vacuum_formatvacuumsecondary",
-      "community": 55,
-      "community_name": "Feature: Card contract",
+      "community": 28,
+      "community_name": "au-vacuum-card.ts",
       "norm_label": "formatvacuumsecondary()"
     },
     {
@@ -15938,8 +15938,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_card_set_config_test",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "set-config.test.ts"
     },
     {
@@ -15949,8 +15949,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "test_card_set_config_test_make",
-      "community": 29,
-      "community_name": "au-vacuum-settings-overlay.ts",
+      "community": 50,
+      "community_name": "VacuumSettingsDraft",
       "norm_label": "make()"
     },
     {
@@ -15982,8 +15982,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_components_au_light_slider_test",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 68,
+      "community_name": "package.json",
       "norm_label": "au-light-slider.test.ts"
     },
     {
@@ -15993,8 +15993,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "test_components_au_light_slider_test_mountslider",
-      "community": 56,
-      "community_name": "AuSensorCard",
+      "community": 68,
+      "community_name": "package.json",
       "norm_label": "mountslider()"
     },
     {
@@ -16279,8 +16279,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_template_config_persist_test",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "config-persist.test.ts"
     },
     {
@@ -16290,8 +16290,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "test_template_config_persist_test_basegrid",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 57,
+      "community_name": "water-heater-timer.ts",
       "norm_label": "basegrid"
     },
     {
@@ -16334,8 +16334,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_template_home_child_config_test",
-      "community": 11,
-      "community_name": "au-cover-card.ts",
+      "community": 6,
+      "community_name": "home-edit-room-modal.ts",
       "norm_label": "home-child-config.test.ts"
     },
     {
@@ -16400,8 +16400,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_template_room_controls_test",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "room-controls.test.ts"
     },
     {
@@ -16455,8 +16455,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_areas_test",
-      "community": 22,
-      "community_name": "au-shell-home-view.ts",
+      "community": 93,
+      "community_name": "._state",
       "norm_label": "areas.test.ts"
     },
     {
@@ -16510,8 +16510,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_device_test",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 82,
+      "community_name": "shell-grid-add-card.test.ts",
       "norm_label": "device.test.ts"
     },
     {
@@ -16521,8 +16521,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_domain_controls_test",
-      "community": 24,
-      "community_name": "au-shell-grid.ts",
+      "community": 25,
+      "community_name": "Distribution and HACS Feature",
       "norm_label": "domain-controls.test.ts"
     },
     {
@@ -16543,8 +16543,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_fan_test",
-      "community": 50,
-      "community_name": "VacuumSettingsDraft",
+      "community": 3,
+      "community_name": "au-fan-card.ts",
       "norm_label": "fan.test.ts"
     },
     {
@@ -16598,8 +16598,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_pointer_gestures_test",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "pointer-gestures.test.ts"
     },
     {
@@ -16609,8 +16609,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "test_utils_pointer_gestures_test_leftpointerdown",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "leftpointerdown()"
     },
     {
@@ -16620,8 +16620,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "test_utils_pointer_gestures_test_touchpointerdown",
-      "community": 59,
-      "community_name": "au-action-card-editor.ts",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "touchpointerdown()"
     },
     {
@@ -16653,8 +16653,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_sync_debug_test",
-      "community": 6,
-      "community_name": "home-edit-room-modal.ts",
+      "community": 61,
+      "community_name": "au-fan-card-editor.ts",
       "norm_label": "sync-debug.test.ts"
     },
     {
@@ -16664,8 +16664,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_touch_click_test",
-      "community": 5,
-      "community_name": "AuRoomCard",
+      "community": 4,
+      "community_name": "AuActionCardBase",
       "norm_label": "touch-click.test.ts"
     },
     {
@@ -16675,8 +16675,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "test_utils_vacuum_device_catalog_test",
-      "community": 25,
-      "community_name": "Distribution and HACS Feature",
+      "community": 41,
+      "community_name": "au-shell-grid",
       "norm_label": "vacuum-device-catalog.test.ts"
     },
     {
@@ -16686,8 +16686,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "test_utils_vacuum_device_catalog_test_withentities",
-      "community": 25,
-      "community_name": "Distribution and HACS Feature",
+      "community": 41,
+      "community_name": "au-shell-grid",
       "norm_label": "withentities()"
     },
     {
@@ -18181,9 +18181,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_md",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "github-pages.md"
     },
     {
@@ -18192,9 +18192,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "implementation: github pages landing site"
     },
     {
@@ -18203,9 +18203,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_goal",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_goal",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "goal"
     },
     {
@@ -18214,9 +18214,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_linked_official_docs",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_linked_official_docs",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "linked official docs"
     },
     {
@@ -18225,9 +18225,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_decisions",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_decisions",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "decisions"
     },
     {
@@ -18236,9 +18236,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_files_touched",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_files_touched",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "files touched"
     },
     {
@@ -18247,9 +18247,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_leftover_cleanup",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_leftover_cleanup",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "leftover cleanup"
     },
     {
@@ -18258,9 +18258,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_tdd",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_tdd",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "tdd"
     },
     {
@@ -18269,9 +18269,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_verification",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_verification",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "verification"
     },
     {
@@ -18280,9 +18280,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_automated",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_automated",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "automated"
     },
     {
@@ -18291,9 +18291,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L54",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_acceptance",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_acceptance",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "acceptance"
     },
     {
@@ -18302,9 +18302,9 @@
       "source_file": "docs/imp/docs/github-pages.md",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "docs_imp_docs_github_pages_manual",
-      "community": 72,
-      "community_name": "PHASE_0.md",
+      "id": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_manual",
+      "community": 59,
+      "community_name": "au-action-card-editor.ts",
       "norm_label": "manual"
     },
     {
@@ -19600,9 +19600,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 46,
+      "community": 90,
       "norm_label": "hacs installation",
-      "community_name": "Architecture Specification",
+      "community_name": "AuVacuumSettingsSection",
       "id": "readme_hacs_install"
     },
     {
@@ -19658,9 +19658,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Single atrium-ui.js; Lit+TS+Vite; HA 2024.1+; native card contract; grid-fill; one shell; preserve healthy reuse; tokens SoT; validated executeAction; no idle always-on timers.",
-      "community": 46,
+      "community": 90,
       "norm_label": "locked architecture constraints c1-c12",
-      "community_name": "Architecture Specification",
+      "community_name": "AuVacuumSettingsSection",
       "id": "docs_architecture_locked_constraints"
     },
     {
@@ -19759,9 +19759,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 46,
+      "community": 90,
       "norm_label": "install and lovelace resource ops",
-      "community_name": "Architecture Specification",
+      "community_name": "AuVacuumSettingsSection",
       "id": "docs_ops_install_and_resource_install_resource"
     },
     {
@@ -19773,9 +19773,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 46,
+      "community": 90,
       "norm_label": "local dev against home assistant",
-      "community_name": "Architecture Specification",
+      "community_name": "AuVacuumSettingsSection",
       "id": "docs_ops_local_dev_ha_local_dev_ha"
     },
     {
@@ -19788,9 +19788,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Watch-build into HA www via HA_WWW / HA_BUILD=1.",
-      "community": 46,
+      "community": 90,
       "norm_label": "npm run dev:ha",
-      "community_name": "Architecture Specification",
+      "community_name": "AuVacuumSettingsSection",
       "id": "docs_ops_local_dev_ha_dev_ha"
     },
     {
@@ -19803,9 +19803,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Single dist/atrium-ui.js chunk via HACS Dashboard or manual www copy.",
-      "community": 46,
+      "community": 90,
       "norm_label": "distribution and hacs feature",
-      "community_name": "Architecture Specification",
+      "community_name": "AuVacuumSettingsSection",
       "id": "docs_prd_platform_distribution_hacs_distribution_hacs"
     },
     {
@@ -20124,8 +20124,8 @@
       "author": null,
       "contributor": null,
       "rationale": "Do not destroy AuActionCardBase, AuBaseEditor, CARDS registry, resolveDomainControl, home-edit-commit, or classic grid compat.",
-      "community": 46,
-      "community_name": "Architecture Specification",
+      "community": 90,
+      "community_name": "AuVacuumSettingsSection",
       "norm_label": "healthy reuse guardrails",
       "id": "master_assessment_healthy_reuse"
     },
@@ -20619,8 +20619,8 @@
       "author": null,
       "contributor": null,
       "rationale": "Vacuums need start/pause/stop/return plus deep device settings across many related entities without hunting.",
-      "community": 21,
-      "community_name": "Card Contract Feature",
+      "community": 37,
+      "community_name": "Edit Mode",
       "norm_label": "vacuum card",
       "id": "docs_prd_product_vacuum_card_vacuum_card"
     },
@@ -20648,8 +20648,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 21,
-      "community_name": "Card Contract Feature",
+      "community": 37,
+      "community_name": "Edit Mode",
       "norm_label": "vacuum hide_sections",
       "id": "docs_prd_product_vacuum_card_hide_sections"
     },
@@ -20765,8 +20765,8 @@
       "author": null,
       "contributor": null,
       "rationale": "UI chrome must follow the user\u2019s HA language, including Hebrew RTL.",
-      "community": 92,
-      "community_name": "Calendar Card",
+      "community": 44,
+      "community_name": "action-tile-layout.ts",
       "norm_label": "localize",
       "id": "docs_prd_ux_localize_localize"
     },
@@ -20779,8 +20779,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 92,
-      "community_name": "Calendar Card",
+      "community": 44,
+      "community_name": "action-tile-layout.ts",
       "norm_label": "localize catalogs (en/ru/he)",
       "id": "docs_prd_ux_localize_language_catalogs"
     },
@@ -20793,8 +20793,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 92,
-      "community_name": "Calendar Card",
+      "community": 44,
+      "community_name": "action-tile-layout.ts",
       "norm_label": "hass.language locale source",
       "id": "docs_prd_ux_localize_hass_language"
     },
@@ -20807,8 +20807,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 92,
-      "community_name": "Calendar Card",
+      "community": 44,
+      "community_name": "action-tile-layout.ts",
       "norm_label": "hebrew rtl support",
       "id": "docs_prd_ux_localize_hebrew_rtl"
     },
@@ -77506,19 +77506,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages",
-      "target": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/imp/docs/pages-hero-theme.md",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "docs_imp_docs_pages_hero_theme",
-      "target": "docs_imp_docs_github_pages",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_md",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
       "confidence_score": 1.0
     },
     {
@@ -77528,8 +77517,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "target": "docs_imp_docs_github_pages_decisions",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_decisions",
       "confidence_score": 1.0
     },
     {
@@ -77539,8 +77528,8 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "target": "docs_imp_docs_github_pages_files_touched",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_files_touched",
       "confidence_score": 1.0
     },
     {
@@ -77550,8 +77539,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "target": "docs_imp_docs_github_pages_goal",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_goal",
       "confidence_score": 1.0
     },
     {
@@ -77561,8 +77550,8 @@
       "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "target": "docs_imp_docs_github_pages_leftover_cleanup",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_leftover_cleanup",
       "confidence_score": 1.0
     },
     {
@@ -77572,8 +77561,8 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "target": "docs_imp_docs_github_pages_linked_official_docs",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_linked_official_docs",
       "confidence_score": 1.0
     },
     {
@@ -77583,8 +77572,8 @@
       "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "target": "docs_imp_docs_github_pages_tdd",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_tdd",
       "confidence_score": 1.0
     },
     {
@@ -77594,8 +77583,8 @@
       "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_implementation_github_pages_landing_site",
-      "target": "docs_imp_docs_github_pages_verification",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_implementation_github_pages_landing_site",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_verification",
       "confidence_score": 1.0
     },
     {
@@ -77605,8 +77594,8 @@
       "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_verification",
-      "target": "docs_imp_docs_github_pages_acceptance",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_verification",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_acceptance",
       "confidence_score": 1.0
     },
     {
@@ -77616,8 +77605,8 @@
       "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_verification",
-      "target": "docs_imp_docs_github_pages_automated",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_verification",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_automated",
       "confidence_score": 1.0
     },
     {
@@ -77627,8 +77616,8 @@
       "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_imp_docs_github_pages_verification",
-      "target": "docs_imp_docs_github_pages_manual",
+      "source": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_verification",
+      "target": "users_alexnechayev_library_mobile_documents_com_apple_clouddocs_project_had_worktrees_docs_pages_hero_theme_docs_imp_docs_github_pages_manual",
       "confidence_score": 1.0
     },
     {
@@ -80281,5 +80270,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "289ab582264b18429ff27308bd2adae02c14e1ad"
+  "built_at_commit": "5ffc80d30775937c9f19dd73a5b03c669feff4be"
 }

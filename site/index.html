@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="system">
+<html lang="en" data-theme="system" data-resolved="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,17 +10,26 @@
     />
     <script>
       (function () {
+        var stored = "system";
         try {
-          var stored = localStorage.getItem("au-theme");
-          if (stored === "light" || stored === "dark" || stored === "system") {
-            document.documentElement.setAttribute("data-theme", stored);
+          var value = localStorage.getItem("au-theme");
+          if (value === "light" || value === "dark" || value === "system") {
+            stored = value;
           }
         } catch (e) {
           /* private mode */
         }
+        var resolved =
+          stored === "system"
+            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : stored;
+        document.documentElement.setAttribute("data-theme", stored);
+        document.documentElement.setAttribute("data-resolved", resolved);
       })();
     </script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <header class="top">
@@ -107,13 +116,22 @@
         var root = document.documentElement;
         var buttons = document.querySelectorAll("[data-theme-value]");
         var key = "au-theme";
+        var media = window.matchMedia("(prefers-color-scheme: dark)");
 
         function current() {
           return root.getAttribute("data-theme") || "system";
         }
 
+        function resolvedOf(theme) {
+          if (theme === "light" || theme === "dark") {
+            return theme;
+          }
+          return media.matches ? "dark" : "light";
+        }
+
         function apply(theme) {
           root.setAttribute("data-theme", theme);
+          root.setAttribute("data-resolved", resolvedOf(theme));
           try {
             localStorage.setItem(key, theme);
           } catch (e) {
@@ -129,6 +147,14 @@
             apply(btn.getAttribute("data-theme-value"));
           });
         });
+
+        if (media.addEventListener) {
+          media.addEventListener("change", function () {
+            if (current() === "system") {
+              apply("system");
+            }
+          });
+        }
 
         apply(current());
       })();
