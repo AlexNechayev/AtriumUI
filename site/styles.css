@@ -7,6 +7,9 @@
   --au-accent: #0a84ff;
   --au-coffee: #ffdd00;
   --au-coffee-text: #3d2e00;
+}
+
+html[data-resolved="light"] {
   --au-text: #1c1c1e;
   --au-muted: #8e8e93;
   --au-bg: #f2f2f7;
@@ -17,20 +20,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root[data-theme="system"] {
-    --au-text: #f2f2f7;
-    --au-muted: #98989d;
-    --au-bg: #1c1c1e;
-    --au-card: #2c2c2e;
-    --au-btn: #3a3a3c;
-    --au-code: #3a3a3c;
-    --au-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
-    color-scheme: dark;
-  }
-}
-
-:root[data-theme="dark"] {
+html[data-resolved="dark"] {
   --au-text: #f2f2f7;
   --au-muted: #98989d;
   --au-bg: #1c1c1e;
@@ -39,10 +29,6 @@
   --au-code: #3a3a3c;
   --au-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
   color-scheme: dark;
-}
-
-:root[data-theme="light"] {
-  color-scheme: light;
 }
 
 * {

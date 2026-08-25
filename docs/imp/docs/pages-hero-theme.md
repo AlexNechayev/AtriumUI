@@ -17,7 +17,7 @@ Tighten the GitHub Pages landing hero: drop the Name/By/Website meta row, move I
 
 ## Decisions
 
-- Theme default is **System** (`prefers-color-scheme`); explicit Light/Dark persist in `localStorage` (`au-theme`).
+- Theme default is **System** (`prefers-color-scheme`); explicit Light/Dark persist in `localStorage` (`au-theme`). Colors apply via `html[data-resolved]` so Dark actually overrides light tokens.
 - Header coffee nav link removed; coffee CTA lives in the footer only.
 - Header Install jumps to `#install` on the same page.
 
