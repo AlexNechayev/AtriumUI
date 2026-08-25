@@ -1,0 +1,35 @@
+name: Question
+description: Install or YAML help (not a bug)
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for HACS install, resource URLs, or dashboard YAML questions. File a **Bug report** if something is broken.
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - HACS install
+        - Manual resource (`/local/atrium-ui/atrium-ui.js`)
+        - Panel view / au-shell-grid
+        - Home → Rooms (`floors`)
+        - Card YAML
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+    validations:
+      required: true
+  - type: textarea
+    id: yaml
+    attributes:
+      label: Relevant YAML (optional)
+      render: yaml
+    validations:
+      required: false

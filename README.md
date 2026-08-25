@@ -1,5 +1,11 @@
 # AtriumUI
 
+[![CI](https://github.com/AlexNechayev/AtriumUI/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexNechayev/AtriumUI/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![HACS](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz)
+[![GitHub release](https://img.shields.io/github/v/release/AlexNechayev/AtriumUI?include_prereleases)](https://github.com/AlexNechayev/AtriumUI/releases)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/AlexNechayev)
+
 A production-grade custom component library and structural design system for the
 Home Assistant frontend (Lovelace). AtriumUI ships as a single, self-contained,
 tree-shaken ES module so you can compose unified dashboards without pulling in
@@ -9,6 +15,9 @@ mixed dependencies from separate custom cards.
 - **Language:** TypeScript (strict mode)
 - **Bundler:** Vite (single optimized `atrium-ui.js` chunk, tree-shaking enabled)
 - **Distribution:** HACS-compatible / manual Lovelace resource
+- **Requires:** Home Assistant **2024.1+** (calendar events: **2023.12+**)
+
+Screenshots of the Home → Rooms shell can live in [`docs/assets/`](docs/assets/). Drop PNG or WebP files there and embed them in this section when you have a capture from your dashboard.
 
 ## Repository layout
 
@@ -63,6 +72,14 @@ which provides entity binding, optional display fields (hidden when unset), and
 HA-native `tap_action` / `hold_action` / `double_tap_action` handling.
 Defaults: tap = toggle, hold = more-info, double-tap = more-info.
 
+## Support
+
+If AtriumUI is useful in your home, you can support development here:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/AlexNechayev)
+
+Bug reports, feature ideas, and install questions: use the [issue templates](https://github.com/AlexNechayev/AtriumUI/issues/new/choose). Please do not open blank issues.
+
 ## Migration (breaking change)
 
 Card tags were renamed in v0.1.0. Update your dashboard YAML:
@@ -94,21 +111,47 @@ tap_action:
 
 ### HACS (recommended)
 
-1. Add this repository as a custom repository of type **Dashboard** in HACS.
+1. In HACS, go to **Custom repositories** and add:
+   - **URL:** `https://github.com/AlexNechayev/AtriumUI`
+   - **Type:** Dashboard
 2. Install **AtriumUI**.
-3. HACS registers the resource automatically. If you install manually, add the
-   resource below.
+3. HACS registers the Lovelace resource from the GitHub Release asset `atrium-ui.js`.
+   Reload resources (or restart Home Assistant) if custom elements do not appear.
 
 ### Manual
 
-1. Build the bundle (`npm install && npm run build`).
-2. Copy `dist/atrium-ui.js` to `<config>/www/atrium-ui/atrium-ui.js`.
-3. Register the Lovelace resource (Settings -> Dashboards -> Resources):
+1. Download `atrium-ui.js` from the [latest GitHub Release](https://github.com/AlexNechayev/AtriumUI/releases/latest), **or** build it (`npm install && npm run build`).
+2. Copy the file to `<config>/www/atrium-ui/atrium-ui.js`.
+3. Register the Lovelace resource (Settings → Dashboards → Resources):
 
 ```yaml
-url: /local/atrium-ui/atrium-ui.js?v=0.0.1
+url: /local/atrium-ui/atrium-ui.js?v=0.5.4
 type: module
 ```
+
+Bump `?v=` after each upgrade so the browser does not keep a cached module.
+
+## Quick start
+
+Create a Lovelace **Panel** view with a single `au-shell-grid` card:
+
+```yaml
+views:
+  - title: Home
+    type: panel
+    cards:
+      - type: custom:au-shell-grid
+        columns: 12
+        row_height: 80px
+        gap: 12px
+        cards:
+          - type: custom:au-action-card
+            id: kitchen
+            entity: light.kitchen
+            layout: { x: 0, y: 0, w: 4, h: 2 }
+```
+
+For Home → Rooms (Apple Home-style), set `floors` on the same card. Full options are under [Usage](#usage). Demo YAML: [`demo/home-dashboard.yaml`](demo/home-dashboard.yaml).
 
 ## Usage
 
@@ -612,6 +655,13 @@ at a local folder and copy into HA.
 ids (e.g. `light.living_room`, `person.alex`). Replace them with entities from
 your HA instance before loading the dashboard.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, tests (`npm run verify`), and
+the pull-request checklist. Please follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+Security reports: [SECURITY.md](SECURITY.md). Release notes: [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
-MIT
+[MIT](LICENSE) © Alex Nechayev

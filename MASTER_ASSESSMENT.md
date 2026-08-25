@@ -1,4 +1,4 @@
-# HAD / AtriumUI — Master Assessment
+# AtriumUI — Master Assessment
 
 Synthesized from 5 domain agents + Judge. Confirmed against `src/` and `graphify-out/`. Audience: sole developer. Breaking changes allowed. Priority: **UI/UX consistency → security → bundle/perf → architecture/DX**.
 

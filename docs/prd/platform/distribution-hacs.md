@@ -53,7 +53,7 @@
 ## 5. UX flows
 
 ### Primary flow
-1. Install via HACS or manual copy → add resource → add `au-shell-grid` / cards in Lovelace.
+1. Install via HACS (custom repository `https://github.com/AlexNechayev/AtriumUI`, type **Dashboard**) or manual copy → add resource → add `au-shell-grid` / cards in Lovelace.
 
 ### Empty / first-use
 - Without resource, custom types fail to load; ops docs cover troubleshooting.
@@ -73,7 +73,7 @@
 
 1. `npm run build` produces `dist/atrium-ui.js`.
 2. Manual resource path loads all documented cards in a Panel view.
-3. HACS Dashboard install registers the resource (documented steps).
+3. HACS Dashboard install from `https://github.com/AlexNechayev/AtriumUI` registers the resource (documented in README and ops/install-and-resource).
 4. `HA_WWW=… npm run dev:ha` watch-updates the target folder.
 
 ---

@@ -4,7 +4,15 @@
   "description": "AtriumUI - a production-grade custom component library and design system for Home Assistant (Lovelace).",
   "type": "module",
   "license": "MIT",
-  "author": "System Architect / Project Lead",
+  "author": "Alex Nechayev",
+  "homepage": "https://github.com/AlexNechayev/AtriumUI#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexNechayev/AtriumUI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlexNechayev/AtriumUI/issues"
+  },
   "keywords": [
     "home-assistant",
     "lovelace",
@@ -19,7 +27,8 @@
   "files": [
     "dist",
     "hacs.json",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "dev": "vite",

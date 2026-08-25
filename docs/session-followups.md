@@ -30,6 +30,34 @@ See [`SCOPE_AND_FEATURES.md`](./SCOPE_AND_FEATURES.md) §4 and [`PRD.md`](./PRD.
 
 ---
 
+### Why does `Card Contract Feature` bridge architecture and product docs?
+
+| Field | Value |
+| --- | --- |
+| Status | open |
+| First seen | 2026-08-25 |
+| Source | graphify Suggested Questions (docs/oss-first-release graphify update) |
+
+**Question:** Why does `Card Contract Feature` connect `Architecture Specification` to `PRD Decision Log D1-D14`, card bases, edit/home docs, `index.ts`, CI, and Distribution/HACS?
+
+**Notes:** High betweenness (≈0.115) after AST re-extract. Likely a documentation hub, not a runtime bug. Confirm whether the PRD card-contract spec should stay the cross-link or if CI/HACS edges are extraction noise.
+
+---
+
+### Should `au-fan-card.ts` be split?
+
+| Field | Value |
+| --- | --- |
+| Status | open |
+| First seen | 2026-08-25 |
+| Source | graphify Suggested Questions (docs/oss-first-release graphify update) |
+
+**Question:** Should `au-fan-card.ts` be split into smaller, more focused modules?
+
+**Notes:** Low cohesion (≈0.08), same smell as light/slider communities. Likely Phase 3 shared gestures/pending-control rather than a fan-only split. Track with Open backlog item 1 unless a dedicated fan refactor is requested.
+
+---
+
 ## Answered
 
 ### Why does `AuShellHomeView` bridge so many Home communities?

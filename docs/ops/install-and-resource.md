@@ -9,9 +9,11 @@
 
 ## HACS (recommended)
 
-1. Add this repository as a custom repository of type **Dashboard** in HACS.
+1. In HACS, add a custom repository:
+   - URL: `https://github.com/AlexNechayev/AtriumUI`
+   - Type: **Dashboard**
 2. Install **AtriumUI**.
-3. Confirm the Lovelace resource is registered (Settings → Dashboards → Resources).
+3. Confirm the Lovelace resource is registered (Settings → Dashboards → Resources). HACS loads `atrium-ui.js` from the latest GitHub Release.
 
 ## Manual
 

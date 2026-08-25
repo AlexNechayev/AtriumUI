@@ -1,0 +1,45 @@
+name: Feature request
+description: Propose a card, shell, or editor change
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the problem first. AtriumUI is a Lovelace design system — one shell (`au-shell-grid`) and a single `atrium-ui.js` bundle.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What can you not do today, or what feels inconsistent with the Home look?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Which card or shell option should change? Sketch YAML if you can.
+      render: yaml
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Shell grid (classic)
+        - Shell grid (Home → Rooms)
+        - Domain card
+        - Visual editor
+        - Theme / tokens
+        - Install / HACS / docs
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing cards, YAML workarounds, or other custom cards you tried.
+    validations:
+      required: false
