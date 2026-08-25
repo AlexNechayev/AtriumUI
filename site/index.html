@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="system">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,6 +8,18 @@
       name="description"
       content="AtriumUI is a Home Assistant Lovelace design system: one bundle, a Home → Rooms shell, and cards that feel native."
     />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("au-theme");
+          if (stored === "light" || stored === "dark" || stored === "system") {
+            document.documentElement.setAttribute("data-theme", stored);
+          }
+        } catch (e) {
+          /* private mode */
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,8 +27,12 @@
       <a class="mark" href="./">AtriumUI</a>
       <nav>
         <a href="https://github.com/AlexNechayev/AtriumUI">GitHub</a>
-        <a href="https://github.com/AlexNechayev/AtriumUI#installation">Install</a>
-        <a class="coffee" href="https://www.buymeacoffee.com/AlexNechayev">Buy me a coffee</a>
+        <a href="#install">Install</a>
+        <div class="theme" role="group" aria-label="Color theme">
+          <button type="button" data-theme-value="system">System</button>
+          <button type="button" data-theme-value="light">Light</button>
+          <button type="button" data-theme-value="dark">Dark</button>
+        </div>
       </nav>
     </header>
 
@@ -30,24 +46,8 @@
           dashboard, a coffee keeps the work going.
         </p>
         <div class="actions">
-          <a class="btn primary" href="https://github.com/AlexNechayev/AtriumUI#installation">Install with HACS</a>
           <a class="btn" href="https://github.com/AlexNechayev/AtriumUI">View on GitHub</a>
-          <a class="btn coffee" href="https://www.buymeacoffee.com/AlexNechayev">Buy me a coffee</a>
         </div>
-        <dl class="meta">
-          <div>
-            <dt>Name</dt>
-            <dd>AtriumUI</dd>
-          </div>
-          <div>
-            <dt>By</dt>
-            <dd>Alex Nechayev</dd>
-          </div>
-          <div>
-            <dt>Website</dt>
-            <dd><a href="https://alexnechayev.github.io/AtriumUI/">alexnechayev.github.io/AtriumUI</a></dd>
-          </div>
-        </dl>
       </section>
 
       <section>
@@ -78,13 +78,16 @@
         </ul>
       </section>
 
-      <section>
+      <section id="install">
         <h2>Install</h2>
         <ol>
           <li>HACS → Custom repositories</li>
           <li>URL <code>https://github.com/AlexNechayev/AtriumUI</code></li>
           <li>Type <strong>Dashboard</strong>, then install <strong>AtriumUI</strong></li>
         </ol>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/AlexNechayev/AtriumUI#installation">Install with HACS</a>
+        </div>
         <p>
           Full YAML reference:
           <a href="https://github.com/AlexNechayev/AtriumUI#readme">README</a>
@@ -95,7 +98,40 @@
     </main>
 
     <footer>
+      <a class="btn coffee" href="https://www.buymeacoffee.com/AlexNechayev">Buy me a coffee</a>
       <p>MIT © Alex Nechayev · <a href="https://github.com/AlexNechayev/AtriumUI">Source</a></p>
     </footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll("[data-theme-value]");
+        var key = "au-theme";
+
+        function current() {
+          return root.getAttribute("data-theme") || "system";
+        }
+
+        function apply(theme) {
+          root.setAttribute("data-theme", theme);
+          try {
+            localStorage.setItem(key, theme);
+          } catch (e) {
+            /* private mode */
+          }
+          buttons.forEach(function (btn) {
+            btn.setAttribute("aria-pressed", String(btn.getAttribute("data-theme-value") === theme));
+          });
+        }
+
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            apply(btn.getAttribute("data-theme-value"));
+          });
+        });
+
+        apply(current());
+      })();
+    </script>
   </body>
 </html>
