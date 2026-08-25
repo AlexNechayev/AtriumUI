@@ -5,6 +5,12 @@ All notable changes to AtriumUI are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Public GitHub Pages site: [alexnechayev.github.io/AtriumUI](https://alexnechayev.github.io/AtriumUI/)
+
 ## [0.5.4] - 2026-08-25
 
 First public GitHub / HACS release of AtriumUI.

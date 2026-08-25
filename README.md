@@ -5,6 +5,9 @@
 [![HACS](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz)
 [![GitHub release](https://img.shields.io/github/v/release/AlexNechayev/AtriumUI?include_prereleases)](https://github.com/AlexNechayev/AtriumUI/releases)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/AlexNechayev)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?logo=github&logoColor=white)](https://alexnechayev.github.io/AtriumUI/)
+
+**Website:** [alexnechayev.github.io/AtriumUI](https://alexnechayev.github.io/AtriumUI/)
 
 A production-grade custom component library and structural design system for the
 Home Assistant frontend (Lovelace). AtriumUI ships as a single, self-contained,
@@ -77,6 +80,8 @@ Defaults: tap = toggle, hold = more-info, double-tap = more-info.
 If AtriumUI is useful in your home, you can support development here:
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/AlexNechayev)
+
+Project website: [alexnechayev.github.io/AtriumUI](https://alexnechayev.github.io/AtriumUI/)
 
 Bug reports, feature ideas, and install questions: use the [issue templates](https://github.com/AlexNechayev/AtriumUI/issues/new/choose). Please do not open blank issues.
 

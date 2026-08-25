@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AtriumUI — Home Assistant Lovelace design system</title>
+    <meta
+      name="description"
+      content="AtriumUI is a Home Assistant Lovelace design system: one bundle, a Home → Rooms shell, and cards that feel native."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="mark" href="./">AtriumUI</a>
+      <nav>
+        <a href="https://github.com/AlexNechayev/AtriumUI">GitHub</a>
+        <a href="https://github.com/AlexNechayev/AtriumUI#installation">Install</a>
+        <a class="coffee" href="https://www.buymeacoffee.com/AlexNechayev">Buy me a coffee</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="kicker">Home Assistant Lovelace</p>
+        <h1>AtriumUI</h1>
+        <p class="about">
+          I build AtriumUI, a Home Assistant Lovelace design system: one bundle, a
+          Home → Rooms shell, and cards that feel native. If it helps your
+          dashboard, a coffee keeps the work going.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/AlexNechayev/AtriumUI#installation">Install with HACS</a>
+          <a class="btn" href="https://github.com/AlexNechayev/AtriumUI">View on GitHub</a>
+          <a class="btn coffee" href="https://www.buymeacoffee.com/AlexNechayev">Buy me a coffee</a>
+        </div>
+        <dl class="meta">
+          <div>
+            <dt>Name</dt>
+            <dd>AtriumUI</dd>
+          </div>
+          <div>
+            <dt>By</dt>
+            <dd>Alex Nechayev</dd>
+          </div>
+          <div>
+            <dt>Website</dt>
+            <dd><a href="https://alexnechayev.github.io/AtriumUI/">alexnechayev.github.io/AtriumUI</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>One module, a whole dashboard</h2>
+        <p>
+          AtriumUI ships as a single tree-shaken ES module
+          (<code>atrium-ui.js</code>). Use <code>custom:au-shell-grid</code> as a
+          Panel view: classic drag/resize grid, or Apple Home → Rooms when
+          <code>floors</code> is set. Requires Home Assistant 2024.1+.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cards</h2>
+        <ul class="cards">
+          <li><strong>Shell Grid</strong> <code>au-shell-grid</code></li>
+          <li><strong>Action</strong> <code>au-action-card</code></li>
+          <li><strong>Sensor</strong> <code>au-sensor-card</code></li>
+          <li><strong>Light</strong> <code>au-light-card</code></li>
+          <li><strong>Climate</strong> <code>au-climate-card</code></li>
+          <li><strong>Fan</strong> <code>au-fan-card</code></li>
+          <li><strong>Cover</strong> <code>au-cover-card</code></li>
+          <li><strong>Switch</strong> <code>au-switch-card</code></li>
+          <li><strong>Vacuum</strong> <code>au-vacuum-card</code></li>
+          <li><strong>Device</strong> <code>au-device-card</code></li>
+          <li><strong>Room</strong> <code>au-room-card</code></li>
+          <li><strong>Calendar</strong> <code>au-calendar-card</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Install</h2>
+        <ol>
+          <li>HACS → Custom repositories</li>
+          <li>URL <code>https://github.com/AlexNechayev/AtriumUI</code></li>
+          <li>Type <strong>Dashboard</strong>, then install <strong>AtriumUI</strong></li>
+        </ol>
+        <p>
+          Full YAML reference:
+          <a href="https://github.com/AlexNechayev/AtriumUI#readme">README</a>
+          · latest bundle:
+          <a href="https://github.com/AlexNechayev/AtriumUI/releases/latest">GitHub Release</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>MIT © Alex Nechayev · <a href="https://github.com/AlexNechayev/AtriumUI">Source</a></p>
+    </footer>
+  </body>
+</html>

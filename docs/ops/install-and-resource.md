@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Audience | Dashboard authors / sole developer |
-| Companion | [prd/platform/distribution-hacs.md](../prd/platform/distribution-hacs.md), README Installation |
+| Companion | [prd/platform/distribution-hacs.md](../prd/platform/distribution-hacs.md), README Installation, [GitHub Pages](https://alexnechayev.github.io/AtriumUI/) |
 
 ---
 
