@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Buy Me a Coffee
+    url: https://www.buymeacoffee.com/AlexNechayev
+    about: Support AtriumUI development
+  - name: Documentation
+    url: https://github.com/AlexNechayev/AtriumUI#readme
+    about: README install steps, YAML reference, and card options

@@ -1,5 +1,6 @@
 {
   "name": "AtriumUI",
   "render_readme": true,
-  "filename": "atrium-ui.js"
+  "filename": "atrium-ui.js",
+  "homeassistant": "2024.1.0"
 }

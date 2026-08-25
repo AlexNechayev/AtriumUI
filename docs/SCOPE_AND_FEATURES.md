@@ -2,7 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| Product name | **AtriumUI** (HAD) |
+| Product name | **AtriumUI** |
 | Document type | Product scope & features specification (legacy / wishlist capture) |
 | Status | Draft — superseded on conflicts by [`PRD.md`](./PRD.md) |
 | Companion doc | [`ARCHITECTURE.md`](./ARCHITECTURE.md) (system must obey) |

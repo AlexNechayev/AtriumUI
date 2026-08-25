@@ -1,0 +1,77 @@
+name: Bug report
+description: Something does not work as documented
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Fill in every section you can — YAML and versions are the fastest way to reproduce Lovelace issues.
+  - type: input
+    id: atrium_version
+    attributes:
+      label: AtriumUI version
+      description: GitHub Release tag or HACS version (for example 0.5.4).
+      placeholder: "0.5.4"
+    validations:
+      required: true
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+      placeholder: "2024.12.0"
+    validations:
+      required: true
+  - type: input
+    id: hacs_install
+    attributes:
+      label: Install method
+      description: HACS custom repository, or manual `www` copy.
+      placeholder: HACS
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser / app
+      options:
+        - Chrome / Edge (desktop)
+        - Safari (desktop)
+        - Firefox (desktop)
+        - Home Assistant companion app (iOS)
+        - Home Assistant companion app (Android)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened
+      description: Expected vs actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: yaml
+    attributes:
+      label: Dashboard YAML
+      description: The `au-shell-grid` or card config that reproduces the bug. Redact personal entity names if you need to.
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Browser console / logs
+      description: Custom-element errors, stack traces, or Home Assistant logs.
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I reloaded Lovelace resources (or restarted Home Assistant) after installing or upgrading.
+          required: true
+        - label: I searched existing issues and this is not a duplicate.
+          required: true

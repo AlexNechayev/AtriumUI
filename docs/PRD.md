@@ -2,7 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| Product | **AtriumUI** (HAD) |
+| Product | **AtriumUI** |
 | Document type | PRD index (feature specs live under [`prd/`](./prd/)) |
 | Status | Draft — distilled from README + MASTER_ASSESSMENT |
 | Architecture | [`ARCHITECTURE.md`](./ARCHITECTURE.md) — MUST obey |
