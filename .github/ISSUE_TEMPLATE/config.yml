@@ -3,6 +3,9 @@ contact_links:
   - name: Buy Me a Coffee
     url: https://www.buymeacoffee.com/AlexNechayev
     about: Support AtriumUI development
+  - name: Website
+    url: https://alexnechayev.github.io/AtriumUI/
+    about: Project landing page (Name, About, install)
   - name: Documentation
     url: https://github.com/AlexNechayev/AtriumUI#readme
     about: README install steps, YAML reference, and card options
