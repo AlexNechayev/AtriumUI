@@ -58,6 +58,48 @@ See [`SCOPE_AND_FEATURES.md`](./SCOPE_AND_FEATURES.md) §4 and [`PRD.md`](./PRD.
 
 ---
 
+### Why does `keywords` bridge package metadata?
+
+| Field | Value |
+| --- | --- |
+| Status | open |
+| First seen | 2026-09-13 |
+| Source | graphify Suggested Questions (feature/room-tile-temperature graphify update) |
+
+**Question:** Why does `keywords` connect `keywords` to `AuSensorCard`, `au-fan-card-editor.ts`?
+
+**Notes:** High betweenness (≈0.067) after worktree AST rebuild. Likely `package.json` keyword extraction noise, not a runtime edge. Confirm on next full `/graphify` if it persists.
+
+---
+
+### Should `light.ts` be split?
+
+| Field | Value |
+| --- | --- |
+| Status | open |
+| First seen | 2026-09-13 |
+| Source | graphify Suggested Questions (feature/room-tile-temperature graphify update) |
+
+**Question:** Should `light.ts` be split into smaller, more focused modules?
+
+**Notes:** Cohesion ≈0.08. Same Phase 3 shared-gestures smell as the answered “Light Card Controls” entry; no new split unless that work lands.
+
+---
+
+### Should `AuTempStepper` be split?
+
+| Field | Value |
+| --- | --- |
+| Status | open |
+| First seen | 2026-09-13 |
+| Source | graphify Suggested Questions (feature/room-tile-temperature graphify update) |
+
+**Question:** Should `AuTempStepper` be split into smaller, more focused modules?
+
+**Notes:** Cohesion ≈0.069. Track with answered “Sliders and Steppers” / Phase 3 shared gestures, not a stepper-only refactor.
+
+---
+
 ## Answered
 
 ### Why does `AuShellHomeView` bridge so many Home communities?

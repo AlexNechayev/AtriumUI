@@ -58,7 +58,7 @@ demo/
 | Switch Card | `custom:au-switch-card` | Simple on/off switch tile. |
 | Vacuum Card | `custom:au-vacuum-card` | Vacuum controls with start/pause/stop/return and a full-screen settings dashboard. |
 | Device Card | `custom:au-device-card` | Adaptive tile for water heater and other toggleable domains without a dedicated card. |
-| Room Card | `custom:au-room-card` | Row of icon buttons to toggle lights/switches. |
+| Room Card | `custom:au-room-card` | Row of icon buttons to toggle lights/switches. Optional `temperature_entity` shows a temperature on the header first row. |
 | Calendar Card | `custom:au-calendar-card` | Apple Calendar–inspired view-only preview of `calendar.*` entities. |
 
 Every card behaves like a native HA card: it validates its YAML in `setConfig`,
@@ -423,6 +423,7 @@ floors:
     rooms:
       - name: Living room
         layout: { x: 0, y: 0, w: 4, h: 3 }
+        temperature_entity: sensor.living_temperature
         controls:
           show: true
           exclude:
@@ -460,6 +461,7 @@ same editor.
 | `show_bulk_actions` | `true` | Show room “All off”. |
 | `clock_format` | `24h` | Toolbar clock: `24h` or `12h` (centered on Home and Room). |
 | `room_controls` | – | Default room-tile light/switch strip (`show`, `include`, `exclude`, `icons`). Per-room `controls` overrides. |
+| `floors[].rooms[].temperature_entity` | – | Optional temperature sensor on the Home room tile (icon \| value on the first header row). |
 | `auto_areas` | `false` | Merge entities from each room’s `area_id` (HA area registry). |
 | `prefer_device_name` | `true` | Prefer device registry names when available. |
 | `confirm_actions` | `false` | Confirm before bulk / high-stakes device actions. |

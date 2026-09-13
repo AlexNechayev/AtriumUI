@@ -1415,6 +1415,7 @@ export class AuShellHomeView extends LitElement {
       id: draft.roomId,
       name,
       icon: draft.icon.trim() || undefined,
+      temperature_entity: draft.temperatureEntity.trim() || undefined,
       entities,
       controls,
     };

@@ -19,6 +19,8 @@ export interface EditRoomDraft {
   /** Subset of `members` shown on the room-tile strip. */
   selected: string[];
   icons: Record<string, string>;
+  /** Optional temperature sensor entity id. */
+  temperatureEntity: string;
 }
 
 export function buildEditRoomDraft(
@@ -48,6 +50,7 @@ export function buildEditRoomDraft(
     members,
     selected,
     icons: { ...(cfg.icons ?? {}) },
+    temperatureEntity: room.temperature_entity?.trim() ?? '',
   };
 }
 
@@ -216,6 +219,26 @@ export function renderEditRoomModal(
               });
             }}
           />
+        </div>
+        <div class="edit-room-field">
+          <label>Temperature sensor (optional)</label>
+          <ha-entity-picker
+            .hass=${hass}
+            .value=${draft.temperatureEntity}
+            .label=${'Temperature sensor'}
+            .includeDomains=${['sensor']}
+            allow-custom-entity
+            ?disabled=${!canEdit}
+            @value-changed=${(ev: CustomEvent) => {
+              ev.stopPropagation();
+              if (!canEdit) return;
+              handlers.onPatch({
+                temperatureEntity: String(
+                  (ev.detail as { value?: string }).value ?? '',
+                ),
+              });
+            }}
+          ></ha-entity-picker>
         </div>
         <div class="edit-room-field">
           <label>Room icon</label>

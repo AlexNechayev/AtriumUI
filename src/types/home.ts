@@ -89,6 +89,11 @@ export interface AuHomeRoomConfig {
   area_id?: string;
   /** Icon override for the room tile. */
   icon?: string;
+  /**
+   * Optional temperature sensor shown on the Home room tile
+   * (first header row: icon | value).
+   */
+  temperature_entity?: string;
   /** Entities shown in this room (Atrium shorthand). */
   entities?: AuHomeEntityConfig[];
   /** Arbitrary Lovelace cards on this room’s grid. */

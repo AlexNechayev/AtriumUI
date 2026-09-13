@@ -35,6 +35,11 @@ export interface AuRoomCardConfig extends LovelaceCardConfig {
   variant?: AuCardVariant;
   /** Icon-row only (no outer card padding/chrome). */
   compact?: boolean;
+  /**
+   * Optional temperature sensor. When set, the first header row is
+   * icon | formatted state; name and subtitle stay under the icon.
+   */
+  temperature_entity?: string;
   /** When true, emit `[AtriumUI:…]` sync/action logs to the browser console. */
   debug?: boolean;
 }

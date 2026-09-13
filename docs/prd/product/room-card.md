@@ -24,6 +24,7 @@
 ### In scope
 - `custom:au-room-card` icon button row for lights/switches
 - Toggle on tap
+- Optional `temperature_entity` header preview (icon | temperature on the first row; name and subtitle under the icon, start-aligned)
 
 ### Out of scope (this feature)
 - Replacing Home shell room-tile strip (related but shell-owned via `room_controls`)
@@ -35,7 +36,8 @@
 
 | Key | Fields | Notes |
 | --- | --- | --- |
-| Card | entities / icons configuration per implementation | Align with README / editor schema |
+| Card | `entities`, `name`, `icon`, `subtitle`, `show_name`, `compact`, `header_interactive` | Align with README / editor schema |
+| Optional preview | `temperature_entity` | Sensor id; omitted = stacked header (icon above name). Home rooms use the same key. |
 
 ---
 
@@ -43,6 +45,8 @@
 
 1. Tap toggles target entity.
 2. Prefer shared control icon helpers with shell room-controls over duplicated logic.
+3. `temperature_entity` is optional. When unset, keep the stacked header. When set, first row is icon | formatted temperature (1 decimal + unit); name and subtitle stay under the icon, start-aligned.
+4. Missing / `unavailable` / `unknown` sensor: stay in the beside-icon first row and show `—`. Compact still hides the whole header.
 
 ---
 
@@ -59,6 +63,8 @@
 | --- | --- |
 | Empty entity list | Empty state |
 | Mixed domains | Only supported toggle domains |
+| No `temperature_entity` | Stacked header; no temperature node |
+| Sensor missing or unavailable | `—` in the temperature slot; do not revert to stacked |
 
 ---
 
@@ -67,6 +73,9 @@
 1. Renders icon buttons for configured light/switch entities.
 2. Tap toggles and updates visual state.
 3. Card-contract §7 + editor when provided.
+4. Without `temperature_entity`, the header stays stacked (icon above name); no temperature preview.
+5. With `temperature_entity`, the first header row is icon | temperature; name and subtitle are under the icon, start-aligned.
+6. Unavailable or missing temperature sensor shows `—` without leaving that layout.
 
 ---
 

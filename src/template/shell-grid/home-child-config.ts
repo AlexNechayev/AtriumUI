@@ -128,6 +128,9 @@ export function buildRoomTileCardConfig(
       icon: input.chipIcon(ent),
       name: input.chipLabel(ent),
     })),
+    ...(room.temperature_entity?.trim()
+      ? { temperature_entity: room.temperature_entity.trim() }
+      : {}),
     ...(input.debug ? { debug: true } : {}),
   };
 }

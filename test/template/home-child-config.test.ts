@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { homeAwareCardConfig } from '../../src/template/shell-grid/home-child-config';
+import {
+  buildRoomTileCardConfig,
+  homeAwareCardConfig,
+} from '../../src/template/shell-grid/home-child-config';
 
 describe('homeAwareCardConfig', () => {
   it('remaps switch action cards then injects home variant', () => {
@@ -78,5 +81,37 @@ describe('homeAwareCardConfig', () => {
       variant: 'home',
       content_layout: 'vertical',
     });
+  });
+});
+
+const roomTileInput = {
+  headerInteractive: true,
+  toggles: [],
+  activeCount: 0,
+  chipEntities: [],
+  chipIcon: () => 'mdi:lightbulb',
+  chipLabel: (ent: { entity: string }) => ent.entity,
+};
+
+describe('buildRoomTileCardConfig', () => {
+  it('forwards temperature_entity onto the room card', () => {
+    const config = buildRoomTileCardConfig({
+      ...roomTileInput,
+      room: {
+        name: 'Master Bedroom',
+        temperature_entity: 'sensor.sonoff_temperature_sensor_temperature',
+      },
+    });
+    expect(config.temperature_entity).toBe(
+      'sensor.sonoff_temperature_sensor_temperature',
+    );
+  });
+
+  it('omits temperature_entity when the room has none', () => {
+    const config = buildRoomTileCardConfig({
+      ...roomTileInput,
+      room: { name: 'Living' },
+    });
+    expect(config.temperature_entity).toBeUndefined();
   });
 });

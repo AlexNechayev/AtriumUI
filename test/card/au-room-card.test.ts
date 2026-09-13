@@ -129,4 +129,141 @@ describe('au-room-card', () => {
     expect((ev as CustomEvent).composed).toBe(true);
     el.remove();
   });
+
+  it('omits temperature preview when temperature_entity is unset', async () => {
+    const { el } = await renderRoomCard(
+      {
+        type: 'custom:au-room-card',
+        name: 'Master Bedroom',
+        subtitle: '1 on · 2',
+        entities: [{ entity: 'light.bed' }],
+      },
+      { 'light.bed': makeEntity('light.bed', 'on') },
+    );
+
+    expect(el.shadowRoot?.querySelector('.temperature-state')).toBeNull();
+    expect(el.shadowRoot?.querySelector('.icon-row')).toBeNull();
+    expect(
+      el.shadowRoot?.querySelector('.header-action.has-temperature'),
+    ).toBeNull();
+    expect(el.shadowRoot?.querySelector('.primary')?.textContent?.trim()).toBe(
+      'Master Bedroom',
+    );
+    el.remove();
+  });
+
+  it('shows formatted temperature beside the icon when configured', async () => {
+    const { el } = await renderRoomCard(
+      {
+        type: 'custom:au-room-card',
+        name: 'Master Bedroom',
+        subtitle: '1 on · 2',
+        temperature_entity: 'sensor.sonoff_temperature_sensor_temperature',
+        entities: [{ entity: 'light.bed' }],
+      },
+      {
+        'light.bed': makeEntity('light.bed', 'on'),
+        'sensor.sonoff_temperature_sensor_temperature': makeEntity(
+          'sensor.sonoff_temperature_sensor_temperature',
+          '22.41',
+          { unit_of_measurement: '°C' },
+        ),
+      },
+    );
+
+    const header = el.shadowRoot?.querySelector(
+      '.header-action.has-temperature',
+    );
+    expect(header).not.toBeNull();
+    const iconRow = header?.querySelector('.icon-row');
+    expect(iconRow).not.toBeNull();
+    expect(iconRow?.querySelector('.icon')).not.toBeNull();
+    expect(
+      iconRow?.querySelector('.temperature-state')?.textContent?.trim(),
+    ).toBe('22.4°C');
+    expect(header?.querySelector('.text .temperature-state')).toBeNull();
+    expect(header?.querySelector('.primary')?.textContent?.trim()).toBe(
+      'Master Bedroom',
+    );
+    expect(header?.querySelector('.subtitle')?.textContent?.trim()).toBe(
+      '1 on · 2',
+    );
+    el.remove();
+  });
+
+  it('shows an em dash when the temperature sensor is missing or unavailable', async () => {
+    const { el } = await renderRoomCard({
+      type: 'custom:au-room-card',
+      name: 'Master Bedroom',
+      temperature_entity: 'sensor.missing_temp',
+    });
+
+    expect(
+      el.shadowRoot?.querySelector('.header-action.has-temperature'),
+    ).not.toBeNull();
+    expect(
+      el.shadowRoot?.querySelector('.temperature-state')?.textContent?.trim(),
+    ).toBe('—');
+
+    el.hass = makeHass({
+      'sensor.missing_temp': makeEntity('sensor.missing_temp', 'unavailable'),
+    });
+    await el.updateComplete;
+    expect(
+      el.shadowRoot?.querySelector('.temperature-state')?.textContent?.trim(),
+    ).toBe('—');
+    el.remove();
+  });
+
+  it('updates the temperature when the watched sensor changes', async () => {
+    const { el } = await renderRoomCard(
+      {
+        type: 'custom:au-room-card',
+        name: 'Master Bedroom',
+        temperature_entity: 'sensor.room_temp',
+      },
+      {
+        'sensor.room_temp': makeEntity('sensor.room_temp', '18', {
+          unit_of_measurement: '°C',
+        }),
+      },
+    );
+
+    expect(
+      el.shadowRoot?.querySelector('.temperature-state')?.textContent?.trim(),
+    ).toBe('18.0°C');
+
+    el.hass = makeHass({
+      'sensor.room_temp': makeEntity('sensor.room_temp', '19.2', {
+        unit_of_measurement: '°C',
+      }),
+    });
+    await el.updateComplete;
+    expect(
+      el.shadowRoot?.querySelector('.temperature-state')?.textContent?.trim(),
+    ).toBe('19.2°C');
+    el.remove();
+  });
+
+  it('styles temperature-state as secondary type aligned to the icon top', () => {
+    const css = AuRoomCard.styles
+      .map((sheet) => String(sheet))
+      .join('\n');
+    expect(css).toMatch(/\.icon-row\s*\{[^}]*align-items:\s*flex-start/);
+    expect(css).toMatch(
+      /\.temperature-state\s*\{[^}]*font-size:\s*var\(--au-font-secondary\)/,
+    );
+    expect(css).toMatch(/\.temperature-state\s*\{[^}]*font-weight:\s*500/);
+    expect(css).not.toMatch(/\.temp\s*\{/);
+  });
+
+  it('rejects a temperature_entity without a domain', () => {
+    const el = document.createElement('au-room-card') as AuRoomCard;
+    expect(() =>
+      el.setConfig({
+        type: 'custom:au-room-card',
+        temperature_entity: 'not-an-entity',
+      }),
+    ).toThrow(/temperature_entity/);
+  });
 });

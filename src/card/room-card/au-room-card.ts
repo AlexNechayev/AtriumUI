@@ -8,6 +8,7 @@ import { activateOnce } from '../../utils/touch-click';
 import { getRootHass, pickFreshestEntity } from '../../utils/hass-entity';
 import { entityDisplayOn } from '../../utils/sync-debug';
 import { controlIcon } from '../../utils/domain-icons';
+import { formatNumericState, isUnavailable } from '../../utils/entity';
 import { hasEntityChanged } from '../../core/base-card';
 import type { PropertyValues } from 'lit';
 import type {
@@ -103,6 +104,22 @@ export class AuRoomCard extends AuCardContent<AuRoomCardConfig> {
           );
         outline-offset: 2px;
         border-radius: 8px;
+      }
+
+      .icon-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--au-gap);
+        min-width: 0;
+      }
+
+      .temperature-state {
+        font-size: var(--au-font-secondary);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--au-home-label);
+        min-width: 0;
       }
 
       .header-action .icon {
@@ -214,10 +231,26 @@ export class AuRoomCard extends AuCardContent<AuRoomCardConfig> {
     if (config.entities !== undefined && !Array.isArray(config.entities)) {
       throw new Error('AtriumUI Room Card: "entities" must be a list');
     }
+    if (
+      config.temperature_entity !== undefined &&
+      String(config.temperature_entity).trim() !== ''
+    ) {
+      const id = String(config.temperature_entity).trim();
+      if (!id.includes('.')) {
+        throw new Error(
+          'AtriumUI Room Card: "temperature_entity" must be an entity id',
+        );
+      }
+    }
   }
 
   protected override watchedEntities(): string[] {
-    return normalizeRoomCardEntities(this._config?.entities).map((e) => e.entity);
+    const ids = normalizeRoomCardEntities(this._config?.entities).map(
+      (e) => e.entity,
+    );
+    const temp = this._temperatureEntity;
+    if (temp) ids.push(temp);
+    return ids;
   }
 
   protected override shouldUpdate(changed: PropertyValues): boolean {
@@ -261,6 +294,25 @@ export class AuRoomCard extends AuCardContent<AuRoomCardConfig> {
 
   private get _hasActive(): boolean {
     return this._entities.some((e) => this._isOn(e.entity));
+  }
+
+  private get _temperatureEntity(): string | undefined {
+    const id = this._config?.temperature_entity?.trim().toLowerCase();
+    return id && id.includes('.') ? id : undefined;
+  }
+
+  private _temperatureLabel(): string {
+    const id = this._temperatureEntity;
+    if (!id) return '—';
+    const st = this.hass?.states[id];
+    if (!st || isUnavailable(st)) return '—';
+    const numeric = Number(st.state);
+    if (Number.isNaN(numeric)) return '—';
+    const unit =
+      typeof st.attributes.unit_of_measurement === 'string'
+        ? st.attributes.unit_of_measurement
+        : '';
+    return `${formatNumericState(numeric, 1)}${unit}`;
   }
 
   private _chipIcon(entry: AuRoomCardEntityConfig): string {
@@ -342,10 +394,13 @@ export class AuRoomCard extends AuCardContent<AuRoomCardConfig> {
     const name = this._config?.name?.trim() || 'Room';
     const subtitle = this._config?.subtitle?.trim();
     const interactive = this._headerInteractive;
-    const body = html`
+    const hasTemp = Boolean(this._temperatureEntity);
+    const icon = html`
       <div class="icon">
         <ha-icon .icon=${this._headerIcon}></ha-icon>
       </div>
+    `;
+    const text = html`
       <div class="text">
         <span class="primary title">${name}</span>
         ${subtitle
@@ -353,11 +408,23 @@ export class AuRoomCard extends AuCardContent<AuRoomCardConfig> {
           : nothing}
       </div>
     `;
+    const body = hasTemp
+      ? html`
+          <div class="icon-row">
+            ${icon}
+            <span class="temperature-state">${this._temperatureLabel()}</span>
+          </div>
+          ${text}
+        `
+      : html`${icon}${text}`;
+    const headerClass = hasTemp
+      ? 'header-action has-temperature'
+      : 'header-action';
     if (interactive) {
       return html`
         <button
           type="button"
-          class="header-action interactive"
+          class="${headerClass} interactive"
           aria-label=${name}
           @click=${this._onHeaderActivate}
           @touchend=${this._onHeaderTouchEnd}
@@ -366,7 +433,7 @@ export class AuRoomCard extends AuCardContent<AuRoomCardConfig> {
         </button>
       `;
     }
-    return html`<div class="header-action">${body}</div>`;
+    return html`<div class=${headerClass}>${body}</div>`;
   }
 
   private _renderChip(entry: AuRoomCardEntityConfig): TemplateResult {
