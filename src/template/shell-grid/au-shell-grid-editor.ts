@@ -249,6 +249,12 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
   private readonly _roomSchema = [
     { name: 'name', selector: { text: {} } },
     { name: 'icon', selector: { icon: {} } },
+    {
+      name: 'temperature_entity',
+      selector: {
+        entity: { domain: 'sensor', device_class: 'temperature' },
+      },
+    },
     { name: 'area_id', selector: { area: {} } },
     {
       name: 'entities',
@@ -305,6 +311,7 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
       name: 'Name',
       id: 'Id (optional)',
       icon: 'Icon',
+      temperature_entity: 'Temperature sensor (optional)',
       area_id: 'Home Assistant area',
       entities: 'Entities (floor overview or room)',
       show: 'Show strip on large room tiles',
@@ -644,6 +651,7 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
         value: {
           name?: string;
           icon?: string;
+          temperature_entity?: string;
           area_id?: string;
           entities?: string[];
           controls?: AuHomeRoomControlsConfig;
@@ -661,6 +669,7 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
             ...r,
             name: value.name?.trim() || r.name,
             icon: value.icon?.trim() || undefined,
+            temperature_entity: value.temperature_entity?.trim() || undefined,
             area_id: value.area_id?.trim() || undefined,
             entities: this._idsToEntities(value.entities ?? [], r.entities),
             controls,
@@ -675,6 +684,7 @@ export class AuShellGridEditor extends AuBaseEditor<AuShellGridConfig> {
     return {
       name: room?.name ?? '',
       icon: room?.icon ?? '',
+      temperature_entity: room?.temperature_entity ?? '',
       area_id: room?.area_id ?? '',
       entities: this._entitiesToIds(room?.entities),
       controls: {

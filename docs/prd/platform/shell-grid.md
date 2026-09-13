@@ -41,7 +41,7 @@
 | --- | --- | --- |
 | Shell | `columns`, `row_height`, `gap`, `width`, `height`, `rows`, `max_rows`, `editable` | Classic + Home shared |
 | Classic children | `cards[]` with `id?`, `layout?` | Auto-flow if no layout |
-| Home | `floors`, `presence`, `show_presence`, `show_bulk_actions`, `clock_format`, `room_controls`, `auto_areas`, `prefer_device_name`, `confirm_actions`, `scenes`, `scripts`, `multi_entity`, `debug`, `room_idle_timeout` | See README Home options |
+| Home | `floors`, `presence`, `show_presence`, `show_bulk_actions`, `clock_format`, `room_controls`, `auto_areas`, `prefer_device_name`, `confirm_actions`, `scenes`, `scripts`, `multi_entity`, `debug`, `room_idle_timeout` | See README Home options. Per-room optional `temperature_entity` (sensor) is forwarded to the room-tile `au-room-card`. |
 
 ---
 

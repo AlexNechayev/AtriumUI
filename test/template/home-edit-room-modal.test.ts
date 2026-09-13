@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
+  buildEditRoomDraft,
   controlsFromEditDraft,
   roomEntitiesFromEditDraft,
   type EditRoomDraft,
@@ -18,7 +19,29 @@ const baseDraft = (over: Partial<EditRoomDraft> = {}): EditRoomDraft => ({
   ],
   selected: ['light.kitchen_led'],
   icons: {},
+  temperatureEntity: '',
   ...over,
+});
+
+describe('buildEditRoomDraft', () => {
+  it('copies temperature_entity into the draft', () => {
+    const draft = buildEditRoomDraft(
+      {
+        name: 'Master Bedroom',
+        temperature_entity: 'sensor.sonoff_temperature_sensor_temperature',
+      },
+      'master-bedroom',
+      [],
+    );
+    expect(draft.temperatureEntity).toBe(
+      'sensor.sonoff_temperature_sensor_temperature',
+    );
+  });
+
+  it('defaults temperatureEntity to empty when unset', () => {
+    const draft = buildEditRoomDraft({ name: 'Living' }, 'living', []);
+    expect(draft.temperatureEntity).toBe('');
+  });
 });
 
 describe('roomEntitiesFromEditDraft', () => {
