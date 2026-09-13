@@ -25,6 +25,10 @@ import {
   type AuDrawerCardId,
 } from './shell-drawer-trigger';
 import {
+  renderDrawerSettingsBody,
+  type AuDrawerSettingsPatch,
+} from './shell-drawer-settings';
+import {
   discoverFloorsFromAreas,
   findRoom,
   mergeAreaEntities,
@@ -2194,6 +2198,12 @@ export class AuShellHomeView extends LitElement {
         this._drawerCard,
         this.hass?.language,
         this._closeDrawerCard,
+        renderDrawerSettingsBody(
+          this._drawerCard,
+          this.config,
+          this.hass?.language,
+          this._onDrawerSettings,
+        ),
       )}
     `;
   }
@@ -2209,6 +2219,10 @@ export class AuShellHomeView extends LitElement {
 
   private _onDrawerTheme = (theme: 'light' | 'dark' | 'system'): void => {
     fireEvent(this, 'au-drawer-theme', { theme });
+  };
+
+  private _onDrawerSettings = (patch: AuDrawerSettingsPatch): void => {
+    fireEvent(this, 'au-drawer-settings', { patch });
   };
 
   private _homeToolbarTitle(): string {

@@ -27,6 +27,11 @@ import {
   type AuDrawerCardId,
 } from './shell-drawer-trigger';
 import {
+  applyShellSettingsPatch,
+  renderDrawerSettingsBody,
+  type AuDrawerSettingsPatch,
+} from './shell-drawer-settings';
+import {
   resolveShellTheme,
   type AuShellTheme,
 } from './shell-drawer-config';
@@ -854,6 +859,20 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     this._setShellTheme(ev.detail.theme);
   };
 
+  private _applyDrawerSettings(patch: AuDrawerSettingsPatch): void {
+    if (!this._config || !patch) return;
+    this._config = applyShellSettingsPatch(this._config, patch);
+    void this._persistToDashboard();
+  }
+
+  private _onDrawerSettingsEvent = (
+    ev: CustomEvent<{ patch: AuDrawerSettingsPatch }>,
+  ): void => {
+    ev.stopPropagation();
+    if (!ev.detail?.patch) return;
+    this._applyDrawerSettings(ev.detail.patch);
+  };
+
   private async _persistToDashboard(): Promise<void> {
     const cfg = this._config;
     const lovelace = this.lovelace;
@@ -1372,6 +1391,12 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
         this._drawerCard,
         this.hass?.language,
         this._closeDrawerCard,
+        renderDrawerSettingsBody(
+          this._drawerCard,
+          this._config,
+          this.hass?.language,
+          (patch) => this._applyDrawerSettings(patch),
+        ),
       )}
     `;
   }
@@ -1399,6 +1424,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
             @home-config-changed=${this._onHomeConfigChanged}
             @au-drawer-theme=${this._onDrawerThemeEvent}
             @au-drawer-enter-edit=${this._onDrawerEnterEdit}
+            @au-drawer-settings=${this._onDrawerSettingsEvent}
           ></au-shell-home-view>
         </div>
       `;
