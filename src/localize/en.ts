@@ -87,6 +87,11 @@ export const en = {
   'drawer.settings.confirm_actions': 'Confirm high-stakes actions',
   'drawer.settings.prefer_device_name': 'Prefer device registry names',
   'drawer.settings.room_controls_show': 'Show room light/switch strip by default',
+  'drawer.automations.empty': 'No automations found',
+  'drawer.automations.unavailable': 'Unavailable',
+  'drawer.automations.run': 'Run',
+  'drawer.automations.enable': 'Enable',
+  'drawer.automations.disable': 'Disable',
 } as const;
 
 export type TranslationKey = keyof typeof en;

@@ -149,6 +149,43 @@ export const drawerTriggerStyles = css`
     gap: 8px;
     font: inherit;
   }
+  .au-drawer-automations {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    clear: both;
+  }
+  .au-drawer-automations-empty {
+    clear: both;
+    margin: 12px 0 0;
+  }
+  .au-drawer-automation-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .au-drawer-automation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .au-drawer-automation-actions button {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    background: transparent;
+    color: inherit;
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+  .au-drawer-automation-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 export function renderDrawerTrigger(
