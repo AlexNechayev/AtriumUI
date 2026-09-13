@@ -122,6 +122,33 @@ export const drawerTriggerStyles = css`
     font: inherit;
     padding: 4px 8px;
   }
+  .au-drawer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    clear: both;
+  }
+  .au-drawer-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font: inherit;
+  }
+  .au-drawer-field input,
+  .au-drawer-field select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+  .au-drawer-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font: inherit;
+  }
 `;
 
 export function renderDrawerTrigger(
