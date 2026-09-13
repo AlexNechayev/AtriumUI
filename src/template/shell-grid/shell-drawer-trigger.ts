@@ -35,6 +35,29 @@ export const drawerTriggerStyles = css`
   .au-drawer-trigger.open .chevron {
     transform: rotate(90deg);
   }
+  .au-drawer-catcher {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+  }
+  .au-drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 21;
+    box-sizing: border-box;
+    overflow: auto;
+    background: var(--au-home-surface-elevated, var(--card-background-color, #fff));
+    color: var(--au-primary-text, var(--primary-text-color, inherit));
+    box-shadow: var(--au-home-shadow-press, 0 8px 32px rgba(0, 0, 0, 0.18));
+    border-radius: var(--au-home-radius, 22px) 0 0 var(--au-home-radius, 22px);
+    padding: var(--au-home-gap, 12px);
+  }
 `;
 
 export function renderDrawerTrigger(
@@ -64,3 +87,33 @@ export function renderDrawerTrigger(
     </button>
   `;
 }
+
+export const DRAWER_PANEL_WIDTH = 'min(360px, max(280px, 40vw))';
+
+export function renderDrawerOverlay(
+  open: boolean,
+  language: string | undefined,
+  onClose: (ev: Event) => void,
+  body: TemplateResult | typeof nothing = nothing,
+): TemplateResult | typeof nothing {
+  if (!open) return nothing;
+  const closeLabel = localize(language, 'drawer.close');
+  return html`
+    <button
+      type="button"
+      class="au-drawer-catcher"
+      style="background:transparent"
+      aria-label=${closeLabel}
+      @click=${onClose}
+    ></button>
+    <aside
+      class="au-drawer-panel"
+      style=${'width:' + DRAWER_PANEL_WIDTH}
+      role="dialog"
+      aria-modal="true"
+    >
+      ${body}
+    </aside>
+  `;
+}
+

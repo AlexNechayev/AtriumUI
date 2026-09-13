@@ -18,6 +18,7 @@ import { auHomeTokens } from '../../theme/home-style';
 import { homeViewStyles } from './home-view-styles';
 import {
   drawerTriggerStyles,
+  renderDrawerOverlay,
   renderDrawerTrigger,
 } from './shell-drawer-trigger';
 import {
@@ -2144,12 +2145,25 @@ export class AuShellHomeView extends LitElement {
     this._drawerOpen = !this._drawerOpen;
   };
 
+  private _closeDrawer = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = false;
+  };
+
   private _renderDrawerTrigger() {
     return renderDrawerTrigger(
       this.config,
       this._drawerOpen,
       this.hass?.language,
       this._toggleDrawer,
+    );
+  }
+
+  private _renderDrawerOverlay() {
+    return renderDrawerOverlay(
+      this._drawerOpen,
+      this.hass?.language,
+      this._closeDrawer,
     );
   }
 
@@ -2320,6 +2334,7 @@ export class AuShellHomeView extends LitElement {
           ${body}
         </div>
         ${this._renderCardEditorModal()}
+        ${this._renderDrawerOverlay()}
       </div>
     `;
   }
