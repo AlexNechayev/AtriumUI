@@ -29,6 +29,12 @@ import {
   type AuDrawerSettingsPatch,
 } from './shell-drawer-settings';
 import {
+  renderDrawerAutomations,
+  runDrawerAutomationAction,
+  teardownDrawerOverlays,
+  type AuDrawerAutomationAction,
+} from './shell-drawer-automations';
+import {
   discoverFloorsFromAreas,
   findRoom,
   mergeAreaEntities,
@@ -287,6 +293,11 @@ export class AuShellHomeView extends LitElement {
     }
     for (const id of this.config.scenes ?? []) ids.add(id);
     for (const id of this.config.scripts ?? []) ids.add(id);
+    if (this._drawerCard === 'automations' && this.hass) {
+      for (const id of Object.keys(this.hass.states)) {
+        if (id.startsWith('automation.')) ids.add(id);
+      }
+    }
     for (const group of this.config.multi_entity ?? []) {
       for (const id of group.entities) ids.add(id);
     }
@@ -322,6 +333,9 @@ export class AuShellHomeView extends LitElement {
   }
 
   public override disconnectedCallback(): void {
+    this._drawerOpen = false;
+    this._drawerCard = null;
+    teardownDrawerOverlays(this.renderRoot);
     if (this._clockInterval !== undefined) {
       clearInterval(this._clockInterval);
       this._clockInterval = undefined;
@@ -2198,12 +2212,18 @@ export class AuShellHomeView extends LitElement {
         this._drawerCard,
         this.hass?.language,
         this._closeDrawerCard,
-        renderDrawerSettingsBody(
-          this._drawerCard,
-          this.config,
-          this.hass?.language,
-          this._onDrawerSettings,
-        ),
+        this._drawerCard === 'automations'
+          ? renderDrawerAutomations(
+              this.hass,
+              this.hass?.language,
+              this._onDrawerAutomation,
+            )
+          : renderDrawerSettingsBody(
+              this._drawerCard,
+              this.config,
+              this.hass?.language,
+              this._onDrawerSettings,
+            ),
       )}
     `;
   }
@@ -2223,6 +2243,14 @@ export class AuShellHomeView extends LitElement {
 
   private _onDrawerSettings = (patch: AuDrawerSettingsPatch): void => {
     fireEvent(this, 'au-drawer-settings', { patch });
+  };
+
+  private _onDrawerAutomation = (
+    entityId: string,
+    action: AuDrawerAutomationAction,
+  ): void => {
+    const entity = this.hass?.states[entityId];
+    void runDrawerAutomationAction(this, this.hass, entity, action);
   };
 
   private _homeToolbarTitle(): string {

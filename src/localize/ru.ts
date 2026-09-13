@@ -89,4 +89,9 @@ export const ru: Record<TranslationKey, string> = {
   'drawer.settings.confirm_actions': 'Подтверждать важные действия',
   'drawer.settings.prefer_device_name': 'Предпочитать имена устройств',
   'drawer.settings.room_controls_show': 'Показывать полосу света/выключателей по умолчанию',
+  'drawer.automations.empty': 'Автоматизации не найдены',
+  'drawer.automations.unavailable': 'Недоступна',
+  'drawer.automations.run': 'Запустить',
+  'drawer.automations.enable': 'Включить',
+  'drawer.automations.disable': 'Выключить',
 };

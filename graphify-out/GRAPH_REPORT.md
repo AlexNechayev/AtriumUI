@@ -1,16 +1,16 @@
-# Graph Report - feature-shell-drawer-dash-global  (2026-09-13)
+# Graph Report - feature-shell-drawer-automations  (2026-09-13)
 
 ## Corpus Check
-- 284 files · ~135,090 words
+- 287 files · ~136,352 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2313 nodes · 5919 edges · 123 communities (113 shown, 10 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 58 edges (avg confidence: 0.82)
+- 2337 nodes · 5995 edges · 138 communities (122 shown, 16 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 60 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6d4062e6`
+- Built from commit: `4814a233`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,6 +21,7 @@
 - au-fan-card.ts
 - AuActionCardBase
 - AuRoomCard
+- home-edit-room-modal.ts
 - AuShellGrid
 - compilerOptions
 - config.ts
@@ -76,6 +77,7 @@
 - au-action-card-editor.ts
 - format-clock.ts
 - au-fan-card-editor.ts
+- AuSwitchCard
 - water-heater-timer.ts
 - Implementation: Room idle timeout
 - action-card.ts
@@ -98,6 +100,7 @@
 - dependencies
 - activateOnce
 - areas.ts
+- au-room-card-editor.stories.ts
 - repository
 - ._findClosestLovelace
 - Verification
@@ -110,6 +113,7 @@
 - AuShellGridConfig
 - Contributing to AtriumUI
 - ._homeMetaLine
+- au-switch-card-editor.ts
 - coverage.test.ts
 - au-sensor-card.stories.ts
 - au-shell-grid.ts
@@ -121,26 +125,40 @@
 - au-vacuum-card-editor.stories.ts
 - main.ts
 - displayColumnsForWidth
+- ._resolvedFloors
 - AuVacuumCard
 - repository
 - Development
 - @mdi/js
 - VacuumSettingsDraft
 - fireEvent
+- GridItemLike
 - Implementation: Shell drawer theme + enter edit
 - ._renderEntry
+- AuSwitchCard
 - device.ts
+- AuLightSlider
+- AuFanSpeedSelector
+- Implementation: Shell drawer Automations list
+- au-cover-card-editor.ts
+- Localize
+- AuSwitchCardEditor
+- action-card-base.test.ts
+- shell-drawer-chrome.test.ts
+- shell-grid-add-card.test.ts
+- au-vacuum-settings-overlay.stories.ts
+- reactive-update.test.ts
 
 ## God Nodes (most connected - your core abstractions)
-1. `AuShellHomeView` - 159 edges
-2. `HassEntity` - 90 edges
-3. `AuShellGrid` - 82 edges
-4. `AuActionCardBase` - 57 edges
-5. `computeDomain()` - 57 edges
-6. `makeHass()` - 57 edges
-7. `AuCalendarFullscreenOverlay` - 48 edges
-8. `lit` - 47 edges
-9. `makeEntity()` - 47 edges
+1. `AuShellHomeView` - 161 edges
+2. `HassEntity` - 91 edges
+3. `AuShellGrid` - 85 edges
+4. `makeHass()` - 59 edges
+5. `AuActionCardBase` - 57 edges
+6. `computeDomain()` - 57 edges
+7. `lit` - 48 edges
+8. `AuCalendarFullscreenOverlay` - 48 edges
+9. `makeEntity()` - 48 edges
 10. `AuVacuumSettingsOverlay` - 45 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -158,11 +176,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (123 total, 10 thin omitted)
+## Communities (138 total, 16 thin omitted)
 
 ### Community 0 - "AuShellHomeView"
 Cohesion: 0.04
-Nodes (15): Phase 3-4 Product Backlog, Session Follow-ups, AuShellHomeView, customElement, property, query, state, addEditRoomMember() (+7 more)
+Nodes (15): Phase 3-4 Product Backlog, Session Follow-ups, AuShellHomeView, customElement, property, query, state, renderAddCardModal() (+7 more)
 
 ### Community 1 - "light.ts"
 Cohesion: 0.08
@@ -170,55 +188,55 @@ Nodes (37): AuLightCard, HTMLElementTagNameMap, customElement, state, createDebo
 
 ### Community 2 - "AuTempStepper"
 Cohesion: 0.09
-Nodes (12): AuActionCardEditor, customElement, AuCoverCardEditor, customElement, AuSensorCardEditor, customElement, AuSwitchCardEditor, customElement (+4 more)
+Nodes (12): AuActionCardEditor, customElement, AuClimateCardEditor, customElement, AuFanCardEditor, customElement, AuSensorCardEditor, customElement (+4 more)
 
 ### Community 3 - "au-fan-card.ts"
-Cohesion: 0.11
-Nodes (20): AuFanCard, customElement, state, getFanModeIcon(), FAN_SUPPORT, FanCapabilities, formatFanSecondary(), formatFanSpeedLabel() (+12 more)
+Cohesion: 0.15
+Nodes (17): getFanModeIcon(), FAN_SUPPORT, FanCapabilities, formatFanSecondary(), formatFanSpeedLabel(), getFanCapabilities(), getFanDirection(), getFanPercentage() (+9 more)
 
 ### Community 4 - "AuActionCardBase"
-Cohesion: 0.07
-Nodes (12): AuActionCardBase, humanize(), eventOptions, ActionConfig, clearHoldTimer(), clearTapTimer(), createPointerGestureState(), handleGesturePointerCancel() (+4 more)
+Cohesion: 0.06
+Nodes (16): AuActionCardBase, humanize(), eventOptions, ActionConfig, defaultDoubleTapAction(), defaultHoldAction(), defaultTapAction(), resolveAction() (+8 more)
 
 ### Community 5 - "AuRoomCard"
 Cohesion: 0.09
 Nodes (7): AuRoomCard, customElement, eventOptions, AuRoomCardEntityConfig, activateOnce(), markActivated(), recentActivate
 
 ### Community 7 - "AuShellGrid"
-Cohesion: 0.10
-Nodes (5): AuShellGrid, customElement, property, query, state
+Cohesion: 0.07
+Nodes (8): AuShellGrid, customElement, property, query, state, walkAncestors(), ensureCardPickerLoaded(), Lovelace
 
 ### Community 8 - "compilerOptions"
 Cohesion: 0.04
 Nodes (45): DOM, DOM.Iterable, ES2021, stories, .storybook, storybook-static, dist, node_modules (+37 more)
 
 ### Community 10 - "index.ts"
-Cohesion: 0.07
-Nodes (24): Default, Story, Default, Story, Default, Story, Default, Story (+16 more)
+Cohesion: 0.08
+Nodes (28): Home, Story, Default, Story, Default, Story, Default, Story (+20 more)
 
 ### Community 12 - "AuHomeEntityConfig"
-Cohesion: 0.14
-Nodes (14): GridItem, GridItemLike, GridPos, applyHomeItemMove(), applyHomeItemResize(), applyRoomItemMove(), applyRoomItemResize(), beginPointerDrag() (+6 more)
+Cohesion: 0.13
+Nodes (21): CardEditorMode, HTMLElementTagNameMap, NavView, applyHomeItemMove(), applyHomeItemResize(), applyRoomItemMove(), applyRoomItemResize(), beginPointerDrag() (+13 more)
 
 ### Community 13 - "AuCalendarCard"
-Cohesion: 0.13
-Nodes (37): HTMLElementTagNameMap, VIEW_KEYS, ensureCalendarFullscreenOverlay(), HTMLElementTagNameMap, VIEW_KEYS, AuCalendarEvent, AuCalendarTimeFormat, AuCalendarTimezoneMode (+29 more)
+Cohesion: 0.15
+Nodes (31): HTMLElementTagNameMap, VIEW_KEYS, ensureCalendarFullscreenOverlay(), HTMLElementTagNameMap, VIEW_KEYS, buildMonthGrid(), CallServiceWithResponse, compileFilter() (+23 more)
 
 ### Community 14 - "HassEntity"
-Cohesion: 0.17
-Nodes (21): HvacAction, HvacMode, asNumber(), asStringList(), clamp(), ClimateCapabilities, formatFanModeLabel(), getClimateCapabilities() (+13 more)
+Cohesion: 0.15
+Nodes (24): HTMLElementTagNameMap, AuClimateCardConfig, HvacAction, HvacMode, asNumber(), asStringList(), clamp(), ClimateCapabilities (+16 more)
 
 ### Community 15 - "computeDomain"
-Cohesion: 0.13
+Cohesion: 0.14
 Nodes (4): AuClimateCard, customElement, state, HassEntity
 
 ### Community 16 - "HomeAssistant"
-Cohesion: 0.08
-Nodes (39): hass.language Locale Source, Hebrew RTL Support, Localize Catalogs (en/ru/he), Localize, en, TranslationKey, he, isRtlLanguage() (+31 more)
+Cohesion: 0.15
+Nodes (22): localize(), DragState, HTMLElementTagNameMap, AuDrawerAutomationAction, renderDrawerAutomations(), teardownDrawerOverlays(), AuResolvedShellDrawer, AuShellDrawerItemKey (+14 more)
 
 ### Community 17 - "au-calendar-card-editor.ts"
-Cohesion: 0.17
-Nodes (10): AuCalendarCardEditor, HTMLElementTagNameMap, customElement, AuCalendarFullscreenOpenOptions, AuCalendarFullscreenSync, calendarCardEditorLabels, calendarCardEditorSchema, AuCalendarCardConfig (+2 more)
+Cohesion: 0.11
+Nodes (15): AuCalendarCardEditor, HTMLElementTagNameMap, customElement, AuCalendarFullscreenOpenOptions, AuCalendarFullscreenSync, calendarCardEditorLabels, calendarCardEditorSchema, AuCalendarCardConfig (+7 more)
 
 ### Community 18 - "._renderHomeView"
 Cohesion: 0.17
@@ -226,31 +244,31 @@ Nodes (11): Acceptance (from docs/prd/platform/distribution-hacs.md), Automated,
 
 ### Community 19 - "grid-engine.ts"
 Cohesion: 0.21
-Nodes (25): DragState, HTMLElementTagNameMap, clampToColumns(), collides(), compact(), computeRowTrackHeightPx(), defaultGridSpan(), deriveResponsiveLayout() (+17 more)
+Nodes (21): clampToColumns(), collides(), compact(), computeRowTrackHeightPx(), defaultGridSpan(), deriveResponsiveLayout(), displayColumnsForWidth(), findFreeSlot() (+13 more)
 
 ### Community 20 - "home-child-config.ts"
 Cohesion: 0.12
-Nodes (7): AuCalendarFullscreenOverlay, customElement, property, state, formatEventTimeRange(), isSameLocalDay(), packMonthDayChips()
+Nodes (5): AuCalendarFullscreenOverlay, customElement, property, state, formatEventTimeRange()
 
 ### Community 21 - "Card Contract Feature"
 Cohesion: 0.09
 Nodes (27): Architecture Card Contract, Card Contract Feature, Action Card, custom:au-action-card, AuActionCardBase, Action Card Content Layout, Calendar Card, Calendar Views (agenda/today/week/month) (+19 more)
 
 ### Community 22 - "au-shell-home-view.ts"
-Cohesion: 0.11
-Nodes (36): CardEditorMode, HTMLElementTagNameMap, NavView, buildRoomTileCardConfig(), childConfigForEntity(), ChildConfigOptions, homeAwareCardConfig(), RoomTileCardConfigInput (+28 more)
+Cohesion: 0.16
+Nodes (18): commitHomeEditToFloors(), commitRoomEditToFloors(), beginHomeEditDraft(), beginRoomEditDraft(), emptyEditSessionDraft(), HomeEditSessionDraft, buildHomeEditItems(), buildHomeFloorGridItems() (+10 more)
 
 ### Community 23 - "home-drag-resize.ts"
 Cohesion: 0.15
 Nodes (12): 1. Correction, 2. Warning, 3. Temporary Ban, 4. Permanent Ban, Attribution, Contributor Covenant Code of Conduct, Enforcement, Enforcement Guidelines (+4 more)
 
 ### Community 24 - "au-shell-grid.ts"
-Cohesion: 0.25
-Nodes (12): actionEntity(), ActionKind, ALLOWED_SERVICE_DOMAINS, BLOCKED_HOMEASSISTANT_SERVICES, defaultDoubleTapAction(), defaultHoldAction(), defaultTapAction(), fireMoreInfo() (+4 more)
+Cohesion: 0.21
+Nodes (13): actionEntity(), ActionKind, ALLOWED_SERVICE_DOMAINS, BLOCKED_HOMEASSISTANT_SERVICES, executeAction(), fireMoreInfo(), isAllowedServiceCall(), isSafeActionUrl() (+5 more)
 
 ### Community 25 - "Distribution and HACS Feature"
-Cohesion: 0.05
-Nodes (38): AuActionCard, customElement, AuSwitchCard, customElement, CARDS, isShellHomeMode(), ActionCardInternals, makeActionCard() (+30 more)
+Cohesion: 0.24
+Nodes (6): CARDS, makeEntity(), registerActionHandlerMock(), openDrawer(), renderHome(), openHomeDrawer()
 
 ### Community 26 - "device.ts"
 Cohesion: 0.17
@@ -273,8 +291,8 @@ Cohesion: 0.31
 Nodes (9): Atrium Home Dashboard Demo, Architecture Domain Card Mapping, Home Rooms Mode, au-shell-grid, Domain to Card Mapping, shell-grid edit-mode fixture (hui-card), Fixture setConfig classic grid cards, shell-grid custom-view edit-mode fixture (lovelace) (+1 more)
 
 ### Community 31 - "._placeFloorCard"
-Cohesion: 0.09
-Nodes (22): HTMLElementTagNameMap, AuBaseCard, hasEntityChanged(), property, state, CustomCardEntry, HassArea, HassDevice (+14 more)
+Cohesion: 0.10
+Nodes (20): ActionSurfaceOptions, AuBaseCard, hasEntityChanged(), property, state, CustomCardEntry, HassArea, HassDevice (+12 more)
 
 ### Community 32 - "PRD Decision Log D1-D14"
 Cohesion: 0.33
@@ -282,19 +300,19 @@ Nodes (7): D10 Action Safety, D2 One Shell Card, D7 Priority Order, PRD Decision
 
 ### Community 33 - "create-child-card.ts"
 Cohesion: 0.15
-Nodes (4): AuCalendarCard, customElement, state, formatDayHeader()
+Nodes (7): AuCalendarCard, customElement, state, AuCalendarEvent, AuCalendarView, isAuCalendarView(), formatDayHeader()
 
 ### Community 34 - "devDependencies"
 Cohesion: 0.09
 Nodes (23): eslint, @eslint/js, jsdom, prettier, storybook, @storybook/web-components-vite, @types/node, typescript (+15 more)
 
 ### Community 35 - "tokens.ts"
-Cohesion: 0.22
-Nodes (7): applyGridToLovelaceConfig(), buildPersistedGridConfig(), buildPersistedHomeConfig(), GridPersistItem, applyShellSettingsPatch(), AuGridCardConfig, baseGrid
+Cohesion: 0.24
+Nodes (6): applyGridToLovelaceConfig(), buildPersistedGridConfig(), buildPersistedHomeConfig(), GridPersistItem, AuGridCardConfig, baseGrid
 
 ### Community 36 - "au-device-card.ts"
-Cohesion: 0.13
-Nodes (16): AuCoverCard, HTMLElementTagNameMap, customElement, state, closeCover(), COVER_SUPPORT, CoverCapabilities, formatCoverSecondary() (+8 more)
+Cohesion: 0.12
+Nodes (15): AuCoverCard, customElement, state, closeCover(), COVER_SUPPORT, CoverCapabilities, formatCoverSecondary(), getCoverCapabilities() (+7 more)
 
 ### Community 37 - "Edit Mode"
 Cohesion: 0.29
@@ -302,31 +320,31 @@ Nodes (7): Vacuum hide_sections, Vacuum Settings Overlay, Vacuum Card, config-pe
 
 ### Community 38 - "._renderChildCard"
 Cohesion: 0.19
-Nodes (17): AuActionCardBaseConfig, AuActionCardContentLayout, AuCardVariant, AuClimateCardConfig, AuActionCardConfig, AuGridItemLayout, AuSeverityThresholds, AuCoverCardConfig (+9 more)
+Nodes (16): AuActionCardBaseConfig, AuActionCardContentLayout, AuCardVariant, AuActionCardConfig, AuGridItemLayout, AuSeverityThresholds, AuCoverCardConfig, AuDeviceCardConfig (+8 more)
 
 ### Community 39 - "._renderEntry"
-Cohesion: 0.13
-Nodes (6): AuClimateSelectors, HTMLElementTagNameMap, SelectorPanel, customElement, property, state
+Cohesion: 0.16
+Nodes (4): AuClimateSelectors, customElement, property, state
 
 ### Community 40 - "au-shell-grid-home.test.ts"
-Cohesion: 0.28
-Nodes (5): AuFanCardEditor, HTMLElementTagNameMap, customElement, fanCardEditorLabels, fanCardEditorSchema
+Cohesion: 0.21
+Nodes (10): HTMLElementTagNameMap, HTMLElementTagNameMap, auDebug(), isEntityActive(), isEntityOffline(), toggleFan(), GestureKind, formatSwitchSecondary() (+2 more)
 
 ### Community 41 - "au-shell-grid"
-Cohesion: 0.28
-Nodes (5): AuClimateCardEditor, HTMLElementTagNameMap, customElement, climateCardEditorLabels, climateCardEditorSchema
+Cohesion: 0.15
+Nodes (3): AuTempStepper, customElement, property
 
 ### Community 42 - "Home Tiles"
-Cohesion: 0.13
-Nodes (4): AuDeviceCard, customElement, state, DomainControlModel
+Cohesion: 0.11
+Nodes (12): AuDeviceCard, customElement, state, DomainControlModel, clampTimerMinutes(), clearTimerEndsAt(), formatTimerRemaining(), normalizeTimerPresets() (+4 more)
 
 ### Community 43 - "compilerOptions"
 Cohesion: 0.13
 Nodes (14): ./tsconfig.json, dist, node_modules, src, test, compilerOptions, declaration, declarationDir (+6 more)
 
 ### Community 44 - "AuSensorCard"
-Cohesion: 0.20
-Nodes (3): AuSensorCard, customElement, AuSensorCardConfig
+Cohesion: 0.17
+Nodes (4): AuSensorCard, customElement, AuSensorCardConfig, renderSensorCard()
 
 ### Community 45 - "._renderEntry"
 Cohesion: 0.22
@@ -361,16 +379,16 @@ Cohesion: 0.29
 Nodes (6): [0.5.4] - 2026-08-25, Added, Added, Changed, Changelog, [Unreleased]
 
 ### Community 54 - "au-room-card-editor.ts"
-Cohesion: 0.05
-Nodes (19): AuFanSpeedSelector, HTMLElementTagNameMap, customElement, property, state, AuLightSlider, customElement, property (+11 more)
+Cohesion: 0.12
+Nodes (12): HTMLElementTagNameMap, AuLightSliderVariant, HTMLElementTagNameMap, AuTempControlMode, HTMLElementTagNameMap, clamp(), snapToStep(), valueFromClientX() (+4 more)
 
 ### Community 55 - "Feature: Card contract"
 Cohesion: 0.11
 Nodes (20): Classic, Home, Story, Unavailable, BrightnessOnly, Classic, Home, Hue (+12 more)
 
 ### Community 56 - "AuSensorCard"
-Cohesion: 0.14
-Nodes (23): Design Tokens, lit, HTMLElementTagNameMap, HTMLElementTagNameMap, HTMLElementTagNameMap, HTMLElementTagNameMap, HTMLElementTagNameMap, SeverityLevel (+15 more)
+Cohesion: 0.12
+Nodes (24): Design Tokens, lit, HTMLElementTagNameMap, HTMLElementTagNameMap, HTMLElementTagNameMap, HTMLElementTagNameMap, HTMLElementTagNameMap, HTMLElementTagNameMap (+16 more)
 
 ### Community 57 - "water-heater-timer.ts"
 Cohesion: 0.08
@@ -391,6 +409,10 @@ Nodes (14): 1. Problem & user story, 2. In / out of scope, 3. Config / data mode
 ### Community 61 - "au-fan-card-editor.ts"
 Cohesion: 0.15
 Nodes (12): author, bugs, url, description, homepage, license, main, module (+4 more)
+
+### Community 62 - "AuSwitchCard"
+Cohesion: 0.24
+Nodes (3): AuFanCard, customElement, state
 
 ### Community 63 - "water-heater-timer.ts"
 Cohesion: 0.42
@@ -433,8 +455,8 @@ Cohesion: 0.40
 Nodes (5): dist, hacs.json, LICENSE, README.md, files
 
 ### Community 74 - "Action Card"
-Cohesion: 0.11
-Nodes (20): Classic, ClassicButtons, Home, HomeButtons, Story, Classic, Home, Story (+12 more)
+Cohesion: 0.09
+Nodes (19): Agenda, Month, Story, Classic, ClassicButtons, Home, HomeButtons, Story (+11 more)
 
 ### Community 75 - "light-card-layout.ts"
 Cohesion: 0.40
@@ -453,12 +475,12 @@ Cohesion: 0.17
 Nodes (11): Acceptance (from docs/prd/product/calendar-card.md), Automated, Decisions, feature/calendar-fullscreen, Files touched, Goal, Leftover cleanup, Linked docs (+3 more)
 
 ### Community 81 - "PULL_REQUEST_TEMPLATE.md"
-Cohesion: 0.09
-Nodes (19): buildEditRoomDraft(), controlsFromEditDraft(), EditRoomAddCandidate, EditRoomDraft, EditRoomModalHandlers, EditRoomModalProps, moveEditRoomMember(), renderEditRoomModal() (+11 more)
+Cohesion: 0.14
+Nodes (18): addEditRoomMember(), buildEditRoomDraft(), controlsFromEditDraft(), EditRoomAddCandidate, EditRoomDraft, EditRoomModalHandlers, EditRoomModalProps, moveEditRoomMember() (+10 more)
 
 ### Community 82 - "resolveAction"
-Cohesion: 0.10
-Nodes (34): clamp(), ActionSurfaceOptions, BulkOffResult, bulkTurnOff(), collectBulkOffTargets(), validateClimateEntity(), DEDICATED_CARD_DOMAINS, DeviceCapabilities (+26 more)
+Cohesion: 0.08
+Nodes (23): AuActionCard, customElement, roomCardEditorLabels, roomCardEditorSchema, clamp(), automationActionConfig(), listShellAutomations(), runDrawerAutomationAction() (+15 more)
 
 ### Community 83 - "CI Verify Job"
 Cohesion: 0.67
@@ -473,8 +495,12 @@ Cohesion: 0.18
 Nodes (11): Acceptance (from docs/prd/ux/shell-drawer.md), Automated, Decisions, Files touched, Goal, Implementation: Shell drawer YAML config, Leftover cleanup, Linked official docs (+3 more)
 
 ### Community 86 - "areas.ts"
-Cohesion: 0.21
-Nodes (10): ACTION_CARD_UI_ACTIONS, actionCardEditorLabels, actionCardEditorSchema, HTMLElementTagNameMap, HTMLElementTagNameMap, coverCardEditorLabels, coverCardEditorSchema, HTMLElementTagNameMap (+2 more)
+Cohesion: 0.19
+Nodes (11): ACTION_CARD_UI_ACTIONS, actionCardEditorLabels, actionCardEditorSchema, climateCardEditorLabels, climateCardEditorSchema, HTMLElementTagNameMap, fanCardEditorLabels, fanCardEditorSchema (+3 more)
+
+### Community 87 - "au-room-card-editor.stories.ts"
+Cohesion: 0.24
+Nodes (8): buildRoomTileCardConfig(), childConfigForEntity(), ChildConfigOptions, homeAwareCardConfig(), RoomTileCardConfigInput, AuHomeEntityConfig, AuHomeRoomConfig, roomTileInput
 
 ### Community 88 - "repository"
 Cohesion: 0.29
@@ -513,20 +539,24 @@ Cohesion: 0.17
 Nodes (11): Acceptance (from docs/prd/ux/shell-drawer.md), Automated, Decisions, Files touched, Goal, Implementation: Shell drawer trigger chrome, Leftover cleanup, Linked official docs (+3 more)
 
 ### Community 98 - "Contributing to AtriumUI"
-Cohesion: 0.25
-Nodes (8): Decisions, Files touched, Goal, Implementation: Shell drawer Dashboard + Global settings, Leftover cleanup, Linked official docs, TDD, Verification
+Cohesion: 0.18
+Nodes (11): Acceptance (from docs/prd/ux/shell-drawer.md), Automated, Decisions, Files touched, Goal, Implementation: Shell drawer Dashboard + Global settings, Leftover cleanup, Linked official docs (+3 more)
 
 ### Community 99 - "._homeMetaLine"
 Cohesion: 0.57
 Nodes (5): formatHvacModeLabel(), formatTemperature(), getCurrentTemperature(), getHvacAction(), getTemperatureUnit()
+
+### Community 100 - "au-switch-card-editor.ts"
+Cohesion: 0.20
+Nodes (13): allowedKeys(), applyShellSettingsPatch(), AuDrawerSettingsPatch, checkbox(), DASHBOARD_KEYS, GLOBAL_KEYS, numberField(), renderDrawerDashboardSettings() (+5 more)
 
 ### Community 101 - "coverage.test.ts"
 Cohesion: 0.40
 Nodes (5): collect(), ROOT, SRC, STORIES, walkTs()
 
 ### Community 102 - "au-sensor-card.stories.ts"
-Cohesion: 0.19
-Nodes (7): Agenda, Month, Story, Classic, config, Home, Story
+Cohesion: 0.40
+Nodes (4): Classic, config, Home, Story
 
 ### Community 103 - "au-shell-grid.ts"
 Cohesion: 0.28
@@ -541,16 +571,28 @@ Cohesion: 0.29
 Nodes (7): Contributing to AtriumUI, Development setup, How to report issues, Making a change, Project constraints (do not break), Pull request checklist, Support the project
 
 ### Community 106 - "bindStopBubble"
-Cohesion: 0.11
-Nodes (16): cardTag(), cardTypeHasEditor(), createChildCard(), ensureCardPickerLoaded(), fallbackCustomCardEntries(), getCardEditorElement(), stubConfigForCardType(), attachChildToHost() (+8 more)
+Cohesion: 0.19
+Nodes (11): cardTag(), cardTypeHasEditor(), createChildCard(), fallbackCustomCardEntries(), getCardEditorElement(), stubConfigForCardType(), attachChildToHost(), ChildCardMaps (+3 more)
 
 ### Community 107 - "Security Policy"
 Cohesion: 0.50
 Nodes (3): Reporting a vulnerability, Security Policy, Supported versions
 
+### Community 109 - "Localize"
+Cohesion: 0.14
+Nodes (11): makeCalendarHass(), renderClimateCard(), renderCoverCard(), renderDeviceCard(), renderFanCard(), renderLightCard(), renderRoomCard(), renderVacuumCard() (+3 more)
+
+### Community 110 - "au-vacuum-card-editor.stories.ts"
+Cohesion: 0.17
+Nodes (9): FakeCard, FakeEditor, HomeViewTestApi, renderIdleHome(), renderShell(), roomTileCard(), roomTileChips(), roomTileHost() (+1 more)
+
 ### Community 113 - "displayColumnsForWidth"
-Cohesion: 0.50
-Nodes (3): AuLightSliderVariant, HTMLElementTagNameMap, mountSlider()
+Cohesion: 0.27
+Nodes (9): en, TranslationKey, he, isRtlLanguage(), normalizeLanguage(), RTL_LANGUAGES, TABLES, ru (+1 more)
+
+### Community 114 - "._resolvedFloors"
+Cohesion: 0.27
+Nodes (6): toggleEditRoomEntity(), discoverFloorsFromAreas(), entitiesForArea(), findRoom(), mergeAreaEntities(), normalizeFloors()
 
 ### Community 115 - "AuVacuumCard"
 Cohesion: 0.15
@@ -568,36 +610,60 @@ Nodes (3): Demo YAML, Development, Home Assistant watch build (`dev:ha`)
 Cohesion: 0.15
 Nodes (4): applyVacuumDraft(), pressVacuumButton(), VacuumDraftValue, VacuumSettingsDraft
 
-### Community 120 - "fireEvent"
-Cohesion: 0.12
-Nodes (12): AuRoomCardEditor, HTMLElementTagNameMap, customElement, roomCardEditorLabels, roomCardEditorSchema, DEFAULT_HOME_FLOORS, HTMLElementTagNameMap, ROOM_CARD_ENTITY_DOMAINS (+4 more)
-
 ### Community 122 - "Implementation: Shell drawer theme + enter edit"
 Cohesion: 0.17
 Nodes (11): Acceptance, Automated, Decisions, Files touched, Goal, Implementation: Shell drawer theme + enter edit, Leftover cleanup, Linked official docs (+3 more)
 
+### Community 124 - "AuSwitchCard"
+Cohesion: 0.20
+Nodes (3): AuSwitchCard, customElement, renderSwitchCard()
+
 ### Community 125 - "device.ts"
-Cohesion: 0.18
-Nodes (20): HTMLElementTagNameMap, DomainControlKind, DomainControlVisibility, resolveDomainControl(), runWaterHeaterTemperature(), getWaterHeaterCapabilities(), getWaterHeaterTemperature(), setWaterHeaterTemperature() (+12 more)
+Cohesion: 0.16
+Nodes (24): HTMLElementTagNameMap, DEDICATED_CARD_DOMAINS, DeviceCapabilities, EXPLICIT_ON_OFF_DOMAINS, getDeviceCapabilities(), isDeviceActive(), isSupportedDeviceDomain(), resolveCardTypeForEntity() (+16 more)
+
+### Community 126 - "AuLightSlider"
+Cohesion: 0.29
+Nodes (3): AuLightSlider, customElement, property
+
+### Community 127 - "AuFanSpeedSelector"
+Cohesion: 0.22
+Nodes (4): AuFanSpeedSelector, customElement, property, state
+
+### Community 128 - "Implementation: Shell drawer Automations list"
+Cohesion: 0.22
+Nodes (8): Decisions, Files touched, Goal, Implementation: Shell drawer Automations list, Leftover cleanup, Linked official docs, TDD, Verification
+
+### Community 129 - "au-cover-card-editor.ts"
+Cohesion: 0.28
+Nodes (5): AuCoverCardEditor, HTMLElementTagNameMap, customElement, coverCardEditorLabels, coverCardEditorSchema
+
+### Community 130 - "Localize"
+Cohesion: 0.67
+Nodes (4): hass.language Locale Source, Hebrew RTL Support, Localize Catalogs (en/ru/he), Localize
+
+### Community 132 - "action-card-base.test.ts"
+Cohesion: 0.67
+Nodes (3): ActionCardInternals, makeActionCard(), renderActionCard()
 
 ## Knowledge Gaps
-- **602 isolated node(s):** `singleQuote`, `trailingComma`, `printWidth`, `semi`, `config` (+597 more)
+- **611 isolated node(s):** `singleQuote`, `trailingComma`, `printWidth`, `semi`, `config` (+606 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `AuShellHomeView` connect `AuShellHomeView` to `bindStopBubble`, `au-cover-card.ts`, `AuHomeEntityConfig`, `Architecture Specification`, `HomeAssistant`, `PULL_REQUEST_TEMPLATE.md`, `grid-engine.ts`, `au-shell-home-view.ts`, `fireEvent`, `Distribution and HACS Feature`, `._renderAddEntityModal`, `._placeFloorCard`?**
-  _High betweenness centrality (0.116) - this node is a cross-community bridge._
-- **Why does `lit` connect `AuSensorCard` to `light.ts`, `AuCalendarCard`, `HomeAssistant`, `au-calendar-card-editor.ts`, `grid-engine.ts`, `au-shell-home-view.ts`, `au-vacuum-card.ts`, `au-vacuum-settings-overlay.ts`, `._placeFloorCard`, `au-device-card.ts`, `._renderEntry`, `au-shell-grid-home.test.ts`, `au-shell-grid`, `au-vacuum-card-editor.ts`, `au-room-card-editor.ts`, `au-cover-card-editor.ts`, `keywords`, `PULL_REQUEST_TEMPLATE.md`, `resolveAction`, `areas.ts`, `Installation`, `au-shell-grid.ts`, `bindStopBubble`, `displayColumnsForWidth`, `fireEvent`, `device.ts`?**
-  _High betweenness centrality (0.066) - this node is a cross-community bridge._
-- **Why does `HomeAssistant` connect `._placeFloorCard` to `AuShellHomeView`, `light.ts`, `AuTempStepper`, `au-fan-card.ts`, `AuCalendarCard`, `HassEntity`, `au-shell-home-view.ts`, `au-shell-grid.ts`, `Distribution and HACS Feature`, `au-vacuum-card.ts`, `au-device-card.ts`, `._renderEntry`, `Feature: Card contract`, `Action Card`, `displayColumnsForWidth`, `PULL_REQUEST_TEMPLATE.md`, `resolveAction`, `bindStopBubble`, `VacuumSettingsDraft`, `fireEvent`, `device.ts`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
+- **Why does `AuShellHomeView` connect `AuShellHomeView` to `home-edit-room-modal.ts`, `bindStopBubble`, `au-cover-card.ts`, `AuHomeEntityConfig`, `Localize`, `Architecture Specification`, `HomeAssistant`, `PULL_REQUEST_TEMPLATE.md`, `._resolvedFloors`, `grid-engine.ts`, `resolveAction`, `au-shell-home-view.ts`, `au-room-card-editor.stories.ts`, `au-shell-grid.ts`, `GridItemLike`, `._renderAddEntityModal`, `Distribution and HACS Feature`, `._placeFloorCard`?**
+  _High betweenness centrality (0.104) - this node is a cross-community bridge._
+- **Why does `lit` connect `AuSensorCard` to `au-cover-card-editor.ts`, `light.ts`, `AuHomeEntityConfig`, `AuCalendarCard`, `HassEntity`, `HomeAssistant`, `au-calendar-card-editor.ts`, `au-vacuum-card.ts`, `au-vacuum-settings-overlay.ts`, `._placeFloorCard`, `au-shell-grid-home.test.ts`, `au-vacuum-card-editor.ts`, `au-room-card-editor.ts`, `au-cover-card-editor.ts`, `keywords`, `PULL_REQUEST_TEMPLATE.md`, `resolveAction`, `areas.ts`, `Installation`, `au-switch-card-editor.ts`, `au-shell-grid.ts`, `device.ts`?**
+  _High betweenness centrality (0.074) - this node is a cross-community bridge._
+- **Why does `HomeAssistant` connect `._placeFloorCard` to `AuShellHomeView`, `light.ts`, `AuTempStepper`, `au-fan-card.ts`, `index.ts`, `AuHomeEntityConfig`, `AuCalendarCard`, `HassEntity`, `HomeAssistant`, `au-shell-grid.ts`, `Distribution and HACS Feature`, `au-vacuum-card.ts`, `au-device-card.ts`, `au-shell-grid-home.test.ts`, `._renderEntry`, `Feature: Card contract`, `AuSensorCard`, `displayColumnsForWidth`, `PULL_REQUEST_TEMPLATE.md`, `resolveAction`, `bindStopBubble`, `._resolvedFloors`, `VacuumSettingsDraft`, `device.ts`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
 - **What connects `singleQuote`, `trailingComma`, `printWidth` to the rest of the system?**
-  _602 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _611 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `AuShellHomeView` be split into smaller, more focused modules?**
-  _Cohesion score 0.04104938271604938 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.042901234567901236 - nodes in this community are weakly interconnected._
 - **Should `light.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.07927565392354124 - nodes in this community are weakly interconnected._
 - **Should `AuTempStepper` be split into smaller, more focused modules?**

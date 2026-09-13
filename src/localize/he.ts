@@ -89,4 +89,9 @@ export const he: Record<TranslationKey, string> = {
   'drawer.settings.confirm_actions': 'אשר פעולות חשובות',
   'drawer.settings.prefer_device_name': 'העדף שמות מכשירים',
   'drawer.settings.room_controls_show': 'הצג פס תאורה/מתגים בחדר כברירת מחדל',
+  'drawer.automations.empty': 'לא נמצאו אוטומציות',
+  'drawer.automations.unavailable': 'לא זמין',
+  'drawer.automations.run': 'הפעל',
+  'drawer.automations.enable': 'הפעלה',
+  'drawer.automations.disable': 'כיבוי',
 };
