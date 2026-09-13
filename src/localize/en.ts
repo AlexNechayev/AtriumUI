@@ -52,6 +52,8 @@ export const en = {
   'calendar.location': 'Location',
   'calendar.description': 'Notes',
   'calendar.more_events': '+{n} more',
+  'drawer.open': 'Open settings',
+  'drawer.close': 'Close settings',
 } as const;
 
 export type TranslationKey = keyof typeof en;

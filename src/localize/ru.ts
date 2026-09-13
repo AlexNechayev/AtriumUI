@@ -54,4 +54,6 @@ export const ru: Record<TranslationKey, string> = {
   'calendar.location': 'Место',
   'calendar.description': 'Заметки',
   'calendar.more_events': '+ещё {n}',
+  'drawer.open': 'Открыть настройки',
+  'drawer.close': 'Закрыть настройки',
 };
