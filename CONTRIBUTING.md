@@ -31,6 +31,7 @@ npm run lint
 npm test
 npm run build
 npm run verify    # typecheck + lint + test + build (required before a PR)
+npm run storybook # local custom-element catalog
 ```
 
 Watch a build into a Home Assistant `www` folder:
@@ -39,7 +40,7 @@ Watch a build into a Home Assistant `www` folder:
 HA_WWW=/path/to/config/www/atrium-ui npm run dev:ha
 ```
 
-See [docs/ops/local-dev-ha.md](docs/ops/local-dev-ha.md) for the HA loop and [demo/home-dashboard.yaml](demo/home-dashboard.yaml) for sample YAML (replace placeholder entity ids).
+See [docs/ops/local-dev-ha.md](docs/ops/local-dev-ha.md) for the HA loop, [docs/ops/storybook.md](docs/ops/storybook.md) for the local component catalog, and [demo/home-dashboard.yaml](demo/home-dashboard.yaml) for sample YAML (replace placeholder entity ids).
 
 ## Making a change
 

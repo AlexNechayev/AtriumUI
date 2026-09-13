@@ -42,6 +42,8 @@ src/
   theme/
 demo/
   home-dashboard.yaml
+stories/             # Storybook CSF catalog (local DX; not shipped in atrium-ui.js)
+.storybook/          # Storybook Vite app config
 ```
 
 ## Components
@@ -636,11 +638,14 @@ fallbacks below match the Home tokens.
 ```bash
 npm install       # install dependencies
 npm run dev       # Vite app server (not HA)
+npm run storybook # local custom-element catalog (not HA)
 npm run typecheck # strict TypeScript check
 npm run lint      # ESLint
 npm run test      # Vitest unit tests
 npm run build     # produce dist/atrium-ui.js
 ```
+
+See [docs/ops/storybook.md](docs/ops/storybook.md) for the Storybook catalog.
 
 ### Home Assistant watch build (`dev:ha`)
 

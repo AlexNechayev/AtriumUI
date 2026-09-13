@@ -108,7 +108,7 @@ flowchart TD
 | **1** | Home visual consistency | [design-system](./prd/ux/design-system.md), [home-tiles](./prd/ux/home-tiles.md), [sensor-card](./prd/product/sensor-card.md) Home variant | One Home language (tokens, sensors, chrome) |
 | **2** | Security & runtime | [card-contract](./prd/platform/card-contract.md) action validation; device timers | Trusted `executeAction`; no idle tickers |
 | **3** | Bundle & perf | shared gestures/pending-control; dead code | Leaner chunk; clearer idle cost |
-| **4** | Architecture & DX | [edit-mode](./prd/ux/edit-mode.md), shell carve-up, ESLint/docs discipline | Thinner Home view; draft discipline; verify CI |
+| **4** | Architecture & DX | [edit-mode](./prd/ux/edit-mode.md), [storybook](./prd/platform/storybook.md), shell carve-up, ESLint/docs discipline | Thinner Home view; draft discipline; verify CI; local component catalog |
 
 ### Exit criteria (phase complete)
 
@@ -133,6 +133,7 @@ Use [`prd/_TEMPLATE.md`](./prd/_TEMPLATE.md) for new files. For build order, see
 | [Shell grid](./prd/platform/shell-grid.md) | Classic grid + Home → Rooms; layout persist |
 | [Card contract](./prd/platform/card-contract.md) | Native Lovelace lifecycle, grid-fill, actions |
 | [Distribution & HACS](./prd/platform/distribution-hacs.md) | Single chunk resource; `dev:ha` |
+| [Storybook](./prd/platform/storybook.md) | Local custom-element catalog (not a Lovelace resource) |
 
 ### 7.2 Product
 

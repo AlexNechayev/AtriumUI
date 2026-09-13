@@ -37,6 +37,6 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": false
   },
-  "include": ["src", "test"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src", "test", "stories", ".storybook"],
+  "exclude": ["node_modules", "dist", "storybook-static"]
 }

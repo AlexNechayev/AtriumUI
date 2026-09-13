@@ -59,6 +59,7 @@ AtriumUI **obeys** [`ARCHITECTURE.md`](./ARCHITECTURE.md).
 ### Tooling
 - Vite build, Vitest, typecheck, lint, format
 - `dev:ha` watch into HA `www`
+- Storybook catalog of custom elements (`npm run storybook`)
 - Demo YAML
 
 ---
