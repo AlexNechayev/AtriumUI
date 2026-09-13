@@ -54,6 +54,11 @@ export const en = {
   'calendar.more_events': '+{n} more',
   'drawer.open': 'Open settings',
   'drawer.close': 'Close settings',
+  'drawer.theme': 'Theme',
+  'drawer.theme.light': 'Light',
+  'drawer.theme.dark': 'Dark',
+  'drawer.theme.system': 'System',
+  'drawer.edit': 'Enter edit mode',
 } as const;
 
 export type TranslationKey = keyof typeof en;

@@ -56,4 +56,9 @@ export const he: Record<TranslationKey, string> = {
   'calendar.more_events': '+עוד {n}',
   'drawer.open': 'פתח הגדרות',
   'drawer.close': 'סגור הגדרות',
+  'drawer.theme': 'ערכת נושא',
+  'drawer.theme.light': 'בהיר',
+  'drawer.theme.dark': 'כהה',
+  'drawer.theme.system': 'מערכת',
+  'drawer.edit': 'מצב עריכה',
 };

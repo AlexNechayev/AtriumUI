@@ -2,7 +2,12 @@ import { html, css, nothing, type TemplateResult } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { localize } from '../../localize/localize';
 import type { AuShellGridConfig } from '../../types/config';
-import { shouldShowDrawerTrigger } from './shell-drawer-config';
+import {
+  resolveShellDrawer,
+  resolveShellTheme,
+  shouldShowDrawerTrigger,
+  type AuShellTheme,
+} from './shell-drawer-config';
 
 export const drawerTriggerStyles = css`
   .au-drawer-trigger {
@@ -57,6 +62,26 @@ export const drawerTriggerStyles = css`
     box-shadow: var(--au-home-shadow-press, 0 8px 32px rgba(0, 0, 0, 0.18));
     border-radius: var(--au-home-radius, 22px) 0 0 var(--au-home-radius, 22px);
     padding: var(--au-home-gap, 12px);
+  }
+  .au-drawer-theme {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .au-drawer-theme button,
+  .au-drawer-edit {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    background: transparent;
+    color: inherit;
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+  .au-drawer-theme button[aria-pressed='true'] {
+    border-color: var(--au-accent, #0a84ff);
+    color: var(--au-accent, #0a84ff);
   }
 `;
 
@@ -116,4 +141,55 @@ export function renderDrawerOverlay(
     </aside>
   `;
 }
+
+export function renderDrawerMenu(
+  config: AuShellGridConfig | undefined,
+  language: string | undefined,
+  onTheme: (theme: AuShellTheme) => void,
+  onEdit: (ev: Event) => void,
+): TemplateResult | typeof nothing {
+  if (!config) return nothing;
+  const drawer = resolveShellDrawer(config);
+  const theme = resolveShellTheme(config);
+  const showTheme = drawer.items.theme;
+  const showEdit = drawer.items.edit && config.editable !== false;
+  if (!showTheme && !showEdit) return nothing;
+  return html`
+    ${showTheme
+      ? html`<div class="au-drawer-theme" role="group" aria-label=${localize(language, 'drawer.theme')}>
+          ${(['light', 'dark', 'system'] as const).map((value) => {
+            const key =
+              value === 'light'
+                ? 'drawer.theme.light'
+                : value === 'dark'
+                  ? 'drawer.theme.dark'
+                  : 'drawer.theme.system';
+            return html`
+              <button
+                type="button"
+                data-theme=${value}
+                aria-pressed=${theme === value ? 'true' : 'false'}
+                @click=${(ev: Event) => {
+                  ev.stopPropagation();
+                  onTheme(value);
+                }}
+              >
+                ${localize(language, key)}
+              </button>
+            `;
+          })}
+        </div>`
+      : nothing}
+    ${showEdit
+      ? html`<button
+          type="button"
+          class="au-drawer-edit"
+          @click=${onEdit}
+        >
+          ${localize(language, 'drawer.edit')}
+        </button>`
+      : nothing}
+  `;
+}
+
 

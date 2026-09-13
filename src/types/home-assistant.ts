@@ -166,6 +166,7 @@ export interface Lovelace {
   mode?: 'generated' | 'yaml' | 'storage';
   config?: LovelaceConfig;
   saveConfig?: (config: Record<string, unknown>) => Promise<void>;
+  setEditMode?: (enabled: boolean) => void;
   showToast?: (params: { message: string; duration?: number }) => void;
   [key: string]: unknown;
 }
