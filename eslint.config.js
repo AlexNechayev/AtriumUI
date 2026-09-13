@@ -5,10 +5,16 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['dist/**', 'graphify-out/**', 'node_modules/**', 'coverage/**'],
+    ignores: [
+      'dist/**',
+      'graphify-out/**',
+      'node_modules/**',
+      'coverage/**',
+      'storybook-static/**',
+    ],
   },
   {
-    files: ['src/**/*.ts', 'test/**/*.ts'],
+    files: ['src/**/*.ts', 'test/**/*.ts', 'stories/**/*.ts', '.storybook/**/*.ts'],
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'warn',

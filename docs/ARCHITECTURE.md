@@ -90,6 +90,7 @@ src/
   types/                 # HA + Atrium config types
   utils/                 # entity, action, domain helpers
 test/                    # Vitest mirrors src/
+stories/                 # Storybook CSF (isolated Vite app; not in HA chunk)
 demo/                    # sample Lovelace YAML
 ```
 
@@ -159,11 +160,13 @@ Persistence: storage-mode dashboards; stable child `id` recommended. Home migrat
 | Command | Purpose |
 | --- | --- |
 | `npm run typecheck` | Strict TS |
-| `npm run lint` | ESLint `src` + `test` |
+| `npm run lint` | ESLint `src` + `test` + `stories` + `.storybook` |
 | `npm test` | Vitest |
 | `npm run build` | `dist/atrium-ui.js` + declarations |
 | `npm run verify` | typecheck + lint + test + build |
 | `npm run dev:ha` | Watch-build into HA `www` |
+| `npm run storybook` | Isolated Storybook catalog (not the HA chunk) |
+| `npm run build-storybook` | Static Storybook build (CI parallel job) |
 
 Knowledge graph: `graphify-out/`; use `graphify query` before deep exploration; `graphify update .` after code changes.
 

@@ -17,7 +17,10 @@ npm run lint
 npm test
 npm run build
 npm run verify       # typecheck + lint + test + build
+npm run storybook    # local custom-element catalog (not HA)
 ```
+
+Storybook is documented in [storybook.md](./storybook.md).
 
 ### Watch into HA `www`
 
