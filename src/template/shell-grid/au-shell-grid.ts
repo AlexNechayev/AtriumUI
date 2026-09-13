@@ -20,9 +20,11 @@ import type {
 import { isShellHomeMode, type AuShellGridConfig } from '../../types/config';
 import {
   drawerTriggerStyles,
+  renderDrawerFloatCard,
   renderDrawerMenu,
   renderDrawerOverlay,
   renderDrawerTrigger,
+  type AuDrawerCardId,
 } from './shell-drawer-trigger';
 import {
   resolveShellTheme,
@@ -378,6 +380,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   @state() private _cardPickerLoading = false;
   @state() private _shellHeightPx = 0;
   @state() private _drawerOpen = false;
+  @state() private _drawerCard: AuDrawerCardId | null = null;
 
   @query('.shell') private _shellEl?: HTMLElement;
   @query('.grid') private _gridEl?: HTMLElement;
@@ -851,19 +854,6 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     this._setShellTheme(ev.detail.theme);
   };
 
-  private _onDrawerEnterEdit = (ev: Event): void => {
-    ev.stopPropagation();
-    this._drawerOpen = false;
-    const lovelace = this.lovelace ?? this._findClosestLovelace();
-    lovelace?.setEditMode?.(true);
-    if (lovelace && !lovelace.setEditMode) {
-      lovelace.editMode = true;
-    }
-    this.editMode = true;
-    this.preview = true;
-    this._refreshLayoutEditingState();
-  };
-
   private async _persistToDashboard(): Promise<void> {
     const cfg = this._config;
     const lovelace = this.lovelace;
@@ -1320,11 +1310,39 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   private _toggleDrawer = (ev: Event): void => {
     ev.stopPropagation();
     this._drawerOpen = !this._drawerOpen;
+    if (!this._drawerOpen) this._drawerCard = null;
   };
 
-  private _closeDrawer = (ev: Event): void => {
+  private _onDrawerCatcher = (ev: Event): void => {
     ev.stopPropagation();
+    if (this._drawerCard) {
+      this._drawerCard = null;
+      return;
+    }
     this._drawerOpen = false;
+  };
+
+  private _openDrawerCard = (id: AuDrawerCardId): void => {
+    this._drawerCard = id;
+  };
+
+  private _closeDrawerCard = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerCard = null;
+  };
+
+  private _onDrawerEnterEdit = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerCard = null;
+    this._drawerOpen = false;
+    const lovelace = this.lovelace ?? this._findClosestLovelace();
+    lovelace?.setEditMode?.(true);
+    if (lovelace && !lovelace.setEditMode) {
+      lovelace.editMode = true;
+    }
+    this.editMode = true;
+    this.preview = true;
+    this._refreshLayoutEditingState();
   };
 
   private _renderDrawerTrigger() {
@@ -1337,17 +1355,25 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   }
 
   private _renderDrawerOverlay() {
-    return renderDrawerOverlay(
-      this._drawerOpen,
-      this.hass?.language,
-      this._closeDrawer,
-      renderDrawerMenu(
-        this._config,
+    return html`
+      ${renderDrawerOverlay(
+        this._drawerOpen,
         this.hass?.language,
-        (theme) => this._setShellTheme(theme),
-        this._onDrawerEnterEdit,
-      ),
-    );
+        this._onDrawerCatcher,
+        renderDrawerMenu(
+          this._config,
+          this.hass?.language,
+          (theme) => this._setShellTheme(theme),
+          this._onDrawerEnterEdit,
+          this._openDrawerCard,
+        ),
+      )}
+      ${renderDrawerFloatCard(
+        this._drawerCard,
+        this.hass?.language,
+        this._closeDrawerCard,
+      )}
+    `;
   }
 
   protected render(): TemplateResult | typeof nothing {

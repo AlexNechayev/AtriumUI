@@ -61,4 +61,7 @@ export const ru: Record<TranslationKey, string> = {
   'drawer.theme.dark': 'Тёмная',
   'drawer.theme.system': 'Системная',
   'drawer.edit': 'Режим правки',
+  'drawer.dashboard': 'Настройки панели',
+  'drawer.global': 'Общие настройки',
+  'drawer.automations': 'Автоматизации',
 };

@@ -61,4 +61,7 @@ export const he: Record<TranslationKey, string> = {
   'drawer.theme.dark': 'כהה',
   'drawer.theme.system': 'מערכת',
   'drawer.edit': 'מצב עריכה',
+  'drawer.dashboard': 'הגדרות לוח בקרה',
+  'drawer.global': 'הגדרות כלליות',
+  'drawer.automations': 'אוטומציות',
 };

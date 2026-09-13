@@ -18,9 +18,11 @@ import { auHomeTokens } from '../../theme/home-style';
 import { homeViewStyles } from './home-view-styles';
 import {
   drawerTriggerStyles,
+  renderDrawerFloatCard,
   renderDrawerMenu,
   renderDrawerOverlay,
   renderDrawerTrigger,
+  type AuDrawerCardId,
 } from './shell-drawer-trigger';
 import {
   discoverFloorsFromAreas,
@@ -192,6 +194,7 @@ export class AuShellHomeView extends LitElement {
   /** Wall clock for toolbar time display. */
   @state() private _clockNow = Date.now();
   @state() private _drawerOpen = false;
+  @state() private _drawerCard: AuDrawerCardId | null = null;
   private _clockInterval?: ReturnType<typeof setInterval>;
   private _roomIdleTimer?: ReturnType<typeof setTimeout>;
 
@@ -229,7 +232,8 @@ export class AuShellHomeView extends LitElement {
       changed.has('_cardEditorMode') ||
       changed.has('_cardEditorDraft') ||
       changed.has('_cardEditorEl') ||
-      changed.has('_drawerOpen')
+      changed.has('_drawerOpen') ||
+      changed.has('_drawerCard')
     ) {
       return true;
     }
@@ -2144,12 +2148,55 @@ export class AuShellHomeView extends LitElement {
   private _toggleDrawer = (ev: Event): void => {
     ev.stopPropagation();
     this._drawerOpen = !this._drawerOpen;
+    if (!this._drawerOpen) this._drawerCard = null;
   };
 
-  private _closeDrawer = (ev: Event): void => {
+  private _onDrawerCatcher = (ev: Event): void => {
     ev.stopPropagation();
+    if (this._drawerCard) {
+      this._drawerCard = null;
+      return;
+    }
     this._drawerOpen = false;
   };
+
+  private _openDrawerCard = (id: AuDrawerCardId): void => {
+    this._drawerCard = id;
+  };
+
+  private _closeDrawerCard = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerCard = null;
+  };
+
+  private _onDrawerEnterEdit = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerCard = null;
+    this._drawerOpen = false;
+    fireEvent(this, 'au-drawer-enter-edit');
+  };
+
+  private _renderDrawerOverlay() {
+    return html`
+      ${renderDrawerOverlay(
+        this._drawerOpen,
+        this.hass?.language,
+        this._onDrawerCatcher,
+        renderDrawerMenu(
+          this.config,
+          this.hass?.language,
+          this._onDrawerTheme,
+          this._onDrawerEnterEdit,
+          this._openDrawerCard,
+        ),
+      )}
+      ${renderDrawerFloatCard(
+        this._drawerCard,
+        this.hass?.language,
+        this._closeDrawerCard,
+      )}
+    `;
+  }
 
   private _renderDrawerTrigger() {
     return renderDrawerTrigger(
@@ -2163,26 +2210,6 @@ export class AuShellHomeView extends LitElement {
   private _onDrawerTheme = (theme: 'light' | 'dark' | 'system'): void => {
     fireEvent(this, 'au-drawer-theme', { theme });
   };
-
-  private _onDrawerEnterEdit = (ev: Event): void => {
-    ev.stopPropagation();
-    this._drawerOpen = false;
-    fireEvent(this, 'au-drawer-enter-edit');
-  };
-
-  private _renderDrawerOverlay() {
-    return renderDrawerOverlay(
-      this._drawerOpen,
-      this.hass?.language,
-      this._closeDrawer,
-      renderDrawerMenu(
-        this.config,
-        this.hass?.language,
-        this._onDrawerTheme,
-        this._onDrawerEnterEdit,
-      ),
-    );
-  }
 
   private _homeToolbarTitle(): string {
     if (this.config?.header_greeting) {
