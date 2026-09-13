@@ -10,6 +10,7 @@ export const homeViewStyles = css`
         box-sizing: border-box;
       }
       .home-shell {
+        position: relative;
         border: none;
         box-shadow: none;
         box-sizing: border-box;

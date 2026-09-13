@@ -20,6 +20,7 @@ import type {
 import { isShellHomeMode, type AuShellGridConfig } from '../../types/config';
 import {
   drawerTriggerStyles,
+  renderDrawerOverlay,
   renderDrawerTrigger,
 } from './shell-drawer-trigger';
 import { validateShellDrawerConfig } from './shell-drawer-config';
@@ -1281,12 +1282,25 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     this._drawerOpen = !this._drawerOpen;
   };
 
+  private _closeDrawer = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = false;
+  };
+
   private _renderDrawerTrigger() {
     return renderDrawerTrigger(
       this._config,
       this._drawerOpen,
       this.hass?.language,
       this._toggleDrawer,
+    );
+  }
+
+  private _renderDrawerOverlay() {
+    return renderDrawerOverlay(
+      this._drawerOpen,
+      this.hass?.language,
+      this._closeDrawer,
     );
   }
 
@@ -1385,6 +1399,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
             `
           : nothing}
         ${this._renderDrawerTrigger()}
+        ${this._renderDrawerOverlay()}
       </div>
       ${this._contentEditId ? this._renderContentModal() : nothing}
       ${this._addCardOpen ? this._renderAddCardModal() : nothing}
