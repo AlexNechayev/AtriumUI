@@ -522,7 +522,7 @@ export const homeViewStyles = css`
         flex-direction: column;
       }
       .home.distribute-rows .room-body {
-        overflow: hidden;
+        overflow: auto;
       }
       .modal-backdrop {
         position: fixed;

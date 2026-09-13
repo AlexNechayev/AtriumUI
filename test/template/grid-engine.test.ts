@@ -6,7 +6,9 @@ import {
   computeRowTrackHeightPx,
   deriveResponsiveLayout,
   displayColumnsForWidth,
+  defaultGridSpan,
   findFreeSlot,
+  findFreeSlotFitting,
   getFirstCollision,
   gridRowCount,
   moveItem,
@@ -157,6 +159,54 @@ describe('findFreeSlot', () => {
     expect(findFreeSlot([], 3, 2, 12)).toEqual({ x: 0, y: 0 });
     const items = [item('a', 0, 0, 4, 2)];
     expect(findFreeSlot(items, 4, 2, 12)).toEqual({ x: 4, y: 0 });
+  });
+});
+
+describe('defaultGridSpan', () => {
+  it('uses a third of the axis so fine grids get visible tiles', () => {
+    expect(defaultGridSpan(24, 2)).toBe(8);
+    expect(defaultGridSpan(36, 2)).toBe(12);
+  });
+
+  it('never goes below the fallback', () => {
+    expect(defaultGridSpan(3, 2)).toBe(2);
+  });
+});
+
+describe('findFreeSlotFitting', () => {
+  const packedHome: GridItemLike[] = [
+    item('living_room', 0, 0, 5, 13),
+    item('kitchen', 5, 0, 5, 13),
+    item('office', 10, 0, 3, 13),
+    item('master_bed_room', 5, 13, 4, 13),
+    item('bathroom', 9, 13, 4, 13),
+    item('climate', 0, 13, 5, 13),
+    item('vacuum', 0, 26, 6, 9),
+    item('garage', 0, 35, 6, 6),
+    item('calendar', 19, 0, 5, 42),
+    item('checklist', 13, 0, 6, 41),
+  ];
+
+  it('places below occupied cells when the default size cannot fit in-bounds', () => {
+    expect(findFreeSlot(packedHome, 8, 2, 24)).toEqual({ x: 0, y: 41 });
+  });
+
+  it('shrinks width to keep a new tile inside the current occupied rows', () => {
+    const slot = findFreeSlotFitting(packedHome, 8, 12, 24, 42);
+    expect(slot.y + slot.h).toBeLessThanOrEqual(42);
+    expect(slot.w).toBeLessThanOrEqual(8);
+    expect(slot.h).toBe(12);
+    expect(getFirstCollision(packedHome, { id: '__probe__', ...slot })).toBeUndefined();
+  });
+
+  it('falls back to findFreeSlot when no in-bounds hole exists', () => {
+    const full = [item('all', 0, 0, 12, 4)];
+    expect(findFreeSlotFitting(full, 6, 2, 12, 4)).toEqual({
+      x: 0,
+      y: 4,
+      w: 6,
+      h: 2,
+    });
   });
 });
 
