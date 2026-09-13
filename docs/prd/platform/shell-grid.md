@@ -7,7 +7,7 @@
 | Priority | Core polish |
 | Primary job impact | Home shell / Classic grid |
 | Platforms | Home Assistant Lovelace (Panel view + HACS/manual resource) |
-| Companion | [`ARCHITECTURE.md`](../../ARCHITECTURE.md) §5, [`PRD.md`](../../PRD.md) D2 |
+| Companion | [`ARCHITECTURE.md`](../../ARCHITECTURE.md) §5, [`PRD.md`](../../PRD.md) D2, [shell drawer](../ux/shell-drawer.md) |
 
 ---
 
@@ -25,6 +25,7 @@
 - Classic `cards` + `layout: { x, y, w, h }` grid
 - Home mode when `floors` is set (rooms, floor entities, presence, bulk actions, scenes/scripts, room controls, multi_entity)
 - Edit mode drag/resize/add (desktop); persist on Done
+- Settings drawer chrome (`theme`, `drawer`) — see [shell drawer](../ux/shell-drawer.md)
 - Domain → card remapping; `card_type_locked`
 - `room_idle_timeout` return to Home after idle
 - Responsive columns (12 / 6 / 1)
@@ -40,8 +41,10 @@
 | Key | Fields | Notes |
 | --- | --- | --- |
 | Shell | `columns`, `row_height`, `gap`, `width`, `height`, `rows`, `max_rows`, `editable` | Classic + Home shared |
+| Shell | `theme` | `light` \| `dark` \| `system`; default `system`. Atrium color-scheme only. |
+| Shell | `drawer` | `enabled` (default true) + `items` (`edit`, `theme`, `dashboard_settings`, `global`, `automations`). YAML-only visibility. Hide icon if disabled or all items false. |
 | Classic children | `cards[]` with `id?`, `layout?` | Auto-flow if no layout |
-| Home | `floors`, `presence`, `show_presence`, `show_bulk_actions`, `clock_format`, `room_controls`, `auto_areas`, `prefer_device_name`, `confirm_actions`, `scenes`, `scripts`, `multi_entity`, `debug`, `room_idle_timeout` | See README Home options. Per-room optional `temperature_entity` (sensor) is forwarded to the room-tile `au-room-card`. |
+| Home | `floors`, `presence`, `show_presence`, `show_bulk_actions`, `clock_format`, `room_controls`, `auto_areas`, `prefer_device_name`, `confirm_actions`, `scenes`, `scripts`, `multi_entity`, `debug`, `room_idle_timeout` | See README Home options. Per-room optional `temperature_entity` (sensor) is forwarded to the room-tile `au-room-card`. Dashboard vs Global **ownership** of overlapping keys is defined in [shell drawer](../ux/shell-drawer.md) (Global owns `confirm_actions` and `prefer_device_name` in the 90% cards). |
 
 ---
 
@@ -52,6 +55,7 @@
 3. Persistence requires storage-mode dashboards; stable `id` ties layout to cards.
 4. Home entity tiles receive `variant: home` automatically.
 5. `room_idle_timeout` ≤ 0 or unset: stay in room; > 0: return to Home after that many seconds of inactivity.
+6. Top-right chrome hosts the settings drawer trigger when `drawer` is enabled and at least one item is on ([shell drawer](../ux/shell-drawer.md)). The icon is the rightmost top control and MUST NOT overlap clock or pencil.
 
 ---
 
@@ -85,6 +89,7 @@
 3. Room control strip appears for eligible room tile sizes; respects include/exclude/icons.
 4. `room_idle_timeout` returns to Home after configured idle seconds; 0/unset disables.
 5. Responsive breakpoints match Architecture (12 / 6 / 1); no drag/resize off desktop base.
+6. Settings drawer chrome follows [shell drawer](../ux/shell-drawer.md) when enabled (icon rightmost; `theme` + `drawer` YAML).
 
 ---
 
@@ -94,6 +99,7 @@
 | --- | --- |
 | [card-contract.md](./card-contract.md) | Child cards |
 | [../ux/edit-mode.md](../ux/edit-mode.md) | Edit chrome |
+| [../ux/shell-drawer.md](../ux/shell-drawer.md) | Settings drawer chrome + `theme` / `drawer` YAML |
 | [../ux/home-tiles.md](../ux/home-tiles.md) | Home visuals |
 | [distribution-hacs.md](./distribution-hacs.md) | Load bundle |
 

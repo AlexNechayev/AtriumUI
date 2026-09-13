@@ -7,7 +7,7 @@
 | Priority | Core polish |
 | Primary job impact | Home shell / Classic grid |
 | Platforms | Home Assistant Lovelace (Panel view + HACS/manual resource) |
-| Companion | [`PRD.md`](../../PRD.md) Phase 4; shell-grid |
+| Companion | [`PRD.md`](../../PRD.md) Phase 4; shell-grid; [shell drawer](./shell-drawer.md) |
 
 ---
 
@@ -27,6 +27,7 @@
 - Persist on Done via storage-mode Lovelace
 - `editable: false` disables layout editing
 - Draft/commit discipline for Home vs classic (Phase 4 improvement)
+- Second entry: shell drawer **Enter edit mode** (pencil stays; see [shell drawer](./shell-drawer.md))
 
 ### Out of scope (this feature)
 - Drag/resize on tablet/mobile breakpoints
@@ -47,6 +48,7 @@
 1. Edit chrome only at desktop base width.
 2. Prefer single draft → commit path (assessment: dual drafts / eager commit is a bug to fix).
 3. Edit accent/chrome uses Home tokens (not Material `#03a9f4`).
+4. Pencil remains the primary desktop chrome control. The shell drawer may also enter edit: that item **closes the drawer**, then uses this same pencil → Done path. `editable: false` hides or disables the drawer edit item.
 
 ---
 
@@ -55,6 +57,7 @@
 ### Primary flow
 1. Pencil → rearrange/add → Done writes YAML.
 2. Click cell body → card editor modal.
+3. Optional: drawer **Enter edit mode** → drawer closes → same as step 1.
 
 ### Empty / first-use
 - + opens HA card picker; free slot placement.
@@ -77,6 +80,7 @@
 3. Card picker add + optional Configure step works in rooms.
 4. Edit chrome color matches design tokens (Phase 1).
 5. Single draft/commit path (Phase 4).
+6. Drawer Enter edit does not replace the pencil; it closes the drawer and uses this feature’s chrome ([shell drawer](./shell-drawer.md) AC6).
 
 ---
 
@@ -86,3 +90,4 @@
 | --- | --- |
 | [../platform/shell-grid.md](../platform/shell-grid.md) | Host |
 | [design-system.md](./design-system.md) | Chrome color |
+| [shell-drawer.md](./shell-drawer.md) | Second edit entry; chrome collision (drawer rightmost) |
