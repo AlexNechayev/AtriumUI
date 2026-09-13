@@ -10,7 +10,7 @@
 | Platforms | Home Assistant Lovelace (Panel + HACS/manual resource) |
 | Languages | English, Russian, Hebrew (RTL) |
 
-> **Reconciliation (PRD precedence):** For implementation and acceptance, [`PRD.md`](./PRD.md) and [`prd/`](./prd/) win when they disagree with this file. Architecture constraints always apply. See PRD Decision Log (D1–D14) and MASTER_ASSESSMENT for the current priority order (UI/UX → security → bundle/perf → architecture/DX).
+> **Reconciliation (PRD precedence):** For implementation and acceptance, [`PRD.md`](./PRD.md) and [`prd/`](./prd/) win when they disagree with this file. Architecture constraints always apply. See PRD Decision Log (D1–D15) and MASTER_ASSESSMENT for the current priority order (UI/UX → security → bundle/perf → architecture/DX).
 
 This document captures **what AtriumUI includes** as originally described in the README, plus assessment backlog items. Runtime contracts live in the architecture spec.
 
@@ -53,6 +53,7 @@ AtriumUI **obeys** [`ARCHITECTURE.md`](./ARCHITECTURE.md).
 ### UX
 - Home tiles / `variant: home`
 - Edit mode (desktop drag/resize/add, modal editors)
+- Shell settings drawer (top-right chevron; spec: [`prd/ux/shell-drawer.md`](./prd/ux/shell-drawer.md))
 - Localize en/ru/he
 - Design tokens (Home look)
 
@@ -86,7 +87,7 @@ Acceptance is defined in PRD phases / feature files. **Closed in code** items st
 
 ## 5. Explicitly out / parked
 
-See [`PRD.md`](./PRD.md) §5. Notable: no nested home dashboard card; no direct calendar cloud APIs; climate humidity/swing/dual setpoints deferred; fan/cover/switch/vacuum stay on dedicated cards.
+See [`PRD.md`](./PRD.md) §5. Notable: no nested home dashboard card; no direct calendar cloud APIs; climate humidity/swing/dual setpoints deferred; fan/cover/switch/vacuum stay on dedicated cards; no HA frontend theme switch from the Atrium drawer; no live HA-instance global store.
 
 ---
 
@@ -96,3 +97,4 @@ See [`PRD.md`](./PRD.md) §5. Notable: no nested home dashboard card; no direct 
 | --- | --- |
 | 0.1 | Scope capture from README + MASTER_ASSESSMENT; PRD precedence |
 | 0.2 | Phase 1–2 High items marked done vs `src/`; Phase 3–4 remain open |
+| 0.3 | UX: shell settings drawer (PRD D15; [`prd/ux/shell-drawer.md`](./prd/ux/shell-drawer.md)) |

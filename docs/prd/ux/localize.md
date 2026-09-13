@@ -7,7 +7,7 @@
 | Priority | Core polish |
 | Primary job impact | Supporting |
 | Platforms | Home Assistant Lovelace (Panel view + HACS/manual resource) |
-| Companion | [`PRD.md`](../../PRD.md) D12; `src/localize/` |
+| Companion | [`PRD.md`](../../PRD.md) D12; `src/localize/`; [shell drawer](./shell-drawer.md) |
 
 ---
 
@@ -25,6 +25,7 @@
 - Catalogs: `en`, `ru`, `he`
 - Language from `hass.language`
 - RTL for Hebrew
+- Shell drawer chrome strings (menu items, theme labels, settings/automations cards)
 
 ### Out of scope (this feature)
 - Additional locales
@@ -45,6 +46,7 @@
 
 1. Missing key falls back sensibly (typically English).
 2. Unused keys should be cleaned opportunistically (assessment low).
+3. Shell drawer: in-panel text and layout follow RTL for Hebrew; the panel **still slides from the right** ([shell drawer](./shell-drawer.md)).
 
 ---
 
@@ -69,6 +71,7 @@
 1. en/ru/he catalogs cover shell and card chrome strings in use.
 2. Hebrew UI sets RTL where shell/card chrome requires it.
 3. Language tracks `hass.language`.
+4. Drawer chrome strings are in the catalogs; Hebrew RTL does not move the panel to the left ([shell drawer](./shell-drawer.md) AC10).
 
 ---
 
@@ -77,6 +80,7 @@
 | Depends on | Why |
 | --- | --- |
 | HA `hass.language` | Locale source |
+| [shell-drawer.md](./shell-drawer.md) | Drawer chrome strings; panel edge stays right in RTL |
 
 ---
 

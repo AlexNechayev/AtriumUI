@@ -57,6 +57,7 @@ AtriumUI is a **production-grade custom component library and structural design 
 | D12 | i18n | en / ru / he catalogs; no extra locales in current scope |
 | D13 | PRD structure | `PRD.md` index + one full-spec file per feature (platform/product/ux) |
 | D14 | Breaking changes | Allowed for sole-dev project when docs + migration notes update |
+| D15 | Shell drawer | Top-right chevron on `au-shell-grid` (Home + classic): right overlay panel; Atrium `theme`; YAML `drawer`; 90% settings cards. See [shell drawer](./prd/ux/shell-drawer.md) |
 
 ---
 
@@ -85,6 +86,8 @@ Feature specs must not invent a second shell card or parallel design-token syste
 | Direct Google/Apple calendar APIs | Out — HA `calendar.*` only |
 | Fan/cover/switch/vacuum on device-card | Out — use dedicated cards |
 | WAN remote HA as Atrium concern | Out — HA networking |
+| HA frontend theme from Atrium drawer | Out — Atrium `theme` is shell color-scheme only ([shell drawer](./prd/ux/shell-drawer.md)) |
+| Live HA-instance Atrium global store | Out — Global keys live on this shell YAML; share via `!include` / copy |
 
 ---
 
@@ -157,6 +160,7 @@ Use [`prd/_TEMPLATE.md`](./prd/_TEMPLATE.md) for new files. For build order, see
 | --- | --- |
 | [Home tiles](./prd/ux/home-tiles.md) | Home variant visual language |
 | [Edit mode](./prd/ux/edit-mode.md) | Drag/resize/add, drafts, picker |
+| [Shell drawer](./prd/ux/shell-drawer.md) | Settings drawer: theme, edit entry, this-view + global cards, automations list |
 | [Localize](./prd/ux/localize.md) | en / ru / he strings |
 | [Design tokens](./prd/ux/design-system.md) | Token source of truth |
 
@@ -181,3 +185,4 @@ Use [`prd/_TEMPLATE.md`](./prd/_TEMPLATE.md) for new files. For build order, see
 | --- | --- |
 | 0.1 | PRD index from README + MASTER_ASSESSMENT; Zerem-shaped feature split |
 | 0.2 | Phase 1–2 exits marked met; design-tokens PRD path → `prd/ux/design-system.md` |
+| 0.3 | D15 shell settings drawer ([`prd/ux/shell-drawer.md`](./prd/ux/shell-drawer.md)); not a Phase 3–4 blocker |
