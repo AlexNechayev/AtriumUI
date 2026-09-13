@@ -83,6 +83,45 @@ export const drawerTriggerStyles = css`
     border-color: var(--au-accent, #0a84ff);
     color: var(--au-accent, #0a84ff);
   }
+  .au-drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .au-drawer-nav button {
+    font: inherit;
+    cursor: pointer;
+    text-align: start;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    background: transparent;
+    color: inherit;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+  .au-drawer-float {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 22;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    overflow: auto;
+    background: var(--au-home-surface-elevated, var(--card-background-color, #fff));
+    color: var(--au-primary-text, var(--primary-text-color, inherit));
+    border-radius: var(--au-home-radius, 22px);
+    box-shadow: var(--au-home-shadow-press, 0 8px 32px rgba(0, 0, 0, 0.18));
+    padding: 20px 20px 24px;
+  }
+  .au-drawer-float-close {
+    float: inline-end;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 4px 8px;
+  }
 `;
 
 export function renderDrawerTrigger(
@@ -112,6 +151,11 @@ export function renderDrawerTrigger(
     </button>
   `;
 }
+
+export type AuDrawerCardId =
+  | 'dashboard_settings'
+  | 'global'
+  | 'automations';
 
 export const DRAWER_PANEL_WIDTH = 'min(360px, max(280px, 40vw))';
 
@@ -147,13 +191,17 @@ export function renderDrawerMenu(
   language: string | undefined,
   onTheme: (theme: AuShellTheme) => void,
   onEdit: (ev: Event) => void,
+  onOpenCard?: (id: AuDrawerCardId) => void,
 ): TemplateResult | typeof nothing {
   if (!config) return nothing;
   const drawer = resolveShellDrawer(config);
   const theme = resolveShellTheme(config);
   const showTheme = drawer.items.theme;
   const showEdit = drawer.items.edit && config.editable !== false;
-  if (!showTheme && !showEdit) return nothing;
+  const cardItems: AuDrawerCardId[] = (
+    ['dashboard_settings', 'global', 'automations'] as const
+  ).filter((key) => drawer.items[key]);
+  if (!showTheme && !showEdit && cardItems.length === 0) return nothing;
   return html`
     ${showTheme
       ? html`<div class="au-drawer-theme" role="group" aria-label=${localize(language, 'drawer.theme')}>
@@ -189,6 +237,64 @@ export function renderDrawerMenu(
           ${localize(language, 'drawer.edit')}
         </button>`
       : nothing}
+    ${cardItems.length
+      ? html`<div class="au-drawer-nav">
+          ${cardItems.map((id) => {
+            const key =
+              id === 'dashboard_settings'
+                ? 'drawer.dashboard'
+                : id === 'global'
+                  ? 'drawer.global'
+                  : 'drawer.automations';
+            return html`
+              <button
+                type="button"
+                data-drawer-card=${id}
+                @click=${(ev: Event) => {
+                  ev.stopPropagation();
+                  onOpenCard?.(id);
+                }}
+              >
+                ${localize(language, key)}
+              </button>
+            `;
+          })}
+        </div>`
+      : nothing}
+  `;
+}
+
+export function renderDrawerFloatCard(
+  cardId: AuDrawerCardId | null,
+  language: string | undefined,
+  onClose: (ev: Event) => void,
+  body?: TemplateResult | typeof nothing,
+): TemplateResult | typeof nothing {
+  if (!cardId) return nothing;
+  const titleKey =
+    cardId === 'dashboard_settings'
+      ? 'drawer.dashboard'
+      : cardId === 'global'
+        ? 'drawer.global'
+        : 'drawer.automations';
+  return html`
+    <article
+      class="au-drawer-float"
+      style="width:90%;height:90%"
+      role="dialog"
+      aria-modal="true"
+    >
+      <button
+        type="button"
+        class="au-drawer-float-close"
+        aria-label=${localize(language, 'drawer.close')}
+        @click=${onClose}
+      >
+        ${localize(language, 'drawer.close')}
+      </button>
+      <h2>${localize(language, titleKey)}</h2>
+      ${body ?? nothing}
+    </article>
   `;
 }
 
