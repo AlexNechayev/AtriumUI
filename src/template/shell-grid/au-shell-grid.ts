@@ -20,9 +20,14 @@ import type {
 import { isShellHomeMode, type AuShellGridConfig } from '../../types/config';
 import {
   drawerTriggerStyles,
+  renderDrawerMenu,
   renderDrawerOverlay,
   renderDrawerTrigger,
 } from './shell-drawer-trigger';
+import {
+  resolveShellTheme,
+  type AuShellTheme,
+} from './shell-drawer-config';
 import { validateShellDrawerConfig } from './shell-drawer-config';
 import {
   deriveResponsiveLayout,
@@ -548,6 +553,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
       if (this._displayCols > this._baseColumns) {
         this._displayCols = this._baseColumns;
       }
+      this._applyAtriumTheme();
       void this._rebuild();
     }
   }
@@ -822,6 +828,40 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     ev.stopPropagation();
     if (!this._config || !ev.detail?.floors) return;
     this._config = { ...this._config, floors: ev.detail.floors };
+  };
+
+  private _applyAtriumTheme(): void {
+    const theme = this._config ? resolveShellTheme(this._config) : 'system';
+    this.setAttribute('data-au-theme', theme);
+    this.style.colorScheme = theme === 'system' ? 'light dark' : theme;
+  }
+
+  private _setShellTheme(theme: AuShellTheme): void {
+    if (!this._config) return;
+    this._config = { ...this._config, theme };
+    this._applyAtriumTheme();
+    void this._persistToDashboard();
+  }
+
+  private _onDrawerThemeEvent = (
+    ev: CustomEvent<{ theme: AuShellTheme }>,
+  ): void => {
+    ev.stopPropagation();
+    if (!ev.detail?.theme) return;
+    this._setShellTheme(ev.detail.theme);
+  };
+
+  private _onDrawerEnterEdit = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = false;
+    const lovelace = this.lovelace ?? this._findClosestLovelace();
+    lovelace?.setEditMode?.(true);
+    if (lovelace && !lovelace.setEditMode) {
+      lovelace.editMode = true;
+    }
+    this.editMode = true;
+    this.preview = true;
+    this._refreshLayoutEditingState();
   };
 
   private async _persistToDashboard(): Promise<void> {
@@ -1301,6 +1341,12 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
       this._drawerOpen,
       this.hass?.language,
       this._closeDrawer,
+      renderDrawerMenu(
+        this._config,
+        this.hass?.language,
+        (theme) => this._setShellTheme(theme),
+        this._onDrawerEnterEdit,
+      ),
     );
   }
 
@@ -1325,6 +1371,8 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
               this._layoutEditingVisible && this._config.editable !== false
             }
             @home-config-changed=${this._onHomeConfigChanged}
+            @au-drawer-theme=${this._onDrawerThemeEvent}
+            @au-drawer-enter-edit=${this._onDrawerEnterEdit}
           ></au-shell-home-view>
         </div>
       `;

@@ -18,6 +18,7 @@ import { auHomeTokens } from '../../theme/home-style';
 import { homeViewStyles } from './home-view-styles';
 import {
   drawerTriggerStyles,
+  renderDrawerMenu,
   renderDrawerOverlay,
   renderDrawerTrigger,
 } from './shell-drawer-trigger';
@@ -2159,11 +2160,27 @@ export class AuShellHomeView extends LitElement {
     );
   }
 
+  private _onDrawerTheme = (theme: 'light' | 'dark' | 'system'): void => {
+    fireEvent(this, 'au-drawer-theme', { theme });
+  };
+
+  private _onDrawerEnterEdit = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = false;
+    fireEvent(this, 'au-drawer-enter-edit');
+  };
+
   private _renderDrawerOverlay() {
     return renderDrawerOverlay(
       this._drawerOpen,
       this.hass?.language,
       this._closeDrawer,
+      renderDrawerMenu(
+        this.config,
+        this.hass?.language,
+        this._onDrawerTheme,
+        this._onDrawerEnterEdit,
+      ),
     );
   }
 

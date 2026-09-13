@@ -56,4 +56,9 @@ export const ru: Record<TranslationKey, string> = {
   'calendar.more_events': '+ещё {n}',
   'drawer.open': 'Открыть настройки',
   'drawer.close': 'Закрыть настройки',
+  'drawer.theme': 'Тема',
+  'drawer.theme.light': 'Светлая',
+  'drawer.theme.dark': 'Тёмная',
+  'drawer.theme.system': 'Системная',
+  'drawer.edit': 'Режим правки',
 };
