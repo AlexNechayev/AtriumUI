@@ -54,4 +54,6 @@ export const he: Record<TranslationKey, string> = {
   'calendar.location': 'מיקום',
   'calendar.description': 'הערות',
   'calendar.more_events': '+עוד {n}',
+  'drawer.open': 'פתח הגדרות',
+  'drawer.close': 'סגור הגדרות',
 };

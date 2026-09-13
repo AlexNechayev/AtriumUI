@@ -17,6 +17,10 @@ import { hasEntityChanged } from '../../core/base-card';
 import { auHomeTokens } from '../../theme/home-style';
 import { homeViewStyles } from './home-view-styles';
 import {
+  drawerTriggerStyles,
+  renderDrawerTrigger,
+} from './shell-drawer-trigger';
+import {
   discoverFloorsFromAreas,
   findRoom,
   mergeAreaEntities,
@@ -176,6 +180,7 @@ export class AuShellHomeView extends LitElement {
   static override styles = [
     auHomeTokens,
     homeViewStyles,
+    drawerTriggerStyles,
   ];
 
   /** Prefer desktop until ResizeObserver reports a real width. */
@@ -184,6 +189,7 @@ export class AuShellHomeView extends LitElement {
   @state() private _shellHeightPx = 0;
   /** Wall clock for toolbar time display. */
   @state() private _clockNow = Date.now();
+  @state() private _drawerOpen = false;
   private _clockInterval?: ReturnType<typeof setInterval>;
   private _roomIdleTimer?: ReturnType<typeof setTimeout>;
 
@@ -220,7 +226,8 @@ export class AuShellHomeView extends LitElement {
       changed.has('_editRoomDraft') ||
       changed.has('_cardEditorMode') ||
       changed.has('_cardEditorDraft') ||
-      changed.has('_cardEditorEl')
+      changed.has('_cardEditorEl') ||
+      changed.has('_drawerOpen')
     ) {
       return true;
     }
@@ -2132,6 +2139,20 @@ export class AuShellHomeView extends LitElement {
     });
   }
 
+  private _toggleDrawer = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = !this._drawerOpen;
+  };
+
+  private _renderDrawerTrigger() {
+    return renderDrawerTrigger(
+      this.config,
+      this._drawerOpen,
+      this.hass?.language,
+      this._toggleDrawer,
+    );
+  }
+
   private _homeToolbarTitle(): string {
     if (this.config?.header_greeting) {
       return formatGreeting(this._clockNow, this.hass?.language);
@@ -2216,6 +2237,7 @@ export class AuShellHomeView extends LitElement {
                   ${this._t('home.bulk.all_off')}
                 </button>`
             : nothing}
+          ${this._renderDrawerTrigger()}
         </div>
       </div>
       <div class="room-body">
@@ -2280,7 +2302,7 @@ export class AuShellHomeView extends LitElement {
                 <h2 class="title">${this._homeToolbarTitle()}</h2>
               </div>
               ${this._renderToolbarClock()}
-              <div class="toolbar-end"></div>
+              <div class="toolbar-end">${this._renderDrawerTrigger()}</div>
             </div>
             ${this._renderHomeView(floors)}
           `

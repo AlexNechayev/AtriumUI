@@ -18,6 +18,10 @@ import type {
   Lovelace,
 } from '../../types/home-assistant';
 import { isShellHomeMode, type AuShellGridConfig } from '../../types/config';
+import {
+  drawerTriggerStyles,
+  renderDrawerTrigger,
+} from './shell-drawer-trigger';
 import { validateShellDrawerConfig } from './shell-drawer-config';
 import {
   deriveResponsiveLayout,
@@ -99,6 +103,7 @@ interface DragState {
 export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   static override styles = [
     auTokens,
+    drawerTriggerStyles,
     css`
       :host {
         display: block;
@@ -109,6 +114,12 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
         position: relative;
         box-sizing: border-box;
         overflow: auto;
+      }
+      .shell > .au-drawer-trigger {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 3;
       }
       .shell.home-mode {
         display: flex;
@@ -360,6 +371,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   @state() private _cardPickerReady = false;
   @state() private _cardPickerLoading = false;
   @state() private _shellHeightPx = 0;
+  @state() private _drawerOpen = false;
 
   @query('.shell') private _shellEl?: HTMLElement;
   @query('.grid') private _gridEl?: HTMLElement;
@@ -1264,6 +1276,20 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     `;
   }
 
+  private _toggleDrawer = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = !this._drawerOpen;
+  };
+
+  private _renderDrawerTrigger() {
+    return renderDrawerTrigger(
+      this._config,
+      this._drawerOpen,
+      this.hass?.language,
+      this._toggleDrawer,
+    );
+  }
+
   protected render(): TemplateResult | typeof nothing {
     if (!this._config) return nothing;
 
@@ -1358,6 +1384,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
               </button>
             `
           : nothing}
+        ${this._renderDrawerTrigger()}
       </div>
       ${this._contentEditId ? this._renderContentModal() : nothing}
       ${this._addCardOpen ? this._renderAddCardModal() : nothing}
