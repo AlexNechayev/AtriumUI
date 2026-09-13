@@ -63,6 +63,25 @@ export interface AuShellGridConfig extends LovelaceCardConfig {
   /** Allow layout editing while the HA dashboard is in edit mode. Default true. */
   editable?: boolean;
   /**
+   * Atrium color-scheme for this shell (not HA frontend theme).
+   * Default `system`. See `docs/prd/ux/shell-drawer.md`.
+   */
+  theme?: 'light' | 'dark' | 'system';
+  /**
+   * Settings drawer visibility. Omitted keys default true / enabled.
+   * Hide the icon when `enabled: false` or every item is false.
+   */
+  drawer?: {
+    enabled?: boolean;
+    items?: {
+      edit?: boolean;
+      theme?: boolean;
+      dashboard_settings?: boolean;
+      global?: boolean;
+      automations?: boolean;
+    };
+  };
+  /**
    * @deprecated Legacy free-form cards. Prefer floors/rooms entities.
    * Still rendered only if `floors` is empty (backward compatibility).
    */

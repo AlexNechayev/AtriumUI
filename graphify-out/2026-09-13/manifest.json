@@ -165,8 +165,8 @@
     "semantic_hash": "a9b4817118b16293b78bc48fd61f1d0d"
   },
   "src/template/shell-grid/au-shell-home-view.ts": {
-    "mtime": 1789316187.4362423,
-    "ast_hash": "57dd0019b28e8cf64029e8640e35df6b",
+    "mtime": 1789318796.9747257,
+    "ast_hash": "549a3425b1fda36bc096cfb6edb12f94",
     "semantic_hash": ""
   },
   "src/template/shell-grid/config-persist.ts": {
@@ -180,7 +180,7 @@
     "semantic_hash": "e27fdff83886bd756aff3355871fa843"
   },
   "src/template/shell-grid/grid-engine.ts": {
-    "mtime": 1789315792.7896338,
+    "mtime": 1789318256.5578058,
     "ast_hash": "854d712bd89755fde070284cc7dafca7",
     "semantic_hash": ""
   },
@@ -465,7 +465,7 @@
     "semantic_hash": "2beb90faa9e747e30ed235db2f825066"
   },
   "test/template/grid-engine.test.ts": {
-    "mtime": 1789315633.3457608,
+    "mtime": 1789318256.5196521,
     "ast_hash": "e6c2c84afbefacc5f22eb4b67777b403",
     "semantic_hash": ""
   },
@@ -625,7 +625,7 @@
     "semantic_hash": "2b726a34bd7787d01e1b6ae626084650"
   },
   "src/template/shell-grid/home-view-styles.ts": {
-    "mtime": 1789315793.13393,
+    "mtime": 1789318256.5579174,
     "ast_hash": "e930d25f999b18a4d219eda2d656cc03",
     "semantic_hash": ""
   },
@@ -1390,8 +1390,8 @@
     "semantic_hash": ""
   },
   "docs/imp/fix/home-card-overflow.md": {
-    "mtime": 1789316269.268698,
-    "ast_hash": "ee66d766a42e20c898005a5672d1ff6d",
+    "mtime": 1789318797.2830873,
+    "ast_hash": "2197bc5930b53f99863f09d082505c2c",
     "semantic_hash": ""
   }
 }

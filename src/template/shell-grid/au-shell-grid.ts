@@ -18,6 +18,7 @@ import type {
   Lovelace,
 } from '../../types/home-assistant';
 import { isShellHomeMode, type AuShellGridConfig } from '../../types/config';
+import { validateShellDrawerConfig } from './shell-drawer-config';
 import {
   deriveResponsiveLayout,
   displayColumnsForWidth,
@@ -422,6 +423,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     if (config.rows !== undefined && config.rows < 1) {
       throw new Error('AtriumUI Shell Grid: "rows" must be >= 1');
     }
+    validateShellDrawerConfig(config);
     for (const card of config.cards ?? []) {
       if (card.layout) {
         const { x, y, w, h } = card.layout;
