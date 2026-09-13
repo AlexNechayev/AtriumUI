@@ -119,8 +119,10 @@ import {
   roomControlEntities,
 } from './room-controls';
 import {
+  defaultGridSpan,
   displayColumnsForWidth,
-  findFreeSlot,
+  findFreeSlotFitting,
+  gridRowCount,
   shouldDistributeRowHeight,
   type GridItemLike,
 } from './grid-engine';
@@ -390,6 +392,31 @@ export class AuShellHomeView extends LitElement {
   private get _defaultWidth(): number {
     const base = this._baseColumns;
     return Math.max(1, Math.min(base, Math.round(base / 3)));
+  }
+
+  private get _defaultHeight(): number {
+    const rows = this.config?.rows;
+    if (rows != null && rows >= 1) {
+      return defaultGridSpan(rows, DEFAULT_HEIGHT_UNITS);
+    }
+    return DEFAULT_HEIGHT_UNITS;
+  }
+
+  private _fittingSlot(items: GridItemLike[]): {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  } {
+    const occupied = gridRowCount(items);
+    const bound = Math.max(occupied, this.config?.rows ?? 0);
+    return findFreeSlotFitting(
+      items,
+      this._defaultWidth,
+      this._defaultHeight,
+      this._baseColumns,
+      bound,
+    );
   }
 
   private get _homeEditing(): boolean {
@@ -862,14 +889,12 @@ export class AuShellHomeView extends LitElement {
         ? preferred.trim()
         : this._nextCardId();
     if (this._editItems.some((i) => i.id === id)) return;
-    const w = this._defaultWidth;
-    const h = DEFAULT_HEIGHT_UNITS;
-    const slot = findFreeSlot(this._editItems, w, h, this._baseColumns);
+    const slot = this._fittingSlot(this._editItems);
     const cardConfig = this._persistedCardConfig(config);
     const entry: AuHomeCardConfig = {
       id,
       card: cardConfig,
-      layout: { x: slot.x, y: slot.y, w, h },
+      layout: { x: slot.x, y: slot.y, w: slot.w, h: slot.h },
     };
     this._editItems = [
       ...this._editItems,
@@ -878,8 +903,8 @@ export class AuShellHomeView extends LitElement {
         kind: 'card',
         x: slot.x,
         y: slot.y,
-        w,
-        h,
+        w: slot.w,
+        h: slot.h,
         card: entry,
       },
     ];
@@ -910,15 +935,13 @@ export class AuShellHomeView extends LitElement {
         ? preferred.trim()
         : this._nextCardId();
     if (this._homeEditItems.some((i) => i.id === id)) return;
-    const w = this._defaultWidth;
-    const h = DEFAULT_HEIGHT_UNITS;
     const floorItems = this._homeEditItems.filter((i) => i.floorId === floorId);
-    const slot = findFreeSlot(floorItems, w, h, this._baseColumns);
+    const slot = this._fittingSlot(floorItems);
     const cardConfig = this._persistedCardConfig(config);
     const entry: AuHomeCardConfig = {
       id,
       card: cardConfig,
-      layout: { x: slot.x, y: slot.y, w, h },
+      layout: { x: slot.x, y: slot.y, w: slot.w, h: slot.h },
     };
     this._homeEditItems = [
       ...this._homeEditItems,
@@ -928,8 +951,8 @@ export class AuShellHomeView extends LitElement {
         kind: 'card',
         x: slot.x,
         y: slot.y,
-        w,
-        h,
+        w: slot.w,
+        h: slot.h,
         card: entry,
       },
     ];
@@ -1211,8 +1234,6 @@ export class AuShellHomeView extends LitElement {
       this._closeAddEntity();
       return;
     }
-    const w = this._defaultWidth;
-    const h = DEFAULT_HEIGHT_UNITS;
     let floors = this._resolvedFloors();
     if (floors.length === 0) {
       floors = [{ id: 'main', name: 'Main', rooms: [], entities: [] }];
@@ -1220,7 +1241,7 @@ export class AuShellHomeView extends LitElement {
     }
     const floorId = floors[0]!.id || 'main';
     const floorItems = this._homeEditItems.filter((i) => i.floorId === floorId);
-    const slot = findFreeSlot(floorItems, w, h, this._baseColumns);
+    const slot = this._fittingSlot(floorItems);
     this._homeEditItems = [
       ...this._homeEditItems,
       {
@@ -1229,11 +1250,11 @@ export class AuShellHomeView extends LitElement {
         kind: 'entity',
         x: slot.x,
         y: slot.y,
-        w,
-        h,
+        w: slot.w,
+        h: slot.h,
         entity: {
           entity: entityId,
-          layout: { x: slot.x, y: slot.y, w, h },
+          layout: { x: slot.x, y: slot.y, w: slot.w, h: slot.h },
         },
       },
     ];
@@ -1252,9 +1273,7 @@ export class AuShellHomeView extends LitElement {
     const targetFloor = floors[0]!;
     const floorId = targetFloor.id || 'main';
     const floorItems = this._homeEditItems.filter((i) => i.floorId === floorId);
-    const w = this._defaultWidth;
-    const h = DEFAULT_HEIGHT_UNITS;
-    const slot = findFreeSlot(floorItems, w, h, this._baseColumns);
+    const slot = this._fittingSlot(floorItems);
     const idBase =
       name
         .toLowerCase()
@@ -1270,7 +1289,7 @@ export class AuShellHomeView extends LitElement {
       id,
       name,
       entities: [],
-      layout: { x: slot.x, y: slot.y, w, h },
+      layout: { x: slot.x, y: slot.y, w: slot.w, h: slot.h },
     };
     this._homeEditItems = [
       ...this._homeEditItems,
@@ -1280,8 +1299,8 @@ export class AuShellHomeView extends LitElement {
         kind: 'room',
         x: slot.x,
         y: slot.y,
-        w,
-        h,
+        w: slot.w,
+        h: slot.h,
         room,
       },
     ];

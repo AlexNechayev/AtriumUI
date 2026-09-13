@@ -171,6 +171,11 @@ export function resizeItem<T extends GridItemLike>(
   return settleCollisions(working, columns);
 }
 
+/** Default span on one axis: ~1/3 of the grid, never below `fallback`. */
+export function defaultGridSpan(axisCount: number, fallback = 2): number {
+  return Math.max(fallback, Math.round(Math.max(1, axisCount) / 3));
+}
+
 /** First free slot (scanning top-to-bottom, left-to-right) fitting w x h. */
 export function findFreeSlot(
   items: GridItemLike[],
@@ -188,6 +193,44 @@ export function findFreeSlot(
   }
   const bottom = items.reduce((m, i) => Math.max(m, i.y + i.h), 0);
   return { x: 0, y: bottom };
+}
+
+/**
+ * Prefer a hole with y+h within `maxExclusiveY`, shrinking width if needed.
+ * Falls back to {@link findFreeSlot} (may extend the grid downward).
+ */
+export function findFreeSlotFitting(
+  items: GridItemLike[],
+  w: number,
+  h: number,
+  columns: number,
+  maxExclusiveY?: number,
+): { x: number; y: number; w: number; h: number } {
+  const height = Math.max(1, h);
+  const maxW = Math.max(1, Math.min(w, columns));
+  const bound =
+    maxExclusiveY != null && maxExclusiveY >= height ? maxExclusiveY : undefined;
+  if (bound != null) {
+    for (let width = maxW; width >= 1; width -= 1) {
+      const yLimit = bound - height;
+      for (let y = 0; y <= yLimit; y += 1) {
+        for (let x = 0; x <= columns - width; x += 1) {
+          const probe: GridItemLike = {
+            id: '__probe__',
+            x,
+            y,
+            w: width,
+            h: height,
+          };
+          if (!getFirstCollision(items, probe)) {
+            return { x, y, w: width, h: height };
+          }
+        }
+      }
+    }
+  }
+  const slot = findFreeSlot(items, maxW, height, columns);
+  return { ...slot, w: maxW, h: height };
 }
 
 /**
