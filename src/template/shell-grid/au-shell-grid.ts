@@ -12,6 +12,7 @@ import { repeat } from 'lit/directives/repeat.js';
 import { AuBaseCard, hasEntityChanged } from '../../core/base-card';
 import { auTokens } from '../../theme/tokens';
 import type {
+  HassEntity,
   HomeAssistant,
   LovelaceCard,
   LovelaceCardConfig,
@@ -33,6 +34,8 @@ import {
   type AuDrawerSettingsPatch,
 } from './shell-drawer-settings';
 import {
+  fetchAutomationRegistry,
+  listShellAutomations,
   renderDrawerAutomations,
   runDrawerAutomationAction,
   teardownDrawerOverlays,
@@ -393,6 +396,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   @state() private _shellHeightPx = 0;
   @state() private _drawerOpen = false;
   @state() private _drawerCard: AuDrawerCardId | null = null;
+  @state() private _drawerAutomationExtras: HassEntity[] = [];
 
   @query('.shell') private _shellEl?: HTMLElement;
   @query('.grid') private _gridEl?: HTMLElement;
@@ -567,9 +571,12 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
         const prev = changed.get('hass') as HomeAssistant | undefined;
         if (!prev || !this.hass) return true;
         const ids = new Set(
-          [...Object.keys(prev.states), ...Object.keys(this.hass.states)].filter(
-            (id) => id.startsWith('automation.'),
-          ),
+          [
+            ...Object.keys(prev.states),
+            ...Object.keys(this.hass.states),
+            ...Object.keys(prev.entities ?? {}),
+            ...Object.keys(this.hass.entities ?? {}),
+          ].filter((id) => id.startsWith('automation.')),
         );
         return [...ids].some((id) => hasEntityChanged(prev, this.hass, id));
       }
@@ -1367,6 +1374,20 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
 
   private _openDrawerCard = (id: AuDrawerCardId): void => {
     this._drawerCard = id;
+    if (id === 'automations') void this._loadAutomationRegistry();
+  };
+
+  private _closeDrawer = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = false;
+    this._drawerCard = null;
+  };
+
+  private async _loadAutomationRegistry(): Promise<void> {
+    if (listShellAutomations(this.hass).length) return;
+    const extras = await fetchAutomationRegistry(this.hass);
+    if (this._drawerCard !== 'automations') return;
+    this._drawerAutomationExtras = extras;
   };
 
   private _closeDrawerCard = (ev: Event): void => {
@@ -1387,12 +1408,11 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     this._drawerCard = null;
     this._drawerOpen = false;
     const lovelace = this.lovelace ?? this._findClosestLovelace();
-    lovelace?.setEditMode?.(true);
+    const next = !this._layoutEditing();
+    lovelace?.setEditMode?.(next);
     if (lovelace && !lovelace.setEditMode) {
-      lovelace.editMode = true;
+      lovelace.editMode = next;
     }
-    this.editMode = true;
-    this.preview = true;
     this._refreshLayoutEditingState();
   };
 
@@ -1417,7 +1437,10 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
           (theme) => this._setShellTheme(theme),
           this._onDrawerEnterEdit,
           this._openDrawerCard,
+          this._layoutEditingVisible,
         ),
+        this._closeDrawer,
+        this._config,
       )}
       ${renderDrawerFloatCard(
         this._drawerCard,
@@ -1428,6 +1451,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
               this.hass,
               this.hass?.language,
               this._onDrawerAutomation,
+              this._drawerAutomationExtras,
             )
           : renderDrawerSettingsBody(
               this._drawerCard,
