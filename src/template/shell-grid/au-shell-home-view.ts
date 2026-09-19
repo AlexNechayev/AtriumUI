@@ -29,6 +29,8 @@ import {
   type AuDrawerSettingsPatch,
 } from './shell-drawer-settings';
 import {
+  fetchAutomationRegistry,
+  listShellAutomations,
   renderDrawerAutomations,
   runDrawerAutomationAction,
   teardownDrawerOverlays,
@@ -58,6 +60,7 @@ import type {
   AuHomeRoomControlsConfig,
 } from '../../types/home';
 import type {
+  HassEntity,
   HomeAssistant,
   LovelaceCard,
   LovelaceCardConfig,
@@ -205,6 +208,7 @@ export class AuShellHomeView extends LitElement {
   @state() private _clockNow = Date.now();
   @state() private _drawerOpen = false;
   @state() private _drawerCard: AuDrawerCardId | null = null;
+  @state() private _drawerAutomationExtras: HassEntity[] = [];
   private _clockInterval?: ReturnType<typeof setInterval>;
   private _roomIdleTimer?: ReturnType<typeof setTimeout>;
 
@@ -243,7 +247,8 @@ export class AuShellHomeView extends LitElement {
       changed.has('_cardEditorDraft') ||
       changed.has('_cardEditorEl') ||
       changed.has('_drawerOpen') ||
-      changed.has('_drawerCard')
+      changed.has('_drawerCard') ||
+      changed.has('_drawerAutomationExtras')
     ) {
       return true;
     }
@@ -295,6 +300,9 @@ export class AuShellHomeView extends LitElement {
     for (const id of this.config.scripts ?? []) ids.add(id);
     if (this._drawerCard === 'automations' && this.hass) {
       for (const id of Object.keys(this.hass.states)) {
+        if (id.startsWith('automation.')) ids.add(id);
+      }
+      for (const id of Object.keys(this.hass.entities ?? {})) {
         if (id.startsWith('automation.')) ids.add(id);
       }
     }
@@ -2180,6 +2188,20 @@ export class AuShellHomeView extends LitElement {
 
   private _openDrawerCard = (id: AuDrawerCardId): void => {
     this._drawerCard = id;
+    if (id === 'automations') void this._loadAutomationRegistry();
+  };
+
+  private _closeDrawer = (ev: Event): void => {
+    ev.stopPropagation();
+    this._drawerOpen = false;
+    this._drawerCard = null;
+  };
+
+  private async _loadAutomationRegistry(): Promise<void> {
+    if (listShellAutomations(this.hass).length) return;
+    const extras = await fetchAutomationRegistry(this.hass);
+    if (this._drawerCard !== 'automations') return;
+    this._drawerAutomationExtras = extras;
   };
 
   private _closeDrawerCard = (ev: Event): void => {
@@ -2206,7 +2228,10 @@ export class AuShellHomeView extends LitElement {
           this._onDrawerTheme,
           this._onDrawerEnterEdit,
           this._openDrawerCard,
+          this.layoutEditing,
         ),
+        this._closeDrawer,
+        this.config,
       )}
       ${renderDrawerFloatCard(
         this._drawerCard,
@@ -2217,6 +2242,7 @@ export class AuShellHomeView extends LitElement {
               this.hass,
               this.hass?.language,
               this._onDrawerAutomation,
+              this._drawerAutomationExtras,
             )
           : renderDrawerSettingsBody(
               this._drawerCard,

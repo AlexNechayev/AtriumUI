@@ -116,6 +116,42 @@ describe('shell drawer automations list', () => {
     el.remove();
   });
 
+  it('lists automations that exist only in the entity registry', async () => {
+    const el = document.createElement('au-shell-grid') as AuShellGrid;
+    document.body.appendChild(el);
+    el.setConfig({
+      type: 'custom:au-shell-grid',
+      floors: [{ name: 'Main', rooms: [{ name: 'Hall', entities: [] }] }],
+    });
+    const hass = makeHass({ 'light.a': makeEntity('light.a', 'on') });
+    hass.entities = {
+      'automation.hidden': {
+        entity_id: 'automation.hidden',
+        platform: 'automation',
+        name: 'Hidden auto',
+      },
+    };
+    el.hass = hass;
+    await el.updateComplete;
+    const home = el.shadowRoot?.querySelector(
+      'au-shell-home-view',
+    ) as AuShellHomeView;
+    await home.updateComplete;
+    (home.shadowRoot?.querySelector('.au-drawer-trigger') as HTMLButtonElement).click();
+    await home.updateComplete;
+    (
+      home.shadowRoot?.querySelector(
+        '[data-drawer-card="automations"]',
+      ) as HTMLButtonElement
+    ).click();
+    await home.updateComplete;
+    const card = home.shadowRoot?.querySelector('.au-drawer-float') as HTMLElement;
+    expect(card.querySelector('[data-automation="automation.hidden"]')).toBeTruthy();
+    expect(card.querySelector('[data-automation-create]')).toBeNull();
+    expect(card.querySelector('[data-automation-edit]')).toBeNull();
+    el.remove();
+  });
+
   it('removes drawer overlays on disconnect', async () => {
     const { el, home } = await openAutomationsCard({
       'automation.morning': makeEntity('automation.morning', 'on'),

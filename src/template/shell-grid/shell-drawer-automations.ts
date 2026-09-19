@@ -5,25 +5,75 @@
 import { html, nothing, type TemplateResult } from 'lit';
 import { localize } from '../../localize/localize';
 import type { ActionConfig } from '../../types/action';
-import type { HassEntity, HomeAssistant } from '../../types/home-assistant';
+import type {
+  HassEntity,
+  HassEntityRegistryEntry,
+  HomeAssistant,
+} from '../../types/home-assistant';
 import { executeAction } from '../../utils/action';
 import { computeEntityName, isEntityOffline } from '../../utils/entity';
 
 export type AuDrawerAutomationAction = 'run' | 'enable';
 
+function isAutomationId(id: string): boolean {
+  return id.startsWith('automation.');
+}
+
+function stubFromRegistry(entry: HassEntityRegistryEntry): HassEntity {
+  const name = entry.name?.trim() || entry.original_name?.trim() || entry.entity_id;
+  return {
+    entity_id: entry.entity_id,
+    state: 'unavailable',
+    attributes: { friendly_name: name },
+    last_changed: '',
+    last_updated: '',
+  };
+}
+
 export function listShellAutomations(
   hass: HomeAssistant | undefined,
+  extras: HassEntity[] = [],
 ): HassEntity[] {
-  if (!hass?.states) return [];
-  return Object.keys(hass.states)
-    .filter((id) => id.startsWith('automation.'))
-    .map((id) => hass.states[id])
-    .filter((entity): entity is HassEntity => Boolean(entity))
-    .sort((a, b) =>
-      computeEntityName(a).localeCompare(computeEntityName(b), undefined, {
-        sensitivity: 'base',
-      }),
-    );
+  const byId = new Map<string, HassEntity>();
+  for (const entity of extras) {
+    if (isAutomationId(entity.entity_id)) byId.set(entity.entity_id, entity);
+  }
+  for (const [key, entry] of Object.entries(hass?.entities ?? {})) {
+    const id = entry.entity_id || key;
+    if (!isAutomationId(id) && entry.platform !== 'automation') continue;
+    const live = hass?.states?.[id];
+    byId.set(id, live ?? stubFromRegistry({ ...entry, entity_id: id }));
+  }
+  for (const id of Object.keys(hass?.states ?? {})) {
+    if (!isAutomationId(id)) continue;
+    const live = hass?.states[id];
+    if (live) byId.set(id, live);
+  }
+  return [...byId.values()].sort((a, b) =>
+    computeEntityName(a).localeCompare(computeEntityName(b), undefined, {
+      sensitivity: 'base',
+    }),
+  );
+}
+
+export async function fetchAutomationRegistry(
+  hass: HomeAssistant | undefined,
+): Promise<HassEntity[]> {
+  if (!hass?.callWS) return [];
+  try {
+    const rows = await hass.callWS<HassEntityRegistryEntry[]>({
+      type: 'config/entity_registry/list',
+    });
+    if (!Array.isArray(rows)) return [];
+    return rows
+      .filter(
+        (row) =>
+          isAutomationId(row.entity_id) || row.platform === 'automation',
+      )
+      .map(stubFromRegistry);
+  } catch {
+    return [];
+  }
 }
 
 export function automationActionConfig(
@@ -79,8 +129,9 @@ export function renderDrawerAutomations(
   hass: HomeAssistant | undefined,
   language: string | undefined,
   onAction: (entityId: string, action: AuDrawerAutomationAction) => void,
+  extras: HassEntity[] = [],
 ): TemplateResult {
-  const items = listShellAutomations(hass);
+  const items = listShellAutomations(hass, extras);
   if (items.length === 0) {
     return html`
       <p class="au-drawer-automations-empty">

@@ -17,6 +17,7 @@ export const homeViewStyles = css`
         width: 100%;
         height: 100%;
         min-height: 0;
+        overflow: hidden;
         background:
           radial-gradient(
             120% 80% at 0% 0%,

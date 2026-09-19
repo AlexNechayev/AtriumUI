@@ -59,6 +59,7 @@ export const en = {
   'drawer.theme.dark': 'Dark',
   'drawer.theme.system': 'System',
   'drawer.edit': 'Enter edit mode',
+  'drawer.edit.exit': 'Exit edit mode',
   'drawer.dashboard': 'Dashboard settings',
   'drawer.global': 'Global configuration',
   'drawer.automations': 'Automations',

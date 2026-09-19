@@ -48,6 +48,7 @@ export const drawerTriggerStyles = css`
     padding: 0;
     margin: 0;
     cursor: default;
+    max-height: 100%;
   }
   .au-drawer-panel {
     position: absolute;
@@ -57,11 +58,26 @@ export const drawerTriggerStyles = css`
     z-index: 21;
     box-sizing: border-box;
     overflow: auto;
+    max-height: 100%;
+    height: 100%;
     background: var(--au-home-surface-elevated, var(--card-background-color, #fff));
     color: var(--au-primary-text, var(--primary-text-color, inherit));
     box-shadow: var(--au-home-shadow-press, 0 8px 32px rgba(0, 0, 0, 0.18));
     border-radius: var(--au-home-radius, 22px) 0 0 var(--au-home-radius, 22px);
     padding: var(--au-home-gap, 12px);
+    transform: translateX(0);
+    transition: transform var(--au-motion-medium, 280ms)
+      var(--au-motion-ease, cubic-bezier(0.22, 1, 0.36, 1));
+  }
+  @starting-style {
+    .au-drawer-panel {
+      transform: translateX(100%);
+    }
+  }
+  .au-drawer-panel-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
   }
   .au-drawer-theme {
     display: flex;
@@ -222,12 +238,16 @@ export type AuDrawerCardId =
   | 'automations';
 
 export const DRAWER_PANEL_WIDTH = 'min(360px, max(280px, 40vw))';
+const DRAWER_PANEL_MOTION =
+  'transform var(--au-motion-medium, 280ms) var(--au-motion-ease, cubic-bezier(0.22, 1, 0.36, 1))';
 
 export function renderDrawerOverlay(
   open: boolean,
   language: string | undefined,
   onClose: (ev: Event) => void,
   body: TemplateResult | typeof nothing = nothing,
+  onPanelClose?: (ev: Event) => void,
+  config?: AuShellGridConfig,
 ): TemplateResult | typeof nothing {
   if (!open) return nothing;
   const closeLabel = localize(language, 'drawer.close');
@@ -235,16 +255,22 @@ export function renderDrawerOverlay(
     <button
       type="button"
       class="au-drawer-catcher"
-      style="background:transparent"
+      style="background:transparent;height:100%;max-height:100%"
       aria-label=${closeLabel}
       @click=${onClose}
     ></button>
     <aside
       class="au-drawer-panel"
-      style=${'width:' + DRAWER_PANEL_WIDTH}
+      style=${`width:${DRAWER_PANEL_WIDTH};height:100%;max-height:100%;transform:translateX(0);transition:${DRAWER_PANEL_MOTION}`}
       role="dialog"
       aria-modal="true"
     >
+      <div class="au-drawer-panel-bar">
+        ${renderDrawerTrigger(config, true, language, (ev) => {
+          ev.stopPropagation();
+          (onPanelClose ?? onClose)(ev);
+        })}
+      </div>
       ${body}
     </aside>
   `;
@@ -256,6 +282,7 @@ export function renderDrawerMenu(
   onTheme: (theme: AuShellTheme) => void,
   onEdit: (ev: Event) => void,
   onOpenCard?: (id: AuDrawerCardId) => void,
+  editing = false,
 ): TemplateResult | typeof nothing {
   if (!config) return nothing;
   const drawer = resolveShellDrawer(config);
@@ -298,7 +325,7 @@ export function renderDrawerMenu(
           class="au-drawer-edit"
           @click=${onEdit}
         >
-          ${localize(language, 'drawer.edit')}
+          ${localize(language, editing ? 'drawer.edit.exit' : 'drawer.edit')}
         </button>`
       : nothing}
     ${cardItems.length
