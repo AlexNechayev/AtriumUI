@@ -4,9 +4,7 @@ import { localize } from '../../localize/localize';
 import type { AuShellGridConfig } from '../../types/config';
 import {
   resolveShellDrawer,
-  resolveShellTheme,
   shouldShowDrawerTrigger,
-  type AuShellTheme,
 } from './shell-drawer-config';
 
 export const drawerTriggerStyles = css`
@@ -83,7 +81,6 @@ export const drawerTriggerStyles = css`
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 12px;
   }
   .au-drawer-theme button,
   .au-drawer-edit {
@@ -136,13 +133,25 @@ export const drawerTriggerStyles = css`
     color: inherit;
     cursor: pointer;
     font: inherit;
-    padding: 4px 8px;
+    font-weight: 650;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    line-height: 1;
   }
   .au-drawer-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     clear: both;
+  }
+  .au-drawer-section h3 {
+    margin: 0 0 8px;
+    font-size: var(--au-font-secondary, 0.78rem);
+    font-weight: 650;
+  }
+  .au-drawer-section-grid {
+    align-items: start;
   }
   .au-drawer-field {
     display: flex;
@@ -174,20 +183,35 @@ export const drawerTriggerStyles = css`
     gap: 12px;
     clear: both;
   }
+  .au-drawer-automations li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
   .au-drawer-automations-empty {
     clear: both;
     margin: 12px 0 0;
   }
   .au-drawer-automation-meta {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  .au-drawer-automation-meta span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .au-drawer-automation-actions {
     display: flex;
+    flex-shrink: 0;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 0;
   }
   .au-drawer-automation-actions button {
     font: inherit;
@@ -279,46 +303,18 @@ export function renderDrawerOverlay(
 export function renderDrawerMenu(
   config: AuShellGridConfig | undefined,
   language: string | undefined,
-  onTheme: (theme: AuShellTheme) => void,
   onEdit: (ev: Event) => void,
   onOpenCard?: (id: AuDrawerCardId) => void,
   editing = false,
 ): TemplateResult | typeof nothing {
   if (!config) return nothing;
   const drawer = resolveShellDrawer(config);
-  const theme = resolveShellTheme(config);
-  const showTheme = drawer.items.theme;
   const showEdit = drawer.items.edit && config.editable !== false;
   const cardItems: AuDrawerCardId[] = (
     ['dashboard_settings', 'global', 'automations'] as const
   ).filter((key) => drawer.items[key]);
-  if (!showTheme && !showEdit && cardItems.length === 0) return nothing;
+  if (!showEdit && cardItems.length === 0) return nothing;
   return html`
-    ${showTheme
-      ? html`<div class="au-drawer-theme" role="group" aria-label=${localize(language, 'drawer.theme')}>
-          ${(['light', 'dark', 'system'] as const).map((value) => {
-            const key =
-              value === 'light'
-                ? 'drawer.theme.light'
-                : value === 'dark'
-                  ? 'drawer.theme.dark'
-                  : 'drawer.theme.system';
-            return html`
-              <button
-                type="button"
-                data-theme=${value}
-                aria-pressed=${theme === value ? 'true' : 'false'}
-                @click=${(ev: Event) => {
-                  ev.stopPropagation();
-                  onTheme(value);
-                }}
-              >
-                ${localize(language, key)}
-              </button>
-            `;
-          })}
-        </div>`
-      : nothing}
     ${showEdit
       ? html`<button
           type="button"
@@ -381,7 +377,7 @@ export function renderDrawerFloatCard(
         aria-label=${localize(language, 'drawer.close')}
         @click=${onClose}
       >
-        ${localize(language, 'drawer.close')}
+        ${'X'}
       </button>
       <h2>${localize(language, titleKey)}</h2>
       ${body ?? nothing}

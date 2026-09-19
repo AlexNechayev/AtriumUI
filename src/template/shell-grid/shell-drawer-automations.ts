@@ -145,7 +145,10 @@ export function renderDrawerAutomations(
         const offline = isEntityOffline(entity);
         const enabled = entity.state === 'on';
         return html`
-          <li data-automation=${entity.entity_id}>
+          <li
+            data-automation=${entity.entity_id}
+            style="display:flex;flex-direction:row;align-items:center;gap:12px"
+          >
             <div class="au-drawer-automation-meta">
               <span>${computeEntityName(entity)}</span>
               ${offline

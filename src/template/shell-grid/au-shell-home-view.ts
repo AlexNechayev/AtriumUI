@@ -2225,7 +2225,6 @@ export class AuShellHomeView extends LitElement {
         renderDrawerMenu(
           this.config,
           this.hass?.language,
-          this._onDrawerTheme,
           this._onDrawerEnterEdit,
           this._openDrawerCard,
           this.layoutEditing,
@@ -2262,10 +2261,6 @@ export class AuShellHomeView extends LitElement {
       this._toggleDrawer,
     );
   }
-
-  private _onDrawerTheme = (theme: 'light' | 'dark' | 'system'): void => {
-    fireEvent(this, 'au-drawer-theme', { theme });
-  };
 
   private _onDrawerSettings = (patch: AuDrawerSettingsPatch): void => {
     fireEvent(this, 'au-drawer-settings', { patch });
