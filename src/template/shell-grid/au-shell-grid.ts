@@ -10,7 +10,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { AuBaseCard, hasEntityChanged } from '../../core/base-card';
-import { auTokens } from '../../theme/tokens';
+import { auTokens, AU_THEME_SURFACES } from '../../theme/tokens';
 import type {
   HassEntity,
   HomeAssistant,
@@ -22,6 +22,7 @@ import type {
 import { isShellHomeMode, type AuShellGridConfig } from '../../types/config';
 import {
   drawerTriggerStyles,
+  renderDrawerEditTrigger,
   renderDrawerFloatCard,
   renderDrawerMenu,
   renderDrawerOverlay,
@@ -137,12 +138,14 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
         position: relative;
         box-sizing: border-box;
         overflow: auto;
+        --au-drawer-trigger-top: 8px;
+        --au-drawer-trigger-end: 8px;
       }
       .shell > .au-drawer-trigger {
         position: absolute;
         top: 8px;
         right: 8px;
-        z-index: 3;
+        z-index: 23;
       }
       .shell.home-mode {
         display: flex;
@@ -873,6 +876,22 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     const theme = this._config ? resolveShellTheme(this._config) : 'system';
     this.setAttribute('data-au-theme', theme);
     this.style.colorScheme = theme === 'system' ? 'light dark' : theme;
+    if (theme === 'system') {
+      this.style.removeProperty('--au-home-bg');
+      this.style.removeProperty('--au-home-surface-elevated');
+      this.style.removeProperty('--au-home-surface');
+      this.style.removeProperty('--au-primary-text');
+      this.style.removeProperty('--au-secondary-text');
+      this.style.removeProperty('--au-card-background');
+      return;
+    }
+    const pal = AU_THEME_SURFACES[theme];
+    this.style.setProperty('--au-home-bg', pal.homeBg);
+    this.style.setProperty('--au-home-surface-elevated', pal.surfaceElevated);
+    this.style.setProperty('--au-home-surface', pal.surfaceElevated);
+    this.style.setProperty('--au-primary-text', pal.primaryText);
+    this.style.setProperty('--au-secondary-text', pal.secondaryText);
+    this.style.setProperty('--au-card-background', pal.surfaceElevated);
   }
 
   private _setShellTheme(theme: AuShellTheme): void {
@@ -893,6 +912,7 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   private _applyDrawerSettings(patch: AuDrawerSettingsPatch): void {
     if (!this._config || !patch) return;
     this._config = applyShellSettingsPatch(this._config, patch);
+    if (patch.theme) this._applyAtriumTheme();
     void this._persistToDashboard();
   }
 
@@ -1377,12 +1397,6 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
     if (id === 'automations') void this._loadAutomationRegistry();
   };
 
-  private _closeDrawer = (ev: Event): void => {
-    ev.stopPropagation();
-    this._drawerOpen = false;
-    this._drawerCard = null;
-  };
-
   private async _loadAutomationRegistry(): Promise<void> {
     if (listShellAutomations(this.hass).length) return;
     const extras = await fetchAutomationRegistry(this.hass);
@@ -1417,12 +1431,23 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
   };
 
   private _renderDrawerTrigger() {
-    return renderDrawerTrigger(
-      this._config,
-      this._drawerOpen,
-      this.hass?.language,
-      this._toggleDrawer,
-    );
+    return html`
+      ${renderDrawerEditTrigger(
+        this._config,
+        this._drawerOpen,
+        this.hass?.language,
+        this._layoutEditingVisible,
+        this._onDrawerEnterEdit,
+        'classic',
+      )}
+      ${renderDrawerTrigger(
+        this._config,
+        this._drawerOpen,
+        this.hass?.language,
+        this._toggleDrawer,
+        'classic',
+      )}
+    `;
   }
 
   private _renderDrawerOverlay() {
@@ -1434,13 +1459,8 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
         renderDrawerMenu(
           this._config,
           this.hass?.language,
-          (theme) => this._setShellTheme(theme),
-          this._onDrawerEnterEdit,
           this._openDrawerCard,
-          this._layoutEditingVisible,
         ),
-        this._closeDrawer,
-        this._config,
       )}
       ${renderDrawerFloatCard(
         this._drawerCard,
@@ -1560,8 +1580,8 @@ export class AuShellGrid extends AuBaseCard<AuShellGridConfig> {
               </button>
             `
           : nothing}
-        ${this._renderDrawerTrigger()}
         ${this._renderDrawerOverlay()}
+        ${this._renderDrawerTrigger()}
       </div>
       ${this._contentEditId ? this._renderContentModal() : nothing}
       ${this._addCardOpen ? this._renderAddCardModal() : nothing}

@@ -6,11 +6,17 @@ import { html, nothing, type TemplateResult } from 'lit';
 import { localize } from '../../localize/localize';
 import type { AuShellGridConfig } from '../../types/config';
 import type { AuHomeRoomControlsConfig } from '../../types/home';
-import type { AuDrawerCardId } from './shell-drawer-trigger';
+import { DRAWER_GROUP_CHROME, type AuDrawerCardId } from './shell-drawer-trigger';
+import {
+  resolveShellDrawer,
+  resolveShellTheme,
+  type AuShellTheme,
+} from './shell-drawer-config';
 
 export type AuDrawerSettingsPatch = Partial<
   Pick<
     AuShellGridConfig,
+    | 'theme'
     | 'show_presence'
     | 'show_bulk_actions'
     | 'header_title'
@@ -36,6 +42,7 @@ export type AuDrawerSettingsPatch = Partial<
 >;
 
 const DASHBOARD_KEYS = new Set<keyof AuDrawerSettingsPatch>([
+  'theme',
   'show_presence',
   'show_bulk_actions',
   'header_title',
@@ -173,6 +180,56 @@ function numberField(
   `;
 }
 
+const SECTION_GRID =
+  'display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px';
+
+function section(
+  id: string,
+  title: string,
+  fields: TemplateResult[],
+): TemplateResult {
+  return html`
+    <section class="au-drawer-section" data-section=${id} style=${DRAWER_GROUP_CHROME}>
+      <h3>${title}</h3>
+      <div class="au-drawer-section-grid" style=${SECTION_GRID}>
+        ${fields}
+      </div>
+    </section>
+  `;
+}
+
+function themeGroup(
+  current: AuShellTheme,
+  language: string | undefined,
+  onChange: (theme: AuShellTheme) => void,
+): TemplateResult {
+  return html`
+    <div class="au-drawer-theme" role="group" aria-label=${localize(language, 'drawer.theme')}>
+      ${(['light', 'dark', 'system'] as const).map((value) => {
+        const key =
+          value === 'light'
+            ? 'drawer.theme.light'
+            : value === 'dark'
+              ? 'drawer.theme.dark'
+              : 'drawer.theme.system';
+        return html`
+          <button
+            type="button"
+            data-theme=${value}
+            aria-pressed=${current === value ? 'true' : 'false'}
+            @click=${(ev: Event) => {
+              ev.stopPropagation();
+              onChange(value);
+            }}
+          >
+            ${localize(language, key)}
+          </button>
+        `;
+      })}
+    </div>
+  `;
+}
+
 function selectField(
   setting: string,
   value: string,
@@ -207,143 +264,165 @@ export function renderDrawerDashboardSettings(
 ): TemplateResult {
   const emit = (patch: AuDrawerSettingsPatch) =>
     onPatch(sanitizeDrawerSettingsPatch('dashboard_settings', patch));
+  const showTheme = resolveShellDrawer(config).items.theme;
+  const appearance: TemplateResult[] = [];
+  if (showTheme) {
+    appearance.push(
+      themeGroup(resolveShellTheme(config), language, (theme) =>
+        emit({ theme }),
+      ),
+    );
+  }
+  appearance.push(
+    checkbox(
+      'header_greeting',
+      config.header_greeting === true,
+      localize(language, 'drawer.settings.header_greeting'),
+      (checked) => emit({ header_greeting: checked }),
+    ),
+    textField(
+      'header_title',
+      config.header_title ?? '',
+      localize(language, 'drawer.settings.header_title'),
+      (value) => emit({ header_title: value }),
+    ),
+  );
   return html`
     <form class="au-drawer-form" @submit=${(ev: Event) => ev.preventDefault()}>
-      ${checkbox(
-        'show_presence',
-        config.show_presence !== false,
-        localize(language, 'drawer.settings.show_presence'),
-        (checked) => emit({ show_presence: checked }),
+      ${section(
+        'appearance',
+        localize(language, 'drawer.settings.section.appearance'),
+        appearance,
       )}
-      ${checkbox(
-        'show_bulk_actions',
-        config.show_bulk_actions !== false,
-        localize(language, 'drawer.settings.show_bulk_actions'),
-        (checked) => emit({ show_bulk_actions: checked }),
-      )}
-      ${checkbox(
-        'header_greeting',
-        config.header_greeting === true,
-        localize(language, 'drawer.settings.header_greeting'),
-        (checked) => emit({ header_greeting: checked }),
-      )}
-      ${textField(
-        'header_title',
-        config.header_title ?? '',
-        localize(language, 'drawer.settings.header_title'),
-        (value) => emit({ header_title: value }),
-      )}
-      ${selectField(
-        'clock_format',
-        config.clock_format ?? '24h',
-        localize(language, 'drawer.settings.clock_format'),
-        [
-          {
-            value: '24h',
-            label: localize(language, 'drawer.settings.clock_24h'),
-          },
-          {
-            value: '12h',
-            label: localize(language, 'drawer.settings.clock_12h'),
-          },
-        ],
-        (value) => emit({ clock_format: value as '12h' | '24h' }),
-      )}
-      ${checkbox(
-        'clock_show_date',
-        config.clock_show_date !== false,
-        localize(language, 'drawer.settings.clock_show_date'),
-        (checked) => emit({ clock_show_date: checked }),
-      )}
-      ${selectField(
-        'clock_date_format',
-        config.clock_date_format ?? 'dd/mm',
-        localize(language, 'drawer.settings.clock_date_format'),
-        [
-          { value: 'dd/mm', label: 'DD/MM' },
-          { value: 'mm/dd', label: 'MM/DD' },
-        ],
-        (value) => emit({ clock_date_format: value as 'dd/mm' | 'mm/dd' }),
-      )}
-      ${checkbox(
-        'clock_show_day',
-        config.clock_show_day !== false,
-        localize(language, 'drawer.settings.clock_show_day'),
-        (checked) => emit({ clock_show_day: checked }),
-      )}
-      ${selectField(
-        'clock_day_format',
-        config.clock_day_format ?? 'short',
-        localize(language, 'drawer.settings.clock_day_format'),
-        [
-          {
-            value: 'short',
-            label: localize(language, 'drawer.settings.clock_day_short'),
-          },
-          {
-            value: 'long',
-            label: localize(language, 'drawer.settings.clock_day_long'),
-          },
-        ],
-        (value) => emit({ clock_day_format: value as 'short' | 'long' }),
-      )}
-      ${numberField(
-        'room_idle_timeout',
-        config.room_idle_timeout,
-        localize(language, 'drawer.settings.room_idle_timeout'),
-        (value) => emit({ room_idle_timeout: value }),
-      )}
-      ${numberField(
-        'columns',
-        config.columns,
-        localize(language, 'drawer.settings.columns'),
-        (value) => emit({ columns: value }),
-        1,
-      )}
-      ${textField(
-        'gap',
-        config.gap ?? '',
-        localize(language, 'drawer.settings.gap'),
-        (value) => emit({ gap: value }),
-      )}
-      ${textField(
-        'row_height',
-        config.row_height ?? '',
-        localize(language, 'drawer.settings.row_height'),
-        (value) => emit({ row_height: value }),
-      )}
-      ${numberField(
-        'rows',
-        config.rows,
-        localize(language, 'drawer.settings.rows'),
-        (value) => emit({ rows: value }),
-        1,
-      )}
-      ${numberField(
-        'max_rows',
-        config.max_rows,
-        localize(language, 'drawer.settings.max_rows'),
-        (value) => emit({ max_rows: value }),
-        1,
-      )}
-      ${textField(
-        'width',
-        config.width ?? '',
-        localize(language, 'drawer.settings.width'),
-        (value) => emit({ width: value }),
-      )}
-      ${textField(
-        'height',
-        config.height ?? '',
-        localize(language, 'drawer.settings.height'),
-        (value) => emit({ height: value }),
-      )}
-      ${checkbox(
-        'auto_areas',
-        config.auto_areas === true,
-        localize(language, 'drawer.settings.auto_areas'),
-        (checked) => emit({ auto_areas: checked }),
-      )}
+      ${section('clock', localize(language, 'drawer.settings.section.clock'), [
+        checkbox(
+          'clock_show_date',
+          config.clock_show_date !== false,
+          localize(language, 'drawer.settings.clock_show_date'),
+          (checked) => emit({ clock_show_date: checked }),
+        ),
+        checkbox(
+          'clock_show_day',
+          config.clock_show_day !== false,
+          localize(language, 'drawer.settings.clock_show_day'),
+          (checked) => emit({ clock_show_day: checked }),
+        ),
+        selectField(
+          'clock_format',
+          config.clock_format ?? '24h',
+          localize(language, 'drawer.settings.clock_format'),
+          [
+            {
+              value: '24h',
+              label: localize(language, 'drawer.settings.clock_24h'),
+            },
+            {
+              value: '12h',
+              label: localize(language, 'drawer.settings.clock_12h'),
+            },
+          ],
+          (value) => emit({ clock_format: value as '12h' | '24h' }),
+        ),
+        selectField(
+          'clock_date_format',
+          config.clock_date_format ?? 'dd/mm',
+          localize(language, 'drawer.settings.clock_date_format'),
+          [
+            { value: 'dd/mm', label: 'DD/MM' },
+            { value: 'mm/dd', label: 'MM/DD' },
+          ],
+          (value) => emit({ clock_date_format: value as 'dd/mm' | 'mm/dd' }),
+        ),
+        selectField(
+          'clock_day_format',
+          config.clock_day_format ?? 'short',
+          localize(language, 'drawer.settings.clock_day_format'),
+          [
+            {
+              value: 'short',
+              label: localize(language, 'drawer.settings.clock_day_short'),
+            },
+            {
+              value: 'long',
+              label: localize(language, 'drawer.settings.clock_day_long'),
+            },
+          ],
+          (value) => emit({ clock_day_format: value as 'short' | 'long' }),
+        ),
+      ])}
+      ${section('home', localize(language, 'drawer.settings.section.home'), [
+        checkbox(
+          'show_presence',
+          config.show_presence !== false,
+          localize(language, 'drawer.settings.show_presence'),
+          (checked) => emit({ show_presence: checked }),
+        ),
+        checkbox(
+          'show_bulk_actions',
+          config.show_bulk_actions !== false,
+          localize(language, 'drawer.settings.show_bulk_actions'),
+          (checked) => emit({ show_bulk_actions: checked }),
+        ),
+        checkbox(
+          'auto_areas',
+          config.auto_areas === true,
+          localize(language, 'drawer.settings.auto_areas'),
+          (checked) => emit({ auto_areas: checked }),
+        ),
+        numberField(
+          'room_idle_timeout',
+          config.room_idle_timeout,
+          localize(language, 'drawer.settings.room_idle_timeout'),
+          (value) => emit({ room_idle_timeout: value }),
+        ),
+      ])}
+      ${section('layout', localize(language, 'drawer.settings.section.layout'), [
+        numberField(
+          'columns',
+          config.columns,
+          localize(language, 'drawer.settings.columns'),
+          (value) => emit({ columns: value }),
+          1,
+        ),
+        numberField(
+          'rows',
+          config.rows,
+          localize(language, 'drawer.settings.rows'),
+          (value) => emit({ rows: value }),
+          1,
+        ),
+        numberField(
+          'max_rows',
+          config.max_rows,
+          localize(language, 'drawer.settings.max_rows'),
+          (value) => emit({ max_rows: value }),
+          1,
+        ),
+        textField(
+          'gap',
+          config.gap ?? '',
+          localize(language, 'drawer.settings.gap'),
+          (value) => emit({ gap: value }),
+        ),
+        textField(
+          'row_height',
+          config.row_height ?? '',
+          localize(language, 'drawer.settings.row_height'),
+          (value) => emit({ row_height: value }),
+        ),
+        textField(
+          'width',
+          config.width ?? '',
+          localize(language, 'drawer.settings.width'),
+          (value) => emit({ width: value }),
+        ),
+        textField(
+          'height',
+          config.height ?? '',
+          localize(language, 'drawer.settings.height'),
+          (value) => emit({ height: value }),
+        ),
+      ])}
     </form>
   `;
 }
@@ -357,7 +436,11 @@ export function renderDrawerGlobalSettings(
     onPatch(sanitizeDrawerSettingsPatch('global', patch));
   const controls: AuHomeRoomControlsConfig = config.room_controls ?? {};
   return html`
-    <form class="au-drawer-form" @submit=${(ev: Event) => ev.preventDefault()}>
+    <form
+      class="au-drawer-form au-drawer-group"
+      style=${DRAWER_GROUP_CHROME}
+      @submit=${(ev: Event) => ev.preventDefault()}
+    >
       ${checkbox(
         'confirm_actions',
         config.confirm_actions === true,

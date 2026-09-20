@@ -1415,8 +1415,8 @@
     "semantic_hash": ""
   },
   "docs/prd/ux/shell-drawer.md": {
-    "mtime": 1789834176.5731442,
-    "ast_hash": "0e0b054370dbfc13f65763619a150121",
+    "mtime": 1789840264.797468,
+    "ast_hash": "524fc4545005350d967220bc8c29c1ff",
     "semantic_hash": ""
   },
   "src/template/shell-grid/shell-drawer-trigger.ts": {
@@ -1465,8 +1465,8 @@
     "semantic_hash": ""
   },
   "src/template/shell-grid/shell-drawer-settings.ts": {
-    "mtime": 1789833478.1178405,
-    "ast_hash": "7d73cba7ed3454a9b1d0e131277631bf",
+    "mtime": 1789840237.2854877,
+    "ast_hash": "a77b2e1d137532b275863ac2ba82cb83",
     "semantic_hash": ""
   },
   "test/template/shell-drawer-dash-global.test.ts": {
@@ -1495,8 +1495,8 @@
     "semantic_hash": ""
   },
   "test/template/shell-drawer-polish.test.ts": {
-    "mtime": 1789834217.739182,
-    "ast_hash": "faa51abaa418c9ada3074862b15d35a8",
+    "mtime": 1789834251.2252336,
+    "ast_hash": "3a62bacd3e2d09622eee9ed9fe2a486f",
     "semantic_hash": ""
   },
   "docs/imp/feature/shell-drawer-polish.md": {
@@ -1505,13 +1505,13 @@
     "semantic_hash": ""
   },
   "test/template/shell-drawer-ux-2.test.ts": {
-    "mtime": 1789833449.127725,
-    "ast_hash": "11630cbb303b5c81c06ede953cd63feb",
+    "mtime": 1789840195.5969563,
+    "ast_hash": "a79a1dddc2cc9d7e5ee63ef8b7b11db8",
     "semantic_hash": ""
   },
   "docs/imp/feature/shell-drawer-ux-2.md": {
-    "mtime": 1789834199.303771,
-    "ast_hash": "7a09a51ee568adcf2ae6b56606bf74d5",
+    "mtime": 1789840271.857755,
+    "ast_hash": "f8bd144eb3c178a93d121a6f4f71aa04",
     "semantic_hash": ""
   }
 }

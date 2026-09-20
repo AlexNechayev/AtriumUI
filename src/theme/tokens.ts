@@ -7,7 +7,25 @@ import { css } from 'lit';
  * Control / chip buttons: 32px (glyph 18px)
  * Spacing: 16px pad, 12px gap (8px compact)
  * Type: keep name > secondary hierarchy
+ *
+ * Surfaces follow shell `theme` via `color-scheme` + `light-dark()` (not HA
+ * `--card-background-color`, which does not change with Atrium theme).
  */
+export const AU_THEME_SURFACES = {
+  light: {
+    homeBg: '#f2f2f7',
+    surfaceElevated: '#ffffff',
+    primaryText: '#1c1c1e',
+    secondaryText: '#8e8e93',
+  },
+  dark: {
+    homeBg: '#000000',
+    surfaceElevated: '#1c1c1e',
+    primaryText: '#f5f5f7',
+    secondaryText: '#98989d',
+  },
+} as const;
+
 export const auTokens = css`
   :host {
     /* --- Home look surfaces --- */
@@ -19,12 +37,9 @@ export const auTokens = css`
     --au-home-pad: 16px;
     --au-home-gap: 8px;
 
-    --au-card-background: var(
-      --ha-card-background,
-      var(--card-background-color, #ffffff)
-    );
-    --au-primary-text: var(--primary-text-color, #1c1c1e);
-    --au-secondary-text: var(--secondary-text-color, #8e8e93);
+    --au-card-background: light-dark(#ffffff, #1c1c1e);
+    --au-primary-text: light-dark(#1c1c1e, #f5f5f7);
+    --au-secondary-text: light-dark(#8e8e93, #98989d);
     --au-accent: var(--accent-color, #0a84ff);
     --au-card-radius: var(--au-home-radius);
     --au-card-padding: var(--au-home-pad);
@@ -54,19 +69,19 @@ export const auTokens = css`
     --au-weight-bold: 650;
 
     /* --- Home surfaces / accents --- */
-    --au-home-bg: var(
-      --ha-view-background-color,
-      var(--primary-background-color, #f2f2f7)
-    );
+    --au-home-bg: light-dark(#f2f2f7, #000000);
     --au-home-surface: color-mix(
       in srgb,
-      var(--card-background-color, #ffffff) 88%,
+      light-dark(#ffffff, #1c1c1e) 88%,
       transparent
     );
-    --au-home-surface-elevated: var(--card-background-color, #ffffff);
+    --au-home-surface-elevated: light-dark(#ffffff, #1c1c1e);
     --au-home-label: var(--au-primary-text);
     --au-home-muted: var(--au-secondary-text);
-    --au-home-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    --au-home-shadow: light-dark(
+      0 10px 28px rgba(0, 0, 0, 0.08),
+      0 10px 28px rgba(0, 0, 0, 0.45)
+    );
     --au-home-shadow-press: 0 4px 12px rgba(0, 0, 0, 0.1);
     --au-home-control-fill: rgba(120, 120, 128, 0.14);
     --au-home-control-fill-strong: rgba(120, 120, 128, 0.16);
@@ -116,6 +131,16 @@ export const auTokens = css`
     font-family: var(--au-font-family);
     color: var(--au-primary-text);
     -webkit-font-smoothing: antialiased;
+  }
+
+  :host([data-au-theme='light']) {
+    color-scheme: light;
+  }
+  :host([data-au-theme='dark']) {
+    color-scheme: dark;
+  }
+  :host([data-au-theme='system']) {
+    color-scheme: light dark;
   }
 `;
 

@@ -100,6 +100,20 @@ See [`SCOPE_AND_FEATURES.md`](./SCOPE_AND_FEATURES.md) §4 and [`PRD.md`](./PRD.
 
 ---
 
+### Why does `HassEntity` bridge Home and card communities?
+
+| Field | Value |
+| --- | --- |
+| Status | open |
+| First seen | 2026-09-19 |
+| Source | graphify Suggested Questions (feature/shell-drawer-ux-2 graphify update) |
+
+**Question:** Why does `HassEntity` connect `AuSwitchCard` / `VacuumSettingsDraft` to `AuShellHomeView`, card bases, and Home tiles?
+
+**Notes:** High betweenness (≈0.066) after 2026-09-20 AST rebuild. Same class of typing hub as the answered `HomeAssistant` entry — entity state objects pass through shell + cards. Confirm on next full `/graphify` if it is still more than extraction noise.
+
+---
+
 ## Answered
 
 ### Why does `AuShellHomeView` bridge so many Home communities?

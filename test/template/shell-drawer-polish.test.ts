@@ -44,15 +44,67 @@ describe('shell drawer polish', () => {
     el.remove();
   });
 
-  it('closes from the in-panel chevron', async () => {
+  it('keeps a single chevron above the panel in the same top-right slot', async () => {
     const { el, home } = await openHomeDrawer();
-    const close = home.shadowRoot?.querySelector(
-      '.au-drawer-panel .au-drawer-trigger',
-    ) as HTMLButtonElement;
-    expect(close).toBeTruthy();
-    close.click();
+    const triggers = [
+      ...home.shadowRoot!.querySelectorAll('.au-drawer-trigger'),
+    ] as HTMLButtonElement[];
+    expect(triggers).toHaveLength(1);
+    expect(home.shadowRoot?.querySelector('.au-drawer-panel .au-drawer-trigger')).toBeNull();
+
+    const trigger = triggers[0]!;
+    expect(trigger.style.position).toBe('absolute');
+    expect(trigger.style.zIndex).toBe('23');
+    expect(trigger.getAttribute('style') ?? '').toContain(
+      'clamp(16px, 2.2vw, 28px)',
+    );
+    expect(home.shadowRoot?.querySelector('.home-shell')?.contains(trigger)).toBe(
+      true,
+    );
+    expect(
+      home.shadowRoot?.querySelector('.toolbar-end .au-drawer-trigger-slot'),
+    ).toBeTruthy();
+
+    const chevron = trigger.querySelector('.chevron') as HTMLElement;
+    expect(chevron.style.transition).toMatch(/au-motion-medium|280ms/);
+    expect(chevron.style.transition).toMatch(/au-motion-ease|cubic-bezier/);
+
+    trigger.click();
     await home.updateComplete;
     expect(home.shadowRoot?.querySelector('.au-drawer-panel')).toBeNull();
+    el.remove();
+  });
+
+  it('pins Enter edit as an icon opposite the chevron on the same row', async () => {
+    const { el, home } = await openHomeDrawer();
+    const trigger = home.shadowRoot?.querySelector(
+      '.au-drawer-trigger',
+    ) as HTMLButtonElement;
+    const edit = home.shadowRoot?.querySelector(
+      '.au-drawer-edit',
+    ) as HTMLButtonElement;
+    const panel = home.shadowRoot?.querySelector(
+      '.au-drawer-panel',
+    ) as HTMLElement;
+    expect(edit).toBeTruthy();
+    expect(panel.contains(edit)).toBe(false);
+    expect(edit.style.width).toBe('36px');
+    expect(edit.style.height).toBe('36px');
+    expect(edit.style.background).toBe('transparent');
+    expect(edit.style.zIndex).toBe('23');
+    expect(edit.style.position).toBe('absolute');
+    expect(edit.style.top).toBe(trigger.style.top);
+    expect(edit.getAttribute('style') ?? '').toContain(
+      'min(220px, max(196px, 24vw))',
+    );
+    expect(edit.getAttribute('aria-label')).toMatch(/edit/i);
+    expect(edit.textContent?.replace(/\s+/g, ' ').trim()).not.toMatch(
+      /enter edit mode/i,
+    );
+    expect(panel.textContent).not.toMatch(/Enter edit mode/);
+    trigger.click();
+    await home.updateComplete;
+    expect(home.shadowRoot?.querySelector('.au-drawer-edit')).toBeNull();
     el.remove();
   });
 
@@ -81,6 +133,7 @@ describe('shell drawer polish', () => {
     const enter = home.shadowRoot?.querySelector(
       '.au-drawer-edit',
     ) as HTMLButtonElement;
+    expect(enter).toBeTruthy();
     enter.click();
     await home.updateComplete;
     await el.updateComplete;
@@ -114,7 +167,8 @@ describe('shell drawer polish', () => {
     const exit = home.shadowRoot?.querySelector(
       '.au-drawer-edit',
     ) as HTMLButtonElement;
-    expect(exit?.textContent).toMatch(/exit/i);
+    expect(exit?.getAttribute('aria-label')).toMatch(/exit/i);
+    expect(exit?.textContent?.trim()).not.toMatch(/exit edit/i);
     exit.click();
     await home.updateComplete;
     await el.updateComplete;

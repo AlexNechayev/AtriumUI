@@ -615,15 +615,17 @@ Tablet-first; narrow/portrait stacks agenda above the month.
 ## Design system
 
 AtriumUI’s visual language is defined in `src/theme/tokens.ts` (Home look).
-Structural colors still bind to Home Assistant theme variables where possible;
-fallbacks below match the Home tokens.
+Home surfaces follow shell `theme` (`light-dark()` + `color-scheme`). Accent
+and semantic state colors still bind to Home Assistant theme variables where
+possible; fallbacks below match the Home tokens.
 
 | Attribute | Token | Fallback |
 | --- | --- | --- |
 | Font | `--au-home-font` | SF Pro Rounded / system rounded sans |
-| Card background | `--ha-card-background` | `var(--card-background-color, #ffffff)` |
-| Primary text | `--primary-text-color` | `#1c1c1e` |
-| Secondary text | `--secondary-text-color` | `#8e8e93` |
+| Home background | `--au-home-bg` | `light-dark(#f2f2f7, #000000)` |
+| Card background | `--au-card-background` | `light-dark(#ffffff, #1c1c1e)` |
+| Primary text | `--au-primary-text` | `light-dark(#1c1c1e, #f5f5f7)` |
+| Secondary text | `--au-secondary-text` | `light-dark(#8e8e93, #98989d)` |
 | Accent | `--accent-color` / `--au-accent` | `#0a84ff` |
 | Corner radius | `--au-home-radius` | `22px` (`--au-home-radius-sm`: `16px`) |
 | Gap | `--au-home-gap` / `--au-gap` | `12px` (`--au-gap-sm`: `8px`) |

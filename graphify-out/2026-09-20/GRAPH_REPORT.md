@@ -1,7 +1,7 @@
 # Graph Report - feature-shell-drawer-ux-2  (2026-09-19)
 
 ## Corpus Check
-- 291 files · ~139,716 words
+- 291 files · ~139,894 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -560,7 +560,7 @@ Cohesion: 0.33
 Nodes (6): Action Card, custom:au-action-card, AuActionCardBase, Action Card Content Layout, Switch Explicit turn_on/turn_off, Switch Card
 
 ### Community 106 - "bindStopBubble"
-Cohesion: 0.09
+Cohesion: 0.10
 Nodes (9): EntityOption, renderAddCardModal(), renderAddEntityModal(), renderAddRoomModal(), renderCardEditorModal(), renderHomeAddChooser(), renderDrawerTriggerSlot(), resolveDeviceDisplayName() (+1 more)
 
 ### Community 107 - "Security Policy"
@@ -576,7 +576,7 @@ Cohesion: 0.31
 Nodes (8): ClockDateFormat, ClockDayFormat, ClockFormat, formatClock(), formatClockDate(), formatClockWeekday(), formatToolbarClock(), ToolbarClockOptions
 
 ### Community 114 - "._resolvedFloors"
-Cohesion: 0.10
+Cohesion: 0.09
 Nodes (18): addEditRoomMember(), buildEditRoomDraft(), controlsFromEditDraft(), EditRoomAddCandidate, EditRoomDraft, EditRoomModalHandlers, EditRoomModalProps, moveEditRoomMember() (+10 more)
 
 ### Community 116 - "repository"

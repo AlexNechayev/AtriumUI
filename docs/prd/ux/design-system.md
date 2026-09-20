@@ -52,7 +52,7 @@
 1. New UI MUST use tokens, not hard-coded hex, unless mapping into a token.
 2. On conflict between README and `tokens.ts`, **code tokens win**; update README.
 3. Prefer HA CSS variables when present; fallbacks match Home look.
-4. Shell `theme: light | dark | system` (default `system`) sets Atrium `color-scheme` / host data attribute for shell + cards. It MUST NOT call HA `set_theme` and MUST NOT introduce a second token file ([shell drawer](./shell-drawer.md)).
+4. Shell `theme: light | dark | system` (default `system`) sets Atrium `color-scheme` / host data attribute for shell + cards. Home surface tokens use `light-dark()` with Home fallbacks so the scheme is visible (independent of HA `--card-background-color`). It MUST NOT call HA `set_theme` and MUST NOT introduce a second token file ([shell drawer](./shell-drawer.md)).
 
 ---
 
@@ -78,7 +78,7 @@ N/A (system concern). Consumers: all cards/shell.
 2. README Design system table matches token fallbacks. (**done** — `#0a84ff`)
 3. Edit chrome uses Home accent from tokens. (**done**)
 4. No new `#03a9f4` Material accent introduced. (**done**)
-5. Shell drawer theme uses this token system’s color-scheme path, not a parallel palette ([shell drawer](./shell-drawer.md)).
+5. Shell drawer theme uses this token system’s color-scheme path, not a parallel palette ([shell drawer](./shell-drawer.md)). Home surfaces in `tokens.ts` use `light-dark()` with the Home light/dark fallbacks so `theme: light|dark|system` actually changes Atrium chrome independently of HA CSS variables.
 
 ---
 

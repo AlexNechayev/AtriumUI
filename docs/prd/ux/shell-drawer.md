@@ -17,7 +17,7 @@ Does **not** block Phases 3–4. Must not invent a second shell card or a parall
 
 **Problem:** Theme, this-view chrome, shared behavior, automations, and edit entry are scattered (pencil-only edit, YAML-only options, HA Automations elsewhere). Touch users need one small, icon-only control on the shell.
 
-**User story:** As a Home Assistant user, I want a top-right chevron that opens a settings drawer on my Atrium shell, so I can switch Atrium light/dark/system, enter edit mode, and open this-view settings, shared behavior, and an automations list without replacing the pencil.
+**User story:** As a Home Assistant user, I want a top-right chevron that opens a settings drawer on my Atrium shell, so I can enter edit mode and open this-view settings (including Atrium light/dark/system), shared behavior, and an automations list without replacing the pencil.
 
 ---
 
@@ -25,9 +25,10 @@ Does **not** block Phases 3–4. Must not invent a second shell card or a parall
 
 ### In scope
 - Icon-only single chevron (36×36 CSS px hit target, no fill), 90° rotate, top-right of shell chrome, **both** Home and classic `au-shell-grid`
-- Right overlay side panel (always from the right, including Hebrew RTL); no dim scrim; tap outside closes the panel when no 90% card is open; panel height is the shell host; in-panel close chevron; slide-open animation
-- Inline in the panel: Dark / Light / System theme; Enter / Exit edit mode
-- 90% centered floating cards: Dashboard settings, Global configuration, Automations list (enable/disable/run; no editor)
+- Right overlay side panel (always from the right, including Hebrew RTL); no dim scrim; tap outside closes the panel when no 90% card is open; panel height is the shell host; one top-right chevron (open + close); slide-open animation
+- Icon-only Enter / Exit edit on the open panel header, same row as the chevron, opposite (inner) edge
+- 90% centered floating cards: Dashboard settings (owns Atrium theme under Appearance), Global configuration, Automations list (enable/disable/run; one row per item; no editor)
+- 90% card close control shows **X**; `aria-label` stays the translated Close settings string
 - YAML `theme` + `drawer` on `au-shell-grid`; item visibility YAML-only
 - Persist via existing shell Lovelace config persist (storage-mode; same family as edit Done)
 - en / ru / he strings; RTL **text** inside the panel; panel **edge** stays right
@@ -76,9 +77,9 @@ Hide the icon when `drawer.enabled` is `false` **or** every item under `drawer.i
 
 | Owner | Keys |
 | --- | --- |
-| Inline drawer | `theme` (Dark / Light / System). Enter edit is not a YAML item beyond `drawer.items.edit` + existing `editable`. |
+| Inline drawer | Enter / Exit edit as a 36×36 icon on the open header row, opposite the chevron (`drawer.items.edit` + existing `editable`). Theme is **not** inline. |
 | YAML only (not in Dashboard card) | `drawer.enabled`, `drawer.items.*` |
-| Dashboard settings 90% card | This-view layout chrome and remaining general shell keys: `clock_format`, `show_presence`, `show_bulk_actions`, `room_idle_timeout`, `columns`, `gap`, `row_height`, `rows`, `max_rows`, `width`, `height`, scenes/scripts visibility as applicable, other this-shell general keys not listed under Global |
+| Dashboard settings 90% card | `theme` (Light / Dark / System) under **Appearance** when `drawer.items.theme` is not false; this-view layout chrome and remaining general shell keys grouped by domain: Appearance (`header_greeting`, `header_title`), Clock (`clock_show_date`, `clock_show_day`, `clock_format`, `clock_date_format`, `clock_day_format`), Home (`show_presence`, `show_bulk_actions`, `auto_areas`, `room_idle_timeout`), Layout (`columns`, `rows`, `max_rows`, `gap`, `row_height`, `width`, `height`). Setting items in each section use a **3-column** grid. Within a section, fields are ordered by control type so rows share similar heights: theme group (Appearance only), then toggles, then selects, then numbers, then text. |
 | Global 90% card | `confirm_actions`, `prefer_device_name`, reduced-motion / motion preference, default card behaviors (cross-card defaults such as Home extra-controls conventions). New keys in this group MUST be specified here before implementation; do not also expose them on Dashboard settings. |
 
 `editable` remains the edit-mode gate ([edit-mode](./edit-mode.md)). When `editable: false`, the drawer **edit** item is hidden or disabled.
@@ -88,16 +89,16 @@ Hide the icon when `drawer.enabled` is `false` **or** every item under `drawer.i
 ## 4. Behaviors & business rules
 
 1. Host is `au-shell-grid` only (Home when `floors` is set, classic otherwise). No second shell card.
-2. Trigger is the rightmost top chrome control: icon-only single chevron, no background fill, **36×36 CSS px** hit target. The glyph rotates **90°** with open vs closed.
+2. Trigger is the rightmost top chrome control: icon-only single chevron, no background fill, **36×36 CSS px** hit target. The glyph rotates **90°** with open vs closed using the same `--au-motion-medium` / `--au-motion-ease` as the panel. The same control stays in one top-right slot while the panel slides in beneath it (z-index above catcher/panel). There is no second in-panel arrow. When the panel is open, Enter / Exit edit is a matching 36×36 icon on that same row at the panel’s **inner** (left) edge — opposite the chevron.
 3. Panel slides from the **right** on every locale, including Hebrew. Labels and layout direction inside the panel follow [localize](./localize.md) (RTL for `he`).
-4. Panel width: `min(360px, max(280px, 40vw))` (or equivalent). Raw 40% of a phone viewport is too narrow.
+4. Panel width: `min(220px, max(196px, 24vw))` (or equivalent). Compact nav; 90% settings cards stay 90% of the shell.
 5. Overlay sits above the dashboard **without** a dimmed scrim. An invisible pointer catcher covers the **shell host** (not `100vh`) and receives outside taps. The panel height is `100%` / `max-height: 100%` of that host.
-6. Z-order: catcher → side panel → 90% card. Tokens only ([design-system](./design-system.md)); no new Material accent.
-7. Theme + Enter/Exit edit stay **in the panel**. The panel has its own close chevron (same 36×36 arrow). Dashboard settings, Global configuration, and Automations each open a centered ~90% floating card (Home look, own close control). The panel slides in from the right using existing motion tokens.
+6. Z-order: catcher → side panel → 90% card → chevron. Tokens only ([design-system](./design-system.md)); no new Material accent.
+7. Enter/Exit edit is the header icon opposite the chevron (not a labeled row in the nav). Theme lives in Dashboard settings → Appearance (hidden when `drawer.items.theme` is false). The top-right chevron is both open and close (no second in-panel arrow). Dashboard settings, Global configuration, and Automations each open a centered ~90% floating card (Home look; visible close control is **X**, `aria-label` remains Close settings). The panel slides in from the right using existing motion tokens.
 8. Tap outside with **no** 90% card: close the panel. Tap outside with a 90% card open: close **only** the card; the panel stays open. The card’s close control also dismisses the card only.
 9. Enter edit **closes the panel**, then follows the existing pencil → Done path ([edit-mode](./edit-mode.md)). The pencil remains. When already editing, the same item is **Exit edit mode** and calls `setEditMode(false)` (same persist path as HA Done). Do not latch local `editMode`/`preview` flags that would block native Done.
-10. Theme applies to Atrium shell + cards (host `color-scheme` / data attribute). It MUST NOT call HA `set_theme`. Persist `theme` on this shell YAML (storage-mode Lovelace). YAML-mode dashboards: persist may be limited — same caveat as edit Done.
-11. Automations card lists all `automation.*` from `hass.states` **and** `hass.entities` (entity registry). If both are empty, it may fetch `config/entity_registry/list`. Enable/disable/run only. No create/edit. Empty and unavailable states must be explicit. Services go through `executeAction` allowlist.
+10. Theme applies to Atrium shell + cards (host `color-scheme` / `data-au-theme` plus Home surface tokens via `light-dark()` in `src/theme/tokens.ts`). It MUST NOT call HA `set_theme`. Persist `theme` on this shell YAML (storage-mode Lovelace). YAML-mode dashboards: persist may be limited — same caveat as edit Done.
+11. Automations card lists all `automation.*` from `hass.states` **and** `hass.entities` (entity registry). If both are empty, it may fetch `config/entity_registry/list`. Each item is **one row**: name (and unavailable) plus Run / Enable-Disable. Enable/disable/run only. No create/edit. Empty and unavailable states must be explicit. Services go through `executeAction` allowlist.
 12. React only when tracked entities / relevant hass slices change (automations list: `automation.*`). Tear down listeners, timers, and overlays in `disconnectedCallback` ([card-contract](../platform/card-contract.md)).
 13. Chrome collision: the drawer icon is the **rightmost** top control. Existing clock / pencil / other chrome MUST NOT overlap it.
 
@@ -110,11 +111,11 @@ Hide the icon when `drawer.enabled` is `false` **or** every item under `drawer.i
 
 ### Primary flow
 1. Tap the top-right chevron → panel slides in from the right; chevron rotates 90°.
-2. Toggle Dark / Light / System in the panel → Atrium surfaces update; `theme` persists on storage-mode Lovelace.
-3. Tap Enter edit → panel closes → existing edit chrome (pencil/Done) takes over. Tap Exit edit (when already editing) → panel closes → `setEditMode(false)` (same as Done).
-4. Tap Dashboard settings / Global / Automations → centered 90% card opens over the panel.
-5. Close the card (close control or tap outside the card) → return to the open panel.
-6. Tap outside the panel (no card), tap the toolbar chevron, or tap the in-panel close chevron → panel closes; chevron rotates back.
+2. Tap the header edit icon → panel closes → existing edit chrome (pencil/Done) takes over. Tap the same icon while already editing → panel closes → `setEditMode(false)` (same as Done).
+3. Tap Dashboard settings → Appearance: Light / Dark / System → Atrium surfaces update; `theme` persists on storage-mode Lovelace. Dashboard fields are grouped under titled sections in a 3-column grid, with similar controls sharing a row.
+4. Tap Global / Automations → centered 90% card opens over the panel. Automations rows keep name and action buttons on one line.
+5. Close the card (**X** or tap outside the card) → return to the open panel.
+6. Tap outside the panel (no card) or tap the same top-right chevron → panel closes; chevron rotates back.
 
 ### Empty / first-use
 - Default: drawer enabled, all items on, `theme: system`.
@@ -132,7 +133,7 @@ Hide the icon when `drawer.enabled` is `false` **or** every item under `drawer.i
 | YAML-mode dashboard | Theme / Dashboard / Global writes may not persist — document (same as edit Done) |
 | Storage-mode persist failure | Keep UI draft; surface error; do not silently claim saved |
 | Hebrew RTL | Panel still from the right; strings and in-panel layout RTL |
-| Phone width | Honor min 280px so the panel stays usable |
+| Phone width | Honor min 196px so the compact nav stays tappable |
 | Pencil / clock overlap | Drawer stays rightmost; other chrome shifts or yields |
 | Overlay still open on disconnect | Remove catcher, panel, and 90% card in `disconnectedCallback` |
 | Automation unavailable / missing | Row shows unavailable; run/toggle no-ops with explicit feedback |
@@ -143,9 +144,9 @@ Hide the icon when `drawer.enabled` is `false` **or** every item under `drawer.i
 ## 7. Acceptance criteria
 
 1. Both Home and classic shells show the icon when the drawer is enabled and at least one item is on.
-2. Chevron, no background, 36×36 hit target, 90° rotation tied to open state.
-3. Panel from the right, width `min(360px, max(280px, 40vw))` (or equivalent), overlay without dim; outside tap closes the panel when no 90% card is open.
-4. Theme + edit are inline; Dashboard settings, Global, and Automations open a centered ~90% Home-look card with close control.
+2. Chevron, no background, 36×36 hit target, 90° rotation tied to open state; the same control stays in the top-right slot above the sliding panel.
+3. Panel from the right, width `min(220px, max(196px, 24vw))` (or equivalent), overlay without dim; outside tap closes the panel when no 90% card is open.
+4. Edit is a 36×36 header icon opposite the chevron; theme is in Dashboard settings → Appearance; Dashboard settings, Global, and Automations open a centered ~90% Home-look card whose visible close control is **X**. Dashboard settings group same-domain keys under titled sections in a 3-column grid, with fields in each section ordered by control type (toggles, then selects, then numbers, then text). Each Dashboard section, the Global form, and each Automations row uses a Home control-fill background and outline so groups stay visually separate. Automations items are one row (text + buttons).
 5. Outside tap with a card open closes only the card; the panel stays open.
 6. Enter edit closes the panel and uses existing edit chrome; Exit edit and native Done both leave edit; the pencil remains.
 7. `theme` and Dashboard/Global writes persist on storage-mode Lovelace; YAML-mode limits are documented.

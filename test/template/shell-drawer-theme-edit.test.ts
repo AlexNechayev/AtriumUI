@@ -32,10 +32,17 @@ describe('shell drawer theme and enter edit', () => {
     document.body.replaceChildren();
   });
 
-  it('applies Atrium dark color-scheme from the inline theme control', async () => {
+  it('applies Atrium dark color-scheme from Dashboard Appearance', async () => {
     const { el, home } = await openHomeDrawer();
-    const dark = [...home.shadowRoot!.querySelectorAll('.au-drawer-theme button')].find(
-      (b) => b.getAttribute('data-theme') === 'dark',
+    expect(home.shadowRoot?.querySelector('.au-drawer-theme')).toBeNull();
+    (
+      home.shadowRoot?.querySelector(
+        '[data-drawer-card="dashboard_settings"]',
+      ) as HTMLButtonElement
+    ).click();
+    await (home as HTMLElement & { updateComplete: Promise<unknown> }).updateComplete;
+    const dark = home.shadowRoot?.querySelector(
+      '[data-theme="dark"]',
     ) as HTMLButtonElement;
     expect(dark).toBeTruthy();
     dark.click();
@@ -57,10 +64,11 @@ describe('shell drawer theme and enter edit', () => {
       saveConfig,
       setEditMode,
     };
-    const editBtn = [...home.shadowRoot!.querySelectorAll('.au-drawer-panel button')].find(
-      (b) => b.classList.contains('au-drawer-edit'),
+    const editBtn = home.shadowRoot?.querySelector(
+      '.au-drawer-edit',
     ) as HTMLButtonElement;
     expect(editBtn).toBeTruthy();
+    expect(editBtn.classList.contains('au-drawer-edit')).toBe(true);
     editBtn.click();
     await (home as HTMLElement & { updateComplete: Promise<unknown> }).updateComplete;
     await el.updateComplete;

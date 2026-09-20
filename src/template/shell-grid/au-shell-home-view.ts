@@ -18,10 +18,12 @@ import { auHomeTokens } from '../../theme/home-style';
 import { homeViewStyles } from './home-view-styles';
 import {
   drawerTriggerStyles,
+  renderDrawerEditTrigger,
   renderDrawerFloatCard,
   renderDrawerMenu,
   renderDrawerOverlay,
   renderDrawerTrigger,
+  renderDrawerTriggerSlot,
   type AuDrawerCardId,
 } from './shell-drawer-trigger';
 import {
@@ -2191,12 +2193,6 @@ export class AuShellHomeView extends LitElement {
     if (id === 'automations') void this._loadAutomationRegistry();
   };
 
-  private _closeDrawer = (ev: Event): void => {
-    ev.stopPropagation();
-    this._drawerOpen = false;
-    this._drawerCard = null;
-  };
-
   private async _loadAutomationRegistry(): Promise<void> {
     if (listShellAutomations(this.hass).length) return;
     const extras = await fetchAutomationRegistry(this.hass);
@@ -2225,13 +2221,8 @@ export class AuShellHomeView extends LitElement {
         renderDrawerMenu(
           this.config,
           this.hass?.language,
-          this._onDrawerTheme,
-          this._onDrawerEnterEdit,
           this._openDrawerCard,
-          this.layoutEditing,
         ),
-        this._closeDrawer,
-        this.config,
       )}
       ${renderDrawerFloatCard(
         this._drawerCard,
@@ -2255,17 +2246,22 @@ export class AuShellHomeView extends LitElement {
   }
 
   private _renderDrawerTrigger() {
-    return renderDrawerTrigger(
-      this.config,
-      this._drawerOpen,
-      this.hass?.language,
-      this._toggleDrawer,
-    );
+    return html`
+      ${renderDrawerEditTrigger(
+        this.config,
+        this._drawerOpen,
+        this.hass?.language,
+        this.layoutEditing,
+        this._onDrawerEnterEdit,
+      )}
+      ${renderDrawerTrigger(
+        this.config,
+        this._drawerOpen,
+        this.hass?.language,
+        this._toggleDrawer,
+      )}
+    `;
   }
-
-  private _onDrawerTheme = (theme: 'light' | 'dark' | 'system'): void => {
-    fireEvent(this, 'au-drawer-theme', { theme });
-  };
 
   private _onDrawerSettings = (patch: AuDrawerSettingsPatch): void => {
     fireEvent(this, 'au-drawer-settings', { patch });
@@ -2363,7 +2359,7 @@ export class AuShellHomeView extends LitElement {
                   ${this._t('home.bulk.all_off')}
                 </button>`
             : nothing}
-          ${this._renderDrawerTrigger()}
+          ${renderDrawerTriggerSlot(this.config)}
         </div>
       </div>
       <div class="room-body">
@@ -2428,7 +2424,7 @@ export class AuShellHomeView extends LitElement {
                 <h2 class="title">${this._homeToolbarTitle()}</h2>
               </div>
               ${this._renderToolbarClock()}
-              <div class="toolbar-end">${this._renderDrawerTrigger()}</div>
+              <div class="toolbar-end">${renderDrawerTriggerSlot(this.config)}</div>
             </div>
             ${this._renderHomeView(floors)}
           `
@@ -2447,6 +2443,7 @@ export class AuShellHomeView extends LitElement {
         </div>
         ${this._renderCardEditorModal()}
         ${this._renderDrawerOverlay()}
+        ${this._renderDrawerTrigger()}
       </div>
     `;
   }
