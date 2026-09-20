@@ -160,13 +160,13 @@
     "semantic_hash": ""
   },
   "src/template/shell-grid/au-shell-grid.ts": {
-    "mtime": 1789797330.4401937,
-    "ast_hash": "4bdd144521e8e86d5c5f3a06faf23919",
+    "mtime": 1789923316.8555794,
+    "ast_hash": "6ce836c4014fc204a2302c3acda893f8",
     "semantic_hash": ""
   },
   "src/template/shell-grid/au-shell-home-view.ts": {
-    "mtime": 1789797333.332513,
-    "ast_hash": "4add4e3668438b1c861ee3ab087fc770",
+    "mtime": 1789923313.441679,
+    "ast_hash": "71864a5dc96a71caddf0731ff655f799",
     "semantic_hash": ""
   },
   "src/template/shell-grid/config-persist.ts": {
@@ -625,8 +625,8 @@
     "semantic_hash": "2b726a34bd7787d01e1b6ae626084650"
   },
   "src/template/shell-grid/home-view-styles.ts": {
-    "mtime": 1789796980.6432939,
-    "ast_hash": "0fef31f0161e39324d0b781a75894d9c",
+    "mtime": 1789834139.3874457,
+    "ast_hash": "5ffbad17d68f5b69100a901a0cd061bc",
     "semantic_hash": ""
   },
   "src/utils/stop-bubble.ts": {
@@ -1030,8 +1030,8 @@
     "semantic_hash": "aafa1caabf0fde1caf0acc5452a1ac61"
   },
   "docs/prd/ux/edit-mode.md": {
-    "mtime": 1789796980.4789236,
-    "ast_hash": "e59dace744b2c3e123c7916cddf0b58b",
+    "mtime": 1789923362.3631377,
+    "ast_hash": "f8c5db6ab807d5c7c70e45b69e82fa06",
     "semantic_hash": ""
   },
   "docs/prd/ux/home-tiles.md": {
@@ -1050,8 +1050,8 @@
     "semantic_hash": ""
   },
   "docs/session-followups.md": {
-    "mtime": 1789796980.481,
-    "ast_hash": "136e479ee49d4fdb19a253b9d104c9fe",
+    "mtime": 1789797467.397382,
+    "ast_hash": "08f67ece31d760e5e7c46b755b55a508",
     "semantic_hash": ""
   },
   "src/card/calendar-card/au-calendar-fullscreen-overlay.ts": {
@@ -1415,18 +1415,18 @@
     "semantic_hash": ""
   },
   "docs/prd/ux/shell-drawer.md": {
-    "mtime": 1789797132.316948,
-    "ast_hash": "352f6ce45635b872a581a337583564d8",
+    "mtime": 1789923284.011979,
+    "ast_hash": "adeb1e619529d99b7e061f46275ed232",
     "semantic_hash": ""
   },
   "src/template/shell-grid/shell-drawer-trigger.ts": {
-    "mtime": 1789797309.4959772,
-    "ast_hash": "7bf402f4023b6f7e2cfbfcd09cfcf392",
+    "mtime": 1789923300.893267,
+    "ast_hash": "2bf9c26be9ba23049605edbe0d5cef0f",
     "semantic_hash": ""
   },
   "test/template/shell-drawer-chrome.test.ts": {
-    "mtime": 1789796980.7070587,
-    "ast_hash": "f7fe9bb3a8a382a7d038204a5bfda402",
+    "mtime": 1789923249.6302469,
+    "ast_hash": "188d93461fcbd468eaab1e751e624555",
     "semantic_hash": ""
   },
   "docs/imp/feature/shell-drawer-chrome.md": {
@@ -1435,8 +1435,8 @@
     "semantic_hash": ""
   },
   "test/template/shell-drawer-panel.test.ts": {
-    "mtime": 1789796980.7088616,
-    "ast_hash": "8b2e077e257e9b99842f75a54f68d5c0",
+    "mtime": 1789923233.4466527,
+    "ast_hash": "806117d8d17546c2741be96b97d7aba1",
     "semantic_hash": ""
   },
   "docs/imp/feature/shell-drawer-panel.md": {
@@ -1445,8 +1445,8 @@
     "semantic_hash": ""
   },
   "test/template/shell-drawer-theme-edit.test.ts": {
-    "mtime": 1789797164.4976907,
-    "ast_hash": "e8ff0c73fa7dbe6dcb45af7384eca812",
+    "mtime": 1789923244.7980359,
+    "ast_hash": "14fb07e9e1d0c15115aaa826f1ad3abe",
     "semantic_hash": ""
   },
   "docs/imp/feature/shell-drawer-theme-edit.md": {
@@ -1465,8 +1465,8 @@
     "semantic_hash": ""
   },
   "src/template/shell-grid/shell-drawer-settings.ts": {
-    "mtime": 1789797289.1434565,
-    "ast_hash": "d3c14d48e1e19b63dadbe6238775e5ac",
+    "mtime": 1789840237.2854877,
+    "ast_hash": "a77b2e1d137532b275863ac2ba82cb83",
     "semantic_hash": ""
   },
   "test/template/shell-drawer-dash-global.test.ts": {
@@ -1480,8 +1480,8 @@
     "semantic_hash": ""
   },
   "src/template/shell-grid/shell-drawer-automations.ts": {
-    "mtime": 1789797309.5354226,
-    "ast_hash": "e296b132f3b5660fc6162900e593f133",
+    "mtime": 1789833481.7587826,
+    "ast_hash": "8f4d0dd5430abe7f9212cbbf3b2ba91a",
     "semantic_hash": ""
   },
   "test/template/shell-drawer-automations.test.ts": {
@@ -1495,8 +1495,8 @@
     "semantic_hash": ""
   },
   "test/template/shell-drawer-polish.test.ts": {
-    "mtime": 1789796980.7093194,
-    "ast_hash": "09fac7bc9100bc986eb34b33f616d7d9",
+    "mtime": 1789923244.1665602,
+    "ast_hash": "a385ce17d19c2dff2e557833f25f8cb5",
     "semantic_hash": ""
   },
   "docs/imp/feature/shell-drawer-polish.md": {
@@ -1505,13 +1505,13 @@
     "semantic_hash": ""
   },
   "test/template/shell-drawer-ux-2.test.ts": {
-    "mtime": 1789797372.981464,
-    "ast_hash": "e177d5b307bb2bed6a6c0ddb9cd9f708",
+    "mtime": 1789840195.5969563,
+    "ast_hash": "a79a1dddc2cc9d7e5ee63ef8b7b11db8",
     "semantic_hash": ""
   },
   "docs/imp/feature/shell-drawer-ux-2.md": {
-    "mtime": 1789797408.728882,
-    "ast_hash": "6678c40efcd4a3614ecb1cd1a9625653",
+    "mtime": 1789923362.4733372,
+    "ast_hash": "f98fce5582a9c61129ac5acbefec0215",
     "semantic_hash": ""
   }
 }

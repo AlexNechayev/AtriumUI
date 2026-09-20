@@ -12,6 +12,7 @@ import type {
 } from '../../types/home-assistant';
 import { executeAction } from '../../utils/action';
 import { computeEntityName, isEntityOffline } from '../../utils/entity';
+import { DRAWER_GROUP_CHROME } from './shell-drawer-trigger';
 
 export type AuDrawerAutomationAction = 'run' | 'enable';
 
@@ -147,7 +148,7 @@ export function renderDrawerAutomations(
         return html`
           <li
             data-automation=${entity.entity_id}
-            style="display:flex;flex-direction:row;align-items:center;gap:12px"
+            style="display:flex;flex-direction:row;align-items:center;gap:12px;${DRAWER_GROUP_CHROME}"
           >
             <div class="au-drawer-automation-meta">
               <span>${computeEntityName(entity)}</span>

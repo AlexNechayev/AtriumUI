@@ -42,7 +42,7 @@ describe('shell drawer overlay panel', () => {
     ) as HTMLElement;
     expect(panel).not.toBeNull();
     expect(catcher).not.toBeNull();
-    expect(panel.style.width).toBe('min(360px, max(280px, 40vw))');
+    expect(panel.style.width).toBe('min(220px, max(196px, 24vw))');
     expect(catcher.style.background).toBe('transparent');
 
     catcher.click();

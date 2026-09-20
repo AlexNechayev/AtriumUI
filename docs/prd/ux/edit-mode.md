@@ -27,7 +27,7 @@
 - Persist on Done via storage-mode Lovelace
 - `editable: false` disables layout editing
 - Draft/commit discipline for Home vs classic (Phase 4 improvement)
-- Second entry: shell drawer **Enter / Exit edit mode** (pencil stays; see [shell drawer](./shell-drawer.md))
+- Second entry: shell drawer **Enter / Exit edit** header icon (pencil stays; see [shell drawer](./shell-drawer.md))
 
 ### Out of scope (this feature)
 - Drag/resize on tablet/mobile breakpoints
@@ -57,7 +57,7 @@
 ### Primary flow
 1. Pencil → rearrange/add → Done writes YAML.
 2. Click cell body → card editor modal.
-3. Optional: drawer **Enter edit mode** → drawer closes → same as step 1. Drawer **Exit edit mode** (or HA Done) leaves edit and persists.
+3. Optional: drawer **edit icon** (header, opposite the chevron) → drawer closes → same as step 1. Drawer **Exit edit** (or HA Done) leaves edit and persists.
 
 ### Empty / first-use
 - + opens HA card picker; free slot placement.

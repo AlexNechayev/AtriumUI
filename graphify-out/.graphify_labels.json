@@ -102,6 +102,9 @@
   "100": "au-switch-card-editor.ts",
   "101": "coverage.test.ts",
   "102": "au-sensor-card.stories.ts",
+  "103": "au-vacuum-card-editor.stories.ts",
+  "104": "tokens.stories.ts",
+  "105": "Action Card",
   "106": "bindStopBubble",
   "107": "Security Policy",
   "108": "repository",
@@ -111,14 +114,12 @@
   "112": "vite.config.ts",
   "113": "displayColumnsForWidth",
   "114": "._resolvedFloors",
+  "115": "AuSensorCardEditor",
   "116": "repository",
+  "117": "au-action-card-editor.stories.ts",
   "118": "@mdi/js",
   "119": "VacuumSettingsDraft",
   "122": "Implementation: Shell drawer theme + enter edit",
   "124": "AuSwitchCard",
-  "128": "Implementation: Shell drawer Automations list",
-  "132": "action-card-base.test.ts",
-  "133": "shell-drawer-chrome.test.ts",
-  "134": "shell-grid-add-card.test.ts",
-  "136": "reactive-update.test.ts"
+  "128": "Implementation: Shell drawer Automations list"
 }

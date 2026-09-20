@@ -18,6 +18,8 @@ export const homeViewStyles = css`
         height: 100%;
         min-height: 0;
         overflow: hidden;
+        --au-drawer-trigger-top: calc(clamp(16px, 2.2vw, 28px) + 6px);
+        --au-drawer-trigger-end: clamp(16px, 2.2vw, 28px);
         background:
           radial-gradient(
             120% 80% at 0% 0%,
@@ -32,6 +34,12 @@ export const homeViewStyles = css`
           var(--au-home-bg);
         padding: clamp(16px, 2.2vw, 28px);
         border-radius: calc(var(--au-home-radius) + 4px);
+      }
+      .home-shell > .au-drawer-trigger {
+        position: absolute;
+        top: var(--au-drawer-trigger-top);
+        right: var(--au-drawer-trigger-end);
+        z-index: 23;
       }
 
       .home {

@@ -108,9 +108,9 @@ See [`SCOPE_AND_FEATURES.md`](./SCOPE_AND_FEATURES.md) §4 and [`PRD.md`](./PRD.
 | First seen | 2026-09-19 |
 | Source | graphify Suggested Questions (feature/shell-drawer-ux-2 graphify update) |
 
-**Question:** Why does `HassEntity` connect `VacuumSettingsDraft` to `AuShellHomeView`, card bases, and Home tiles?
+**Question:** Why does `HassEntity` connect `AuSwitchCard` / `VacuumSettingsDraft` to `AuShellHomeView`, card bases, and Home tiles?
 
-**Notes:** High betweenness (≈0.065) after AST rebuild. Same class of typing hub as the answered `HomeAssistant` entry — entity state objects pass through shell + cards. Confirm on next full `/graphify` if it is still more than extraction noise.
+**Notes:** High betweenness (≈0.066) after 2026-09-20 AST rebuild. Same class of typing hub as the answered `HomeAssistant` entry — entity state objects pass through shell + cards. Confirm on next full `/graphify` if it is still more than extraction noise.
 
 ---
 

@@ -64,10 +64,11 @@ describe('shell drawer theme and enter edit', () => {
       saveConfig,
       setEditMode,
     };
-    const editBtn = [...home.shadowRoot!.querySelectorAll('.au-drawer-panel button')].find(
-      (b) => b.classList.contains('au-drawer-edit'),
+    const editBtn = home.shadowRoot?.querySelector(
+      '.au-drawer-edit',
     ) as HTMLButtonElement;
     expect(editBtn).toBeTruthy();
+    expect(editBtn.classList.contains('au-drawer-edit')).toBe(true);
     editBtn.click();
     await (home as HTMLElement & { updateComplete: Promise<unknown> }).updateComplete;
     await el.updateComplete;

@@ -118,6 +118,10 @@ describe('shell drawer UX iteration 2', () => {
     expect(ids).toEqual(['appearance', 'clock', 'home', 'layout']);
     for (const section of sections) {
       expect(section.querySelector('h3')).toBeTruthy();
+      const block = section as HTMLElement;
+      expect(block.style.background).toMatch(/au-home-control-fill/);
+      expect(block.style.border).toMatch(/solid/);
+      expect(block.style.borderRadius).toMatch(/au-home-radius-sm|16px/);
       const grid = section.querySelector('.au-drawer-section-grid') as HTMLElement;
       expect(grid).toBeTruthy();
       expect(grid.style.display).toBe('grid');
@@ -125,6 +129,57 @@ describe('shell drawer UX iteration 2', () => {
         'repeat(3,minmax(0,1fr))',
       );
     }
+    el.remove();
+  });
+
+  it('orders Dashboard fields by control type within each section', async () => {
+    const { el, home } = await openHomeDrawer();
+    const card = await openCard(home, 'dashboard_settings');
+    const ids = (section: string) =>
+      [...card.querySelectorAll(`[data-section="${section}"] [data-setting]`)].map(
+        (node) => node.getAttribute('data-setting'),
+      );
+    expect(ids('appearance')).toEqual(['header_greeting', 'header_title']);
+    expect(ids('clock')).toEqual([
+      'clock_show_date',
+      'clock_show_day',
+      'clock_format',
+      'clock_date_format',
+      'clock_day_format',
+    ]);
+    expect(ids('home')).toEqual([
+      'show_presence',
+      'show_bulk_actions',
+      'auto_areas',
+      'room_idle_timeout',
+    ]);
+    expect(ids('layout')).toEqual([
+      'columns',
+      'rows',
+      'max_rows',
+      'gap',
+      'row_height',
+      'width',
+      'height',
+    ]);
+    el.remove();
+  });
+
+  it('outlines Global and Automations groups the same way', async () => {
+    const { el, home } = await openHomeDrawer();
+    const global = await openCard(home, 'global');
+    const form = global.querySelector('.au-drawer-form') as HTMLElement;
+    expect(form.style.background).toMatch(/au-home-control-fill/);
+    expect(form.style.border).toMatch(/solid/);
+    (home.shadowRoot?.querySelector('.au-drawer-float-close') as HTMLButtonElement).click();
+    await home.updateComplete;
+
+    const automations = await openCard(home, 'automations');
+    const row = automations.querySelector(
+      '[data-automation="automation.morning"]',
+    ) as HTMLElement;
+    expect(row.style.background).toMatch(/au-home-control-fill/);
+    expect(row.style.border).toMatch(/solid/);
     el.remove();
   });
 
@@ -137,6 +192,7 @@ describe('shell drawer UX iteration 2', () => {
     expect(row).toBeTruthy();
     expect(row.style.display).toBe('flex');
     expect(row.style.flexDirection).toBe('row');
+    expect(row.style.background).toMatch(/au-home-control-fill/);
     expect(row.querySelector('.au-drawer-automation-meta')).toBeTruthy();
     expect(row.querySelector('.au-drawer-automation-actions')).toBeTruthy();
     el.remove();

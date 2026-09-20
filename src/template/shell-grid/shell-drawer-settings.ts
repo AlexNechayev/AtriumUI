@@ -6,7 +6,7 @@ import { html, nothing, type TemplateResult } from 'lit';
 import { localize } from '../../localize/localize';
 import type { AuShellGridConfig } from '../../types/config';
 import type { AuHomeRoomControlsConfig } from '../../types/home';
-import type { AuDrawerCardId } from './shell-drawer-trigger';
+import { DRAWER_GROUP_CHROME, type AuDrawerCardId } from './shell-drawer-trigger';
 import {
   resolveShellDrawer,
   resolveShellTheme,
@@ -189,7 +189,7 @@ function section(
   fields: TemplateResult[],
 ): TemplateResult {
   return html`
-    <section class="au-drawer-section" data-section=${id}>
+    <section class="au-drawer-section" data-section=${id} style=${DRAWER_GROUP_CHROME}>
       <h3>${title}</h3>
       <div class="au-drawer-section-grid" style=${SECTION_GRID}>
         ${fields}
@@ -295,6 +295,18 @@ export function renderDrawerDashboardSettings(
         appearance,
       )}
       ${section('clock', localize(language, 'drawer.settings.section.clock'), [
+        checkbox(
+          'clock_show_date',
+          config.clock_show_date !== false,
+          localize(language, 'drawer.settings.clock_show_date'),
+          (checked) => emit({ clock_show_date: checked }),
+        ),
+        checkbox(
+          'clock_show_day',
+          config.clock_show_day !== false,
+          localize(language, 'drawer.settings.clock_show_day'),
+          (checked) => emit({ clock_show_day: checked }),
+        ),
         selectField(
           'clock_format',
           config.clock_format ?? '24h',
@@ -311,12 +323,6 @@ export function renderDrawerDashboardSettings(
           ],
           (value) => emit({ clock_format: value as '12h' | '24h' }),
         ),
-        checkbox(
-          'clock_show_date',
-          config.clock_show_date !== false,
-          localize(language, 'drawer.settings.clock_show_date'),
-          (checked) => emit({ clock_show_date: checked }),
-        ),
         selectField(
           'clock_date_format',
           config.clock_date_format ?? 'dd/mm',
@@ -326,12 +332,6 @@ export function renderDrawerDashboardSettings(
             { value: 'mm/dd', label: 'MM/DD' },
           ],
           (value) => emit({ clock_date_format: value as 'dd/mm' | 'mm/dd' }),
-        ),
-        checkbox(
-          'clock_show_day',
-          config.clock_show_day !== false,
-          localize(language, 'drawer.settings.clock_show_day'),
-          (checked) => emit({ clock_show_day: checked }),
         ),
         selectField(
           'clock_day_format',
@@ -384,18 +384,6 @@ export function renderDrawerDashboardSettings(
           (value) => emit({ columns: value }),
           1,
         ),
-        textField(
-          'gap',
-          config.gap ?? '',
-          localize(language, 'drawer.settings.gap'),
-          (value) => emit({ gap: value }),
-        ),
-        textField(
-          'row_height',
-          config.row_height ?? '',
-          localize(language, 'drawer.settings.row_height'),
-          (value) => emit({ row_height: value }),
-        ),
         numberField(
           'rows',
           config.rows,
@@ -409,6 +397,18 @@ export function renderDrawerDashboardSettings(
           localize(language, 'drawer.settings.max_rows'),
           (value) => emit({ max_rows: value }),
           1,
+        ),
+        textField(
+          'gap',
+          config.gap ?? '',
+          localize(language, 'drawer.settings.gap'),
+          (value) => emit({ gap: value }),
+        ),
+        textField(
+          'row_height',
+          config.row_height ?? '',
+          localize(language, 'drawer.settings.row_height'),
+          (value) => emit({ row_height: value }),
         ),
         textField(
           'width',
@@ -436,7 +436,11 @@ export function renderDrawerGlobalSettings(
     onPatch(sanitizeDrawerSettingsPatch('global', patch));
   const controls: AuHomeRoomControlsConfig = config.room_controls ?? {};
   return html`
-    <form class="au-drawer-form" @submit=${(ev: Event) => ev.preventDefault()}>
+    <form
+      class="au-drawer-form au-drawer-group"
+      style=${DRAWER_GROUP_CHROME}
+      @submit=${(ev: Event) => ev.preventDefault()}
+    >
       ${checkbox(
         'confirm_actions',
         config.confirm_actions === true,

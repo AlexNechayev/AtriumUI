@@ -34,21 +34,25 @@ describe('shell drawer trigger chrome', () => {
     document.body.replaceChildren();
   });
 
-  it('renders a 36px icon-only chevron in Home toolbar-end by default', async () => {
+  it('renders a 36px icon-only chevron on the Home shell, not in the toolbar', async () => {
     const el = await renderShell({
       type: 'custom:au-shell-grid',
       floors: [{ name: 'Main', rooms: [{ name: 'Hall', entities: [] }] }],
     });
     const home = await homeView(el);
+    const shell = home.shadowRoot?.querySelector('.home-shell');
     const end = home.shadowRoot?.querySelector('.toolbar-end');
-    const btn = triggerIn(end);
+    const btn = triggerIn(home.shadowRoot);
     expect(btn).not.toBeNull();
-    expect(end?.lastElementChild).toBe(btn);
+    expect(shell?.contains(btn)).toBe(true);
+    expect(end?.contains(btn)).toBe(false);
+    expect(end?.querySelector('.au-drawer-trigger-slot')).toBeTruthy();
     expect(btn?.getAttribute('aria-expanded')).toBe('false');
     expect(btn?.classList.contains('open')).toBe(false);
     expect(btn?.style.width).toBe('36px');
     expect(btn?.style.height).toBe('36px');
     expect(btn?.style.background).toBe('transparent');
+    expect(btn?.style.zIndex).toBe('23');
     el.remove();
   });
 
@@ -110,6 +114,19 @@ describe('shell drawer trigger chrome', () => {
     const btn = triggerIn(el.shadowRoot);
     expect(btn).not.toBeNull();
     expect(btn?.classList.contains('au-drawer-trigger')).toBe(true);
+    expect(btn?.style.zIndex).toBe('23');
+    expect(btn?.style.top).toBe('8px');
+    expect(btn?.style.right).toBe('8px');
+    expect(el.shadowRoot?.querySelector('.au-drawer-edit')).toBeNull();
+    btn?.click();
+    await el.updateComplete;
+    const edit = el.shadowRoot?.querySelector('.au-drawer-edit') as HTMLButtonElement;
+    expect(edit).toBeTruthy();
+    expect(edit.style.top).toBe('8px');
+    expect(edit.style.zIndex).toBe('23');
+    expect(edit.getAttribute('style') ?? '').toContain(
+      'min(220px, max(196px, 24vw))',
+    );
     el.remove();
   });
 });
